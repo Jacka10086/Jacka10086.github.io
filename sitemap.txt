@@ -1,4 +1,0 @@
-http://example.com/about/index.html
-http://example.com/post/post-title.html
-http://example.com/post/hello-world.html
-http://example.com/
