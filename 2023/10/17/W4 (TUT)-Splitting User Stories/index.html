@@ -1,0 +1,434 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>W4 (TUT)-Splitting User Stories | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="为什么要拆分故事？ (Why Split Stories?)1. 将其拆分为可管理的小块 便于管理: 更小的故事意味着更易于理解和实施。 提高效率: 团队可以快速完成小故事，并感受到成就感，从而提高团队的整体速度。  2. 足够小，能够在两周的冲刺中交付8-12个故事 可预测的交付: 规划更准确，因为故事的规模较小，易于估算。 持续的进步: 每个冲刺结束时都能看到实实在在的成果，有助于保持团队和利">
+<meta property="og:type" content="article">
+<meta property="og:title" content="W4 (TUT)-Splitting User Stories">
+<meta property="og:url" content="http://example.com/2023/10/17/W4%20(TUT)-Splitting%20User%20Stories/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="为什么要拆分故事？ (Why Split Stories?)1. 将其拆分为可管理的小块 便于管理: 更小的故事意味着更易于理解和实施。 提高效率: 团队可以快速完成小故事，并感受到成就感，从而提高团队的整体速度。  2. 足够小，能够在两周的冲刺中交付8-12个故事 可预测的交付: 规划更准确，因为故事的规模较小，易于估算。 持续的进步: 每个冲刺结束时都能看到实实在在的成果，有助于保持团队和利">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2023-10-17T01:18:56.000Z">
+<meta property="article:modified_time" content="2023-10-25T01:48:53.134Z">
+<meta property="article:author" content="Jacka10086">
+<meta property="article:tag" content="Week4">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/10/17/W4%20(TUT)-Splitting%20User%20Stories/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'W4 (TUT)-Splitting User Stories',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-25 02:48:53'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">W4 (TUT)-Splitting User Stories</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-10-17T01:18:56.000Z" title="Created 2023-10-17 02:18:56">2023-10-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-10-25T01:48:53.134Z" title="Updated 2023-10-25 02:48:53">2023-10-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Com435/">Com435</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="W4 (TUT)-Splitting User Stories"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="为什么要拆分故事？-Why-Split-Stories"><a href="#为什么要拆分故事？-Why-Split-Stories" class="headerlink" title="为什么要拆分故事？ (Why Split Stories?)"></a>为什么要拆分故事？ (Why Split Stories?)</h2><h3 id="1-将其拆分为可管理的小块"><a href="#1-将其拆分为可管理的小块" class="headerlink" title="1. 将其拆分为可管理的小块"></a>1. 将其拆分为可管理的小块</h3><ul>
+<li><strong>便于管理</strong>: 更小的故事意味着更易于理解和实施。</li>
+<li><strong>提高效率</strong>: 团队可以快速完成小故事，并感受到成就感，从而提高团队的整体速度。</li>
+</ul>
+<h3 id="2-足够小，能够在两周的冲刺中交付8-12个故事"><a href="#2-足够小，能够在两周的冲刺中交付8-12个故事" class="headerlink" title="2. 足够小，能够在两周的冲刺中交付8-12个故事"></a>2. 足够小，能够在两周的冲刺中交付8-12个故事</h3><ul>
+<li><strong>可预测的交付</strong>: 规划更准确，因为故事的规模较小，易于估算。</li>
+<li><strong>持续的进步</strong>: 每个冲刺结束时都能看到实实在在的成果，有助于保持团队和利益相关者的动力。</li>
+</ul>
+<h3 id="3-区分高价值和低价值"><a href="#3-区分高价值和低价值" class="headerlink" title="3. 区分高价值和低价值"></a>3. 区分高价值和低价值</h3><ul>
+<li><strong>优先级排序</strong>: 通过拆分，我们可以识别哪些故事具有最高价值，应该首先执行。</li>
+<li><strong>减少浪费</strong>: 低价值的故事可以推迟或取消，从而集中精力在更有价值的工作上。</li>
+</ul>
+<h3 id="4-产品待办事项自然处理优先级"><a href="#4-产品待办事项自然处理优先级" class="headerlink" title="4. 产品待办事项自然处理优先级"></a>4. 产品待办事项自然处理优先级</h3><ul>
+<li><strong>自然排序</strong>: 故事拆分后，可以更自然地根据其重要性和紧迫性在产品待办事项中排序。</li>
+<li><strong>灵活的调整</strong>: 随着项目的进展或市场需求的变化，可以随时重新评估和调整优先级。</li>
+</ul>
+<h3 id="5-较小的故事提高了生产力和团队动力"><a href="#5-较小的故事提高了生产力和团队动力" class="headerlink" title="5. 较小的故事提高了生产力和团队动力"></a>5. 较小的故事提高了生产力和团队动力</h3><ul>
+<li><strong>快速反馈</strong>: 小故事使团队能够更快地完成工作并获得反馈，从而迅速学习和改进。</li>
+<li><strong>提高士气</strong>: 完有成效的冲刺和项目交付可以提高团队的信心和士气。</li>
+</ul>
+<h3 id="6-更好的资源规划-分配工作"><a href="#6-更好的资源规划-分配工作" class="headerlink" title="6. 更好的资源规划 - 分配工作"></a>6. 更好的资源规划 - 分配工作</h3><ul>
+<li><strong>明确的责任</strong>: 通过故事拆分，团队成员可以清楚地了解他们的责任和期望。</li>
+<li><strong>平衡的工作负载</strong>: 可以根据团队成员的能力和可用性更有效地分配任务。</li>
+</ul>
+<h2 id="拆分用户故事-Splitting-the-User-Story"><a href="#拆分用户故事-Splitting-the-User-Story" class="headerlink" title="拆分用户故事 (Splitting the User Story)"></a>拆分用户故事 (Splitting the User Story)</h2><p>用户故事拆分过程可以分为几个步骤，每个步骤都对故事的大小、质量和可管理性有重要影响。</p>
+<h3 id="准备输入故事-Prepare-the-Input-Story"><a href="#准备输入故事-Prepare-the-Input-Story" class="headerlink" title="准备输入故事 (Prepare the Input Story)"></a>准备输入故事 (Prepare the Input Story)</h3><ol>
+<li><strong>确认故事内容</strong>: 确保用户故事清晰、完整，并且包含所有相关方的需求。</li>
+<li><strong>满足INVEST原则</strong> (除了“小”之外): 故事需要是独立的(Independent)、可协商的(Negotiable)、有价值的(Valuable)、可估计的(Estimable)、小的(Small)、可测试的(Testable)，尽管在拆分前可能不完全满足“小”的条件。</li>
+</ol>
+<h3 id="应用拆分模式-Apply-the-Splitting-Patterns"><a href="#应用拆分模式-Apply-the-Splitting-Patterns" class="headerlink" title="应用拆分模式 (Apply the Splitting Patterns)"></a>应用拆分模式 (Apply the Splitting Patterns)</h3><ol>
+<li><strong>工作流步骤</strong> (#1 Workflow Steps): 按照不同的工作流程步骤来拆分用户故事。</li>
+<li><strong>操作</strong> (#2 Operations): 根据不同的操作或功能将大故事拆分为小故事。</li>
+<li><strong>业务规则变化</strong> (#3 Business Rules Variations): 如果一个故事包含多种业务规则，可以考虑分别拆分。</li>
+<li><strong>其他…</strong> (#4 …): 根据需要，可以考虑其他拆分模式，如按照数据类型或错误条件等。</li>
+</ol>
+<h3 id="评估拆分-Evaluate-the-Split"><a href="#评估拆分-Evaluate-the-Split" class="headerlink" title="评估拆分 (Evaluate the Split)"></a>评估拆分 (Evaluate the Split)</h3><ol>
+<li><strong>80&#x2F;20原则</strong>: 专注于大部分用户最关心的功能或需求，即20%的功能满足80%的需求。</li>
+<li><strong>等大小故事</strong>: 尽量使拆分后的小故事大小均等，这有助于更好的规划和估算。</li>
+</ol>
+<p>通过这种方法拆分用户故事，我们可以更有效地管理产品待办事项，并确保团队专注于交付最大的价值。</p>
+<h2 id="INVEST原则在优质用户故事中的应用-INVEST-in-Good-User-Stories"><a href="#INVEST原则在优质用户故事中的应用-INVEST-in-Good-User-Stories" class="headerlink" title="INVEST原则在优质用户故事中的应用 (INVEST in Good User Stories)"></a>INVEST原则在优质用户故事中的应用 (INVEST in Good User Stories)</h2><p>INVEST原则是编写高质量用户故事的关键，每个字母代表一个重要的属性，这些属性有助于确保故事的清晰度和可管理性。</p>
+<h3 id="独立性-Independent"><a href="#独立性-Independent" class="headerlink" title="独立性 (Independent)"></a>独立性 (Independent)</h3><ul>
+<li><strong>限制依赖</strong>: 故事应该是自包含的，尽量减少对其他用户故事的依赖。</li>
+<li><strong>自主排程</strong>: 独立性允许故事可以在不依赖其他故事完成的情况下被开发和测试。</li>
+</ul>
+<h3 id="可协商-Negotiable"><a href="#可协商-Negotiable" class="headerlink" title="可协商 (Negotiable)"></a>可协商 (Negotiable)</h3><ul>
+<li><strong>关注点在于什么而非如何</strong>: 故事描述了需要什么而不是怎么做，即不是由解决方案驱动的。</li>
+<li><strong>灵活的细节</strong>: 故事的具体实现可以在故事的生命周期中与团队协商。</li>
+</ul>
+<h3 id="有价值-Valuable"><a href="#有价值-Valuable" class="headerlink" title="有价值 (Valuable)"></a>有价值 (Valuable)</h3><ul>
+<li><strong>清晰的用户价值</strong>: 每个故事必须为用户或项目干系人提供明确的价值。</li>
+<li><strong>价值导向</strong>: 故事的优先级是基于它们所提供的价值来决定的。</li>
+</ul>
+<h3 id="可估算-Estimable"><a href="#可估算-Estimable" class="headerlink" title="可估算 (Estimable)"></a>可估算 (Estimable)</h3><ul>
+<li><strong>相对大小的估算</strong>: 团队应该能够估算故事的大小，即使是相对的，也足以进行规划。</li>
+<li><strong>基于信息</strong>: 估算应该基于当前所知的信息，接受可能的调整。</li>
+</ul>
+<h3 id="小巧-Small"><a href="#小巧-Small" class="headerlink" title="小巧 (Small)"></a>小巧 (Small)</h3><ul>
+<li><strong>规划与完成的大小</strong>: 故事需要足够小，能够在一到两个团队日内计划和完成（最多不超过1&#x2F;4冲刺）。</li>
+<li><strong>可管理的任务</strong>: 小故事使得跟踪和复查变得更简单，降低了复杂性。</li>
+</ul>
+<h3 id="可测试-Testable"><a href="#可测试-Testable" class="headerlink" title="可测试 (Testable)"></a>可测试 (Testable)</h3><ul>
+<li><strong>清晰的完成定义或验收标准</strong>: 每个故事必须有明确的条件，以确定它何时被视为完成。</li>
+<li><strong>质量保证</strong>: 可测试性确保了故事的质量和最终的用户满意度。</li>
+</ul>
+<p>遵循INVEST原则能够帮助团队创建出清晰、可实现且有价值的用户故事，从而提高项目的成功率。</p>
+<h2 id="1-工作流步骤-Workflow-Steps"><a href="#1-工作流步骤-Workflow-Steps" class="headerlink" title="#1 - 工作流步骤 (Workflow Steps)"></a>#1 - 工作流步骤 (Workflow Steps)</h2><p>作为内容管理者，我可以发布新闻故事到公司网站。工作流步骤包括编辑和法律审批，最后审核到暂存区，然后再到生产。</p>
+<p>通过将一个大的用户故事拆分成基于不同工作流步骤的几个小故事，我们可以更细致地管理和执行每个步骤。</p>
+<h3 id="新的用户故事-New-User-Stories"><a href="#新的用户故事-New-User-Stories" class="headerlink" title="新的用户故事 (New User Stories):"></a>新的用户故事 (New User Stories):</h3><ul>
+<li><p><strong>我可以直接发布新闻故事到公司网站。</strong></p>
+<ul>
+<li>这个故事关注于直接发布功能，没有经过任何审批流程。</li>
+</ul>
+</li>
+<li><p><strong>我可以发布经过编辑审核的新闻故事。</strong></p>
+<ul>
+<li>这个故事强调了编辑审核的重要性和需求。</li>
+</ul>
+</li>
+<li><p><strong>我可以发布经过法律审查的新闻故事。</strong></p>
+<ul>
+<li>这个故事确保内容遵循法律指导原则和公司政策。</li>
+</ul>
+</li>
+<li><p><strong>我可以在暂存站点上查看新闻故事。</strong></p>
+<ul>
+<li>在此故事中，内容管理者能够在一个安全的环境中预览故事，这是发布前的重要步骤。</li>
+</ul>
+</li>
+<li><p><strong>我可以从暂存区发布新闻故事到生产环境。</strong></p>
+<ul>
+<li>这个故事描述了从暂存区到生产环境的最终发布步骤。</li>
+</ul>
+</li>
+</ul>
+<p>每个新的用户故事都代表了发布新闻到公司网站的不同步骤，使得流程更加清晰，也便于团队分配资源和时间来分别处理这些步骤。</p>
+<h2 id="2-操作-Operations"><a href="#2-操作-Operations" class="headerlink" title="#2 - 操作 (Operations)"></a>#2 - 操作 (Operations)</h2><p>作为用户，我可以管理我的账户。这里的“管理”涵盖了多个操作（CRUD - 创建、读取、更新、删除）。</p>
+<p>通过将“管理账户”这一宏观功能拆分为几个具体操作的用户故事，可以更清晰地定义需求，同时使得开发和测试工作更具针对性和可管理性。</p>
+<h3 id="新的用户故事-New-User-Stories-1"><a href="#新的用户故事-New-User-Stories-1" class="headerlink" title="新的用户故事 (New User Stories):"></a>新的用户故事 (New User Stories):</h3><ul>
+<li><p><strong>我可以注册一个账户</strong></p>
+<ul>
+<li>此故事关注于用户创建新账户的能力，是用户管理生命周期的起点。</li>
+</ul>
+</li>
+<li><p><strong>我可以登录我的账户</strong></p>
+<ul>
+<li>此故事允许用户通过验证身份来访问其账户，是日常用户体验的重要组成部分。</li>
+</ul>
+</li>
+<li><p><strong>我可以编辑我的账户设置</strong></p>
+<ul>
+<li>此故事强调了用户自定义和更新个人信息的能力，提高了用户体验的个性化。</li>
+</ul>
+</li>
+<li><p><strong>我可以注销我的账户</strong></p>
+<ul>
+<li>此故事提供给用户一个结束使用服务的选项，这在处理用户数据和隐私时是一个重要考量。</li>
+</ul>
+</li>
+</ul>
+<p>这样拆分用户故事后，每个故事都聚焦于账户管理的一个特定方面，使得需求更加明确，开发工作更加细化，也便于跟踪每个功能的实现和质量。</p>
+<h2 id="3-商业规则变化-Business-Rule-Variations"><a href="#3-商业规则变化-Business-Rule-Variations" class="headerlink" title="#3 - 商业规则变化 (Business Rule Variations)"></a>#3 - 商业规则变化 (Business Rule Variations)</h2><p>作为用户，我可以用灵活的日期搜索航班。这里的“灵活的日期”揭示了潜在的商业规则，这些规则值得拥有自己的用户故事。</p>
+<p>通过为不同的商业规则创建独立的用户故事，我们能更清晰地定义这些规则，并确保它们在产品开发过程中得到妥善处理。</p>
+<h3 id="新的用户故事-New-User-Stories-2"><a href="#新的用户故事-New-User-Stories-2" class="headerlink" title="新的用户故事 (New User Stories):"></a>新的用户故事 (New User Stories):</h3><ul>
+<li><p><strong>我可以搜索“在x和y之间的n天”的航班</strong></p>
+<ul>
+<li>此故事让用户能够定义一个具体的时间范围，并搜索在这个范围内的航班。</li>
+</ul>
+</li>
+<li><p><strong>我可以搜索“12月的周末”的航班</strong></p>
+<ul>
+<li>此故事专注于用户寻找特定月份中周末的航班，满足对假期或特定时间的需求。</li>
+</ul>
+</li>
+<li><p><strong>我可以搜索“x和y的前后几天”的航班</strong></p>
+<ul>
+<li>此故事允许用户在指定日期前后的几天内搜索航班，提供更多的灵活性和选择。</li>
+</ul>
+</li>
+</ul>
+<p>每个新的用户故事都针对“灵活的日期”这一功能的不同商业规则进行了细化，使得功能需求更加明确，并帮助团队理解和实现这些复杂的搜索条件。</p>
+<h2 id="4-数据变化-Variations-in-Data"><a href="#4-数据变化-Variations-in-Data" class="headerlink" title="#4 - 数据变化 (Variations in Data)"></a>#4 - 数据变化 (Variations in Data)</h2><p>作为内容管理者，我可以创建新闻故事。在处理多语言内容时，我们考虑到数据的变化，特别是语言。</p>
+<p>创建针对不同语言的独立用户故事，有助于确保每种语言的特定需求和差异都能得到充分考虑和处理。</p>
+<h3 id="新的用户故事-New-User-Stories-3"><a href="#新的用户故事-New-User-Stories-3" class="headerlink" title="新的用户故事 (New User Stories):"></a>新的用户故事 (New User Stories):</h3><ul>
+<li><p><strong>…用英语 (in English)</strong></p>
+<ul>
+<li>此故事强调了内容管理者用英语创建新闻的能力，考虑到可能的地域差异和表达习惯。</li>
+</ul>
+</li>
+<li><p><strong>…用日语 (in Japanese)</strong></p>
+<ul>
+<li>此故事让内容管理者能够用日语撰写新闻，涵盖了特定的字符集和格式需求。</li>
+</ul>
+</li>
+<li><p><strong>…用阿拉伯语 (in Arabic)</strong></p>
+<ul>
+<li>此故事关注于使用阿拉伯语创建新闻的功能，特别注意从右到左的书写方向和其他语言特性。</li>
+</ul>
+</li>
+</ul>
+<p>每个新的用户故事都专注于一种特定的语言，从而允许团队细分需求，更好地处理多语言支持所带来的复杂性和特殊要求。</p>
+<h2 id="5-数据输入方法-Data-Entry-Methods"><a href="#5-数据输入方法-Data-Entry-Methods" class="headerlink" title="#5 - 数据输入方法 (Data Entry Methods)"></a>#5 - 数据输入方法 (Data Entry Methods)</h2><p>作为用户，我可以搜索两个目的地之间的航班。数据输入的用户界面可以是简单的，也可以是更复杂的。</p>
+<p>通过拆分用户故事，针对不同的数据输入方法（如简单输入字段或复杂的日历界面）创建独立的故事，可以帮助确保每种输入方式的特定需求都被充分理解和考虑。</p>
+<h3 id="拆分用户故事-Splitting-the-User-Stories"><a href="#拆分用户故事-Splitting-the-User-Stories" class="headerlink" title="拆分用户故事 (Splitting the User Stories):"></a>拆分用户故事 (Splitting the User Stories):</h3><ul>
+<li><p><strong>…使用简单的日期输入字段 (using simple date input fields)</strong></p>
+<ul>
+<li>此故事关注于基本的数据输入需求，允许用户通过简单的文本字段来输入日期，提供快速、无干扰的用户体验。</li>
+</ul>
+</li>
+<li><p><strong>…使用一个花哨的日历界面 (with a fancy calendar UI)</strong></p>
+<ul>
+<li>此故事提供了一个更复杂、更直观的日期选择过程，通过一个图形日历界面，用户可以更容易地浏览和选择日期。</li>
+</ul>
+</li>
+</ul>
+<p>这两个故事考虑了从最基本到更高级的用户界面需求，使团队能够根据项目的范围、时间和资源来优先考虑和实现不同的功能。</p>
+<h2 id="6-主要影响-Major-Effect"><a href="#6-主要影响-Major-Effect" class="headerlink" title="#6 - 主要影响 (Major Effect)"></a>#6 - 主要影响 (Major Effect)</h2><p>作为用户，我可以使用VISA、万事达卡(MasterCard)、美国运通卡(American Express)支付我的航班费用。很明显，主要的工作在于卡处理基础设施。支持额外的卡类型是微不足道的。</p>
+<p>通过拆分用户故事，我们可以更明确地聚焦于支持不同类型的信用卡所需的工作量和基础设施需求。</p>
+<h3 id="拆分用户故事-Splitting-the-User-Stories-1"><a href="#拆分用户故事-Splitting-the-User-Stories-1" class="headerlink" title="拆分用户故事 (Splitting the User Stories):"></a>拆分用户故事 (Splitting the User Stories):</h3><ul>
+<li><p><strong>…我可以使用一种信用卡类型支付 (I can pay with one credit card type - VISA, MasterCard, AMEX)</strong></p>
+<ul>
+<li>此故事强调了支持单一信用卡支付的实现，是建立支付基础设施的第一步。</li>
+</ul>
+</li>
+<li><p><strong>…我可以使用所有四种信用卡类型支付（假设已经实现了一种）(I can pay with all four credit card types, given one is already implemented)</strong></p>
+<ul>
+<li>此故事考虑到扩展支付系统以接受多种信用卡的能力，前提是已经有一种信用卡支付方式被实现。</li>
+</ul>
+</li>
+</ul>
+<p>拆分的这两个故事允许团队逐步实施复杂的支付处理功能，从支持一种信用卡类型开始，然后扩展到更多的卡种，这样做可以更有效地管理开发工作，并确保质量和安全性。</p>
+<h2 id="7-简单-复杂-Simple-Complex"><a href="#7-简单-复杂-Simple-Complex" class="headerlink" title="#7 - 简单&#x2F;复杂 (Simple&#x2F;Complex)"></a>#7 - 简单&#x2F;复杂 (Simple&#x2F;Complex)</h2><p>作为用户，我可以搜索两个目的地之间的航班。当通过增加更多情景使故事变得更大时，故事的复杂性也就随之增加。</p>
+<p>通过将用户故事分解为核心功能和额外的变化，我们可以确保团队集中精力在主要功能上，同时也能够灵活地扩展更多的用户需求。</p>
+<h3 id="拆分用户故事-Splitting-the-User-Stories-2"><a href="#拆分用户故事-Splitting-the-User-Stories-2" class="headerlink" title="拆分用户故事 (Splitting the User Stories):"></a>拆分用户故事 (Splitting the User Stories):</h3><ul>
+<li><p><strong>…指定最大停靠次数 (specifying a max number of stops)</strong></p>
+<ul>
+<li>此故事让用户能够限制搜索结果中的航班停靠次数，为想要更直接航线的用户提供便利。</li>
+</ul>
+</li>
+<li><p><strong>…包括附近机场 (including nearby airports)</strong></p>
+<ul>
+<li>此故事扩展了搜索功能，允许用户选择包括附近机场的航班，为用户提供更多的选择和灵活性。</li>
+</ul>
+</li>
+<li><p><strong>…使用灵活日期 (using flexible dates)</strong></p>
+<ul>
+<li>此故事增加了日期的灵活性，用户可以搜索在特定日期范围内的航班，而不是固定的出发和返回日期。</li>
+</ul>
+</li>
+</ul>
+<p>通过保持核心故事的简洁性，并将更多的变化拆分到它们自己的用户故事中，团队可以更有效地管理工作的优先级，并确保每个功能都得到充分的注意和实现。</p>
+<h2 id="8-推迟性能优化-Defer-Performance"><a href="#8-推迟性能优化-Defer-Performance" class="headerlink" title="#8 - 推迟性能优化 (Defer Performance)"></a>#8 - 推迟性能优化 (Defer Performance)</h2><p>作为用户，我可以搜索两个目的地之间的航班。有时，工作的难点在于使功能快速或安全 - 可以分为“使它工作”和“使它快速”。</p>
+<p>在开发初期，重点可能是实现基本功能；但是，随着产品的发展，性能和安全性变得越来越重要。因此，通过拆分用户故事来分阶段处理这些关注点是很有意义的。</p>
+<h3 id="拆分用户故事-Splitting-the-User-Stories-3"><a href="#拆分用户故事-Splitting-the-User-Stories-3" class="headerlink" title="拆分用户故事 (Splitting the User Stories):"></a>拆分用户故事 (Splitting the User Stories):</h3><ul>
+<li><p><strong>…慢 - 只是完成它并显示等待&#x2F;搜索动画 (…slow - just get it done and display waiting&#x2F;searching animation)</strong></p>
+<ul>
+<li>此故事聚焦于实现基本的搜索功能，即使响应时间较长，用户也会看到一个等待或搜索中的动画，从而知道进程正在进行中。</li>
+</ul>
+</li>
+<li><p><strong>…快（在5秒内完成） (…fast - in under 5 seconds)</strong></p>
+<ul>
+<li>此故事的目标是优化已有功能的性能，确保搜索结果能在5秒内快速呈现给用户，提供更流畅的用户体验。</li>
+</ul>
+</li>
+</ul>
+<p>虽然推迟性能优化可以帮助团队快速推出产品并获得用户反馈，但也要注意不要累积过多的技术债务，应适时进行必要的重构和优化，确保产品的长期健康和可维护性。</p>
+<h2 id="9-分解探索性任务-Break-out-a-Spike"><a href="#9-分解探索性任务-Break-out-a-Spike" class="headerlink" title="#9 - 分解探索性任务 (Break out a Spike)"></a>#9 - 分解探索性任务 (Break out a Spike)</h2><p>作为用户，我可以使用信用卡支付。当面临不确定性时，可以使用探索性任务（spike）来进行调查研究。</p>
+<p>探索性任务是一种短期、集中的研究活动，旨在获取足够的信息和知识，从而能够准确地估计一个复杂任务的大小和复杂性。在这种情况下，它可以用来调查信用卡处理的不确定性和复杂性。</p>
+<h3 id="拆分用户故事-Splitting-the-User-Stories-4"><a href="#拆分用户故事-Splitting-the-User-Stories-4" class="headerlink" title="拆分用户故事 (Splitting the User Stories):"></a>拆分用户故事 (Splitting the User Stories):</h3><ul>
+<li><p><strong>…调查信用卡处理过程 (…investigate credit card processing)</strong></p>
+<ul>
+<li>此故事不涉及实际的实现，而是关注于收集关于信用卡处理方式、第三方服务商、安全性要求和合规性问题的信息。</li>
+</ul>
+</li>
+<li><p><strong>…实施信用卡处理 (…implement credit card processing)</strong></p>
+<ul>
+<li>在收集到必要信息并减少不确定性之后，此故事关注于实际的信用卡支付功能的开发和实施。</li>
+</ul>
+</li>
+</ul>
+<p>探索性任务是管理风险的有用方法，它们允许团队在承诺实施解决方案之前先了解和理解潜在的难题和挑战。我们将在下周更详细地讨论这个主题。</p>
+<h2 id="评估拆分-Evaluate-the-Split-1"><a href="#评估拆分-Evaluate-the-Split-1" class="headerlink" title="评估拆分 (Evaluate the Split)"></a>评估拆分 (Evaluate the Split)</h2><p>在故事拆分后，对结果进行评估是至关重要的。这可以帮助我们确保故事的大小和范围更适合迭代开发，并且团队可以更有效地管理其工作负载和交付优先级。</p>
+<h3 id="1-80-20-帕累托原则-80-20-Pareto-Principle"><a href="#1-80-20-帕累托原则-80-20-Pareto-Principle" class="headerlink" title="1. 80&#x2F;20 帕累托原则 (80&#x2F;20 Pareto Principle)"></a>1. 80&#x2F;20 帕累托原则 (80&#x2F;20 Pareto Principle)</h3><ul>
+<li><strong>80%的工作在20%的时间内完成</strong>：换句话说，完成最后20%的工作需要80%的时间。这通常意味着大部分工作可以在相对较短的时间内完成，而细节和微调可能会花费大量时间。</li>
+<li><strong>识别繁琐的部分</strong>：即可能价值较低的20%部分。选择揭示高价值与低价值的拆分方式，可以帮助团队集中精力在产生最大影响的工作上。</li>
+</ul>
+<h3 id="2-选择可以得到更多大小相等的小故事的拆分方式-Choose-the-Split-That-Gets-You-More-Equally-Sized-Small-Stories"><a href="#2-选择可以得到更多大小相等的小故事的拆分方式-Choose-the-Split-That-Gets-You-More-Equally-Sized-Small-Stories" class="headerlink" title="2. 选择可以得到更多大小相等的小故事的拆分方式 (Choose the Split That Gets You More Equally Sized Small Stories)"></a>2. 选择可以得到更多大小相等的小故事的拆分方式 (Choose the Split That Gets You More Equally Sized Small Stories)</h3><ul>
+<li><strong>更均等的故事大小</strong>：将一个8点的故事拆分成四个2点的故事比产生一个5点和一个3点的故事更有用。这有助于团队更有效地规划和分配工作，因为他们可以预期每个故事所需的工作量更一致。</li>
+</ul>
+<p>通过这些评估标准，我们可以更好地决定如何拆分故事，以便它们更符合敏捷开发的需要，同时确保工作的价值最大化和工作流程的顺畅。</p>
+<h2 id="拆分过度的风险（When-Is-Too-Far-）"><a href="#拆分过度的风险（When-Is-Too-Far-）" class="headerlink" title="拆分过度的风险（When Is Too Far?）"></a>拆分过度的风险（When Is Too Far?）</h2><p>故事拆分是为了提高敏捷团队的效率和响应能力，但过度拆分可能会产生反效果。识别过度拆分的迹象至关重要。</p>
+<h3 id="拆分过小的风险-Risks-of-Breaking-into-Too-Small-Chunks"><a href="#拆分过小的风险-Risks-of-Breaking-into-Too-Small-Chunks" class="headerlink" title="拆分过小的风险 (Risks of Breaking into Too Small Chunks)"></a>拆分过小的风险 (Risks of Breaking into Too Small Chunks)</h3><ul>
+<li><strong>相互依赖</strong>：当故事拆分得过小，以至于它们不能独立于其他故事存在时，这可能会导致开发和测试工作的复杂性增加，因为每个小故事都变得依赖于其他故事。</li>
+<li><strong>缺乏独立价值</strong>：如果拆分后的故事对用户来说没有单独的价值，这可能意味着故事已被拆分得过细，无法单独交付任何实质性结果。</li>
+</ul>
+<h3 id="团队自适应性-Teams-Will-Find-What-Works-Well-for-Them"><a href="#团队自适应性-Teams-Will-Find-What-Works-Well-for-Them" class="headerlink" title="团队自适应性 (Teams Will Find What Works Well for Them)"></a>团队自适应性 (Teams Will Find What Works Well for Them)</h3><ul>
+<li><strong>适应和学习</strong>：每个团队都有其独特的需求和动态。通过实践和反思，团队将了解什么程度的拆分对他们最有效。</li>
+<li><strong>持续改进</strong>：敏捷是关于持续改进的。团队应该定期评估他们的故事拆分策略，并进行必要的调整，以确保他们不是在拆分过度或不足。</li>
+</ul>
+<p>通过警惕拆分过度的迹象，并允许团队找到适合自己的平衡点，我们可以确保故事拆分实践为敏捷开发带来积极的影响，而不是额外的负担。</p>
+<h2 id="水平切割与垂直切割（Horizontal-vs-Vertical-Slicing）"><a href="#水平切割与垂直切割（Horizontal-vs-Vertical-Slicing）" class="headerlink" title="水平切割与垂直切割（Horizontal vs. Vertical Slicing）"></a>水平切割与垂直切割（Horizontal vs. Vertical Slicing）</h2><p>故事的切割可以是水平的也可以是垂直的，但两种方法有着根本的不同，这影响了用户收益的实现和故事的测试方式。</p>
+<h3 id="水平切割的缺点-Disadvantages-of-Horizontal-Slicing"><a href="#水平切割的缺点-Disadvantages-of-Horizontal-Slicing" class="headerlink" title="水平切割的缺点 (Disadvantages of Horizontal Slicing)"></a>水平切割的缺点 (Disadvantages of Horizontal Slicing)</h3><ul>
+<li><strong>用户无感知的收益</strong>：直到所有的水平故事完成，用户才能感知到益处。</li>
+<li><strong>无法进行测试</strong>：所有故事完成之前，无法进行有效测试。</li>
+<li><strong>架构集成问题隐蔽</strong>：直到所有故事完成，才能发现潜在的架构集成问题。</li>
+<li><strong>错失高低价值切割机会</strong>：无法在故事之间区分高价值和低价值。</li>
+</ul>
+<h3 id="水平切割的可能性-Possibility-of-Horizontal-Slicing"><a href="#水平切割的可能性-Possibility-of-Horizontal-Slicing" class="headerlink" title="水平切割的可能性 (Possibility of Horizontal Slicing)"></a>水平切割的可能性 (Possibility of Horizontal Slicing)</h3><ul>
+<li><strong>故事可进行水平切割</strong>：尽管存在缺点，但某些故事仍可水平切割以变得更小。</li>
+<li><strong>通常导致开发任务的识别</strong>：这种切割方式往往会揭示具体的开发任务。</li>
+</ul>
+<h3 id="垂直切割-Vertical-Slicing"><a href="#垂直切割-Vertical-Slicing" class="headerlink" title="垂直切割 (Vertical Slicing)"></a>垂直切割 (Vertical Slicing)</h3><ul>
+<li><strong>仅影响UI层的故事</strong>：例如，对表单的可见更改，无需贯穿所有层。</li>
+<li><strong>改变系统接口的故事</strong>：例如，一个API更新。</li>
+<li><strong>非功能性的故事</strong>：更改可能是可见的，因为某些操作变得更快。</li>
+<li><strong>更改数据库中的数据</strong>：其效果可能在以后某个时间点可见。</li>
+</ul>
+<p>通过理解水平切割和垂直切割的不同，我们可以更好地制定故事，确保它们为用户提供价值，并在开发过程中保持可测试性和可管理性。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/10/17/W4%20(TUT)-Splitting%20User%20Stories/">http://example.com/2023/10/17/W4%20(TUT)-Splitting%20User%20Stories/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Week4/">Week4</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/10/17/W4%20(LEC)-Requirements%20Process/" title="W4 (LEC)-Requirements Process"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">W4 (LEC)-Requirements Process</div></div></a></div><div class="next-post pull-right"><a href="/2023/10/16/week%204%20lab/" title="Week4-Lab"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Week4-Lab</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/10/23/W4%20(LEC)%20-%20Story%20Driven%20Approach/" title="W4 (LEC) - Story Driven Approach"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-23</div><div class="title">W4 (LEC) - Story Driven Approach</div></div></a></div><div><a href="/2023/10/18/Week4%20Challenge/" title="Week4-Challenge"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-18</div><div class="title">Week4-Challenge</div></div></a></div><div><a href="/2023/10/17/Week4%20pratical/" title="Week4-pratical"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-17</div><div class="title">Week4-pratical</div></div></a></div><div><a href="/2023/10/17/W4%20(LEC)-Requirements%20Process/" title="W4 (LEC)-Requirements Process"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-17</div><div class="title">W4 (LEC)-Requirements Process</div></div></a></div><div><a href="/2023/10/16/week%204%20lab/" title="Week4-Lab"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-16</div><div class="title">Week4-Lab</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">29</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8B%86%E5%88%86%E6%95%85%E4%BA%8B%EF%BC%9F-Why-Split-Stories"><span class="toc-number">1.</span> <span class="toc-text">为什么要拆分故事？ (Why Split Stories?)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B0%86%E5%85%B6%E6%8B%86%E5%88%86%E4%B8%BA%E5%8F%AF%E7%AE%A1%E7%90%86%E7%9A%84%E5%B0%8F%E5%9D%97"><span class="toc-number">1.1.</span> <span class="toc-text">1. 将其拆分为可管理的小块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%B6%B3%E5%A4%9F%E5%B0%8F%EF%BC%8C%E8%83%BD%E5%A4%9F%E5%9C%A8%E4%B8%A4%E5%91%A8%E7%9A%84%E5%86%B2%E5%88%BA%E4%B8%AD%E4%BA%A4%E4%BB%988-12%E4%B8%AA%E6%95%85%E4%BA%8B"><span class="toc-number">1.2.</span> <span class="toc-text">2. 足够小，能够在两周的冲刺中交付8-12个故事</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8C%BA%E5%88%86%E9%AB%98%E4%BB%B7%E5%80%BC%E5%92%8C%E4%BD%8E%E4%BB%B7%E5%80%BC"><span class="toc-number">1.3.</span> <span class="toc-text">3. 区分高价值和低价值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%BA%A7%E5%93%81%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E8%87%AA%E7%84%B6%E5%A4%84%E7%90%86%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.4.</span> <span class="toc-text">4. 产品待办事项自然处理优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%BE%83%E5%B0%8F%E7%9A%84%E6%95%85%E4%BA%8B%E6%8F%90%E9%AB%98%E4%BA%86%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%92%8C%E5%9B%A2%E9%98%9F%E5%8A%A8%E5%8A%9B"><span class="toc-number">1.5.</span> <span class="toc-text">5. 较小的故事提高了生产力和团队动力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%9B%B4%E5%A5%BD%E7%9A%84%E8%B5%84%E6%BA%90%E8%A7%84%E5%88%92-%E5%88%86%E9%85%8D%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.6.</span> <span class="toc-text">6. 更好的资源规划 - 分配工作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%86%E5%88%86%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B-Splitting-the-User-Story"><span class="toc-number">2.</span> <span class="toc-text">拆分用户故事 (Splitting the User Story)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E8%BE%93%E5%85%A5%E6%95%85%E4%BA%8B-Prepare-the-Input-Story"><span class="toc-number">2.1.</span> <span class="toc-text">准备输入故事 (Prepare the Input Story)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E6%8B%86%E5%88%86%E6%A8%A1%E5%BC%8F-Apply-the-Splitting-Patterns"><span class="toc-number">2.2.</span> <span class="toc-text">应用拆分模式 (Apply the Splitting Patterns)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%8B%86%E5%88%86-Evaluate-the-Split"><span class="toc-number">2.3.</span> <span class="toc-text">评估拆分 (Evaluate the Split)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#INVEST%E5%8E%9F%E5%88%99%E5%9C%A8%E4%BC%98%E8%B4%A8%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8-INVEST-in-Good-User-Stories"><span class="toc-number">3.</span> <span class="toc-text">INVEST原则在优质用户故事中的应用 (INVEST in Good User Stories)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8B%AC%E7%AB%8B%E6%80%A7-Independent"><span class="toc-number">3.1.</span> <span class="toc-text">独立性 (Independent)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E5%8D%8F%E5%95%86-Negotiable"><span class="toc-number">3.2.</span> <span class="toc-text">可协商 (Negotiable)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E4%BB%B7%E5%80%BC-Valuable"><span class="toc-number">3.3.</span> <span class="toc-text">有价值 (Valuable)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E4%BC%B0%E7%AE%97-Estimable"><span class="toc-number">3.4.</span> <span class="toc-text">可估算 (Estimable)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E5%B7%A7-Small"><span class="toc-number">3.5.</span> <span class="toc-text">小巧 (Small)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E6%B5%8B%E8%AF%95-Testable"><span class="toc-number">3.6.</span> <span class="toc-text">可测试 (Testable)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%AD%A5%E9%AA%A4-Workflow-Steps"><span class="toc-number">4.</span> <span class="toc-text">#1 - 工作流步骤 (Workflow Steps)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B-New-User-Stories"><span class="toc-number">4.1.</span> <span class="toc-text">新的用户故事 (New User Stories):</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%93%8D%E4%BD%9C-Operations"><span class="toc-number">5.</span> <span class="toc-text">#2 - 操作 (Operations)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B-New-User-Stories-1"><span class="toc-number">5.1.</span> <span class="toc-text">新的用户故事 (New User Stories):</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%95%86%E4%B8%9A%E8%A7%84%E5%88%99%E5%8F%98%E5%8C%96-Business-Rule-Variations"><span class="toc-number">6.</span> <span class="toc-text">#3 - 商业规则变化 (Business Rule Variations)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B-New-User-Stories-2"><span class="toc-number">6.1.</span> <span class="toc-text">新的用户故事 (New User Stories):</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%95%B0%E6%8D%AE%E5%8F%98%E5%8C%96-Variations-in-Data"><span class="toc-number">7.</span> <span class="toc-text">#4 - 数据变化 (Variations in Data)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B-New-User-Stories-3"><span class="toc-number">7.1.</span> <span class="toc-text">新的用户故事 (New User Stories):</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%95%B0%E6%8D%AE%E8%BE%93%E5%85%A5%E6%96%B9%E6%B3%95-Data-Entry-Methods"><span class="toc-number">8.</span> <span class="toc-text">#5 - 数据输入方法 (Data Entry Methods)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%86%E5%88%86%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B-Splitting-the-User-Stories"><span class="toc-number">8.1.</span> <span class="toc-text">拆分用户故事 (Splitting the User Stories):</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E4%B8%BB%E8%A6%81%E5%BD%B1%E5%93%8D-Major-Effect"><span class="toc-number">9.</span> <span class="toc-text">#6 - 主要影响 (Major Effect)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%86%E5%88%86%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B-Splitting-the-User-Stories-1"><span class="toc-number">9.1.</span> <span class="toc-text">拆分用户故事 (Splitting the User Stories):</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%AE%80%E5%8D%95-%E5%A4%8D%E6%9D%82-Simple-Complex"><span class="toc-number">10.</span> <span class="toc-text">#7 - 简单&#x2F;复杂 (Simple&#x2F;Complex)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%86%E5%88%86%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B-Splitting-the-User-Stories-2"><span class="toc-number">10.1.</span> <span class="toc-text">拆分用户故事 (Splitting the User Stories):</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E6%8E%A8%E8%BF%9F%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-Defer-Performance"><span class="toc-number">11.</span> <span class="toc-text">#8 - 推迟性能优化 (Defer Performance)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%86%E5%88%86%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B-Splitting-the-User-Stories-3"><span class="toc-number">11.1.</span> <span class="toc-text">拆分用户故事 (Splitting the User Stories):</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E5%88%86%E8%A7%A3%E6%8E%A2%E7%B4%A2%E6%80%A7%E4%BB%BB%E5%8A%A1-Break-out-a-Spike"><span class="toc-number">12.</span> <span class="toc-text">#9 - 分解探索性任务 (Break out a Spike)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%86%E5%88%86%E7%94%A8%E6%88%B7%E6%95%85%E4%BA%8B-Splitting-the-User-Stories-4"><span class="toc-number">12.1.</span> <span class="toc-text">拆分用户故事 (Splitting the User Stories):</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%8B%86%E5%88%86-Evaluate-the-Split-1"><span class="toc-number">13.</span> <span class="toc-text">评估拆分 (Evaluate the Split)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-80-20-%E5%B8%95%E7%B4%AF%E6%89%98%E5%8E%9F%E5%88%99-80-20-Pareto-Principle"><span class="toc-number">13.1.</span> <span class="toc-text">1. 80&#x2F;20 帕累托原则 (80&#x2F;20 Pareto Principle)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%80%89%E6%8B%A9%E5%8F%AF%E4%BB%A5%E5%BE%97%E5%88%B0%E6%9B%B4%E5%A4%9A%E5%A4%A7%E5%B0%8F%E7%9B%B8%E7%AD%89%E7%9A%84%E5%B0%8F%E6%95%85%E4%BA%8B%E7%9A%84%E6%8B%86%E5%88%86%E6%96%B9%E5%BC%8F-Choose-the-Split-That-Gets-You-More-Equally-Sized-Small-Stories"><span class="toc-number">13.2.</span> <span class="toc-text">2. 选择可以得到更多大小相等的小故事的拆分方式 (Choose the Split That Gets You More Equally Sized Small Stories)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%86%E5%88%86%E8%BF%87%E5%BA%A6%E7%9A%84%E9%A3%8E%E9%99%A9%EF%BC%88When-Is-Too-Far-%EF%BC%89"><span class="toc-number">14.</span> <span class="toc-text">拆分过度的风险（When Is Too Far?）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%86%E5%88%86%E8%BF%87%E5%B0%8F%E7%9A%84%E9%A3%8E%E9%99%A9-Risks-of-Breaking-into-Too-Small-Chunks"><span class="toc-number">14.1.</span> <span class="toc-text">拆分过小的风险 (Risks of Breaking into Too Small Chunks)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A2%E9%98%9F%E8%87%AA%E9%80%82%E5%BA%94%E6%80%A7-Teams-Will-Find-What-Works-Well-for-Them"><span class="toc-number">14.2.</span> <span class="toc-text">团队自适应性 (Teams Will Find What Works Well for Them)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E5%88%87%E5%89%B2%E4%B8%8E%E5%9E%82%E7%9B%B4%E5%88%87%E5%89%B2%EF%BC%88Horizontal-vs-Vertical-Slicing%EF%BC%89"><span class="toc-number">15.</span> <span class="toc-text">水平切割与垂直切割（Horizontal vs. Vertical Slicing）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E5%88%87%E5%89%B2%E7%9A%84%E7%BC%BA%E7%82%B9-Disadvantages-of-Horizontal-Slicing"><span class="toc-number">15.1.</span> <span class="toc-text">水平切割的缺点 (Disadvantages of Horizontal Slicing)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E5%88%87%E5%89%B2%E7%9A%84%E5%8F%AF%E8%83%BD%E6%80%A7-Possibility-of-Horizontal-Slicing"><span class="toc-number">15.2.</span> <span class="toc-text">水平切割的可能性 (Possibility of Horizontal Slicing)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9E%82%E7%9B%B4%E5%88%87%E5%89%B2-Vertical-Slicing"><span class="toc-number">15.3.</span> <span class="toc-text">垂直切割 (Vertical Slicing)</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/24/W5%20(LEC)-Risk/" title="W5 (LEC)-Risk">W5 (LEC)-Risk</a><time datetime="2023-10-24T01:18:56.000Z" title="Created 2023-10-24 02:18:56">2023-10-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/24/W5%20(LEC)-Spikes/" title="W5 (LEC)-Spikes">W5 (LEC)-Spikes</a><time datetime="2023-10-24T01:18:56.000Z" title="Created 2023-10-24 02:18:56">2023-10-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/24/W5%20(LEC)-Story/" title="W5 (LEC)-Story">W5 (LEC)-Story</a><time datetime="2023-10-24T01:18:56.000Z" title="Created 2023-10-24 02:18:56">2023-10-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/24/W5%20(TUT)-User%20Story%20Splittings/" title="W5 (TUT)-User Story Splittings">W5 (TUT)-User Story Splittings</a><time datetime="2023-10-24T01:18:56.000Z" title="Created 2023-10-24 02:18:56">2023-10-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/23/W4%20(LEC)%20-%20Story%20Driven%20Approach/" title="W4 (LEC) - Story Driven Approach">W4 (LEC) - Story Driven Approach</a><time datetime="2023-10-23T15:51:12.000Z" title="Created 2023-10-23 16:51:12">2023-10-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
