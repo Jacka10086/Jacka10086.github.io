@@ -1,0 +1,775 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Cryptography1 | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="密码学导论（Introduction） 密码学定义（Cryptography: Definition） 数据安全性（Data Security） 历史背景（Historical Background） 凯撒密码（Caesar cipher） 维吉尼亚密码（Vigenere Cipher）   对称加密（Symmetric Encryption） 一次性密码本（One time pad） ROT13">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cryptography1">
+<meta property="og:url" content="http://example.com/2023/10/02/C398-w2-Cryptography1/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="密码学导论（Introduction） 密码学定义（Cryptography: Definition） 数据安全性（Data Security） 历史背景（Historical Background） 凯撒密码（Caesar cipher） 维吉尼亚密码（Vigenere Cipher）   对称加密（Symmetric Encryption） 一次性密码本（One time pad） ROT13">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2023-10-02T04:56:17.000Z">
+<meta property="article:modified_time" content="2023-11-12T05:00:42.151Z">
+<meta property="article:author" content="Jacka10086">
+<meta property="article:tag" content="Week2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/10/02/C398-w2-Cryptography1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Cryptography1',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-12 05:00:42'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Cryptography1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-10-02T04:56:17.000Z" title="Created 2023-10-02 05:56:17">2023-10-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-11-12T05:00:42.151Z" title="Updated 2023-11-12 05:00:42">2023-11-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Com398/">Com398</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Cryptography1"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="密码学导论（Introduction）"><a href="#密码学导论（Introduction）" class="headerlink" title="密码学导论（Introduction）"></a>密码学导论（Introduction）</h2><ul>
+<li><strong>密码学定义（Cryptography: Definition）</strong></li>
+<li><strong>数据安全性（Data Security）</strong></li>
+<li><strong>历史背景（Historical Background）</strong><ul>
+<li>凯撒密码（Caesar cipher）</li>
+<li>维吉尼亚密码（Vigenere Cipher）</li>
+</ul>
+</li>
+<li><strong>对称加密（Symmetric Encryption）</strong><ul>
+<li>一次性密码本（One time pad）</li>
+<li>ROT13</li>
+<li>流密码（Stream ciphers）</li>
+<li>块密码（Block ciphers）</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：这是对密码学基础的简介，涵盖了从历史上的密码算法到现代的对称加密技术。</p>
+<h2 id="密码学是什么（Cryptography）"><a href="#密码学是什么（Cryptography）" class="headerlink" title="密码学是什么（Cryptography）"></a>密码学是什么（Cryptography）</h2><ul>
+<li><strong>密码学（Cryptography）</strong><ul>
+<li>秘密书写的艺术（The art of secret writing）</li>
+<li>制作密码学是加密过程的构造（Cryptography is the making）</li>
+</ul>
+</li>
+<li><strong>密码分析（Cryptanalysis）</strong><ul>
+<li>破解密码学是解密过程的破解（Cryptanalysis is the breaking）</li>
+</ul>
+</li>
+<li><strong>为什么使用密码学（Why Cryptography）</strong><ul>
+<li>密码学旨在提供一个在敌手或攻击者存在的情况下的安全通信（Cryptography aims to provide secure communications in the presence of an adversary&#x2F;attacker）</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：这部分解释了密码学的定义，它是保护秘密通信的技术，并强调了密码分析的重要性。</p>
+<h2 id="密码学一些定义（Cryptography-Some-definitions）"><a href="#密码学一些定义（Cryptography-Some-definitions）" class="headerlink" title="密码学一些定义（Cryptography: Some definitions）"></a>密码学一些定义（Cryptography: Some definitions）</h2><ul>
+<li><strong>明文（Plaintext）</strong>：原始信息或需要保护的数据。</li>
+<li><strong>加密算法（Encryption algorithm）</strong>：保护信息和数据的机制。加密算法对明文执行各种替换和转换。</li>
+<li><strong>秘密密钥（Secret key）</strong>：也是算法的输入。算法执行的确切替换和转换取决于密钥。</li>
+<li><strong>密文（Ciphertext）</strong>：作为输出产生的混乱信息。它取决于明文和秘密密钥。对于给定的消息，两个不同的密钥会产生两个不同的密文。</li>
+<li><strong>解密算法（Decryption algorithm）</strong>：本质上是加密算法的逆运算。它接受密文和相同的秘密密钥并产生原始的明文。</li>
+</ul>
+<p><strong>总结</strong>：这一部分提供了密码学中一些基本术语的定义，这对理解加密和解密过程至关重要。</p>
+<h2 id="数据安全（Data-Security）"><a href="#数据安全（Data-Security）" class="headerlink" title="数据安全（Data Security）"></a>数据安全（Data Security）</h2><h3 id="数据安全组件（Data-Security-Components）"><a href="#数据安全组件（Data-Security-Components）" class="headerlink" title="数据安全组件（Data Security Components）"></a>数据安全组件（Data Security Components）</h3><ul>
+<li><p><strong>数据静态加密（Encrypting data at rest）</strong></p>
+<ul>
+<li>保护存储在计算机、手机、数据库等地方的数据。</li>
+</ul>
+</li>
+<li><p><strong>数据传输加密（Encrypting data in transit）</strong></p>
+<ul>
+<li>保护数据在不同位置之间通信时的安全性，如发送电子邮件、浏览互联网等。</li>
+</ul>
+</li>
+<li><p><strong>访问控制（Access control）</strong></p>
+<ul>
+<li>控制谁可以访问数据。</li>
+</ul>
+</li>
+<li><p><strong>数据加密（Data encryption）</strong></p>
+<ul>
+<li>强加密是必需的，它将数据从明文（或人类可读格式）转换为密文。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：数据安全涉及多个组件，包括数据静态加密和数据传输加密以保护数据不被未授权访问；访问控制确保只有授权用户才能访问数据；数据加密确保即使数据被泄露，也不易被未授权的人读取和理解。</p>
+<h2 id="历史背景（Historical-Background）"><a href="#历史背景（Historical-Background）" class="headerlink" title="历史背景（Historical Background）"></a>历史背景（Historical Background）</h2><h3 id="凯撒密码（The-Caesar-cipher）"><a href="#凯撒密码（The-Caesar-cipher）" class="headerlink" title="凯撒密码（The Caesar cipher）"></a>凯撒密码（The Caesar cipher）</h3><ul>
+<li><strong>凯撒密码</strong><ul>
+<li>消息中的每个’A’替换为’D’，每个’B’替换为’E’，每个’C’替换为’F’，以此类推。</li>
+</ul>
+</li>
+<li><strong>考虑因素（Considerations）</strong><ul>
+<li>算法是公开的（Kerchoff’s Principle）。</li>
+<li>加密&#x2F;解密依赖于一个密钥。</li>
+<li>唯一的秘密是密钥。</li>
+<li>对于凯撒密码，密钥是n，因为向前移动n位来加密，向后移动n位来解密。</li>
+<li>加密公式：(C_i &#x3D; (P_i + n) \mod 26)</li>
+<li>解密公式：(P_i &#x3D; (C_i - n) \mod 26)</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：凯撒密码是一种简单的替换密码，通过将字母表中的每个字母移动固定数目来进行加密和解密。它的安全性在于密钥的保密，即字母移动的数目。</p>
+<h3 id="凯撒密码的密码分析（Cryptanalysis-of-Caesar-Cipher）"><a href="#凯撒密码的密码分析（Cryptanalysis-of-Caesar-Cipher）" class="headerlink" title="凯撒密码的密码分析（Cryptanalysis of Caesar Cipher）"></a>凯撒密码的密码分析（Cryptanalysis of Caesar Cipher）</h3><ul>
+<li><strong>例子</strong><ul>
+<li>密文：“GRR MGAR OY JOBOJKJ OT ZNXKK VGXZY”。</li>
+<li>使用所有可能的密钥执行解密，以找到明文。</li>
+<li>当密钥为6时，解密结果：“ALL GAUL IS DIVIDED IN THREE PARTS”。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：凯撒密码的密码分析涉及尝试所有可能的密钥直到找到有意义的解密文本。这种方法显示了凯撒密码的脆弱性，因为可能的密钥数量有限。</p>
+<h3 id="维吉尼亚密码（Vigenere-Cipher）"><a href="#维吉尼亚密码（Vigenere-Cipher）" class="headerlink" title="维吉尼亚密码（Vigenere Cipher）"></a>维吉尼亚密码（Vigenere Cipher）</h3><ul>
+<li><strong>发展背景</strong><ul>
+<li>于1553年发展出来。</li>
+<li>使用一系列交织的凯撒密码，基于关键字的字母进行加密。</li>
+</ul>
+</li>
+<li><strong>密钥和明文</strong><ul>
+<li>密钥：一个长度为M的单词W。</li>
+<li>明文：长度为N的文本P。</li>
+<li>重复密钥直到它与明文长度匹配。</li>
+<li>对明文中的每个字母( P_j )，应用一个长度为( W_j )的凯撒密码。</li>
+</ul>
+</li>
+<li><strong>例子</strong><ul>
+<li>密钥：RPI</li>
+<li>明文：HELLO</li>
+<li>扩展后的密钥：RPIRP</li>
+<li>密文：YTTCD</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：维吉尼亚密码通过使用基于关键字的凯撒密码序列，为同一明文的不同部分提供了不同的加密方式，增加了破解的难度。</p>
+<h3 id="维吉尼亚密码的密码分析（Cryptanalysis-of-Vigenere-Cipher）"><a href="#维吉尼亚密码的密码分析（Cryptanalysis-of-Vigenere-Cipher）" class="headerlink" title="维吉尼亚密码的密码分析（Cryptanalysis of Vigenere Cipher）"></a>维吉尼亚密码的密码分析（Cryptanalysis of Vigenere Cipher）</h3><ul>
+<li><strong>密码分析方法</strong><ul>
+<li>找到密钥的长度。<ul>
+<li>Kasisky测试。</li>
+</ul>
+</li>
+<li>将消息分成许多移位密码加密。</li>
+<li>使用频率分析来解决产生的移位密码。</li>
+</ul>
+</li>
+<li><strong>密钥和文本例子</strong><ul>
+<li>密钥：KINGKINGKINGKINGKING</li>
+<li>明文：The sun and the man in the moon</li>
+<li>密文：DPRYEVTNBUKIWOXBUIKWBT</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：维吉尼亚密码的密码分析涉及确定密钥的长度和使用频率分析来识别每个凯撒密码的位移，从而解密信息。这种方法利用了语言中字母出现频率的不同。</p>
+<h2 id="历史背景（Historical-Background）-1"><a href="#历史背景（Historical-Background）-1" class="headerlink" title="历史背景（Historical Background）"></a>历史背景（Historical Background）</h2><h3 id="凯撒密码（The-Caesar-cipher）-1"><a href="#凯撒密码（The-Caesar-cipher）-1" class="headerlink" title="凯撒密码（The Caesar cipher）"></a>凯撒密码（The Caesar cipher）</h3><ul>
+<li><strong>凯撒密码</strong><ul>
+<li>消息中的每个’A’替换为’D’，每个’B’替换为’E’，每个’C’替换为’F’，以此类推。</li>
+</ul>
+</li>
+<li><strong>考虑因素（Considerations）</strong><ul>
+<li>算法是公开的（Kerchoff’s Principle）。</li>
+<li>加密&#x2F;解密依赖于一个密钥。</li>
+<li>唯一的秘密是密钥。</li>
+<li>对于凯撒密码，密钥是n，因为向前移动n位来加密，向后移动n位来解密。</li>
+<li>加密公式：(C_i &#x3D; (P_i + n) \mod 26)</li>
+<li>解密公式：(P_i &#x3D; (C_i - n) \mod 26)</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：凯撒密码是一种简单的替换密码，通过将字母表中的每个字母移动固定数目来进行加密和解密。它的安全性在于密钥的保密，即字母移动的数目。</p>
+<h3 id="凯撒密码的密码分析（Cryptanalysis-of-Caesar-Cipher）-1"><a href="#凯撒密码的密码分析（Cryptanalysis-of-Caesar-Cipher）-1" class="headerlink" title="凯撒密码的密码分析（Cryptanalysis of Caesar Cipher）"></a>凯撒密码的密码分析（Cryptanalysis of Caesar Cipher）</h3><ul>
+<li><strong>例子</strong><ul>
+<li>密文：“GRR MGAR OY JOBOJKJ OT ZNXKK VGXZY”。</li>
+<li>使用所有可能的密钥执行解密，以找到明文。</li>
+<li>当密钥为6时，解密结果：“ALL GAUL IS DIVIDED IN THREE PARTS”。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：凯撒密码的密码分析涉及尝试所有可能的密钥直到找到有意义的解密文本。这种方法显示了凯撒密码的脆弱性，因为可能的密钥数量有限。</p>
+<h3 id="维吉尼亚密码（Vigenere-Cipher）-1"><a href="#维吉尼亚密码（Vigenere-Cipher）-1" class="headerlink" title="维吉尼亚密码（Vigenere Cipher）"></a>维吉尼亚密码（Vigenere Cipher）</h3><ul>
+<li><strong>发展背景</strong><ul>
+<li>于1553年发展出来。</li>
+<li>使用一系列交织的凯撒密码，基于关键字的字母进行加密。</li>
+</ul>
+</li>
+<li><strong>密钥和明文</strong><ul>
+<li>密钥：一个长度为M的单词W。</li>
+<li>明文：长度为N的文本P。</li>
+<li>重复密钥直到它与明文长度匹配。</li>
+<li>对明文中的每个字母( P_j )，应用一个长度为( W_j )的凯撒密码。</li>
+</ul>
+</li>
+<li><strong>例子</strong><ul>
+<li>密钥：RPI</li>
+<li>明文：HELLO</li>
+<li>扩展后的密钥：RPIRP</li>
+<li>密文：YTTCD</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：维吉尼亚密码通过使用基于关键字的凯撒密码序列，为同一明文的不同部分提供了不同的加密方式，增加了破解的难度。</p>
+<h3 id="维吉尼亚密码的密码分析（Cryptanalysis-of-Vigenere-Cipher）-1"><a href="#维吉尼亚密码的密码分析（Cryptanalysis-of-Vigenere-Cipher）-1" class="headerlink" title="维吉尼亚密码的密码分析（Cryptanalysis of Vigenere Cipher）"></a>维吉尼亚密码的密码分析（Cryptanalysis of Vigenere Cipher）</h3><ul>
+<li><strong>密码分析方法</strong><ul>
+<li>找到密钥的长度。<ul>
+<li>Kasisky测试。</li>
+</ul>
+</li>
+<li>将消息分成许多移位密码加密。</li>
+<li>使用频率分析来解决产生的移位密码。</li>
+</ul>
+</li>
+<li><strong>密钥和文本例子</strong><ul>
+<li>密钥：KINGKINGKINGKINGKING</li>
+<li>明文：The sun and the man in the moon</li>
+<li>密文：DPRYEVTNBUKIWOXBUIKWBT</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：维吉尼亚密码的密码分析涉及确定密钥的长度和使用频率分析来识别每个凯撒密码的位移，从而解密信息。这种方法利用了语言中字母出现频率的不同。</p>
+<h2 id="希尔密码（Hill-Cipher）"><a href="#希尔密码（Hill-Cipher）" class="headerlink" title="希尔密码（Hill Cipher）"></a>希尔密码（Hill Cipher）</h2><h3 id="希尔密码概述"><a href="#希尔密码概述" class="headerlink" title="希尔密码概述"></a>希尔密码概述</h3><ul>
+<li><strong>发展历史</strong>：<ul>
+<li>由数学家Lester Hill于1929年开发。</li>
+</ul>
+</li>
+<li><strong>密码强度</strong>：<ul>
+<li>它能够完全隐藏单字母频率信息。</li>
+<li>使用更大的矩阵可以隐藏更多频率信息。</li>
+<li>例如，3x3的希尔密码不仅隐藏了单字母，还隐藏了双字母频率信息。</li>
+</ul>
+</li>
+<li><strong>安全性分析</strong>：<ul>
+<li>对仅密文攻击较强，但如果存在已知明文，该密码很容易被破解。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：希尔密码是一种基于线性代数的加密方法，它通过矩阵操作来混淆原文，提供了比传统替换密码更强的安全性。</p>
+<h3 id="希尔密码的加密示例"><a href="#希尔密码的加密示例" class="headerlink" title="希尔密码的加密示例"></a>希尔密码的加密示例</h3><ul>
+<li><strong>明文与密文</strong>：<ul>
+<li>明文：<code>ACT</code></li>
+<li>密钥：<code>GYBNQKURP</code>（表示为矩阵）</li>
+<li>密文：<code>POH</code></li>
+</ul>
+</li>
+<li><strong>加密过程</strong>：<ul>
+<li>将消息<code>ACT</code>（n&#x3D;3）转换为数字并与密钥矩阵相乘，然后对26取模来得到密文。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：希尔密码的加密过程包括将明文转换为数字，通过矩阵乘法与密钥结合，然后对结果取模来获取密文。</p>
+<h3 id="希尔密码加密计算"><a href="#希尔密码加密计算" class="headerlink" title="希尔密码加密计算"></a>希尔密码加密计算</h3><ul>
+<li><strong>加密矩阵</strong>：<ul>
+<li>给定的加密矩阵和明文<code>ACT</code>（转换为数字<code>[0 2 19]</code>）相乘后的结果，再对26取模，得到密文<code>POH</code>。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：通过使用矩阵乘法和模运算，希尔密码将明文映射为密文，这个过程可以通过适当的线性代数知识和模算术来理解。</p>
+<h2 id="ROT13"><a href="#ROT13" class="headerlink" title="ROT13"></a>ROT13</h2><h3 id="ROT13简介"><a href="#ROT13简介" class="headerlink" title="ROT13简介"></a>ROT13简介</h3><ul>
+<li><strong>加密强度不足</strong>：<ul>
+<li>ROT13没有使用密钥。</li>
+<li>易受频率分析攻击。</li>
+<li>易受暴力破解攻击。</li>
+</ul>
+</li>
+</ul>
+<h3 id="ROT13加密过程"><a href="#ROT13加密过程" class="headerlink" title="ROT13加密过程"></a>ROT13加密过程</h3><ul>
+<li><strong>字母转换示例</strong>：<ul>
+<li>A到M的字母向前旋转13位，N到Z的字母向后旋转13位。</li>
+<li>例如，’A’变为’N’，’N’变为’A’，以此类推。</li>
+</ul>
+</li>
+</ul>
+<h3 id="ROT13示例"><a href="#ROT13示例" class="headerlink" title="ROT13示例"></a>ROT13示例</h3><ul>
+<li><strong>加密实例</strong>：<ul>
+<li>明文：”HELLO”通过ROT13加密后变为”URYYB”。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：ROT13是一种简单的替换密码，通过将字母表旋转13位来加密文字。这种加密方法没有使用密钥，且由于其固定的转换规则，非常容易被破解，提供的安全性非常有限。</p>
+<h2 id="我们所覆盖的内容（What-we-have-covered）"><a href="#我们所覆盖的内容（What-we-have-covered）" class="headerlink" title="我们所覆盖的内容（What we have covered）"></a>我们所覆盖的内容（What we have covered）</h2><h3 id="密码分类（Classification）"><a href="#密码分类（Classification）" class="headerlink" title="密码分类（Classification）"></a>密码分类（Classification）</h3><ul>
+<li><p><strong>经典密码（Classical）</strong></p>
+<ul>
+<li><strong>替换密码（Substitution）</strong><ul>
+<li>凯撒密码（Caesar）</li>
+<li>维吉尼亚密码（Vigenere）</li>
+<li>希尔密码（Hill）</li>
+<li>ROT13</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>现代密码（Modern）</strong></p>
+<ul>
+<li><strong>对称加密（Symmetric&#x2F;Private Key）</strong><ul>
+<li>流密码（Stream）</li>
+<li>块密码（Block）</li>
+</ul>
+</li>
+<li><strong>非对称加密（Asymmetric&#x2F;Public Key）</strong><ul>
+<li>RSA</li>
+<li>Diffie Hellman</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：我们探讨了从传统的替换密码到现代的对称和非对称密码的各种密码技术。在经典密码中，凯撒和维吉尼亚使用替换的方法来加密信息，而希尔密码引入了矩阵数学。ROT13是替换密码中的一种特殊情况，它以固定的数目13来替换字母。现代密码中，对称密钥密码包括流密码和块密码，而非对称密钥密码如RSA和Diffie Hellman则允许安全的密钥交换和加密。</p>
+<h2 id="现代密码学（Modern-Cryptography）"><a href="#现代密码学（Modern-Cryptography）" class="headerlink" title="现代密码学（Modern Cryptography）"></a>现代密码学（Modern Cryptography）</h2><h3 id="现代密码学可分为以下几个领域："><a href="#现代密码学可分为以下几个领域：" class="headerlink" title="现代密码学可分为以下几个领域："></a>现代密码学可分为以下几个领域：</h3><ul>
+<li><p><strong>对称密码学（Symmetric Cryptography）</strong></p>
+<ul>
+<li>使用一个密钥或私钥进行加密。</li>
+</ul>
+</li>
+<li><p><strong>公钥密码学或非对称密码学（Public Key or Asymmetric Cryptography）</strong></p>
+<ul>
+<li>公钥（Public Key）</li>
+<li>私钥（Private Key）</li>
+</ul>
+</li>
+<li><p><strong>密码分析（Cryptanalysis）</strong></p>
+<ul>
+<li>寻找密码方案中的任何弱点或不安全因素。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：现代密码学包括对称和非对称两种主要类型，对称密码学使用同一个密钥进行加密和解密，而非对称密码学使用一对公钥和私钥。密码分析是研究如何破解这些加密方法的学科。</p>
+<h2 id="对称加密（Symmetric-Encryption）"><a href="#对称加密（Symmetric-Encryption）" class="headerlink" title="对称加密（Symmetric Encryption）"></a>对称加密（Symmetric Encryption）</h2><ul>
+<li><strong>通用技术提供传输或存储数据的保密性</strong>。</li>
+<li>也被称为常规加密或单密钥加密。</li>
+</ul>
+<h3 id="对称加密的安全使用要求："><a href="#对称加密的安全使用要求：" class="headerlink" title="对称加密的安全使用要求："></a>对称加密的安全使用要求：</h3><ul>
+<li><strong>需要强大的加密算法</strong>。</li>
+<li><strong>发送方和接收方必须以安全的方式获得密钥的副本，并且必须保持密钥的安全</strong>。</li>
+</ul>
+<p><strong>总结</strong>：对称加密是一种加密方法，它要求发送方和接收方保持一个共享的秘密密钥，以保证通信的安全。它的安全性依赖于加密算法的强度和密钥保密性的维护。</p>
+<h2 id="一次性密码本（One-Time-Pad）"><a href="#一次性密码本（One-Time-Pad）" class="headerlink" title="一次性密码本（One Time Pad）"></a>一次性密码本（One Time Pad）</h2><p>一次性密码本是早期对称加密的一个例子，以其理论上的绝对安全性著称。</p>
+<h3 id="发明背景（Invention-Background）"><a href="#发明背景（Invention-Background）" class="headerlink" title="发明背景（Invention Background）"></a>发明背景（Invention Background）</h3><ul>
+<li><strong>发明者（Inventor）</strong>：Gilbert Vernam 于 1920 年代发明。</li>
+<li><strong>消息格式（Message Format）</strong>：消息是一个由 0 和 1 组成的比特串。</li>
+<li><strong>密钥要求（Key Requirement）</strong>：密钥也是一个比特串，长度与消息一致。</li>
+<li><strong>加密相似性（Encryption Similarity）</strong>：加密方式类似于移位密码。</li>
+<li><strong>密文生成（Ciphertext Generation）</strong>：通过每个明文比特与密钥比特的 XOR 运算得到密文。</li>
+</ul>
+<h3 id="加密过程（Encryption-Process）"><a href="#加密过程（Encryption-Process）" class="headerlink" title="加密过程（Encryption Process）"></a>加密过程（Encryption Process）</h3><ul>
+<li><strong>发送方（Sender）</strong>：发送方有一条需要加密的信息。</li>
+<li><strong>密钥（Key）</strong>：一个随机比特序列，与明文长度相同，用于加密。</li>
+<li><strong>加密操作（Encryption Operation）</strong>：明文和密钥进行按位 XOR 运算，生成密文。</li>
+</ul>
+<h3 id="解密过程（Decryption-Process）"><a href="#解密过程（Decryption-Process）" class="headerlink" title="解密过程（Decryption Process）"></a>解密过程（Decryption Process）</h3><ul>
+<li><strong>接收方（Receiver）</strong>：接收方拥有相同的密钥，用于解密信息。</li>
+<li><strong>解密操作（Decryption Operation）</strong>：密文和密钥进行按位 XOR 运算，恢复出明文。</li>
+</ul>
+<h3 id="图表解释（Diagram-Explanation）"><a href="#图表解释（Diagram-Explanation）" class="headerlink" title="图表解释（Diagram Explanation）"></a>图表解释（Diagram Explanation）</h3><ul>
+<li>图表清楚地展示了加密和解密的过程，使用箭头指示信息和密钥的流向。</li>
+<li>展示了明文如何通过与密钥进行 XOR 运算变为密文，以及如何通过与相同的密钥再次进行 XOR 运算来还原为明文。</li>
+</ul>
+<p><strong>总结</strong>：一次性密码本的发明为对称加密技术的发展提供了重要的理论基础，其独特的加解密方法在理论上确保了信息传输的绝对安全性。然而，在实践中，由于密钥的一次性使用和分发上的不便，限制了其广泛应用。</p>
+<h2 id="一次性密码本优势（One-Time-Pad-Advantages）"><a href="#一次性密码本优势（One-Time-Pad-Advantages）" class="headerlink" title="一次性密码本优势（One Time Pad Advantages）"></a>一次性密码本优势（One Time Pad Advantages）</h2><p>一次性密码本作为一种加密工具，具有其独特的优势。</p>
+<h3 id="计算简便（Easy-to-Compute）"><a href="#计算简便（Easy-to-Compute）" class="headerlink" title="计算简便（Easy to Compute）"></a>计算简便（Easy to Compute）</h3><ul>
+<li><strong>操作一致性（Same Operation）</strong>：加密和解密使用相同的操作，简化了实现过程。</li>
+<li><strong>成本低廉（Cheap to Compute）</strong>：按位 XOR 运算成本非常低，易于执行。</li>
+</ul>
+<h3 id="理论上的绝对安全（Theoretically-Maximum-Security）"><a href="#理论上的绝对安全（Theoretically-Maximum-Security）" class="headerlink" title="理论上的绝对安全（Theoretically Maximum Security）"></a>理论上的绝对安全（Theoretically Maximum Security）</h3><ul>
+<li><strong>所有明文同等可能（All Plaintexts Equally Likely）</strong>：任何给定的密文，所有可能的明文都同样可能，不受攻击者计算资源的限制。</li>
+<li><strong>真随机密钥序列（Truly Random Key Sequence）</strong>：仅当密钥序列是真正随机时，才能确保安全。</li>
+<li><strong>随机性成本（Cost of True Randomness）</strong>：真正的随机性在大量情况下获取代价昂贵。</li>
+</ul>
+<p><strong>总结</strong>：一次性密码本在理论上提供了最大程度的安全性，因其简易的计算过程和对称性而受到青睐。然而，其安全性依赖于真正的随机密钥序列，这在实际应用中可能成本较高。</p>
+<h2 id="一次性密码本劣势（One-Time-Pad-Disadvantages）"><a href="#一次性密码本劣势（One-Time-Pad-Disadvantages）" class="headerlink" title="一次性密码本劣势（One Time Pad Disadvantages）"></a>一次性密码本劣势（One Time Pad Disadvantages）</h2><p>尽管一次性密码本有其优点，但也存在一些劣势。</p>
+<h3 id="密钥长度限制（Key-Length-Restriction）"><a href="#密钥长度限制（Key-Length-Restriction）" class="headerlink" title="密钥长度限制（Key Length Restriction）"></a>密钥长度限制（Key Length Restriction）</h3><ul>
+<li><strong>密钥与明文等长（Key Must Be as Long as Plaintext）</strong>：这在现实情况下通常是不切实际的，但在外交和情报通信中仍有使用。</li>
+<li><strong>不保证完整性（Does Not Guarantee Integrity）</strong>：一次性密码本只保证了机密性，不保证消息的完整性。</li>
+</ul>
+<h3 id="密钥重用的风险（Risk-of-Key-Reuse）"><a href="#密钥重用的风险（Risk-of-Key-Reuse）" class="headerlink" title="密钥重用的风险（Risk of Key Reuse）"></a>密钥重用的风险（Risk of Key Reuse）</h3><ul>
+<li><strong>密钥重用不安全（Insecure if Keys Are Reused）</strong>：如果密钥被重用，攻击者可以通过XOR操作获得明文。</li>
+</ul>
+<p><strong>总结</strong>：一次性密码本的主要劣势在于其密钥管理上的实际困难，如需密钥长度与明文等长以及密钥不可重用等。这些限制在某些情况下降低了其实用性。</p>
+<h2 id="对称加密（Symmetric-Encryption）-1"><a href="#对称加密（Symmetric-Encryption）-1" class="headerlink" title="对称加密（Symmetric Encryption）"></a>对称加密（Symmetric Encryption）</h2><p>对称加密是一种使用相同密钥进行数据加密和解密的技术。</p>
+<h3 id="操作概述（Operational-Overview）"><a href="#操作概述（Operational-Overview）" class="headerlink" title="操作概述（Operational Overview）"></a>操作概述（Operational Overview）</h3><ul>
+<li><strong>数据保护</strong>：使用密钥保护数据安全。</li>
+</ul>
+<h3 id="加密和解密过程示例（Sample-Encryption-and-Decryption-Process）"><a href="#加密和解密过程示例（Sample-Encryption-and-Decryption-Process）" class="headerlink" title="加密和解密过程示例（Sample Encryption and Decryption Process）"></a>加密和解密过程示例（Sample Encryption and Decryption Process）</h3><h4 id="加密（Encryption）"><a href="#加密（Encryption）" class="headerlink" title="加密（Encryption）"></a>加密（Encryption）</h4><ul>
+<li><strong>明文（Plain Text）</strong>：需要加密的原始数据。</li>
+<li><strong>密钥（Key）</strong>：用于加密数据的密钥。</li>
+<li><strong>算法（Algorithm）</strong>：加密明文时使用的算法。</li>
+<li><strong>密文（Cipher Text）</strong>：通过算法加密后生成的加密数据。</li>
+</ul>
+<h4 id="解密（Decryption）"><a href="#解密（Decryption）" class="headerlink" title="解密（Decryption）"></a>解密（Decryption）</h4><ul>
+<li><strong>密文（Cipher Text）</strong>：需要解密的加密数据。</li>
+<li><strong>密钥（Key）</strong>：用于解密数据的同一密钥。</li>
+<li><strong>算法（Algorithm）</strong>：解密密文时使用的算法。</li>
+<li><strong>明文（Plain Text）</strong>：通过算法解密后恢复的原始数据。</li>
+</ul>
+<h3 id="图表解释（Diagram-Explanation）-1"><a href="#图表解释（Diagram-Explanation）-1" class="headerlink" title="图表解释（Diagram Explanation）"></a>图表解释（Diagram Explanation）</h3><ul>
+<li><strong>图表设计</strong>：图表简洁地展示了对称加密的加密和解密过程。</li>
+<li><strong>流程展示</strong>：明文通过密钥和算法变成密文，密文再通过同一密钥和算法恢复为明文。</li>
+</ul>
+<p><strong>总结</strong>：对称加密是一种数据安全技术，它通过一个密钥来加密和解密信息。这种方法的优点是加密和解密过程简单快捷，但缺点是密钥的分发和管理可能存在风险。图表有效地概括了对称加密的核心过程。</p>
+<h2 id="对称加密（Symmetric-Encryption）-2"><a href="#对称加密（Symmetric-Encryption）-2" class="headerlink" title="对称加密（Symmetric Encryption）"></a>对称加密（Symmetric Encryption）</h2><p>对称加密是一种使用密钥保护数据的加密方法。</p>
+<h3 id="操作概览（Operational-Overview）"><a href="#操作概览（Operational-Overview）" class="headerlink" title="操作概览（Operational Overview）"></a>操作概览（Operational Overview）</h3><ul>
+<li><strong>数据保护（Securing Data）</strong>：通过使用密钥来确保数据的安全。</li>
+</ul>
+<h3 id="加密和解密过程示例（Sample-Encryption-and-Decryption-Process）-1"><a href="#加密和解密过程示例（Sample-Encryption-and-Decryption-Process）-1" class="headerlink" title="加密和解密过程示例（Sample Encryption and Decryption Process）"></a>加密和解密过程示例（Sample Encryption and Decryption Process）</h3><ul>
+<li><p><strong>加密（Encryption）</strong>：</p>
+<ul>
+<li><strong>明文（Plain Text）</strong>：待加密的原始数据。</li>
+<li><strong>密钥（Key）</strong>：用于加密的密钥。</li>
+<li><strong>算法（Algorithm）</strong>：执行加密的步骤或方法。</li>
+<li><strong>密文（Cipher Text）</strong>：加密后的结果，只能通过密钥解密。</li>
+</ul>
+</li>
+<li><p><strong>解密（Decryption）</strong>：</p>
+<ul>
+<li><strong>密文（Cipher Text）</strong>：经过加密的数据。</li>
+<li><strong>密钥（Key）</strong>：用于解密的相同密钥。</li>
+<li><strong>算法（Algorithm）</strong>：执行解密的步骤或方法。</li>
+<li><strong>明文（Plain Text）</strong>：解密后恢复的原始数据。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：对称加密通过使用相同的密钥进行加密和解密来保护数据。该过程依赖于加密算法和密钥的安全性。在图表中，我们看到了一个加密和解密的简化流程，其中明文通过一个算法和密钥的结合变成密文，然后使用相同的密钥和算法过程逆转回明文。</p>
+<h2 id="对称加密（Symmetric-Encryption）-3"><a href="#对称加密（Symmetric-Encryption）-3" class="headerlink" title="对称加密（Symmetric Encryption）"></a>对称加密（Symmetric Encryption）</h2><p>对称加密涉及使用密钥对数据进行加密和解密的过程。</p>
+<h3 id="操作概述（Operational-Overview）-1"><a href="#操作概述（Operational-Overview）-1" class="headerlink" title="操作概述（Operational Overview）"></a>操作概述（Operational Overview）</h3><ul>
+<li><strong>秘密密钥（Secret Key）</strong>：发送方和接收方共享的密钥。</li>
+<li><strong>明文输入（Plaintext Input）</strong>：原始未加密的数据。</li>
+<li><strong>加密算法（Encryption Algorithm）</strong>：用于转换明文的算法（例如DES）。</li>
+<li><strong>传输密文（Transmitted Ciphertext）</strong>：加密后传输的数据表示为 Y&#x3D;E[K, X]。</li>
+</ul>
+<h3 id="加密过程（Encryption-Process）-1"><a href="#加密过程（Encryption-Process）-1" class="headerlink" title="加密过程（Encryption Process）"></a>加密过程（Encryption Process）</h3><ul>
+<li>明文通过加密算法和密钥的结合转换成密文。</li>
+</ul>
+<h3 id="解密过程（Decryption-Process）-1"><a href="#解密过程（Decryption-Process）-1" class="headerlink" title="解密过程（Decryption Process）"></a>解密过程（Decryption Process）</h3><ul>
+<li><strong>解密算法（Decryption Algorithm）</strong>：加密的逆过程算法。</li>
+<li><strong>密文输出（Ciphertext Output）</strong>：接收方收到的加密数据。</li>
+<li><strong>明文输出（Plaintext Output）</strong>：通过解密算法和密钥恢复的原始数据表示为 X&#x3D;D[K, Y]。</li>
+</ul>
+<p><strong>总结</strong>：对称加密是一个两步过程，首先使用一个秘密密钥将明文转换为密文，然后再次使用这个密钥将密文转换回明文。这种方法的关键是发送方和接收方必须共享并保护密钥。图表清晰地展示了这一过程，强调了加密和解密步骤的对称性。</p>
+<h2 id="对称加密操作模式（Symmetric-Encryption-Operational-Modes）"><a href="#对称加密操作模式（Symmetric-Encryption-Operational-Modes）" class="headerlink" title="对称加密操作模式（Symmetric Encryption Operational Modes）"></a>对称加密操作模式（Symmetric Encryption Operational Modes）</h2><p>对称加密有两种不同的操作模式。</p>
+<h3 id="流密码（Stream-Cipher）"><a href="#流密码（Stream-Cipher）" class="headerlink" title="流密码（Stream Cipher）"></a>流密码（Stream Cipher）</h3><ul>
+<li><strong>逐比特加密（Bit by Bit Encryption）</strong>：明文数据逐比特进行加密。</li>
+<li><strong>XOR运算（XOR Operation）</strong>：明文和密钥进行XOR运算。</li>
+</ul>
+<h3 id="块密码（Block-Cipher）"><a href="#块密码（Block-Cipher）" class="headerlink" title="块密码（Block Cipher）"></a>块密码（Block Cipher）</h3><ul>
+<li><strong>逐块加密（Block by Block Encryption）</strong>：明文数据被分成块，然后逐块加密。</li>
+<li><strong>整块加密（Whole Block Encryption）</strong>：整个数据块使用密钥进行加密。</li>
+</ul>
+<p><strong>总结</strong>：对称加密的两种操作模式分别是流密码和块密码。流密码将每一个比特单独加密，而块密码则将数据分块后整体加密。每种模式都有其特定的用途和优势，如流密码适合于实时加密通信，块密码则适合加密大量数据。</p>
+<h2 id="流密码（Stream-Ciphers）"><a href="#流密码（Stream-Ciphers）" class="headerlink" title="流密码（Stream Ciphers）"></a>流密码（Stream Ciphers）</h2><p>流密码是一种逐比特加密明文的加密方式。</p>
+<h3 id="流密码特点（Characteristics-of-Stream-Ciphers）"><a href="#流密码特点（Characteristics-of-Stream-Ciphers）" class="headerlink" title="流密码特点（Characteristics of Stream Ciphers）"></a>流密码特点（Characteristics of Stream Ciphers）</h3><ul>
+<li><strong>逐比特加密（Bit-by-bit Encryption）</strong>：每个明文比特与密钥流的相应比特一一对应加密，生成密文比特。</li>
+<li><strong>密钥流生成器描述（Key Stream Generator Description）</strong>：描述流密码的关键部分是密钥流生成器，一旦获得密钥流，其工作原理类似于一次性密码本。</li>
+<li><strong>随机种子生成（Random Seed Generation）</strong>：密钥流必须由一个随机种子生成。</li>
+</ul>
+<h3 id="图表解释（Diagram-Explanation）-2"><a href="#图表解释（Diagram-Explanation）-2" class="headerlink" title="图表解释（Diagram Explanation）"></a>图表解释（Diagram Explanation）</h3><ul>
+<li><strong>种子（Seed）</strong>：加密和解密过程开始的随机种子。</li>
+<li><strong>密钥流生成器（Key-stream Generator）</strong>：根据种子生成密钥流的机制。</li>
+<li><strong>密文（Ciphertext）</strong>：明文与密钥流通过 XOR 运算得到的加密信息。</li>
+<li><strong>消息（Message）</strong>：明文或解密后得到的文本。</li>
+<li><strong>密钥流（Key stream）</strong>：密钥流生成器产生的，用于加密和解密的序列。</li>
+</ul>
+<p><strong>总结</strong>：流密码通过使用密钥流逐比特地加密明文，加密过程需要一个随机种子来生成密钥流。图表中展示了从随机种子到密钥流生成，再到明文和密钥流的 XOR 运算得到密文的过程。流密码的特点是加密操作简单，适用于速度要求高和硬件资源受限的环境。</p>
+<h2 id="对称加密-流密码（Symmetric-Encryption-Stream-Ciphers）"><a href="#对称加密-流密码（Symmetric-Encryption-Stream-Ciphers）" class="headerlink" title="对称加密 - 流密码（Symmetric Encryption - Stream Ciphers）"></a>对称加密 - 流密码（Symmetric Encryption - Stream Ciphers）</h2><p>流密码是一种逐比特处理明文和密钥流的对称加密形式。</p>
+<h3 id="XOR门真值表（XOR-GATE-Truth-Table）"><a href="#XOR门真值表（XOR-GATE-Truth-Table）" class="headerlink" title="XOR门真值表（XOR GATE Truth Table）"></a>XOR门真值表（XOR GATE Truth Table）</h3><ul>
+<li><strong>逻辑符号（Logic Symbol）</strong>：展示了XOR门的逻辑符号，输入为A和B，输出为C。</li>
+<li><strong>布尔表达式（Boolean Expression）</strong>：给出了XOR操作的布尔表达式 (A \cdot \bar{B} + \bar{A} \cdot B) 或 ((A + B) \cdot (\bar{A} + \bar{B}))。</li>
+<li><strong>真值表（Truth Table）</strong>：描述了XOR运算的四种可能情况及其结果。</li>
+</ul>
+<h3 id="流密码操作模式（Stream-Encryption-Operational-Modes）"><a href="#流密码操作模式（Stream-Encryption-Operational-Modes）" class="headerlink" title="流密码操作模式（Stream Encryption Operational Modes）"></a>流密码操作模式（Stream Encryption Operational Modes）</h3><ul>
+<li><strong>明文（Plaintext）</strong>：未加密的原始数据序列。</li>
+<li><strong>密钥流（Cipher stream）</strong>：与明文等长的密钥序列。</li>
+<li><strong>密文（Ciphertext）</strong>：通过明文与密钥流的每一比特进行XOR运算得到的加密数据。</li>
+</ul>
+<p><strong>总结</strong>：流密码通过XOR门将明文和密钥流的每个比特进行加密。XOR运算的真值表清晰地显示了当输入比特不同时产生1，相同时产生0的逻辑。这种方式在实时或硬件加密场景中非常有效，因为它允许数据流被逐比特加密，而无需等待整个数据块。</p>
+<h2 id="对称加密-流加密（Symmetric-Encryption-Stream-Encryption）"><a href="#对称加密-流加密（Symmetric-Encryption-Stream-Encryption）" class="headerlink" title="对称加密 - 流加密（Symmetric Encryption - Stream Encryption）"></a>对称加密 - 流加密（Symmetric Encryption - Stream Encryption）</h2><p>流加密是一种对称加密技术，它将每个明文比特与密钥流的相应比特进行操作。</p>
+<h3 id="XOR门和真值表（XOR-Gate-and-Truth-Table）"><a href="#XOR门和真值表（XOR-Gate-and-Truth-Table）" class="headerlink" title="XOR门和真值表（XOR Gate and Truth Table）"></a>XOR门和真值表（XOR Gate and Truth Table）</h3><ul>
+<li><strong>XOR门符号（XOR Gate Symbol）</strong>：逻辑门的图形表示，它执行的是异或（XOR）操作。</li>
+<li><strong>布尔表达式（Boolean Expression）</strong>：XOR门的输出C可以用布尔表达式 ( A \cdot \overline{B} + \overline{A} \cdot B ) 或 ( (A + B) \cdot (\overline{A} + \overline{B}) ) 表示。</li>
+<li><strong>真值表（Truth Table）</strong>：列出了所有可能的输入A和B的组合及其对应的XOR输出C。</li>
+</ul>
+<p><strong>总结</strong>：在对称流加密中，XOR门是基础运算单元，用于每个比特的加密和解密。真值表是理解XOR门如何在加密中工作的关键，它展示了两个不同输入产生1，两个相同输入产生0的结果。这个原理是实现流加密算法的基础，如一次性密码本（OTP）。</p>
+<h2 id="对称加密-流加密操作模式（Symmetric-Encryption-Stream-Encryption-Operational-Modes）"><a href="#对称加密-流加密操作模式（Symmetric-Encryption-Stream-Encryption-Operational-Modes）" class="headerlink" title="对称加密 - 流加密操作模式（Symmetric Encryption - Stream Encryption Operational Modes）"></a>对称加密 - 流加密操作模式（Symmetric Encryption - Stream Encryption Operational Modes）</h2><p>流加密是对称加密的一种方式，它涉及到按照密钥流逐比特加密明文数据。</p>
+<h3 id="流加密的加密过程（Stream-Encryption-Process）"><a href="#流加密的加密过程（Stream-Encryption-Process）" class="headerlink" title="流加密的加密过程（Stream Encryption Process）"></a>流加密的加密过程（Stream Encryption Process）</h3><ul>
+<li><strong>明文（Plaintext）</strong>：需要加密的原始数据序列。</li>
+<li><strong>密钥流（Cipher Stream）</strong>：一个随机生成的，与明文长度相同的比特序列。</li>
+<li><strong>密文（Ciphertext）</strong>：通过明文与密钥流进行逐比特XOR运算产生的加密数据。</li>
+</ul>
+<h3 id="加密示例解释（Encryption-Example-Explanation）"><a href="#加密示例解释（Encryption-Example-Explanation）" class="headerlink" title="加密示例解释（Encryption Example Explanation）"></a>加密示例解释（Encryption Example Explanation）</h3><ul>
+<li>图表显示了一个明文比特序列与一个密钥流比特序列。</li>
+<li>明文和密钥流的每一位都经过XOR运算。</li>
+<li>当明文和密钥流的比特不同时，结果为1；相同时，结果为0。</li>
+<li>这个过程生成了密文比特序列。</li>
+</ul>
+<p><strong>总结</strong>：流加密通过将每个明文比特与密钥流的相应比特进行XOR运算来加密数据。图表清晰地展示了这一过程，为理解流加密提供了一个直观的例子。这种方式在加密数据传输中尤其有用，因为它允许加密过程与数据的传输几乎同时进行。</p>
+<h2 id="块密码（Block-Ciphers）"><a href="#块密码（Block-Ciphers）" class="headerlink" title="块密码（Block Ciphers）"></a>块密码（Block Ciphers）</h2><p>块密码是一种在数据块上操作以生成密文块的对称加密技术。</p>
+<h3 id="块密码的特点（Characteristics-of-Block-Ciphers）"><a href="#块密码的特点（Characteristics-of-Block-Ciphers）" class="headerlink" title="块密码的特点（Characteristics of Block Ciphers）"></a>块密码的特点（Characteristics of Block Ciphers）</h3><ul>
+<li><strong>操作方式（Operation Method）</strong>：块密码一次处理一个数据块，将明文块转换成密文块。</li>
+<li><strong>比特加密依赖性（Bit Encryption Dependency）</strong>：明文中的一个比特的加密可能依赖于该数据块中的其他比特。</li>
+<li><strong>数据块大小（Block Sizes）</strong>：数据块通常相当大，例如，DES的块大小是64比特，而AES的块大小是128比特。</li>
+<li><strong>著名块密码（Famous Block Cipher）</strong>：最著名的块密码是DES（数据加密标准）。</li>
+<li><strong>设计原则（Design Principles）</strong>：DES是最广泛研究的加密方案，其设计原则启发了现今使用的许多密码算法。</li>
+</ul>
+<p><strong>总结</strong>：块密码通过对数据块进行加密来保护信息，其中每个数据块的加密都可能依赖于块内的比特关系。DES作为一个历史悠久的块密码，对现代加密技术有着深远的影响，其设计原则对许多现代密码算法的开发有着指导意义。</p>
+<h2 id="对称加密-块密码模式（Symmetric-Encryption-Block-Cipher-Modes）"><a href="#对称加密-块密码模式（Symmetric-Encryption-Block-Cipher-Modes）" class="headerlink" title="对称加密 - 块密码模式（Symmetric Encryption - Block Cipher Modes）"></a>对称加密 - 块密码模式（Symmetric Encryption - Block Cipher Modes）</h2><p>块密码模式定义了不同的技术来处理数据块的加密和解密。</p>
+<h3 id="块密码模式描述（Description-of-Block-Cipher-Modes）"><a href="#块密码模式描述（Description-of-Block-Cipher-Modes）" class="headerlink" title="块密码模式描述（Description of Block Cipher Modes）"></a>块密码模式描述（Description of Block Cipher Modes）</h3><ul>
+<li><p><strong>电子密码本（ECB, Electronic Codebook）</strong></p>
+<ul>
+<li><strong>描述</strong>：每个64位的数据块独立加密。</li>
+<li><strong>典型应用</strong>：安全传输单个值（例如，一个加密密钥）。</li>
+</ul>
+</li>
+<li><p><strong>密码块链接（CBC, Cipher Block Chaining）</strong></p>
+<ul>
+<li><strong>描述</strong>：加密算法的输入是明文的下一个64位与前一个密文块的XOR结果。</li>
+<li><strong>典型应用</strong>：通用的块传输和认证。</li>
+</ul>
+</li>
+<li><p><strong>密码反馈（CFB, Cipher Feedback）</strong></p>
+<ul>
+<li><strong>描述</strong>：每次处理s比特，前一次的密文块作为加密算法的输入，产生伪随机输出，与明文XOR产生下一单元的密文。</li>
+<li><strong>典型应用</strong>：通用的流传输和认证。</li>
+</ul>
+</li>
+<li><p><strong>输出反馈（OFB, Output Feedback）</strong></p>
+<ul>
+<li><strong>描述</strong>：与CFB类似，但加密算法的输入是前一个DES输出。</li>
+<li><strong>典型应用</strong>：在噪声信道上的流传输（例如，卫星通信）。</li>
+</ul>
+</li>
+<li><p><strong>计数器（CTR, Counter）</strong></p>
+<ul>
+<li><strong>描述</strong>：每个明文块与一个加密计数器的XOR结果，每处理一个块，计数器增加。</li>
+<li><strong>典型应用</strong>：适用于高速传输需求。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：块密码模式提供了多种数据块处理方式，每种模式都有其特定的使用场景和优点。从独立加密每个数据块的ECB到复杂的计数器模式，这些方法确保了在不同环境下加密的灵活性和安全性。图表整合了每种模式的描述和应用，对理解它们在实际中的作用至关重要。</p>
+<h2 id="对称加密-块密码模式（Symmetric-Encryption-Block-Cipher-Modes）-1"><a href="#对称加密-块密码模式（Symmetric-Encryption-Block-Cipher-Modes）-1" class="headerlink" title="对称加密 - 块密码模式（Symmetric Encryption - Block Cipher Modes）"></a>对称加密 - 块密码模式（Symmetric Encryption - Block Cipher Modes）</h2><p>块密码模式是处理加密数据块的不同方法，每种模式都有其特定的结构和用途。</p>
+<h3 id="块密码模式概述（Overview-of-Block-Cipher-Modes）"><a href="#块密码模式概述（Overview-of-Block-Cipher-Modes）" class="headerlink" title="块密码模式概述（Overview of Block Cipher Modes）"></a>块密码模式概述（Overview of Block Cipher Modes）</h3><ul>
+<li><p><strong>电子密码本模式（ECB, Electronic Codebook）</strong></p>
+<ul>
+<li>加密：每个明文块独立加密。</li>
+<li>解密：每个密文块独立解密。</li>
+</ul>
+</li>
+<li><p><strong>密码块链接模式（CBC, Cipher Block Chaining）</strong></p>
+<ul>
+<li>加密：每个明文块与前一个密文块的XOR后加密。</li>
+<li>解密：加密过程的逆操作。</li>
+</ul>
+</li>
+<li><p><strong>密码反馈模式（CFB, Cipher Feedback）</strong></p>
+<ul>
+<li>加密：明文按照设定的位数s与前一个加密块的XOR后加密。</li>
+<li>解密：加密过程的逆操作。</li>
+</ul>
+</li>
+<li><p><strong>输出反馈模式（OFB, Output Feedback）</strong></p>
+<ul>
+<li>加密：与CFB类似，但使用前一个加密块的输出作为下一个块的输入。</li>
+<li>解密：加密过程的逆操作。</li>
+</ul>
+</li>
+<li><p><strong>计数器模式（CTR, Counter）</strong></p>
+<ul>
+<li>加密：每个明文块与不同的计数器值加密。</li>
+<li>解密：加密过程的逆操作。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：以上块密码模式各有特点，ECB模式适用于单独块的加密，而CBC、CFB、OFB和CTR模式则通过不同方式提高了加密的复杂性和安全性。图表展示了每种模式的加密和解密过程，帮助我们理解它们在实际操作中的应用。</p>
+<h2 id="对称加密-块密码（Symmetric-Encryption-Block-Cipher）"><a href="#对称加密-块密码（Symmetric-Encryption-Block-Cipher）" class="headerlink" title="对称加密 - 块密码（Symmetric Encryption - Block Cipher）"></a>对称加密 - 块密码（Symmetric Encryption - Block Cipher）</h2><p>块密码是对称加密中的一种算法，按块处理输入数据并输出加密数据。</p>
+<h3 id="块密码的关键要素（Key-Elements-of-Block-Cipher）"><a href="#块密码的关键要素（Key-Elements-of-Block-Cipher）" class="headerlink" title="块密码的关键要素（Key Elements of Block Cipher）"></a>块密码的关键要素（Key Elements of Block Cipher）</h3><ul>
+<li><strong>数据块大小（Block Size）</strong>：处理的数据块大小，较大的块大小通常意味着更高的安全性，但加解密速度会降低。128位的块大小在现代块密码设计中几乎是通用的。</li>
+<li><strong>密钥大小（Key Size）</strong>：加密密钥的大小，与安全性直接相关。</li>
+<li><strong>轮数（Number of Rounds）</strong>：加密过程中数据块被处理的次数。</li>
+<li><strong>子密钥生成算法（Subkey Generation Algorithm）</strong>：生成每一轮所需使用的子密钥的算法。</li>
+<li><strong>轮函数（Round Function）</strong>：每一轮中用于处理数据块的函数。</li>
+</ul>
+<h3 id="块密码设计的考量因素（Considerations-in-Block-Cipher-Design）"><a href="#块密码设计的考量因素（Considerations-in-Block-Cipher-Design）" class="headerlink" title="块密码设计的考量因素（Considerations in Block Cipher Design）"></a>块密码设计的考量因素（Considerations in Block Cipher Design）</h3><ul>
+<li><strong>易于分析（Ease of Analysis）</strong>：加密算法的安全性需要能够承受分析，这是设计时的一个重要考虑。</li>
+<li><strong>软件加解密速度（Fast Software Encryption&#x2F;Decryption）</strong>：算法需要在软件实现时能够快速加解密。</li>
+</ul>
+<p><strong>总结</strong>：块密码通过组合不同的数据块大小、密钥大小、轮数、子密钥生成算法和轮函数来确保安全性和效率。这些要素的选择反映了在高安全性和高性能之间的平衡，是现代加密算法设计的关键部分。</p>
+<h2 id="对称加密实践安全问题（Symmetric-Encryption-Practical-Security-Issues）"><a href="#对称加密实践安全问题（Symmetric-Encryption-Practical-Security-Issues）" class="headerlink" title="对称加密实践安全问题（Symmetric Encryption Practical Security Issues）"></a>对称加密实践安全问题（Symmetric Encryption Practical Security Issues）</h2><p>在对称加密的实际应用中，存在一些安全性问题需要关注。</p>
+<h3 id="基本问题（Basic-Issues）"><a href="#基本问题（Basic-Issues）" class="headerlink" title="基本问题（Basic Issues）"></a>基本问题（Basic Issues）</h3><ul>
+<li>对称加密通常处理的数据单元大于单个64位或128位的数据块。</li>
+<li>电子密码本（ECB）模式是最简单的多块加密方法。</li>
+<li>使用ECB模式时，每个数据块使用相同的密钥独立加密。</li>
+<li>分析人员可能会利用明文中的规律性。</li>
+</ul>
+<h3 id="操作模式（Modes-of-Operation）"><a href="#操作模式（Modes-of-Operation）" class="headerlink" title="操作模式（Modes of Operation）"></a>操作模式（Modes of Operation）</h3><ul>
+<li>为了增加对称块加密的安全性，针对大序列数据开发了替代技术。</li>
+<li>这些技术克服了ECB模式的弱点。</li>
+</ul>
+<h2 id="对称加密-流行算法的特点（Symmetric-Encryption-Characteristics-of-Popular-Algorithms）"><a href="#对称加密-流行算法的特点（Symmetric-Encryption-Characteristics-of-Popular-Algorithms）" class="headerlink" title="对称加密 - 流行算法的特点（Symmetric Encryption - Characteristics of Popular Algorithms）"></a>对称加密 - 流行算法的特点（Symmetric Encryption - Characteristics of Popular Algorithms）</h2><p>流行的对称加密算法具有不同的特点。</p>
+<h3 id="常见算法特点（Common-Algorithm-Characteristics）"><a href="#常见算法特点（Common-Algorithm-Characteristics）" class="headerlink" title="常见算法特点（Common Algorithm Characteristics）"></a>常见算法特点（Common Algorithm Characteristics）</h3><ul>
+<li><p><strong>DES（数据加密标准）</strong></p>
+<ul>
+<li>明文块大小：64位</li>
+<li>密钥大小：56位</li>
+</ul>
+</li>
+<li><p><strong>三重DES（Triple DES）</strong></p>
+<ul>
+<li>明文块大小：64位</li>
+<li>密钥大小：112或168位</li>
+</ul>
+</li>
+<li><p><strong>AES（高级加密标准）</strong></p>
+<ul>
+<li>明文块大小：128位</li>
+<li>密钥大小：128, 192或256位</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：对称加密算法在安全性和效率方面需要平衡。ECB模式虽然简单，但在安全性方面存在缺陷。其他操作模式如CBC、CFB、OFB和CTR则提供了更复杂的加密方法以提高安全性。DES、三重DES和AES是市面上常见的算法，它们在块大小和密钥大小上有所不同，应根据具体需求选择合适的算法和模式。</p>
+<h2 id="对称加密攻击策略（Symmetric-Encryption-Attack-Strategy）"><a href="#对称加密攻击策略（Symmetric-Encryption-Attack-Strategy）" class="headerlink" title="对称加密攻击策略（Symmetric Encryption Attack Strategy）"></a>对称加密攻击策略（Symmetric Encryption Attack Strategy）</h2><p>针对对称加密系统的攻击策略包括密码分析和暴力破解。</p>
+<h3 id="密码分析攻击（Cryptanalytic-Attacks）"><a href="#密码分析攻击（Cryptanalytic-Attacks）" class="headerlink" title="密码分析攻击（Cryptanalytic Attacks）"></a>密码分析攻击（Cryptanalytic Attacks）</h3><ul>
+<li><strong>依赖因素（Relies on）</strong>：<ul>
+<li>算法的本质（Nature of the algorithm）</li>
+<li>明文的一般特征（Some knowledge of the general characteristics of the plaintext）</li>
+<li>一些明文-密文对的样本（Some sample plaintext-ciphertext pairs）</li>
+</ul>
+</li>
+<li><strong>攻击方式（Method of Attack）</strong>：<ul>
+<li>利用算法特性尝试推导出特定的明文或所使用的密钥（Exploits characteristics of the algorithm to deduce a specific plaintext or the key being used）</li>
+<li>如果成功，使用该密钥加密的所有未来和过去的消息都会被泄露（If successful, all future and past messages encrypted with that key are compromised）</li>
+</ul>
+</li>
+</ul>
+<h3 id="暴力破解攻击（Brute-force-Attacks）"><a href="#暴力破解攻击（Brute-force-Attacks）" class="headerlink" title="暴力破解攻击（Brute-force Attacks）"></a>暴力破解攻击（Brute-force Attacks）</h3><ul>
+<li><strong>尝试方式（Method of Trial）</strong>：<ul>
+<li>尝试所有可能的密钥在某些密文上，直到获得一个有意义的明文翻译（Try all possible keys on some ciphertext until an intelligible translation into plaintext is obtained）</li>
+</ul>
+</li>
+<li><strong>平均尝试次数（Average Attempts）</strong>：<ul>
+<li>平均需要尝试所有可能密钥的一半才能成功（On average half of all possible keys must be tried to achieve success）</li>
+</ul>
+</li>
+<li><strong>密钥数量（Number of Keys）</strong>：<ul>
+<li>可能的密钥数量取决于密钥的大小（Number of Keys are dictated by the key size）</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：在对称加密中，密码分析攻击和暴力破解攻击是两种主要的攻击策略。密码分析攻击依赖于对算法和明文特性的了解，而暴力破解攻击则尝试所有可能的密钥组合。密钥的大小直接影响到暴力破解的难度，因此设计一个足够长的密钥是保证加密安全的关键。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/10/02/C398-w2-Cryptography1/">http://example.com/2023/10/02/C398-w2-Cryptography1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Week2/">Week2</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/10/03/week3-pratical/" title="week3-pratical"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">week3-pratical</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/26/Week1-practical/" title="Week1-practical"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Week1-practical</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/10/05/W2%20(LEC)%20-%20Agile%20vs%20Lean/" title="W2 (LEC) - Agile vs Lean"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-05</div><div class="title">W2 (LEC) - Agile vs Lean</div></div></a></div><div><a href="/2023/10/05/W2%20(TUT)%20-%20Traditional%20SDLCs/" title="W2 (TUT) - Traditional SDLCs"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-05</div><div class="title">W2 (TUT) - Traditional SDLCs</div></div></a></div><div><a href="/2023/10/05/W2%20(TUT)%20-%20Working%20Agreement/" title="W2 (TUT) - Working Agreement"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-05</div><div class="title">W2 (TUT) - Working Agreement</div></div></a></div><div><a href="/2023/10/05/W2%20(LEC)%20-%20Agile%20Scrum/" title="W2 (LEC) - Agile Scrum"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-05</div><div class="title">W2 (LEC) - Agile Scrum</div></div></a></div><div><a href="/2023/10/03/week2-Lab/" title="week2-Lab"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-03</div><div class="title">week2-Lab</div></div></a></div><div><a href="/2023/10/03/T2/" title="T2 - Comparison Operators"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-03</div><div class="title">T2 - Comparison Operators</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AF%BC%E8%AE%BA%EF%BC%88Introduction%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">密码学导论（Introduction）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%88Cryptography%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">密码学是什么（Cryptography）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%80%E4%BA%9B%E5%AE%9A%E4%B9%89%EF%BC%88Cryptography-Some-definitions%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">密码学一些定义（Cryptography: Some definitions）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%EF%BC%88Data-Security%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">数据安全（Data Security）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E7%BB%84%E4%BB%B6%EF%BC%88Data-Security-Components%EF%BC%89"><span class="toc-number">4.1.</span> <span class="toc-text">数据安全组件（Data Security Components）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E8%83%8C%E6%99%AF%EF%BC%88Historical-Background%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">历史背景（Historical Background）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81%EF%BC%88The-Caesar-cipher%EF%BC%89"><span class="toc-number">5.1.</span> <span class="toc-text">凯撒密码（The Caesar cipher）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81%E7%9A%84%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%EF%BC%88Cryptanalysis-of-Caesar-Cipher%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">凯撒密码的密码分析（Cryptanalysis of Caesar Cipher）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%EF%BC%88Vigenere-Cipher%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">维吉尼亚密码（Vigenere Cipher）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E7%9A%84%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%EF%BC%88Cryptanalysis-of-Vigenere-Cipher%EF%BC%89"><span class="toc-number">5.4.</span> <span class="toc-text">维吉尼亚密码的密码分析（Cryptanalysis of Vigenere Cipher）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E8%83%8C%E6%99%AF%EF%BC%88Historical-Background%EF%BC%89-1"><span class="toc-number">6.</span> <span class="toc-text">历史背景（Historical Background）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81%EF%BC%88The-Caesar-cipher%EF%BC%89-1"><span class="toc-number">6.1.</span> <span class="toc-text">凯撒密码（The Caesar cipher）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81%E7%9A%84%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%EF%BC%88Cryptanalysis-of-Caesar-Cipher%EF%BC%89-1"><span class="toc-number">6.2.</span> <span class="toc-text">凯撒密码的密码分析（Cryptanalysis of Caesar Cipher）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%EF%BC%88Vigenere-Cipher%EF%BC%89-1"><span class="toc-number">6.3.</span> <span class="toc-text">维吉尼亚密码（Vigenere Cipher）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%AF%86%E7%A0%81%E7%9A%84%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%EF%BC%88Cryptanalysis-of-Vigenere-Cipher%EF%BC%89-1"><span class="toc-number">6.4.</span> <span class="toc-text">维吉尼亚密码的密码分析（Cryptanalysis of Vigenere Cipher）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%8C%E5%B0%94%E5%AF%86%E7%A0%81%EF%BC%88Hill-Cipher%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">希尔密码（Hill Cipher）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%8C%E5%B0%94%E5%AF%86%E7%A0%81%E6%A6%82%E8%BF%B0"><span class="toc-number">7.1.</span> <span class="toc-text">希尔密码概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%8C%E5%B0%94%E5%AF%86%E7%A0%81%E7%9A%84%E5%8A%A0%E5%AF%86%E7%A4%BA%E4%BE%8B"><span class="toc-number">7.2.</span> <span class="toc-text">希尔密码的加密示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%8C%E5%B0%94%E5%AF%86%E7%A0%81%E5%8A%A0%E5%AF%86%E8%AE%A1%E7%AE%97"><span class="toc-number">7.3.</span> <span class="toc-text">希尔密码加密计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ROT13"><span class="toc-number">8.</span> <span class="toc-text">ROT13</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ROT13%E7%AE%80%E4%BB%8B"><span class="toc-number">8.1.</span> <span class="toc-text">ROT13简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ROT13%E5%8A%A0%E5%AF%86%E8%BF%87%E7%A8%8B"><span class="toc-number">8.2.</span> <span class="toc-text">ROT13加密过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ROT13%E7%A4%BA%E4%BE%8B"><span class="toc-number">8.3.</span> <span class="toc-text">ROT13示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E4%BB%AC%E6%89%80%E8%A6%86%E7%9B%96%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%88What-we-have-covered%EF%BC%89"><span class="toc-number">9.</span> <span class="toc-text">我们所覆盖的内容（What we have covered）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%88%86%E7%B1%BB%EF%BC%88Classification%EF%BC%89"><span class="toc-number">9.1.</span> <span class="toc-text">密码分类（Classification）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6%EF%BC%88Modern-Cryptography%EF%BC%89"><span class="toc-number">10.</span> <span class="toc-text">现代密码学（Modern Cryptography）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E5%AD%A6%E5%8F%AF%E5%88%86%E4%B8%BA%E4%BB%A5%E4%B8%8B%E5%87%A0%E4%B8%AA%E9%A2%86%E5%9F%9F%EF%BC%9A"><span class="toc-number">10.1.</span> <span class="toc-text">现代密码学可分为以下几个领域：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%EF%BC%88Symmetric-Encryption%EF%BC%89"><span class="toc-number">11.</span> <span class="toc-text">对称加密（Symmetric Encryption）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%9A%84%E5%AE%89%E5%85%A8%E4%BD%BF%E7%94%A8%E8%A6%81%E6%B1%82%EF%BC%9A"><span class="toc-number">11.1.</span> <span class="toc-text">对称加密的安全使用要求：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E6%AC%A1%E6%80%A7%E5%AF%86%E7%A0%81%E6%9C%AC%EF%BC%88One-Time-Pad%EF%BC%89"><span class="toc-number">12.</span> <span class="toc-text">一次性密码本（One Time Pad）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E6%98%8E%E8%83%8C%E6%99%AF%EF%BC%88Invention-Background%EF%BC%89"><span class="toc-number">12.1.</span> <span class="toc-text">发明背景（Invention Background）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E8%BF%87%E7%A8%8B%EF%BC%88Encryption-Process%EF%BC%89"><span class="toc-number">12.2.</span> <span class="toc-text">加密过程（Encryption Process）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%AF%86%E8%BF%87%E7%A8%8B%EF%BC%88Decryption-Process%EF%BC%89"><span class="toc-number">12.3.</span> <span class="toc-text">解密过程（Decryption Process）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A%EF%BC%88Diagram-Explanation%EF%BC%89"><span class="toc-number">12.4.</span> <span class="toc-text">图表解释（Diagram Explanation）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E6%AC%A1%E6%80%A7%E5%AF%86%E7%A0%81%E6%9C%AC%E4%BC%98%E5%8A%BF%EF%BC%88One-Time-Pad-Advantages%EF%BC%89"><span class="toc-number">13.</span> <span class="toc-text">一次性密码本优势（One Time Pad Advantages）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BE%BF%EF%BC%88Easy-to-Compute%EF%BC%89"><span class="toc-number">13.1.</span> <span class="toc-text">计算简便（Easy to Compute）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E4%B8%8A%E7%9A%84%E7%BB%9D%E5%AF%B9%E5%AE%89%E5%85%A8%EF%BC%88Theoretically-Maximum-Security%EF%BC%89"><span class="toc-number">13.2.</span> <span class="toc-text">理论上的绝对安全（Theoretically Maximum Security）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E6%AC%A1%E6%80%A7%E5%AF%86%E7%A0%81%E6%9C%AC%E5%8A%A3%E5%8A%BF%EF%BC%88One-Time-Pad-Disadvantages%EF%BC%89"><span class="toc-number">14.</span> <span class="toc-text">一次性密码本劣势（One Time Pad Disadvantages）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%EF%BC%88Key-Length-Restriction%EF%BC%89"><span class="toc-number">14.1.</span> <span class="toc-text">密钥长度限制（Key Length Restriction）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E9%87%8D%E7%94%A8%E7%9A%84%E9%A3%8E%E9%99%A9%EF%BC%88Risk-of-Key-Reuse%EF%BC%89"><span class="toc-number">14.2.</span> <span class="toc-text">密钥重用的风险（Risk of Key Reuse）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%EF%BC%88Symmetric-Encryption%EF%BC%89-1"><span class="toc-number">15.</span> <span class="toc-text">对称加密（Symmetric Encryption）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%A6%82%E8%BF%B0%EF%BC%88Operational-Overview%EF%BC%89"><span class="toc-number">15.1.</span> <span class="toc-text">操作概述（Operational Overview）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E8%BF%87%E7%A8%8B%E7%A4%BA%E4%BE%8B%EF%BC%88Sample-Encryption-and-Decryption-Process%EF%BC%89"><span class="toc-number">15.2.</span> <span class="toc-text">加密和解密过程示例（Sample Encryption and Decryption Process）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%EF%BC%88Encryption%EF%BC%89"><span class="toc-number">15.2.1.</span> <span class="toc-text">加密（Encryption）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%AF%86%EF%BC%88Decryption%EF%BC%89"><span class="toc-number">15.2.2.</span> <span class="toc-text">解密（Decryption）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A%EF%BC%88Diagram-Explanation%EF%BC%89-1"><span class="toc-number">15.3.</span> <span class="toc-text">图表解释（Diagram Explanation）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%EF%BC%88Symmetric-Encryption%EF%BC%89-2"><span class="toc-number">16.</span> <span class="toc-text">对称加密（Symmetric Encryption）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%A6%82%E8%A7%88%EF%BC%88Operational-Overview%EF%BC%89"><span class="toc-number">16.1.</span> <span class="toc-text">操作概览（Operational Overview）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E8%BF%87%E7%A8%8B%E7%A4%BA%E4%BE%8B%EF%BC%88Sample-Encryption-and-Decryption-Process%EF%BC%89-1"><span class="toc-number">16.2.</span> <span class="toc-text">加密和解密过程示例（Sample Encryption and Decryption Process）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%EF%BC%88Symmetric-Encryption%EF%BC%89-3"><span class="toc-number">17.</span> <span class="toc-text">对称加密（Symmetric Encryption）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%A6%82%E8%BF%B0%EF%BC%88Operational-Overview%EF%BC%89-1"><span class="toc-number">17.1.</span> <span class="toc-text">操作概述（Operational Overview）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E8%BF%87%E7%A8%8B%EF%BC%88Encryption-Process%EF%BC%89-1"><span class="toc-number">17.2.</span> <span class="toc-text">加密过程（Encryption Process）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%AF%86%E8%BF%87%E7%A8%8B%EF%BC%88Decryption-Process%EF%BC%89-1"><span class="toc-number">17.3.</span> <span class="toc-text">解密过程（Decryption Process）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E6%93%8D%E4%BD%9C%E6%A8%A1%E5%BC%8F%EF%BC%88Symmetric-Encryption-Operational-Modes%EF%BC%89"><span class="toc-number">18.</span> <span class="toc-text">对称加密操作模式（Symmetric Encryption Operational Modes）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E5%AF%86%E7%A0%81%EF%BC%88Stream-Cipher%EF%BC%89"><span class="toc-number">18.1.</span> <span class="toc-text">流密码（Stream Cipher）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E5%AF%86%E7%A0%81%EF%BC%88Block-Cipher%EF%BC%89"><span class="toc-number">18.2.</span> <span class="toc-text">块密码（Block Cipher）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E5%AF%86%E7%A0%81%EF%BC%88Stream-Ciphers%EF%BC%89"><span class="toc-number">19.</span> <span class="toc-text">流密码（Stream Ciphers）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E5%AF%86%E7%A0%81%E7%89%B9%E7%82%B9%EF%BC%88Characteristics-of-Stream-Ciphers%EF%BC%89"><span class="toc-number">19.1.</span> <span class="toc-text">流密码特点（Characteristics of Stream Ciphers）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A%EF%BC%88Diagram-Explanation%EF%BC%89-2"><span class="toc-number">19.2.</span> <span class="toc-text">图表解释（Diagram Explanation）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86-%E6%B5%81%E5%AF%86%E7%A0%81%EF%BC%88Symmetric-Encryption-Stream-Ciphers%EF%BC%89"><span class="toc-number">20.</span> <span class="toc-text">对称加密 - 流密码（Symmetric Encryption - Stream Ciphers）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XOR%E9%97%A8%E7%9C%9F%E5%80%BC%E8%A1%A8%EF%BC%88XOR-GATE-Truth-Table%EF%BC%89"><span class="toc-number">20.1.</span> <span class="toc-text">XOR门真值表（XOR GATE Truth Table）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E5%AF%86%E7%A0%81%E6%93%8D%E4%BD%9C%E6%A8%A1%E5%BC%8F%EF%BC%88Stream-Encryption-Operational-Modes%EF%BC%89"><span class="toc-number">20.2.</span> <span class="toc-text">流密码操作模式（Stream Encryption Operational Modes）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86-%E6%B5%81%E5%8A%A0%E5%AF%86%EF%BC%88Symmetric-Encryption-Stream-Encryption%EF%BC%89"><span class="toc-number">21.</span> <span class="toc-text">对称加密 - 流加密（Symmetric Encryption - Stream Encryption）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XOR%E9%97%A8%E5%92%8C%E7%9C%9F%E5%80%BC%E8%A1%A8%EF%BC%88XOR-Gate-and-Truth-Table%EF%BC%89"><span class="toc-number">21.1.</span> <span class="toc-text">XOR门和真值表（XOR Gate and Truth Table）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86-%E6%B5%81%E5%8A%A0%E5%AF%86%E6%93%8D%E4%BD%9C%E6%A8%A1%E5%BC%8F%EF%BC%88Symmetric-Encryption-Stream-Encryption-Operational-Modes%EF%BC%89"><span class="toc-number">22.</span> <span class="toc-text">对称加密 - 流加密操作模式（Symmetric Encryption - Stream Encryption Operational Modes）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E5%8A%A0%E5%AF%86%E7%9A%84%E5%8A%A0%E5%AF%86%E8%BF%87%E7%A8%8B%EF%BC%88Stream-Encryption-Process%EF%BC%89"><span class="toc-number">22.1.</span> <span class="toc-text">流加密的加密过程（Stream Encryption Process）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E7%A4%BA%E4%BE%8B%E8%A7%A3%E9%87%8A%EF%BC%88Encryption-Example-Explanation%EF%BC%89"><span class="toc-number">22.2.</span> <span class="toc-text">加密示例解释（Encryption Example Explanation）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%97%E5%AF%86%E7%A0%81%EF%BC%88Block-Ciphers%EF%BC%89"><span class="toc-number">23.</span> <span class="toc-text">块密码（Block Ciphers）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E5%AF%86%E7%A0%81%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%88Characteristics-of-Block-Ciphers%EF%BC%89"><span class="toc-number">23.1.</span> <span class="toc-text">块密码的特点（Characteristics of Block Ciphers）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86-%E5%9D%97%E5%AF%86%E7%A0%81%E6%A8%A1%E5%BC%8F%EF%BC%88Symmetric-Encryption-Block-Cipher-Modes%EF%BC%89"><span class="toc-number">24.</span> <span class="toc-text">对称加密 - 块密码模式（Symmetric Encryption - Block Cipher Modes）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E5%AF%86%E7%A0%81%E6%A8%A1%E5%BC%8F%E6%8F%8F%E8%BF%B0%EF%BC%88Description-of-Block-Cipher-Modes%EF%BC%89"><span class="toc-number">24.1.</span> <span class="toc-text">块密码模式描述（Description of Block Cipher Modes）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86-%E5%9D%97%E5%AF%86%E7%A0%81%E6%A8%A1%E5%BC%8F%EF%BC%88Symmetric-Encryption-Block-Cipher-Modes%EF%BC%89-1"><span class="toc-number">25.</span> <span class="toc-text">对称加密 - 块密码模式（Symmetric Encryption - Block Cipher Modes）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E5%AF%86%E7%A0%81%E6%A8%A1%E5%BC%8F%E6%A6%82%E8%BF%B0%EF%BC%88Overview-of-Block-Cipher-Modes%EF%BC%89"><span class="toc-number">25.1.</span> <span class="toc-text">块密码模式概述（Overview of Block Cipher Modes）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86-%E5%9D%97%E5%AF%86%E7%A0%81%EF%BC%88Symmetric-Encryption-Block-Cipher%EF%BC%89"><span class="toc-number">26.</span> <span class="toc-text">对称加密 - 块密码（Symmetric Encryption - Block Cipher）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E5%AF%86%E7%A0%81%E7%9A%84%E5%85%B3%E9%94%AE%E8%A6%81%E7%B4%A0%EF%BC%88Key-Elements-of-Block-Cipher%EF%BC%89"><span class="toc-number">26.1.</span> <span class="toc-text">块密码的关键要素（Key Elements of Block Cipher）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E5%AF%86%E7%A0%81%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%80%83%E9%87%8F%E5%9B%A0%E7%B4%A0%EF%BC%88Considerations-in-Block-Cipher-Design%EF%BC%89"><span class="toc-number">26.2.</span> <span class="toc-text">块密码设计的考量因素（Considerations in Block Cipher Design）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%AE%9E%E8%B7%B5%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98%EF%BC%88Symmetric-Encryption-Practical-Security-Issues%EF%BC%89"><span class="toc-number">27.</span> <span class="toc-text">对称加密实践安全问题（Symmetric Encryption Practical Security Issues）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98%EF%BC%88Basic-Issues%EF%BC%89"><span class="toc-number">27.1.</span> <span class="toc-text">基本问题（Basic Issues）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%A8%A1%E5%BC%8F%EF%BC%88Modes-of-Operation%EF%BC%89"><span class="toc-number">27.2.</span> <span class="toc-text">操作模式（Modes of Operation）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86-%E6%B5%81%E8%A1%8C%E7%AE%97%E6%B3%95%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%88Symmetric-Encryption-Characteristics-of-Popular-Algorithms%EF%BC%89"><span class="toc-number">28.</span> <span class="toc-text">对称加密 - 流行算法的特点（Symmetric Encryption - Characteristics of Popular Algorithms）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E7%89%B9%E7%82%B9%EF%BC%88Common-Algorithm-Characteristics%EF%BC%89"><span class="toc-number">28.1.</span> <span class="toc-text">常见算法特点（Common Algorithm Characteristics）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E6%94%BB%E5%87%BB%E7%AD%96%E7%95%A5%EF%BC%88Symmetric-Encryption-Attack-Strategy%EF%BC%89"><span class="toc-number">29.</span> <span class="toc-text">对称加密攻击策略（Symmetric Encryption Attack Strategy）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90%E6%94%BB%E5%87%BB%EF%BC%88Cryptanalytic-Attacks%EF%BC%89"><span class="toc-number">29.1.</span> <span class="toc-text">密码分析攻击（Cryptanalytic Attacks）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E6%94%BB%E5%87%BB%EF%BC%88Brute-force-Attacks%EF%BC%89"><span class="toc-number">29.2.</span> <span class="toc-text">暴力破解攻击（Brute-force Attacks）</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/09/W7%20(LEC)%20-%20Usability%20-%20Empirical%20Approach.pdf/" title="W7 (LEC) - Usability - Empirical Approach.pdf">W7 (LEC) - Usability - Empirical Approach.pdf</a><time datetime="2023-11-09T01:50:40.000Z" title="Created 2023-11-09 01:50:40">2023-11-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/09/W7%20(TUT)%20-%20Beyond%20Usability%20-%20PET/" title="W7 (TUT) - Beyond Usability - PET.pdf">W7 (TUT) - Beyond Usability - PET.pdf</a><time datetime="2023-11-09T01:50:40.000Z" title="Created 2023-11-09 01:50:40">2023-11-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/07/B1/" title="B1">B1</a><time datetime="2023-11-07T15:55:36.000Z" title="Created 2023-11-07 15:55:36">2023-11-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/06/C398-w7-Internet%20Security%20Protocols%20and%20standards/" title="Internet Security Protocols and standards">Internet Security Protocols and standards</a><time datetime="2023-11-06T15:23:35.000Z" title="Created 2023-11-06 15:23:35">2023-11-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/02/W6%20(TUT)%20-%20Splitting%20User%20Stories%20-%20Part%202.pdf/" title="W6 (TUT) - Splitting User Stories - Part 2.pdf">W6 (TUT) - Splitting User Stories - Part 2.pdf</a><time datetime="2023-11-02T01:50:40.000Z" title="Created 2023-11-02 01:50:40">2023-11-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

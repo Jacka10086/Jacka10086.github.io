@@ -1,0 +1,681 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Overview | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《计算机安全：原理与实践》第四版概览（Computer Security: Principles and Practice Fourth Edition Overview）书籍信息（Book Information）： 标题：计算机安全：原理与实践（Computer Security: Principles and Practice） 版本：第四版（Fourth Edition） 作者：威廉·斯托">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Overview">
+<meta property="og:url" content="http://example.com/2023/09/25/C398-w1-Overview/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="《计算机安全：原理与实践》第四版概览（Computer Security: Principles and Practice Fourth Edition Overview）书籍信息（Book Information）： 标题：计算机安全：原理与实践（Computer Security: Principles and Practice） 版本：第四版（Fourth Edition） 作者：威廉·斯托">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2023-09-25T04:56:17.000Z">
+<meta property="article:modified_time" content="2023-11-12T04:55:00.127Z">
+<meta property="article:author" content="Jacka10086">
+<meta property="article:tag" content="Week1">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/09/25/C398-w1-Overview/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Overview',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-12 04:55:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Overview</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-09-25T04:56:17.000Z" title="Created 2023-09-25 05:56:17">2023-09-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-11-12T04:55:00.127Z" title="Updated 2023-11-12 04:55:00">2023-11-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Com398/">Com398</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Overview"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="《计算机安全：原理与实践》第四版概览（Computer-Security-Principles-and-Practice-Fourth-Edition-Overview）"><a href="#《计算机安全：原理与实践》第四版概览（Computer-Security-Principles-and-Practice-Fourth-Edition-Overview）" class="headerlink" title="《计算机安全：原理与实践》第四版概览（Computer Security: Principles and Practice Fourth Edition Overview）"></a>《计算机安全：原理与实践》第四版概览（Computer Security: Principles and Practice Fourth Edition Overview）</h2><h3 id="书籍信息（Book-Information）："><a href="#书籍信息（Book-Information）：" class="headerlink" title="书籍信息（Book Information）："></a>书籍信息（Book Information）：</h3><ul>
+<li><strong>标题</strong>：计算机安全：原理与实践（Computer Security: Principles and Practice）</li>
+<li><strong>版本</strong>：第四版（Fourth Edition）</li>
+<li><strong>作者</strong>：威廉·斯托林斯（William Stallings）和劳里·布朗（Lawrie Brown）</li>
+</ul>
+<h3 id="第一章概览（Chapter-1-Overview）："><a href="#第一章概览（Chapter-1-Overview）：" class="headerlink" title="第一章概览（Chapter 1 Overview）："></a>第一章概览（Chapter 1 Overview）：</h3><ul>
+<li>这部分可能介绍了计算机安全的基本概念、历史背景和本书将要覆盖的主要主题。</li>
+</ul>
+<p><strong>总结</strong>：这张图片是《计算机安全：原理与实践》第四版的封面和第一章的概览页。这本书由著名的计算机安全专家威廉·斯托林斯和劳里·布朗合著，提供了计算机安全领域的深入分析和实践指导。第一章的概览为读者展现了本书的结构和即将讨论的安全问题。</p>
+<h2 id="NISTIR-7298定义计算机安全（NIST-Internal-Interagency-Report-NISTIR-7298-Definition-of-Computer-Security）"><a href="#NISTIR-7298定义计算机安全（NIST-Internal-Interagency-Report-NISTIR-7298-Definition-of-Computer-Security）" class="headerlink" title="NISTIR 7298定义计算机安全（NIST Internal&#x2F;Interagency Report NISTIR 7298 Definition of Computer Security）"></a>NISTIR 7298定义计算机安全（NIST Internal&#x2F;Interagency Report NISTIR 7298 Definition of Computer Security）</h2><h3 id="报告信息（Report-Information）："><a href="#报告信息（Report-Information）：" class="headerlink" title="报告信息（Report Information）："></a>报告信息（Report Information）：</h3><ul>
+<li><strong>报告名称</strong>：NIST内部&#x2F;机构间报告NISTIR 7298</li>
+<li><strong>文档类型</strong>：关键信息安全术语表（Glossary of Key Information Security Terms）</li>
+<li><strong>发布时间</strong>：2013年5月</li>
+</ul>
+<h3 id="计算机安全定义（Definition-of-Computer-Security）："><a href="#计算机安全定义（Definition-of-Computer-Security）：" class="headerlink" title="计算机安全定义（Definition of Computer Security）："></a>计算机安全定义（Definition of Computer Security）：</h3><ul>
+<li><strong>NIST对计算机安全的定义</strong>：<ul>
+<li>确保信息系统资产包括硬件、软件、固件及信息处理、存储和通信的保密性、完整性和可用性的措施和控制。</li>
+</ul>
+</li>
+</ul>
+<p><strong>总结</strong>：美国国家标准与技术研究院（NIST）的内部&#x2F;机构间报告NISTIR 7298定义了计算机安全的核心要素。报告强调了保护信息系统资产的重要性，这些资产包括硬件、软件和固件。定义中涵盖的关键安全特性包括保密性、完整性和可用性，这些都是确保信息在处理、存储和传输过程中安全的基本措施和控制。</p>
+<h2 id="网络与计算机安全的核心要求"><a href="#网络与计算机安全的核心要求" class="headerlink" title="网络与计算机安全的核心要求"></a>网络与计算机安全的核心要求</h2><h3 id="保密性（Confidentiality）"><a href="#保密性（Confidentiality）" class="headerlink" title="保密性（Confidentiality）"></a>保密性（Confidentiality）</h3><ul>
+<li>确保数据不被未授权访问</li>
+<li>采用加密技术保护数据传输和存储</li>
+</ul>
+<h3 id="完整性（Integrity）"><a href="#完整性（Integrity）" class="headerlink" title="完整性（Integrity）"></a>完整性（Integrity）</h3><ul>
+<li>确保数据未被篡改</li>
+<li>使用校验和和数字签名保障数据的完整性</li>
+</ul>
+<h3 id="可用性（Availability）"><a href="#可用性（Availability）" class="headerlink" title="可用性（Availability）"></a>可用性（Availability）</h3><ul>
+<li>确保授权用户能获取信息</li>
+<li>实施冗余系统和数据备份</li>
+</ul>
+<h3 id="责任追究性（Accountability）"><a href="#责任追究性（Accountability）" class="headerlink" title="责任追究性（Accountability）"></a>责任追究性（Accountability）</h3><ul>
+<li>跟踪和记录数据使用情况</li>
+<li>使用审计日志追踪用户活动</li>
+</ul>
+<h3 id="真实性（Authenticity）"><a href="#真实性（Authenticity）" class="headerlink" title="真实性（Authenticity）"></a>真实性（Authenticity）</h3><ul>
+<li>验证数据和交易的真实性</li>
+<li>实施身份验证确保用户身份的真实性</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本图为网络与计算机安全的五大核心要求，包括保密性、完整性、可用性、责任追究性和真实性。每一要求都涉及特定的安全措施，如加密、数据校验、系统冗余、审计追踪和身份验证等，以确保信息系统的安全性和可靠性。</p>
+<h2 id="关键安全概念"><a href="#关键安全概念" class="headerlink" title="关键安全概念"></a>关键安全概念</h2><h3 id="保密性（Confidentiality）-1"><a href="#保密性（Confidentiality）-1" class="headerlink" title="保密性（Confidentiality）"></a>保密性（Confidentiality）</h3><ul>
+<li>保留对信息访问和披露的授权限制</li>
+<li>包括保护个人隐私和专有信息的手段</li>
+</ul>
+<h3 id="完整性（Integrity）-1"><a href="#完整性（Integrity）-1" class="headerlink" title="完整性（Integrity）"></a>完整性（Integrity）</h3><ul>
+<li>防止信息被不当修改或破坏</li>
+<li>包括确保信息的不可否认性和真实性</li>
+</ul>
+<h3 id="可用性（Availability）-1"><a href="#可用性（Availability）-1" class="headerlink" title="可用性（Availability）"></a>可用性（Availability）</h3><ul>
+<li>确保信息的及时和可靠访问及使用</li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>这张图表阐述了信息安全中的三个关键概念：保密性、完整性和可用性。保密性侧重于限制信息访问，保护隐私；完整性则防止信息被篡改或破坏，确保其真实性；可用性保证信息能够被及时且可靠地访问和使用。这三个概念共同构成了网络和信息系统安全的基础。</p>
+<h2 id="影响级别"><a href="#影响级别" class="headerlink" title="影响级别"></a>影响级别</h2><h3 id="低（Low）"><a href="#低（Low）" class="headerlink" title="低（Low）"></a>低（Low）</h3><ul>
+<li>损失可能导致组织运作、组织资产或个人受到有限的负面影响</li>
+</ul>
+<h3 id="中等（Moderate）"><a href="#中等（Moderate）" class="headerlink" title="中等（Moderate）"></a>中等（Moderate）</h3><ul>
+<li>损失可能导致组织运作、组织资产或个人受到严重的负面影响</li>
+</ul>
+<h3 id="高（High）"><a href="#高（High）" class="headerlink" title="高（High）"></a>高（High）</h3><ul>
+<li>损失可能导致组织运作、组织资产或个人受到严重或灾难性的负面影响</li>
+</ul>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>本图表描述了影响级别的三个分类：低、中等、高。低级别指的是对组织的运作、资产或个人有限的负面影响；中等级别则是严重的负面影响；而高级别表示极为严重或灾难性的负面影响。这种分类有助于组织在进行风险评估和管理时，更好地理解潜在损失的严重程度。</p>
+<h2 id="计算机安全挑战"><a href="#计算机安全挑战" class="headerlink" title="计算机安全挑战"></a>计算机安全挑战</h2><ol>
+<li>对初学者来说，计算机安全并不像看起来那么简单</li>
+<li>在开发特定的安全机制或算法时，必须总是考虑潜在的攻击</li>
+<li>提供特定服务的程序常常违反直觉</li>
+<li>需要确定物理和逻辑的放置位置</li>
+<li>安全机制通常涉及特定算法或协议之外的内容，还需要参与者拥有某些秘密信息，这涉及到秘密信息的创建、分发和保护问题</li>
+<li>攻击者只需要找到一个弱点，而设计者必须发现并消除所有弱点以实现完美的安全</li>
+<li>安全性通常在设计完成后才作为事后考虑的内容被纳入系统，而不是作为设计过程的一个整体部分</li>
+<li>安全需要定期和持续的监控</li>
+<li>用户和系统管理员往往只有在出现安全失败后才意识到安全的重要性</li>
+<li>许多用户甚至安全管理员都认为强安全措施会妨碍信息系统的有效和友好使用</li>
+</ol>
+<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><p>该图表列出了计算机安全面临的十大挑战，从设计和用户观念的误区到操作和管理的难点。强调了安全应被视为系统设计的一个不可分割的部分，并且需要持续的关注与维护，以确保系统的整体安全性。</p>
+<h2 id="计算机系统的资产"><a href="#计算机系统的资产" class="headerlink" title="计算机系统的资产"></a>计算机系统的资产</h2><ul>
+<li><p><strong>硬件（Hardware）</strong></p>
+<ul>
+<li>计算机系统的物理组成部分</li>
+</ul>
+</li>
+<li><p><strong>软件（Software）</strong></p>
+<ul>
+<li>系统运行所需的程序和操作系统</li>
+</ul>
+</li>
+<li><p><strong>数据（Data）</strong></p>
+<ul>
+<li>存储在系统中的信息和知识库</li>
+</ul>
+</li>
+<li><p><strong>通信设施与网络（Communication facilities and networks）</strong></p>
+<ul>
+<li>使系统之间可以相互通信和数据交换的设备和服务</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h3><p>计算机系统的资产包括硬件、软件、数据以及通信设施与网络。硬件是物理设备，软件是使硬件运行的程序，数据是系统处理和存储的信息，通信设施与网络则负责实现系统间的连接和信息传递。这些资产是计算机系统运作不可或缺的组成部分。</p>
+<h2 id="漏洞、威胁和攻击"><a href="#漏洞、威胁和攻击" class="headerlink" title="漏洞、威胁和攻击"></a>漏洞、威胁和攻击</h2><ul>
+<li><p><strong>漏洞的类别</strong></p>
+<ul>
+<li>腐败（完整性丧失）</li>
+<li>泄漏（保密性丧失）</li>
+<li>不可用或非常缓慢（可用性丧失）</li>
+</ul>
+</li>
+<li><p><strong>威胁</strong></p>
+<ul>
+<li>能够利用漏洞</li>
+<li>表示对资产可能造成的安全危害</li>
+</ul>
+</li>
+<li><p><strong>攻击（实施的威胁）</strong></p>
+<ul>
+<li>被动攻击——试图学习或利用系统信息，不影响系统资源</li>
+<li>主动攻击——试图改变系统资源或影响其运作</li>
+<li>内部人攻击——由安全边界内的实体发起</li>
+<li>外部人攻击——由安全边界外的实体发起</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-5"><a href="#总结-5" class="headerlink" title="总结"></a>总结</h3><p>本图表详细介绍了计算机系统安全中的漏洞、威胁和攻击类型。漏洞分为影响完整性、保密性和可用性的三种类型。威胁是指能够利用这些漏洞对资产造成损害的潜在危险。攻击则是威胁的实际实施，包括被动和主动攻击，以及来自系统内部或外部的攻击。这些信息对于理解和防御网络安全威胁至关重要。</p>
+<h2 id="对策"><a href="#对策" class="headerlink" title="对策"></a>对策</h2><ul>
+<li><p><strong>处理安全攻击的手段</strong></p>
+<ul>
+<li>预防（Prevent）</li>
+<li>检测（Detect）</li>
+<li>恢复（Recover）</li>
+</ul>
+</li>
+<li><p><strong>可能仍有剩余漏洞</strong></p>
+<ul>
+<li>指实施对策后可能留下的未解决的弱点</li>
+</ul>
+</li>
+<li><p><strong>可能引入新的漏洞</strong></p>
+<ul>
+<li>实施安全对策有时可能会引入新的安全问题</li>
+</ul>
+</li>
+<li><p><strong>目标是最小化资产的剩余风险水平</strong></p>
+<ul>
+<li>力求减少对资产潜在的剩余风险</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-6"><a href="#总结-6" class="headerlink" title="总结"></a>总结</h3><p>本图展示了计算机安全对策的目的和潜在问题。对策的目的是预防、检测和恢复安全攻击，但在实施这些措施的同时可能会留下一些未解决的漏洞，甚至可能引入新的漏洞。整个安全策略的目标是降低对资产的剩余风险到最小。</p>
+<h2 id="威胁后果与威胁行为类型"><a href="#威胁后果与威胁行为类型" class="headerlink" title="威胁后果与威胁行为类型"></a>威胁后果与威胁行为类型</h2><p>根据RFC 4949，威胁后果及其引起的威胁行为类型如下：</p>
+<h3 id="未授权披露（Unauthorized-Disclosure）"><a href="#未授权披露（Unauthorized-Disclosure）" class="headerlink" title="未授权披露（Unauthorized Disclosure）"></a>未授权披露（Unauthorized Disclosure）</h3><ul>
+<li><strong>暴露（Exposure）</strong>: 敏感数据直接被未授权实体获取。</li>
+<li><strong>截获（Interception）</strong>: 未授权实体直接访问敏感数据。</li>
+<li><strong>推断（Inference）</strong>: 未授权实体间接访问敏感数据。</li>
+<li><strong>侵入（Intrusion）</strong>: 通过绕过安全措施，未授权实体获取敏感数据。</li>
+</ul>
+<h3 id="欺骗（Deception）"><a href="#欺骗（Deception）" class="headerlink" title="欺骗（Deception）"></a>欺骗（Deception）</h3><ul>
+<li><strong>伪装（Masquerade）</strong>: 未授权实体通过冒充获得访问或执行恶意行为。</li>
+<li><strong>伪造（Falsification）</strong>: 向授权实体提供虚假数据。</li>
+<li><strong>抵赖（Repudiation）</strong>: 错误地否认对某行为的责任。</li>
+</ul>
+<h3 id="中断（Disruption）"><a href="#中断（Disruption）" class="headerlink" title="中断（Disruption）"></a>中断（Disruption）</h3><ul>
+<li><strong>失能（Incapacitation）</strong>: 阻止或中断系统操作。</li>
+<li><strong>腐败（Corruption）</strong>: 不良地改变系统操作。</li>
+<li><strong>阻塞（Obstruction）</strong>: 中断系统服务交付。</li>
+</ul>
+<h3 id="篡夺（Usurpation）"><a href="#篡夺（Usurpation）" class="headerlink" title="篡夺（Usurpation）"></a>篡夺（Usurpation）</h3><ul>
+<li><strong>侵占（Misappropriation）</strong>: 未授权控制系统资源。</li>
+<li><strong>滥用（Misuse）</strong>: 系统组件执行有害系统安全的操作或服务。</li>
+</ul>
+<h3 id="总结-7"><a href="#总结-7" class="headerlink" title="总结"></a>总结</h3><p>表1.2列出了不同类型的威胁行为及其相应的后果。这些包括未经授权的披露、欺骗、中断和篡夺等，每种后果都与特定的威胁行为相对应。了解这些威胁对于防止和应对安全事件至关重要。</p>
+<p><strong>注意</strong>: 本表在教材第10页。</p>
+<h2 id="计算机和网络资产及威胁示例"><a href="#计算机和网络资产及威胁示例" class="headerlink" title="计算机和网络资产及威胁示例"></a>计算机和网络资产及威胁示例</h2><p>根据表1.3，计算机和网络资产面临的威胁包括：</p>
+<h3 id="硬件（Hardware）"><a href="#硬件（Hardware）" class="headerlink" title="硬件（Hardware）"></a>硬件（Hardware）</h3><ul>
+<li><strong>可用性（Availability）</strong>: 设备被盗或失效，服务不可用。</li>
+<li><strong>保密性（Confidentiality）</strong>: 未加密的CD-ROM或DVD被盗。</li>
+<li><strong>完整性（Integrity）</strong>: 工作中的程序被修改，导致执行失败或执行未预期的任务。</li>
+</ul>
+<h3 id="软件（Software）"><a href="#软件（Software）" class="headerlink" title="软件（Software）"></a>软件（Software）</h3><ul>
+<li><strong>可用性</strong>: 程序被删除，用户无法访问。</li>
+<li><strong>保密性</strong>: 未授权复制软件。</li>
+<li><strong>完整性</strong>: 程序被修改，造成运行失败或执行未预期的任务。</li>
+</ul>
+<h3 id="数据（Data）"><a href="#数据（Data）" class="headerlink" title="数据（Data）"></a>数据（Data）</h3><ul>
+<li><strong>可用性</strong>: 文件被删除，用户无法访问。</li>
+<li><strong>保密性</strong>: 未授权读取数据，统计分析揭示底层数据。</li>
+<li><strong>完整性</strong>: 现有文件被修改或伪造新文件。</li>
+</ul>
+<h3 id="通信线路和网络（Communication-Lines-and-Networks）"><a href="#通信线路和网络（Communication-Lines-and-Networks）" class="headerlink" title="通信线路和网络（Communication Lines and Networks）"></a>通信线路和网络（Communication Lines and Networks）</h3><ul>
+<li><strong>可用性</strong>: 消息被破坏或删除，通信线路或网络不可用。</li>
+<li><strong>保密性</strong>: 消息被阅读，观察消息的传输模式。</li>
+<li><strong>完整性</strong>: 消息被修改、延迟、重新排序或复制，伪造错误消息。</li>
+</ul>
+<h3 id="总结-8"><a href="#总结-8" class="headerlink" title="总结"></a>总结</h3><p>表1.3展示了计算机和网络资产在可用性、保密性和完整性方面所面临的威胁。硬件可能因设备失窃或失效而不可用，软件和数据可能被未授权复制或删除，通信可能被破坏或监控。每种资产都有可能被非法修改，威胁其正常运作和数据的真实性。</p>
+<h2 id="计算机和网络资产及威胁示例-1"><a href="#计算机和网络资产及威胁示例-1" class="headerlink" title="计算机和网络资产及威胁示例"></a>计算机和网络资产及威胁示例</h2><ul>
+<li><p><strong>硬件（Hardware）</strong></p>
+<ul>
+<li><strong>可用性（Availability）</strong><ul>
+<li>威胁：设备被盗或失效，导致服务不可用</li>
+<li>解释：硬件设备的丢失或故障可能会导致系统服务无法提供，对组织运营造成影响</li>
+</ul>
+</li>
+<li><strong>保密性（Confidentiality）</strong><ul>
+<li>威胁：未加密的CD-ROM或DVD被盗</li>
+<li>解释：未经加密的存储介质被盗取可能会泄露敏感信息</li>
+</ul>
+</li>
+<li><strong>完整性（Integrity）</strong><ul>
+<li>威胁：工作中的程序被修改，导致执行失败或执行未预期的任务</li>
+<li>解释：恶意修改硬件上的程序可能会导致系统执行异常或破坏数据完整性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>软件（Software）</strong></p>
+<ul>
+<li><strong>可用性</strong><ul>
+<li>威胁：程序被删除，用户无法访问</li>
+<li>解释：软件被删除可能导致用户无法正常使用系统或应用</li>
+</ul>
+</li>
+<li><strong>保密性</strong><ul>
+<li>威胁：未授权复制软件</li>
+<li>解释：未经授权的复制可能会导致盗版软件传播，损害知识产权</li>
+</ul>
+</li>
+<li><strong>完整性</strong><ul>
+<li>威胁：程序被修改，造成运行失败或执行未预期的任务</li>
+<li>解释：恶意修改软件可能导致系统运行异常或执行不受控制的操作</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>数据（Data）</strong></p>
+<ul>
+<li><strong>可用性</strong><ul>
+<li>威胁：文件被删除，用户无法访问</li>
+<li>解释：数据丢失可能导致用户无法访问重要信息</li>
+</ul>
+</li>
+<li><strong>保密性</strong><ul>
+<li>威胁：未授权读取数据，统计分析揭示底层数据</li>
+<li>解释：数据泄露可能会导致敏感信息曝光，或者通过分析揭示隐藏的信息</li>
+</ul>
+</li>
+<li><strong>完整性</strong><ul>
+<li>威胁：现有文件被修改或伪造新文件</li>
+<li>解释：数据的完整性受到威胁，可能导致误导性信息传播</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>通信线路和网络（Communication Lines and Networks）</strong></p>
+<ul>
+<li><strong>可用性</strong><ul>
+<li>威胁：消息被破坏或删除，通信线路或网络不可用</li>
+<li>解释：通信中断可能导致信息无法传递，影响业务连续性</li>
+</ul>
+</li>
+<li><strong>保密性</strong><ul>
+<li>威胁：消息被阅读，观察消息的传输模式</li>
+<li>解释：未经授权的消息访问可能泄露敏感信息</li>
+</ul>
+</li>
+<li><strong>完整性</strong><ul>
+<li>威胁：消息被修改、延迟、重新排序或复制，伪造错误消息</li>
+<li>解释：消息的完整性受到威胁，可能导致信息传递错误或被篡改</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-9"><a href="#总结-9" class="headerlink" title="总结"></a>总结</h3><p>这份文档详细介绍了不同类型的计算机和网络资产以及它们面临的威胁示例。每个资产都可能受到可用性、保密性和完整性方面的威胁，这些威胁可能会对组织的运营和信息安全产生严重影响。理解这些威胁示例对于制定有效的安全策略和防范措施至关重要。</p>
+<h2 id="被动攻击与主动攻击-Passive-and-Active-Attacks"><a href="#被动攻击与主动攻击-Passive-and-Active-Attacks" class="headerlink" title="被动攻击与主动攻击 (Passive and Active Attacks)"></a>被动攻击与主动攻击 (Passive and Active Attacks)</h2><h3 id="被动攻击-Passive-Attack"><a href="#被动攻击-Passive-Attack" class="headerlink" title="被动攻击 (Passive Attack)"></a>被动攻击 (Passive Attack)</h3><ul>
+<li>尝试学习或使用系统信息，但不影响系统资源。<ul>
+<li>窃听或监控传输。</li>
+</ul>
+</li>
+<li>攻击者目的在于获取传输中的信息。<ul>
+<li>泄露消息内容。</li>
+<li>流量分析。</li>
+</ul>
+</li>
+</ul>
+<h4 id="扩展解释"><a href="#扩展解释" class="headerlink" title="扩展解释"></a>扩展解释</h4><ul>
+<li><strong>泄露消息内容</strong>：攻击者获取传输过程中的消息内容。</li>
+<li><strong>流量分析</strong>：通过分析数据传输的频率和量来推测通信的性质。</li>
+</ul>
+<blockquote>
+<p>总结：被动攻击不直接干扰系统的正常运行，而是通过监听和分析传输的数据来获取信息。</p>
+</blockquote>
+<h3 id="主动攻击-Active-Attack"><a href="#主动攻击-Active-Attack" class="headerlink" title="主动攻击 (Active Attack)"></a>主动攻击 (Active Attack)</h3><ul>
+<li>旨在改变系统资源或影响其运行方式。<ul>
+<li>包括对数据流的修改或制造假的数据流。</li>
+</ul>
+</li>
+<li>主要分类：<ul>
+<li>重放 (Replay)</li>
+<li>伪装 (Masquerade)</li>
+<li>消息修改 (Modification of messages)</li>
+<li>服务拒绝 (Denial of service)</li>
+</ul>
+</li>
+</ul>
+<h4 id="扩展解释-1"><a href="#扩展解释-1" class="headerlink" title="扩展解释"></a>扩展解释</h4><ul>
+<li><strong>重放</strong>：攻击者重发或延迟发送合法的数据传输，以欺骗系统。</li>
+<li><strong>伪装</strong>：攻击者假扮成一个合法的用户，以获取不正当的访问权。</li>
+<li><strong>消息修改</strong>：攻击者更改通信过程中的消息内容。</li>
+<li><strong>服务拒绝</strong>：攻击者阻断服务，使得真正的用户无法使用。</li>
+</ul>
+<blockquote>
+<p>总结：主动攻击通过直接干预系统运行来破坏或改变数据，对系统安全构成直接威胁。</p>
+</blockquote>
+<h2 id="攻击面-Attack-Surfaces"><a href="#攻击面-Attack-Surfaces" class="headerlink" title="攻击面 (Attack Surfaces)"></a>攻击面 (Attack Surfaces)</h2><p>攻击面指的是系统中可达到并且可以被利用的脆弱点。</p>
+<h3 id="示例-Examples"><a href="#示例-Examples" class="headerlink" title="示例 (Examples)"></a>示例 (Examples)</h3><ul>
+<li><p><strong>对外开放的Web及其他服务器上的开放端口</strong></p>
+<ul>
+<li>在这些端口上监听的代码。</li>
+</ul>
+</li>
+<li><p><strong>防火墙内部可用的服务</strong></p>
+<ul>
+<li>这可能包括通过防火墙暴露的内部网络服务。</li>
+</ul>
+</li>
+<li><p><strong>处理传入数据的代码</strong></p>
+<ul>
+<li>处理各种格式的数据，如email, XML, 办公文档以及特定行业的自定义数据交换格式。</li>
+</ul>
+</li>
+<li><p><strong>接口、SQL和Web表单</strong></p>
+<ul>
+<li>这些通常是Web应用的一部分，用户输入数据可以通过这些途径处理。</li>
+</ul>
+</li>
+<li><p><strong>可访问敏感信息的员工</strong></p>
+<ul>
+<li>这些员工可能对社会工程学攻击特别脆弱。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：攻击面包括了一系列系统中的潜在弱点，这些弱点可以是物理的、软件的、网络的，甚至是人员的。了解攻击面的范围对于加强系统安全防护至关重要，因为攻击者往往会寻找这些脆弱点来发起攻击。</p>
+</blockquote>
+<h2 id="攻击面分类-Attack-Surface-Categories"><a href="#攻击面分类-Attack-Surface-Categories" class="headerlink" title="攻击面分类 (Attack Surface Categories)"></a>攻击面分类 (Attack Surface Categories)</h2><p>攻击面分类指的是可能受到攻击的不同领域。</p>
+<h3 id="网络攻击面-Network-Attack-Surface"><a href="#网络攻击面-Network-Attack-Surface" class="headerlink" title="网络攻击面 (Network Attack Surface)"></a>网络攻击面 (Network Attack Surface)</h3><ul>
+<li>跨企业网络、广域网或互联网的脆弱性。<ul>
+<li>包括网络协议脆弱性，如服务拒绝攻击。</li>
+<li>通信链路的中断。</li>
+<li>各种入侵攻击形式。</li>
+</ul>
+</li>
+</ul>
+<h3 id="软件攻击面-Software-Attack-Surface"><a href="#软件攻击面-Software-Attack-Surface" class="headerlink" title="软件攻击面 (Software Attack Surface)"></a>软件攻击面 (Software Attack Surface)</h3><ul>
+<li>应用程序、实用程序或操作系统代码中的脆弱性。<ul>
+<li>特别关注Web服务器软件。</li>
+</ul>
+</li>
+</ul>
+<h3 id="人类攻击面-Human-Attack-Surface"><a href="#人类攻击面-Human-Attack-Surface" class="headerlink" title="人类攻击面 (Human Attack Surface)"></a>人类攻击面 (Human Attack Surface)</h3><ul>
+<li>由人员或外部人员造成的脆弱性，如社交工程、人为错误和内部信任人员。</li>
+</ul>
+<blockquote>
+<p>总结：攻击面分类展示了网络、软件和人为三个方面的脆弱点。了解这些分类可以帮助我们更好地识别和防御潜在的安全威胁。网络攻击面关注的是网络协议和连接的安全性；软件攻击面着眼于程序代码的弱点；而人类攻击面则涉及到人的因素，包括社交工程和人为失误等。</p>
+</blockquote>
+<h2 id="银行账户危害攻击树-Bank-Account-Compromise-Attack-Tree"><a href="#银行账户危害攻击树-Bank-Account-Compromise-Attack-Tree" class="headerlink" title="银行账户危害攻击树 (Bank Account Compromise Attack Tree)"></a>银行账户危害攻击树 (Bank Account Compromise Attack Tree)</h2><p>银行账户危害的攻击树展示了网络银行认证可能遇到的各种安全威胁。</p>
+<h3 id="用户凭据危害-User-credential-compromise"><a href="#用户凭据危害-User-credential-compromise" class="headerlink" title="用户凭据危害 (User credential compromise)"></a>用户凭据危害 (User credential compromise)</h3><ul>
+<li><strong>用户监视 (User surveillance)</strong><ul>
+<li>盗取令牌和手写笔记 (Theft of token and handwritten notes)</li>
+</ul>
+</li>
+<li><strong>恶意软件安装 (Malicious software installation)</strong><ul>
+<li>智能分析器 (Smartcard analyzers)</li>
+<li>智能卡读卡器操纵 (Smartcard reader manipulator)</li>
+<li>使用PIN计算器的暴力破解 (Brute force attacks with PIN calculators)</li>
+</ul>
+</li>
+<li><strong>窃听 (Sniffing)</strong></li>
+<li><strong>与攻击者通信 (User communication with attacker)</strong></li>
+</ul>
+<h3 id="漏洞利用-Vulnerability-exploit"><a href="#漏洞利用-Vulnerability-exploit" class="headerlink" title="漏洞利用 (Vulnerability exploit)"></a>漏洞利用 (Vulnerability exploit)</h3><ul>
+<li><strong>隐藏代码 (Hidden code)</strong></li>
+<li><strong>蠕虫 (Worms)</strong></li>
+<li><strong>含恶意代码的电子邮件 (E-mails with malicious code)</strong></li>
+</ul>
+<h3 id="社会工程学-Social-engineering"><a href="#社会工程学-Social-engineering" class="headerlink" title="社会工程学 (Social engineering)"></a>社会工程学 (Social engineering)</h3><ul>
+<li><strong>网页混淆 (Web page obfuscation)</strong></li>
+<li><strong>重定向通信至欺诈网站 (Redirection of communication toward fraudulent site)</strong></li>
+<li><strong>网络钓鱼 (Pharming)</strong></li>
+</ul>
+<h3 id="注入命令-Injection-of-commands"><a href="#注入命令-Injection-of-commands" class="headerlink" title="注入命令 (Injection of commands)"></a>注入命令 (Injection of commands)</h3><h3 id="用户凭据猜测-User-credential-guessing"><a href="#用户凭据猜测-User-credential-guessing" class="headerlink" title="用户凭据猜测 (User credential guessing)"></a>用户凭据猜测 (User credential guessing)</h3><ul>
+<li><strong>安全政策违规 (Security policy violation)</strong></li>
+<li><strong>已知会话的攻击者使用 (Use of known authenticated session by attacker)</strong></li>
+</ul>
+<h3 id="中间人攻击-Active-man-in-the-middle-attacks"><a href="#中间人攻击-Active-man-in-the-middle-attacks" class="headerlink" title="中间人攻击 (Active man-in-the-middle attacks)"></a>中间人攻击 (Active man-in-the-middle attacks)</h3><h3 id="暴力破解攻击-Brute-force-attacks"><a href="#暴力破解攻击-Brute-force-attacks" class="headerlink" title="暴力破解攻击 (Brute force attacks)"></a>暴力破解攻击 (Brute force attacks)</h3><h3 id="网站操作-Web-site-manipulation"><a href="#网站操作-Web-site-manipulation" class="headerlink" title="网站操作 (Web site manipulation)"></a>网站操作 (Web site manipulation)</h3><h3 id="会话劫持-Pre-defined-session-IDs-session-hijacking"><a href="#会话劫持-Pre-defined-session-IDs-session-hijacking" class="headerlink" title="会话劫持 (Pre-defined session IDs - session hijacking)"></a>会话劫持 (Pre-defined session IDs - session hijacking)</h3><blockquote>
+<p>总结：这个攻击树详细展示了银行账户危害的各个环节，包括用户凭据危害、漏洞利用、社会工程学、命令注入等多个维度。了解这些攻击路径有助于银行和用户采取相应的安全措施来预防潜在的网络攻击。</p>
+</blockquote>
+<h2 id="计算机安全策略-Computer-Security-Strategy"><a href="#计算机安全策略-Computer-Security-Strategy" class="headerlink" title="计算机安全策略 (Computer Security Strategy)"></a>计算机安全策略 (Computer Security Strategy)</h2><p>计算机安全策略涉及多个方面，旨在保护敏感和关键的系统资源。</p>
+<h3 id="安全政策-Security-Policy"><a href="#安全政策-Security-Policy" class="headerlink" title="安全政策 (Security Policy)"></a>安全政策 (Security Policy)</h3><ul>
+<li>规则和实践的正式声明，指定系统或组织如何提供安全服务。</li>
+<li>目的是保护敏感和关键的系统资源。</li>
+</ul>
+<h3 id="安全实施-Security-Implementation"><a href="#安全实施-Security-Implementation" class="headerlink" title="安全实施 (Security Implementation)"></a>安全实施 (Security Implementation)</h3><ul>
+<li>涉及四个互补的行动路径：<ul>
+<li>预防 (Prevention)</li>
+<li>检测 (Detection)</li>
+<li>响应 (Response)</li>
+<li>恢复 (Recovery)</li>
+</ul>
+</li>
+</ul>
+<h3 id="保证-Assurance"><a href="#保证-Assurance" class="headerlink" title="保证 (Assurance)"></a>保证 (Assurance)</h3><ul>
+<li>包含系统设计和系统实施。</li>
+<li>提供一个信息系统的属性，使得我们可以确信系统运行符合安全政策。</li>
+</ul>
+<h3 id="评估-Evaluation"><a href="#评估-Evaluation" class="headerlink" title="评估 (Evaluation)"></a>评估 (Evaluation)</h3><ul>
+<li>检查计算机产品或系统是否符合特定标准的过程。</li>
+<li>包括测试，并可能涉及正式的分析或数学技术。</li>
+</ul>
+<blockquote>
+<p>总结：计算机安全策略是确保系统安全运行的基石，包括明确的安全政策、全面的安全实施措施、系统保证和持续的安全评估。这些组成部分共同工作，以防范、检测、应对和恢复安全威胁。</p>
+</blockquote>
+<h2 id="标准-Standards"><a href="#标准-Standards" class="headerlink" title="标准 (Standards)"></a>标准 (Standards)</h2><p>标准被制定用来覆盖管理实践以及安全机制和服务的整体架构。</p>
+<ul>
+<li><p><strong>国家标准与技术研究院 (National Institute of Standards and Technology, NIST)</strong></p>
+<ul>
+<li>美国联邦机构，负责测量科学、标准和技术，与美国政府使用相关，也支持美国私营部门创新。</li>
+</ul>
+</li>
+<li><p><strong>互联网协会 (Internet Society, ISOC)</strong></p>
+<ul>
+<li>专业会员组织，提供关于互联网未来面临问题的领导力，并为负责互联网基础设施标准的团体提供组织家。</li>
+</ul>
+</li>
+<li><p><strong>国际电信联盟 (International Telecommunication Union, ITU-T)</strong></p>
+<ul>
+<li>联合国机构，政府和私营部门协调全球电信网络和服务。</li>
+</ul>
+</li>
+<li><p><strong>国际标准化组织 (International Organization for Standardization, ISO)</strong></p>
+<ul>
+<li>非政府组织，其工作成果以国际标准形式发布，是国际协议的基础。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：这些组织制定了管理实践和安全机制的国际标准，为全球的信息安全和互联网基础设施提供了框架和指导。它们在推动技术创新和协调全球通信方面扮演着关键角色。</p>
+</blockquote>
+<h2 id="标准-Standards-1"><a href="#标准-Standards-1" class="headerlink" title="标准 (Standards)"></a>标准 (Standards)</h2><p>标准是为了覆盖管理实践、安全机制和服务的整体架构而制定的。</p>
+<h3 id="主要标准组织-The-most-important-of-these-organizations-are"><a href="#主要标准组织-The-most-important-of-these-organizations-are" class="headerlink" title="主要标准组织 (The most important of these organizations are)"></a>主要标准组织 (The most important of these organizations are)</h3><ul>
+<li><p><strong>国家标准技术研究所 (NIST)</strong></p>
+<ul>
+<li>美国联邦机构，负责测量科学、标准和技术，同时促进美国政府使用和美国私营部门创新。</li>
+</ul>
+</li>
+<li><p><strong>互联网协会 (ISOC)</strong></p>
+<ul>
+<li>一个专业会员社团，提供互联网未来问题的领导，并负责互联网基础架构标准。</li>
+</ul>
+</li>
+<li><p><strong>国际电信联盟 (ITU-T)</strong></p>
+<ul>
+<li>联合国机构，政府和私营部门协调全球电信网络和服务。</li>
+</ul>
+</li>
+<li><p><strong>国际标准化组织 (ISO)</strong></p>
+<ul>
+<li>一个非政府组织，其工作以国际标准形式发布，是国际协议的基础。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：这些组织制定了覆盖管理实践和安全机制整体架构的标准，它们对全球信息技术和互联网安全的标准化有着深远的影响。了解这些标准组织及其工作重点对于理解和实施国际安全标准至关重要。</p>
+</blockquote>
+<h2 id="计算机安全真假陈述-Computer-Security-True-or-False-Statements"><a href="#计算机安全真假陈述-Computer-Security-True-or-False-Statements" class="headerlink" title="计算机安全真假陈述 (Computer Security True or False Statements)"></a>计算机安全真假陈述 (Computer Security True or False Statements)</h2><p>以下是关于计算机安全的一系列陈述，旨在区分真实与虚假的观点。</p>
+<h3 id="陈述-Statements"><a href="#陈述-Statements" class="headerlink" title="陈述 (Statements)"></a>陈述 (Statements)</h3><ul>
+<li><p>T F <strong>1. 威胁是实施出来的攻击。</strong></p>
+<ul>
+<li>威胁指的是潜在的安全违规行为，而攻击是这些威胁的实际实施，所以这个陈述是错误的。</li>
+</ul>
+</li>
+<li><p>T F <strong>2. 计算机安全是信息系统资源的完整性、可用性和保密性的保护。</strong></p>
+<ul>
+<li>这是计算机安全的经典CIA三元组，这个陈述是正确的。</li>
+</ul>
+</li>
+<li><p>T F <strong>3. 数据完整性确保信息和程序只以特定和授权的方式改变。</strong></p>
+<ul>
+<li>数据完整性是指在整个数据生命周期内保持数据的一致性、准确性和可信度，这个陈述是正确的。</li>
+</ul>
+</li>
+<li><p>T F <strong>4. 可用性确保系统迅速工作并且对授权用户服务不被拒绝。</strong></p>
+<ul>
+<li>可用性确保授权用户在需要时能够可靠地访问信息和资源，这个陈述是正确的。</li>
+</ul>
+</li>
+<li><p>T F <strong>5. CIA三元组中的“A”代表“真实性”。</strong></p>
+<ul>
+<li>CIA三元组中的“A”代表“可用性”，而真实性通常被视为CIA三元组的扩展部分，这个陈述是错误的。</li>
+</ul>
+</li>
+<li><p>T F <strong>6. 组件或服务越关键，所需的可用性水平越高。</strong></p>
+<ul>
+<li>关键组件需要高可用性以确保基本功能始终可访问，这个陈述是正确的。</li>
+</ul>
+</li>
+<li><p>T F <strong>7. 计算机安全本质上是试图寻找漏洞的行为者和试图关闭它们的管理员之间的智力战。</strong></p>
+<ul>
+<li>虽然有些简化，但这是正确的。计算机安全是一个复杂领域，涉及防止系统被盗、损坏或中断，并涉及不断地识别和减轻漏洞。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：上述陈述中，正确的观点反映了计算机安全领域的核心原则，如CIA三元组、数据完整性和系统可用性。错误的陈述则是常见的误解，需要纠正以提升安全意识。</p>
+</blockquote>
+<h2 id="计算机安全概念测验-Computer-Security-Concept-Quiz"><a href="#计算机安全概念测验-Computer-Security-Concept-Quiz" class="headerlink" title="计算机安全概念测验 (Computer Security Concept Quiz)"></a>计算机安全概念测验 (Computer Security Concept Quiz)</h2><p>以下是一组计算机安全的概念测验题，以选择题的形式出现。</p>
+<h3 id="题目与答案-Questions-and-Answers"><a href="#题目与答案-Questions-and-Answers" class="headerlink" title="题目与答案 (Questions and Answers)"></a>题目与答案 (Questions and Answers)</h3><ol>
+<li><code>C. Privacy</code> 保护个人控制或影响与他们相关的信息的收集和存储的权限，以及这些信息可能被披露的对象和范围。</li>
+<li><code>A. System Integrity</code> 确保系统以未受损的方式执行其预定功能，没有因故意或无意的未授权操纵而被破坏。</li>
+<li><code>A. confidentiality</code> 信息的未授权披露是对保密性的损失。</li>
+<li><code>B. vulnerability</code> 系统设计、实施、操作或管理中的缺陷或弱点，可能会被利用来违反系统的安全政策。</li>
+</ol>
+<blockquote>
+<p>总结：这些测验题涉及隐私、系统完整性、保密性和漏洞等计算机安全的关键概念。了解这些基本术语对于在数字环境中维护安全至关重要。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/09/25/C398-w1-Overview/">http://example.com/2023/09/25/C398-w1-Overview/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Week1/">Week1</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/09/26/W1%20(LEC)%20-%20Module%20Introduction/" title="W1 (LEC) - Module Introduction"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">W1 (LEC) - Module Introduction</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/25/week2-practical/" title="week2-practical"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">week2-practical</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/10/29/T1/" title="T1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-29</div><div class="title">T1</div></div></a></div><div><a href="/2023/09/26/Week1-practical/" title="Week1-practical"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-26</div><div class="title">Week1-practical</div></div></a></div><div><a href="/2023/09/26/Week1-Challenge/" title="Week1-Challenge"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-26</div><div class="title">Week1-Challenge</div></div></a></div><div><a href="/2023/09/26/W1%20(LEC)%20-%20Module%20Introduction/" title="W1 (LEC) - Module Introduction"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-26</div><div class="title">W1 (LEC) - Module Introduction</div></div></a></div><div><a href="/2023/09/25/week1-Lab/" title="week1-Lab"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-25</div><div class="title">week1-Lab</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%EF%BC%9A%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%89%88%E6%A6%82%E8%A7%88%EF%BC%88Computer-Security-Principles-and-Practice-Fourth-Edition-Overview%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">《计算机安全：原理与实践》第四版概览（Computer Security: Principles and Practice Fourth Edition Overview）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A6%E7%B1%8D%E4%BF%A1%E6%81%AF%EF%BC%88Book-Information%EF%BC%89%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">书籍信息（Book Information）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%A6%82%E8%A7%88%EF%BC%88Chapter-1-Overview%EF%BC%89%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">第一章概览（Chapter 1 Overview）：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NISTIR-7298%E5%AE%9A%E4%B9%89%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%EF%BC%88NIST-Internal-Interagency-Report-NISTIR-7298-Definition-of-Computer-Security%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">NISTIR 7298定义计算机安全（NIST Internal&#x2F;Interagency Report NISTIR 7298 Definition of Computer Security）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%A5%E5%91%8A%E4%BF%A1%E6%81%AF%EF%BC%88Report-Information%EF%BC%89%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">报告信息（Report Information）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%E5%AE%9A%E4%B9%89%EF%BC%88Definition-of-Computer-Security%EF%BC%89%EF%BC%9A"><span class="toc-number">2.2.</span> <span class="toc-text">计算机安全定义（Definition of Computer Security）：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%E7%9A%84%E6%A0%B8%E5%BF%83%E8%A6%81%E6%B1%82"><span class="toc-number">3.</span> <span class="toc-text">网络与计算机安全的核心要求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E5%AF%86%E6%80%A7%EF%BC%88Confidentiality%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">保密性（Confidentiality）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E6%80%A7%EF%BC%88Integrity%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">完整性（Integrity）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E7%94%A8%E6%80%A7%EF%BC%88Availability%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">可用性（Availability）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%A3%E4%BB%BB%E8%BF%BD%E7%A9%B6%E6%80%A7%EF%BC%88Accountability%EF%BC%89"><span class="toc-number">3.4.</span> <span class="toc-text">责任追究性（Accountability）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%9F%E5%AE%9E%E6%80%A7%EF%BC%88Authenticity%EF%BC%89"><span class="toc-number">3.5.</span> <span class="toc-text">真实性（Authenticity）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.6.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%AE%89%E5%85%A8%E6%A6%82%E5%BF%B5"><span class="toc-number">4.</span> <span class="toc-text">关键安全概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E5%AF%86%E6%80%A7%EF%BC%88Confidentiality%EF%BC%89-1"><span class="toc-number">4.1.</span> <span class="toc-text">保密性（Confidentiality）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E6%80%A7%EF%BC%88Integrity%EF%BC%89-1"><span class="toc-number">4.2.</span> <span class="toc-text">完整性（Integrity）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E7%94%A8%E6%80%A7%EF%BC%88Availability%EF%BC%89-1"><span class="toc-number">4.3.</span> <span class="toc-text">可用性（Availability）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-number">4.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%B1%E5%93%8D%E7%BA%A7%E5%88%AB"><span class="toc-number">5.</span> <span class="toc-text">影响级别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8E%EF%BC%88Low%EF%BC%89"><span class="toc-number">5.1.</span> <span class="toc-text">低（Low）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E7%AD%89%EF%BC%88Moderate%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">中等（Moderate）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%EF%BC%88High%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">高（High）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-2"><span class="toc-number">5.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%E6%8C%91%E6%88%98"><span class="toc-number">6.</span> <span class="toc-text">计算机安全挑战</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-3"><span class="toc-number">6.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%B5%84%E4%BA%A7"><span class="toc-number">7.</span> <span class="toc-text">计算机系统的资产</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-4"><span class="toc-number">7.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E3%80%81%E5%A8%81%E8%83%81%E5%92%8C%E6%94%BB%E5%87%BB"><span class="toc-number">8.</span> <span class="toc-text">漏洞、威胁和攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-5"><span class="toc-number">8.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%AD%96"><span class="toc-number">9.</span> <span class="toc-text">对策</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-6"><span class="toc-number">9.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A8%81%E8%83%81%E5%90%8E%E6%9E%9C%E4%B8%8E%E5%A8%81%E8%83%81%E8%A1%8C%E4%B8%BA%E7%B1%BB%E5%9E%8B"><span class="toc-number">10.</span> <span class="toc-text">威胁后果与威胁行为类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AA%E6%8E%88%E6%9D%83%E6%8A%AB%E9%9C%B2%EF%BC%88Unauthorized-Disclosure%EF%BC%89"><span class="toc-number">10.1.</span> <span class="toc-text">未授权披露（Unauthorized Disclosure）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%BA%E9%AA%97%EF%BC%88Deception%EF%BC%89"><span class="toc-number">10.2.</span> <span class="toc-text">欺骗（Deception）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%EF%BC%88Disruption%EF%BC%89"><span class="toc-number">10.3.</span> <span class="toc-text">中断（Disruption）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AF%A1%E5%A4%BA%EF%BC%88Usurpation%EF%BC%89"><span class="toc-number">10.4.</span> <span class="toc-text">篡夺（Usurpation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-7"><span class="toc-number">10.5.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%92%8C%E7%BD%91%E7%BB%9C%E8%B5%84%E4%BA%A7%E5%8F%8A%E5%A8%81%E8%83%81%E7%A4%BA%E4%BE%8B"><span class="toc-number">11.</span> <span class="toc-text">计算机和网络资产及威胁示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%EF%BC%88Hardware%EF%BC%89"><span class="toc-number">11.1.</span> <span class="toc-text">硬件（Hardware）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%EF%BC%88Software%EF%BC%89"><span class="toc-number">11.2.</span> <span class="toc-text">软件（Software）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%EF%BC%88Data%EF%BC%89"><span class="toc-number">11.3.</span> <span class="toc-text">数据（Data）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E7%BA%BF%E8%B7%AF%E5%92%8C%E7%BD%91%E7%BB%9C%EF%BC%88Communication-Lines-and-Networks%EF%BC%89"><span class="toc-number">11.4.</span> <span class="toc-text">通信线路和网络（Communication Lines and Networks）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-8"><span class="toc-number">11.5.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%92%8C%E7%BD%91%E7%BB%9C%E8%B5%84%E4%BA%A7%E5%8F%8A%E5%A8%81%E8%83%81%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">12.</span> <span class="toc-text">计算机和网络资产及威胁示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-9"><span class="toc-number">12.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A2%AB%E5%8A%A8%E6%94%BB%E5%87%BB%E4%B8%8E%E4%B8%BB%E5%8A%A8%E6%94%BB%E5%87%BB-Passive-and-Active-Attacks"><span class="toc-number">13.</span> <span class="toc-text">被动攻击与主动攻击 (Passive and Active Attacks)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A2%AB%E5%8A%A8%E6%94%BB%E5%87%BB-Passive-Attack"><span class="toc-number">13.1.</span> <span class="toc-text">被动攻击 (Passive Attack)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E8%A7%A3%E9%87%8A"><span class="toc-number">13.1.1.</span> <span class="toc-text">扩展解释</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%8A%A8%E6%94%BB%E5%87%BB-Active-Attack"><span class="toc-number">13.2.</span> <span class="toc-text">主动攻击 (Active Attack)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E8%A7%A3%E9%87%8A-1"><span class="toc-number">13.2.1.</span> <span class="toc-text">扩展解释</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E9%9D%A2-Attack-Surfaces"><span class="toc-number">14.</span> <span class="toc-text">攻击面 (Attack Surfaces)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-Examples"><span class="toc-number">14.1.</span> <span class="toc-text">示例 (Examples)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E9%9D%A2%E5%88%86%E7%B1%BB-Attack-Surface-Categories"><span class="toc-number">15.</span> <span class="toc-text">攻击面分类 (Attack Surface Categories)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E9%9D%A2-Network-Attack-Surface"><span class="toc-number">15.1.</span> <span class="toc-text">网络攻击面 (Network Attack Surface)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%94%BB%E5%87%BB%E9%9D%A2-Software-Attack-Surface"><span class="toc-number">15.2.</span> <span class="toc-text">软件攻击面 (Software Attack Surface)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E7%B1%BB%E6%94%BB%E5%87%BB%E9%9D%A2-Human-Attack-Surface"><span class="toc-number">15.3.</span> <span class="toc-text">人类攻击面 (Human Attack Surface)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%B6%E8%A1%8C%E8%B4%A6%E6%88%B7%E5%8D%B1%E5%AE%B3%E6%94%BB%E5%87%BB%E6%A0%91-Bank-Account-Compromise-Attack-Tree"><span class="toc-number">16.</span> <span class="toc-text">银行账户危害攻击树 (Bank Account Compromise Attack Tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%87%AD%E6%8D%AE%E5%8D%B1%E5%AE%B3-User-credential-compromise"><span class="toc-number">16.1.</span> <span class="toc-text">用户凭据危害 (User credential compromise)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8-Vulnerability-exploit"><span class="toc-number">16.2.</span> <span class="toc-text">漏洞利用 (Vulnerability exploit)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6-Social-engineering"><span class="toc-number">16.3.</span> <span class="toc-text">社会工程学 (Social engineering)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%85%A5%E5%91%BD%E4%BB%A4-Injection-of-commands"><span class="toc-number">16.4.</span> <span class="toc-text">注入命令 (Injection of commands)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%87%AD%E6%8D%AE%E7%8C%9C%E6%B5%8B-User-credential-guessing"><span class="toc-number">16.5.</span> <span class="toc-text">用户凭据猜测 (User credential guessing)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB-Active-man-in-the-middle-attacks"><span class="toc-number">16.6.</span> <span class="toc-text">中间人攻击 (Active man-in-the-middle attacks)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%E6%94%BB%E5%87%BB-Brute-force-attacks"><span class="toc-number">16.7.</span> <span class="toc-text">暴力破解攻击 (Brute force attacks)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E6%93%8D%E4%BD%9C-Web-site-manipulation"><span class="toc-number">16.8.</span> <span class="toc-text">网站操作 (Web site manipulation)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%9A%E8%AF%9D%E5%8A%AB%E6%8C%81-Pre-defined-session-IDs-session-hijacking"><span class="toc-number">16.9.</span> <span class="toc-text">会话劫持 (Pre-defined session IDs - session hijacking)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5-Computer-Security-Strategy"><span class="toc-number">17.</span> <span class="toc-text">计算机安全策略 (Computer Security Strategy)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%94%BF%E7%AD%96-Security-Policy"><span class="toc-number">17.1.</span> <span class="toc-text">安全政策 (Security Policy)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%AE%9E%E6%96%BD-Security-Implementation"><span class="toc-number">17.2.</span> <span class="toc-text">安全实施 (Security Implementation)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E8%AF%81-Assurance"><span class="toc-number">17.3.</span> <span class="toc-text">保证 (Assurance)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0-Evaluation"><span class="toc-number">17.4.</span> <span class="toc-text">评估 (Evaluation)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E5%87%86-Standards"><span class="toc-number">18.</span> <span class="toc-text">标准 (Standards)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E5%87%86-Standards-1"><span class="toc-number">19.</span> <span class="toc-text">标准 (Standards)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E6%A0%87%E5%87%86%E7%BB%84%E7%BB%87-The-most-important-of-these-organizations-are"><span class="toc-number">19.1.</span> <span class="toc-text">主要标准组织 (The most important of these organizations are)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%E7%9C%9F%E5%81%87%E9%99%88%E8%BF%B0-Computer-Security-True-or-False-Statements"><span class="toc-number">20.</span> <span class="toc-text">计算机安全真假陈述 (Computer Security True or False Statements)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%88%E8%BF%B0-Statements"><span class="toc-number">20.1.</span> <span class="toc-text">陈述 (Statements)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8%E6%A6%82%E5%BF%B5%E6%B5%8B%E9%AA%8C-Computer-Security-Concept-Quiz"><span class="toc-number">21.</span> <span class="toc-text">计算机安全概念测验 (Computer Security Concept Quiz)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%8E%E7%AD%94%E6%A1%88-Questions-and-Answers"><span class="toc-number">21.1.</span> <span class="toc-text">题目与答案 (Questions and Answers)</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/09/W7%20(LEC)%20-%20Usability%20-%20Empirical%20Approach.pdf/" title="W7 (LEC) - Usability - Empirical Approach.pdf">W7 (LEC) - Usability - Empirical Approach.pdf</a><time datetime="2023-11-09T01:50:40.000Z" title="Created 2023-11-09 01:50:40">2023-11-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/09/W7%20(TUT)%20-%20Beyond%20Usability%20-%20PET/" title="W7 (TUT) - Beyond Usability - PET.pdf">W7 (TUT) - Beyond Usability - PET.pdf</a><time datetime="2023-11-09T01:50:40.000Z" title="Created 2023-11-09 01:50:40">2023-11-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/07/B1/" title="B1">B1</a><time datetime="2023-11-07T15:55:36.000Z" title="Created 2023-11-07 15:55:36">2023-11-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/06/C398-w7-Internet%20Security%20Protocols%20and%20standards/" title="Internet Security Protocols and standards">Internet Security Protocols and standards</a><time datetime="2023-11-06T15:23:35.000Z" title="Created 2023-11-06 15:23:35">2023-11-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/02/W6%20(TUT)%20-%20Splitting%20User%20Stories%20-%20Part%202.pdf/" title="W6 (TUT) - Splitting User Stories - Part 2.pdf">W6 (TUT) - Splitting User Stories - Part 2.pdf</a><time datetime="2023-11-02T01:50:40.000Z" title="Created 2023-11-02 01:50:40">2023-11-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

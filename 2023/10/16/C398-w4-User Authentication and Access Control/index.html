@@ -1,0 +1,1061 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>User Authentication and Access Control | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数字用户认证介绍 (Introduction to Digital User Authentication)本部分内容介绍了NIST SP 800-63-3关于数字用户认证的定义。 数字用户认证定义 (Definition of Digital User Authentication) NIST SP 800-63-3 (数字认证指南，2016年10月) 定义了数字用户认证为： “建立对以电子方式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="User Authentication and Access Control">
+<meta property="og:url" content="http://example.com/2023/10/16/C398-w4-User%20Authentication%20and%20Access%20Control/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="数字用户认证介绍 (Introduction to Digital User Authentication)本部分内容介绍了NIST SP 800-63-3关于数字用户认证的定义。 数字用户认证定义 (Definition of Digital User Authentication) NIST SP 800-63-3 (数字认证指南，2016年10月) 定义了数字用户认证为： “建立对以电子方式">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2023-10-16T04:56:17.000Z">
+<meta property="article:modified_time" content="2023-11-12T16:03:20.967Z">
+<meta property="article:author" content="Jacka10086">
+<meta property="article:tag" content="Week4">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/10/16/C398-w4-User%20Authentication%20and%20Access%20Control/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'User Authentication and Access Control',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-12 16:03:20'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">User Authentication and Access Control</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-10-16T04:56:17.000Z" title="Created 2023-10-16 05:56:17">2023-10-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-11-12T16:03:20.967Z" title="Updated 2023-11-12 16:03:20">2023-11-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Com398/">Com398</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="User Authentication and Access Control"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="数字用户认证介绍-Introduction-to-Digital-User-Authentication"><a href="#数字用户认证介绍-Introduction-to-Digital-User-Authentication" class="headerlink" title="数字用户认证介绍 (Introduction to Digital User Authentication)"></a>数字用户认证介绍 (Introduction to Digital User Authentication)</h2><p>本部分内容介绍了NIST SP 800-63-3关于数字用户认证的定义。</p>
+<h3 id="数字用户认证定义-Definition-of-Digital-User-Authentication"><a href="#数字用户认证定义-Definition-of-Digital-User-Authentication" class="headerlink" title="数字用户认证定义 (Definition of Digital User Authentication)"></a>数字用户认证定义 (Definition of Digital User Authentication)</h3><ul>
+<li>NIST SP 800-63-3 (数字认证指南，2016年10月) 定义了数字用户认证为：<ul>
+<li>“建立对以电子方式呈现给信息系统的用户身份的信任的过程。”</li>
+</ul>
+</li>
+</ul>
+<h3 id="分支解释-Branch-Explanation"><a href="#分支解释-Branch-Explanation" class="headerlink" title="分支解释 (Branch Explanation)"></a>分支解释 (Branch Explanation)</h3><ul>
+<li><strong>用户身份</strong>：指一个个体在数字世界中的身份标识。</li>
+<li><strong>建立信任</strong>：通过验证措施确认用户身份的真实性。</li>
+<li><strong>信息系统</strong>：可以是任何需要用户认证的电子系统，如网站、应用程序或数据库。</li>
+</ul>
+<blockquote>
+<p>总结：数字用户认证是信息安全的核心组成部分，它确保只有经过授权的用户才能访问系统。这个过程涉及到验证用户身份的真实性，是保护信息系统不受未经授权访问的重要步骤。</p>
+</blockquote>
+<h2 id="用户身份验证方法-Authenticating-User-Identity"><a href="#用户身份验证方法-Authenticating-User-Identity" class="headerlink" title="用户身份验证方法 (Authenticating User Identity)"></a>用户身份验证方法 (Authenticating User Identity)</h2><p>用户身份验证的四种手段基于以下原则：</p>
+<h3 id="身份验证的四种手段-The-four-means-of-authenticating-user-identity-are-based-on"><a href="#身份验证的四种手段-The-four-means-of-authenticating-user-identity-are-based-on" class="headerlink" title="身份验证的四种手段 (The four means of authenticating user identity are based on)"></a>身份验证的四种手段 (The four means of authenticating user identity are based on)</h3><ul>
+<li><p><strong>某个人知道的信息 (Something the individual knows)</strong></p>
+<ul>
+<li>密码、PIN码、预先安排的问题的答案。</li>
+</ul>
+</li>
+<li><p><strong>某个人拥有的物品 (Something the individual possesses)</strong></p>
+<ul>
+<li>智能卡、电子钥匙卡、物理钥匙。</li>
+</ul>
+</li>
+<li><p><strong>某个人的生物特征 (Something the individual is - static biometrics)</strong></p>
+<ul>
+<li>指纹、视网膜、面部。</li>
+</ul>
+</li>
+<li><p><strong>某个人的行为特征 (Something the individual does - dynamic biometrics)</strong></p>
+<ul>
+<li>语音模式、笔迹、打字节奏。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：用户身份验证是确保安全访问控制的重要组成部分，涉及知识、拥有物、生物特征和行为特征这四个方面。这些方法可以单独使用也可以组合使用，以增强身份验证过程的安全性。</p>
+</blockquote>
+<h2 id="多因素身份验证-Multifactor-Authentication"><a href="#多因素身份验证-Multifactor-Authentication" class="headerlink" title="多因素身份验证 (Multifactor Authentication)"></a>多因素身份验证 (Multifactor Authentication)</h2><p>该图展示了多因素身份验证的过程。</p>
+<h3 id="多因素身份验证过程-The-Process-of-Multifactor-Authentication"><a href="#多因素身份验证过程-The-Process-of-Multifactor-Authentication" class="headerlink" title="多因素身份验证过程 (The Process of Multifactor Authentication)"></a>多因素身份验证过程 (The Process of Multifactor Authentication)</h3><ul>
+<li><p><strong>第一因素验证 (First Factor Authentication)</strong></p>
+<ul>
+<li>用户通过输入密码、PIN码等知识型因素进行身份验证。</li>
+<li>若验证通过，则进入第二因素验证；若失败，则认证结束。</li>
+</ul>
+</li>
+<li><p><strong>第二因素验证 (Second Factor Authentication)</strong></p>
+<ul>
+<li>用户需提供拥有型因素，如智能卡、手机验证码等。</li>
+<li>若第二因素验证通过，则认证成功；若失败，则认证结束。</li>
+</ul>
+</li>
+</ul>
+<h3 id="图表解释-Explanation-of-the-Diagram"><a href="#图表解释-Explanation-of-the-Diagram" class="headerlink" title="图表解释 (Explanation of the Diagram)"></a>图表解释 (Explanation of the Diagram)</h3><ul>
+<li><strong>客户端 (Client)</strong><ul>
+<li>指尝试进行身份验证的用户。</li>
+</ul>
+</li>
+<li><strong>认证逻辑 (Authentication Logic)</strong><ul>
+<li>服务器端执行的验证过程，判断提供的凭证是否有效。</li>
+</ul>
+</li>
+<li><strong>认证协议 (Authentication Protocol)</strong><ul>
+<li>定义客户端和服务器之间进行身份验证所需通信的规则和步骤。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：多因素身份验证通过要求用户提供两种或更多类型的认证因素，大幅增强了安全性。这通常包括某个人知道的信息（如密码）和某个人拥有的物品（如智能卡）。这种方法在当前的数字安全实践中被广泛采用，以防止未授权访问。</p>
+</blockquote>
+<h2 id="基于密码的认证-Password-Based-Authentication"><a href="#基于密码的认证-Password-Based-Authentication" class="headerlink" title="基于密码的认证 (Password-Based Authentication)"></a>基于密码的认证 (Password-Based Authentication)</h2><p>基于密码的认证是防止入侵者的常用防线。</p>
+<h3 id="认证流程-Authentication-Process"><a href="#认证流程-Authentication-Process" class="headerlink" title="认证流程 (Authentication Process)"></a>认证流程 (Authentication Process)</h3><ul>
+<li>用户提供用户名&#x2F;登录名和密码。</li>
+<li>系统将提供的密码与为该指定登录名存储的密码进行比较。</li>
+</ul>
+<h3 id="用户ID的作用-The-Role-of-User-ID"><a href="#用户ID的作用-The-Role-of-User-ID" class="headerlink" title="用户ID的作用 (The Role of User ID)"></a>用户ID的作用 (The Role of User ID)</h3><ul>
+<li>确定用户是否被授权访问系统。</li>
+<li>决定用户的权限。</li>
+<li>用于自主访问控制。</li>
+</ul>
+<blockquote>
+<p>总结：基于密码的认证是最普遍的用户身份验证方式，用户ID不仅用于确认身份，还定义了用户在系统中的权限级别。这种方法便于实施但也需要适当的安全措施，以确保密码的安全性和防范未授权访问。</p>
+</blockquote>
+<h2 id="基于密码的认证机制-Password-Based-Authentication-Mechanism"><a href="#基于密码的认证机制-Password-Based-Authentication-Mechanism" class="headerlink" title="基于密码的认证机制 (Password-Based Authentication Mechanism)"></a>基于密码的认证机制 (Password-Based Authentication Mechanism)</h2><p>此图展示了UNIX系统中用于密码验证的机制。</p>
+<h3 id="密码验证流程-Password-Verification-Process"><a href="#密码验证流程-Password-Verification-Process" class="headerlink" title="密码验证流程 (Password Verification Process)"></a>密码验证流程 (Password Verification Process)</h3><ul>
+<li><p><strong>加载新密码 (Loading a new password)</strong></p>
+<ul>
+<li>用户的密码与“盐值”结合后通过慢速哈希函数处理。</li>
+<li>处理后的哈希值存储在密码文件中，与用户ID和盐值一起。</li>
+</ul>
+</li>
+<li><p><strong>验证密码 (Verifying a password)</strong></p>
+<ul>
+<li>系统根据用户ID在密码文件中选择相应的盐值和哈希码。</li>
+<li>用户输入的密码与盐值结合，再次通过慢速哈希函数处理。</li>
+<li>系统比较这个新生成的哈希值与存储的哈希值是否匹配。</li>
+</ul>
+</li>
+</ul>
+<h3 id="UNIX密码方案图解-UNIX-Password-Scheme-Diagram"><a href="#UNIX密码方案图解-UNIX-Password-Scheme-Diagram" class="headerlink" title="UNIX密码方案图解 (UNIX Password Scheme Diagram)"></a>UNIX密码方案图解 (UNIX Password Scheme Diagram)</h3><ul>
+<li><strong>密码文件 (Password File)</strong><ul>
+<li>存储用户ID、盐值和密码的哈希码。</li>
+</ul>
+</li>
+<li><strong>盐值 (Salt)</strong><ul>
+<li>用于保护密码，使得同一个密码在不同盐值下产生不同的哈希值。</li>
+</ul>
+</li>
+<li><strong>慢速哈希函数 (Slow Hash Function)</strong><ul>
+<li>用于增加破解密码的难度，因为它需要更多的计算资源和时间。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：UNIX密码方案通过使用盐值和慢速哈希函数提高了密码存储的安全性。这种机制可以有效地防止密码被破解，确保系统安全。</p>
+</blockquote>
+<h2 id="密码漏洞-Password-Vulnerabilities"><a href="#密码漏洞-Password-Vulnerabilities" class="headerlink" title="密码漏洞 (Password Vulnerabilities)"></a>密码漏洞 (Password Vulnerabilities)</h2><p>这张图表列出了密码系统可能面临的多种安全漏洞。</p>
+<h3 id="密码漏洞类型-Types-of-Password-Vulnerabilities"><a href="#密码漏洞类型-Types-of-Password-Vulnerabilities" class="headerlink" title="密码漏洞类型 (Types of Password Vulnerabilities)"></a>密码漏洞类型 (Types of Password Vulnerabilities)</h3><ul>
+<li><p><strong>离线字典攻击 (Offline dictionary attack)</strong></p>
+<ul>
+<li>攻击者在未连接到系统的情况下，尝试破解密码。</li>
+</ul>
+</li>
+<li><p><strong>针对单一用户的密码猜测 (Password guessing against single user)</strong></p>
+<ul>
+<li>攻击者尝试猜测单一用户的密码，通常基于用户的个人信息。</li>
+</ul>
+</li>
+<li><p><strong>工作站劫持 (Workstation hijacking)</strong></p>
+<ul>
+<li>攻击者控制了用户的工作站，进而尝试越过登录过程。</li>
+</ul>
+</li>
+<li><p><strong>电子监控 (Electronic monitoring)</strong></p>
+<ul>
+<li>通过监控电子通信来拦截密码。</li>
+</ul>
+</li>
+<li><p><strong>针对特定账户的攻击 (Specific account attack)</strong></p>
+<ul>
+<li>目标明确的攻击，专门针对特定账户的密码进行破解。</li>
+</ul>
+</li>
+<li><p><strong>常见密码攻击 (Popular password attack)</strong></p>
+<ul>
+<li>利用用户倾向于使用常见或简单密码的习惯进行攻击。</li>
+</ul>
+</li>
+<li><p><strong>利用用户错误 (Exploiting user mistakes)</strong></p>
+<ul>
+<li>利用用户可能犯的错误，如密码重用或简单密码。</li>
+</ul>
+</li>
+<li><p><strong>多重密码使用的利用 (Exploiting multiple password use)</strong></p>
+<ul>
+<li>利用用户在不同服务中重用相同密码的习惯。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：密码漏洞是信息安全中一个常见的问题，包括了多种不同类型的攻击方法。了解这些漏洞有助于我们采取适当的安全措施来保护密码不被破解，从而保障账户安全。</p>
+</blockquote>
+<h2 id="密码破解技术-Password-Cracking-Techniques"><a href="#密码破解技术-Password-Cracking-Techniques" class="headerlink" title="密码破解技术 (Password Cracking Techniques)"></a>密码破解技术 (Password Cracking Techniques)</h2><p>这张图表详细介绍了几种常见的密码破解技术。</p>
+<h3 id="常见的密码破解方法-Common-Password-Cracking-Methods"><a href="#常见的密码破解方法-Common-Password-Cracking-Methods" class="headerlink" title="常见的密码破解方法 (Common Password Cracking Methods)"></a>常见的密码破解方法 (Common Password Cracking Methods)</h3><ul>
+<li><p><strong>字典攻击 (Dictionary attacks)</strong></p>
+<ul>
+<li>开发一个大型的可能密码字典，并尝试每一个密码对照密码文件。</li>
+<li>每个密码必须使用每个盐值进行哈希处理，然后与存储的哈希值进行比较。</li>
+</ul>
+</li>
+<li><p><strong>彩虹表攻击 (Rainbow table attacks)</strong></p>
+<ul>
+<li>预先计算所有盐值的哈希值表。</li>
+<li>使用足够大的盐值和足够长的哈希长度可以对抗此攻击。</li>
+</ul>
+</li>
+<li><p><strong>猜测 &#x2F; 密码破解 (Guessing &#x2F; Password crackers)</strong></p>
+<ul>
+<li>利用人们倾向于选择容易被猜测的密码的事实。</li>
+<li>更短的密码长度也更容易被破解。</li>
+</ul>
+</li>
+<li><p><strong>John the Ripper</strong></p>
+<ul>
+<li>开源密码破解工具，于1996年首次开发。</li>
+<li>使用暴力破解和字典技术的组合。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：上述密码破解技术说明了密码安全的重要性以及为什么需要采取强密码策略。了解这些破解技术可以帮助我们更好地防范潜在的安全威胁，采用更安全的密码管理措施。</p>
+</blockquote>
+<h2 id="字典攻击-Dictionary-Attacks"><a href="#字典攻击-Dictionary-Attacks" class="headerlink" title="字典攻击 (Dictionary Attacks)"></a>字典攻击 (Dictionary Attacks)</h2><p>字典攻击是猜测密码的一种常见方法。</p>
+<h3 id="字典攻击的过程-The-Process-of-Dictionary-Attacks"><a href="#字典攻击的过程-The-Process-of-Dictionary-Attacks" class="headerlink" title="字典攻击的过程 (The Process of Dictionary Attacks)"></a>字典攻击的过程 (The Process of Dictionary Attacks)</h3><ul>
+<li>使用预选的词汇库和短语来猜测可能的密码。</li>
+<li>假设用户通常会使用简单的、常见的密码，如 “password”、”123abc” 和 “123456”。</li>
+</ul>
+<h3 id="字典攻击机制-Dictionary-Attack-Mechanism"><a href="#字典攻击机制-Dictionary-Attack-Mechanism" class="headerlink" title="字典攻击机制 (Dictionary Attack Mechanism)"></a>字典攻击机制 (Dictionary Attack Mechanism)</h3><ul>
+<li><p><strong>Bot</strong></p>
+<ul>
+<li>机器人程序从字典文件中取出猜测密码。</li>
+</ul>
+</li>
+<li><p><strong>字典文件 (Dictionary File)</strong></p>
+<ul>
+<li>包含可能的密码列表。</li>
+</ul>
+</li>
+<li><p><strong>登录 (Login)</strong></p>
+<ul>
+<li>针对特定账户或系统尝试密码。</li>
+</ul>
+</li>
+<li><p><strong>猜测正确? (Guess correct?)</strong></p>
+<ul>
+<li>如果猜测的密码正确，则认证成功；</li>
+<li>如果不正确，尝试字典中的下一个密码。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：字典攻击表明密码的复杂性和唯一性对于安全性至关重要。通过理解字典攻击的工作原理，我们可以更好地采取措施来保护账户不被此类攻击手段所侵犯。</p>
+</blockquote>
+<h2 id="彩虹表攻击-Rainbow-Table-Attacks"><a href="#彩虹表攻击-Rainbow-Table-Attacks" class="headerlink" title="彩虹表攻击 (Rainbow Table Attacks)"></a>彩虹表攻击 (Rainbow Table Attacks)</h2><p>彩虹表攻击是一种高效的密码破解方法。</p>
+<h3 id="彩虹表攻击的原理-Principles-of-Rainbow-Table-Attacks"><a href="#彩虹表攻击的原理-Principles-of-Rainbow-Table-Attacks" class="headerlink" title="彩虹表攻击的原理 (Principles of Rainbow Table Attacks)"></a>彩虹表攻击的原理 (Principles of Rainbow Table Attacks)</h3><ul>
+<li>使用一张特别的预计算字符串或常用密码及其对应哈希值的表。</li>
+<li>针对已经通过哈希函数加密的密码进行攻击，通过哈希反查破解密码。</li>
+</ul>
+<h3 id="彩虹表链的解释-Explanation-of-a-Rainbow-Table-Chain"><a href="#彩虹表链的解释-Explanation-of-a-Rainbow-Table-Chain" class="headerlink" title="彩虹表链的解释 (Explanation of a Rainbow Table Chain)"></a>彩虹表链的解释 (Explanation of a Rainbow Table Chain)</h3><ul>
+<li><strong>密码哈希过程 (Password Hashing Process)</strong><ul>
+<li>将密码通过哈希函数转换成哈希值。</li>
+</ul>
+</li>
+<li><strong>还原过程 (Reduce Process)</strong><ul>
+<li>将哈希值通过还原函数转换回可能的密码。</li>
+</ul>
+</li>
+<li><strong>彩虹表 (Rainbow Table)</strong><ul>
+<li>包含多个这样的哈希和还原序列，形成一个链。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：彩虹表攻击通过利用预计算的哈希值来尝试破解密码，这种方法在没有适当保护措施的系统中可能特别有效。了解彩虹表攻击的工作机制对于设计防御这类攻击的安全系统至关重要。</p>
+</blockquote>
+<h2 id="现代密码策略-Modern-Approaches-to-Password-Policy"><a href="#现代密码策略-Modern-Approaches-to-Password-Policy" class="headerlink" title="现代密码策略 (Modern Approaches to Password Policy)"></a>现代密码策略 (Modern Approaches to Password Policy)</h2><p>现代密码策略强调了制定复杂的密码规则以增强安全性。</p>
+<h3 id="密码策略的要点-Key-Points-of-Password-Policy"><a href="#密码策略的要点-Key-Points-of-Password-Policy" class="headerlink" title="密码策略的要点 (Key Points of Password Policy)"></a>密码策略的要点 (Key Points of Password Policy)</h3><ul>
+<li>强制用户选择更强的密码，增加密码的复杂性。</li>
+</ul>
+<h3 id="密码破解技术的进步-Advancements-in-Password-Cracking-Techniques"><a href="#密码破解技术的进步-Advancements-in-Password-Cracking-Techniques" class="headerlink" title="密码破解技术的进步 (Advancements in Password-Cracking Techniques)"></a>密码破解技术的进步 (Advancements in Password-Cracking Techniques)</h3><ul>
+<li>密码破解的处理能力已大幅提高。</li>
+<li>使用复杂算法生成可能的密码。</li>
+</ul>
+<h3 id="实际密码的研究-Studying-Actual-Passwords"><a href="#实际密码的研究-Studying-Actual-Passwords" class="headerlink" title="实际密码的研究 (Studying Actual Passwords)"></a>实际密码的研究 (Studying Actual Passwords)</h3><ul>
+<li>通过分析实际使用中的密码的例子和结构，可以更好地了解密码的脆弱性。</li>
+<li>例如，在2009年，针对在线游戏服务RockYou.com的SQL注入攻击泄露了3200万个明文密码。</li>
+</ul>
+<blockquote>
+<p>总结：现代密码策略和密码破解技术的发展表明，简单提升密码复杂性不足以防止破解，还需要其他安全措施。了解密码破解的最新技术对于制定有效的密码政策和保护用户账户至关重要。</p>
+</blockquote>
+<h2 id="密码文件访问控制（Password-File-Access-Control）"><a href="#密码文件访问控制（Password-File-Access-Control）" class="headerlink" title="密码文件访问控制（Password File Access Control）"></a>密码文件访问控制（Password File Access Control）</h2><h3 id="可以通过拒绝访问加密密码来阻止离线猜测攻击（Can-block-offline-guessing-attacks-by-denying-access-to-encrypted-passwords）"><a href="#可以通过拒绝访问加密密码来阻止离线猜测攻击（Can-block-offline-guessing-attacks-by-denying-access-to-encrypted-passwords）" class="headerlink" title="可以通过拒绝访问加密密码来阻止离线猜测攻击（Can block offline guessing attacks by denying access to encrypted passwords）"></a>可以通过拒绝访问加密密码来阻止离线猜测攻击（Can block offline guessing attacks by denying access to encrypted passwords）</h3><ul>
+<li>仅向特权用户开放（Make available only to privileged users）<ul>
+<li><strong>扩展说明</strong>：这意味着应该将访问权限严格限制在具有必要权限的用户上，避免未授权用户获取密码文件。</li>
+</ul>
+</li>
+<li>阴影密码文件（Shadow password file）<ul>
+<li><strong>扩展说明</strong>：通常指在系统中有一个加密的密码文件，仅系统内部服务可读取，提高了安全性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="弱点（Vulnerabilities）"><a href="#弱点（Vulnerabilities）" class="headerlink" title="弱点（Vulnerabilities）"></a>弱点（Vulnerabilities）</h3><ul>
+<li>操作系统中允许访问文件的弱点（Weakness in the OS that allows access to the file）<ul>
+<li><strong>扩展说明</strong>：这可能指操作系统的安全漏洞，可以让未授权者或恶意软件访问或修改密码文件。</li>
+</ul>
+</li>
+<li>权限设置失误使文件可读（Accident with permissions making it readable）<ul>
+<li><strong>扩展说明</strong>：如果文件权限设置不当，可能导致原本应该受保护的密码文件被任意用户读取。</li>
+</ul>
+</li>
+<li>其他系统上使用相同密码的用户（Users with same password on other systems）<ul>
+<li><strong>扩展说明</strong>：这种情况下，如果用户在多个系统上重用密码，一旦一个系统被破解，其他系统的安全也会受到威胁。</li>
+</ul>
+</li>
+<li>从备份媒体访问（Access from backup media）<ul>
+<li><strong>扩展说明</strong>：备份媒体可能未加密或保护不当，导致攻击者可以从中获取密码信息。</li>
+</ul>
+</li>
+<li>网络流量中嗅探密码（Sniff passwords in network traffic）<ul>
+<li><strong>扩展说明</strong>：在数据传输过程中，密码可能会被截获，尤其是在未加密的网络环境中。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本页内容为Ulster University的演示文稿页面，介绍了密码文件访问控制的重要性和可能的安全弱点。重点在于强调访问控制对于防止离线猜测攻击的重要性，并列出了几种常见的安全漏洞。演示文稿的目的是提醒用户和管理员注意这些潜在的风险，并采取适当措施来保护敏感的密码文件。</p>
+<h2 id="密码选择策略（Password-Selection-Strategies）"><a href="#密码选择策略（Password-Selection-Strategies）" class="headerlink" title="密码选择策略（Password Selection Strategies）"></a>密码选择策略（Password Selection Strategies）</h2><h3 id="用户教育（User-education）"><a href="#用户教育（User-education）" class="headerlink" title="用户教育（User education）"></a>用户教育（User education）</h3><ul>
+<li>告知用户选择难以猜测的密码的重要性，并提供选择强密码的指南。<ul>
+<li><strong>扩展说明</strong>：教育用户理解强密码设置的重要性，例如使用多种字符类型，避免常见词汇，以及定期更新密码，增强账户安全。</li>
+</ul>
+</li>
+</ul>
+<h3 id="计算机生成密码（Computer-generated-passwords）"><a href="#计算机生成密码（Computer-generated-passwords）" class="headerlink" title="计算机生成密码（Computer generated passwords）"></a>计算机生成密码（Computer generated passwords）</h3><ul>
+<li>用户常常难以记住计算机生成的密码。<ul>
+<li><strong>扩展说明</strong>：虽然这类密码通常较安全，因为其随机性和复杂性，但用户记忆负担大，可能导致写下密码或使用易记但不安全的方式存储。</li>
+</ul>
+</li>
+</ul>
+<h3 id="反应式密码检查（Reactive-password-checking）"><a href="#反应式密码检查（Reactive-password-checking）" class="headerlink" title="反应式密码检查（Reactive password checking）"></a>反应式密码检查（Reactive password checking）</h3><ul>
+<li>系统定期运行自己的密码破解器以找到容易猜测的密码。<ul>
+<li><strong>扩展说明</strong>：这种方法通过定期检查现有密码的强度，来识别和提示用户改进弱密码，从而提高系统的整体安全性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="复杂密码政策-主动密码检查（Complex-password-policy-Proactive-Password-checker）"><a href="#复杂密码政策-主动密码检查（Complex-password-policy-Proactive-Password-checker）" class="headerlink" title="复杂密码政策 &#x2F; 主动密码检查（Complex password policy &#x2F; Proactive Password checker）"></a>复杂密码政策 &#x2F; 主动密码检查（Complex password policy &#x2F; Proactive Password checker）</h3><ul>
+<li>用户可以选择自己的密码，但系统会检查密码是否可接受，如果不行，则拒绝。<ul>
+<li><strong>扩展说明</strong>：这种策略要求用户在创建密码时遵守特定规则，如长度、字符类型和复杂性，以此来减少可猜测密码的使用。</li>
+</ul>
+</li>
+<li>目标是在允许用户选择好记的密码的同时，消除容易猜测的密码。<ul>
+<li><strong>扩展说明</strong>：通过教育用户创建既难以猜测又容易记忆的密码，可以提高密码的安全性和用户的使用便利性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>本页内容为Ulster University的演示文稿页面，介绍了密码选择的不同策略，包括用户教育、计算机生成密码、反应式和主动密码检查等方法。主旨在于指导用户如何创建强大而易记的密码，同时通过系统检查来避免弱密码的设置，确保系统安全。</p>
+<h2 id="记忆卡（Memory-Cards）"><a href="#记忆卡（Memory-Cards）" class="headerlink" title="记忆卡（Memory Cards）"></a>记忆卡（Memory Cards）</h2><h3 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h3><ul>
+<li>能够存储但不处理数据。<ul>
+<li><strong>扩展说明</strong>：记忆卡用于存储信息，但不具备处理或计算数据的能力。</li>
+</ul>
+</li>
+<li>最常见的是磁条卡（The most common is the magnetic stripe card）。<ul>
+<li><strong>扩展说明</strong>：磁条卡广泛用于银行卡和身份验证卡，信息存储在磁条中。</li>
+</ul>
+</li>
+<li>可包含内部电子存储器（Can include an internal electronic memory）。<ul>
+<li><strong>扩展说明</strong>：一些记忆卡内置有电子存储器，可以存储更多信息。</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><ul>
+<li>可单独用于物理访问。<ul>
+<li><strong>例子</strong>：<ul>
+<li>酒店房间（Hotel room）：使用记忆卡作为房间钥匙。</li>
+<li>自动取款机（ATM）：使用磁条卡进行身份验证和交易。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="安全性提升"><a href="#安全性提升" class="headerlink" title="安全性提升"></a>安全性提升</h3><ul>
+<li>当与密码或PIN码结合使用时，能够显著提高安全性。<ul>
+<li><strong>扩展说明</strong>：结合密码使用，可以防止他人在无密码或PIN码的情况下使用卡片。</li>
+</ul>
+</li>
+</ul>
+<h3 id="记忆卡的缺点"><a href="#记忆卡的缺点" class="headerlink" title="记忆卡的缺点"></a>记忆卡的缺点</h3><ul>
+<li>需要特殊的读卡器（Requires a special reader）。<ul>
+<li><strong>扩展说明</strong>：使用记忆卡需要有相应的设备来读取卡内信息。</li>
+</ul>
+</li>
+<li>令牌丢失的风险（Loss of token）。<ul>
+<li><strong>扩展说明</strong>：如果记忆卡丢失，可能导致存储在卡上的信息泄露。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>本页内容为Ulster University的演示文稿页面，介绍了记忆卡的基本特性、使用方式、安全性优势以及潜在缺点。记忆卡虽然方便，但需要特别注意保管以防丢失，并且在安全性方面，最好与密码或PIN码结合使用以提高保护等级。</p>
+<h2 id="智能令牌（Smart-Tokens）"><a href="#智能令牌（Smart-Tokens）" class="headerlink" title="智能令牌（Smart Tokens）"></a>智能令牌（Smart Tokens）</h2><h3 id="物理特性（Physical-characteristics）"><a href="#物理特性（Physical-characteristics）" class="headerlink" title="物理特性（Physical characteristics）"></a>物理特性（Physical characteristics）</h3><ul>
+<li>包含嵌入式微处理器。<ul>
+<li><strong>扩展说明</strong>：这种微处理器赋予智能令牌一定的计算能力，可以执行安全认证等任务。</li>
+</ul>
+</li>
+<li>外观类似银行卡（A smart token that looks like a bank card）。<ul>
+<li><strong>扩展说明</strong>：这种设计便于用户携带和使用，类似于常见的银行卡。</li>
+</ul>
+</li>
+<li>可以是计算器、钥匙、小型便携物品的形状（Can look like calculators, keys, small portable objects）。<ul>
+<li><strong>扩展说明</strong>：多样的形态使得智能令牌可以根据不同的使用场景进行定制。</li>
+</ul>
+</li>
+</ul>
+<h3 id="用户界面（User-interface）"><a href="#用户界面（User-interface）" class="headerlink" title="用户界面（User interface）"></a>用户界面（User interface）</h3><ul>
+<li>手动界面包括键盘和显示屏，用于人与令牌之间的交互（Manual interfaces include a keypad and display for human&#x2F;token interaction）。<ul>
+<li><strong>扩展说明</strong>：用户可以通过键盘输入信息，显示屏用于反馈信息或指示操作。</li>
+</ul>
+</li>
+</ul>
+<h3 id="电子界面（Electronic-interface）"><a href="#电子界面（Electronic-interface）" class="headerlink" title="电子界面（Electronic interface）"></a>电子界面（Electronic interface）</h3><ul>
+<li>智能卡或其他令牌需要一个电子界面来与兼容的读&#x2F;写器通信（A smart card or other token requires an electronic interface to communicate with a compatible reader&#x2F;writer）。<ul>
+<li><strong>扩展说明</strong>：电子界面可能包括接触式和非接触式界面，如插卡槽或NFC。</li>
+</ul>
+</li>
+</ul>
+<h3 id="认证协议（Authentication-protocol）"><a href="#认证协议（Authentication-protocol）" class="headerlink" title="认证协议（Authentication protocol）"></a>认证协议（Authentication protocol）</h3><ul>
+<li>分为三种类别（Classified into three categories）：<ul>
+<li>静态（Static）</li>
+<li>动态密码生成器（Dynamic password generator）<ul>
+<li><strong>扩展说明</strong>：生成一次性密码，增加安全性。</li>
+</ul>
+</li>
+<li>挑战-响应（Challenge-response）<ul>
+<li><strong>扩展说明</strong>：需要令牌计算并提供对特定挑战的响应，用于验证身份。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><p>本页内容为Ulster University的演示文稿页面，介绍了智能令牌的物理特性、用户界面、电子界面和认证协议。智能令牌以其便携性、易于交互的设计以及高安全性的认证协议，成为现代安全领域的重要工具。其多样的形态和高级的认证机制为用户身份验证提供了更加灵活和安全的选择。</p>
+<h2 id="智能卡（Smart-Cards）"><a href="#智能卡（Smart-Cards）" class="headerlink" title="智能卡（Smart Cards）"></a>智能卡（Smart Cards）</h2><h3 id="最重要的智能令牌类别（Most-important-category-of-smart-token）"><a href="#最重要的智能令牌类别（Most-important-category-of-smart-token）" class="headerlink" title="最重要的智能令牌类别（Most important category of smart token）"></a>最重要的智能令牌类别（Most important category of smart token）</h3><ul>
+<li>外观像信用卡（Has the appearance of a credit card）。<ul>
+<li><strong>扩展说明</strong>：方便携带和广泛使用，用户熟悉的形状。</li>
+</ul>
+</li>
+<li>有电子界面（Has an electronic interface）。<ul>
+<li><strong>扩展说明</strong>：允许与读卡器等设备进行通信。</li>
+</ul>
+</li>
+<li>可使用任何智能令牌协议（May use any of the smart token protocols）。<ul>
+<li><strong>扩展说明</strong>：支持多种认证和通信协议，提高兼容性和安全性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="包含内容（Contain）"><a href="#包含内容（Contain）" class="headerlink" title="包含内容（Contain）"></a>包含内容（Contain）</h3><ul>
+<li>完整的微处理器（An entire microprocessor）。<ul>
+<li><strong>扩展说明</strong>：使智能卡能够处理数据和执行安全加密操作。</li>
+</ul>
+</li>
+<li>存储器（Memory）。<ul>
+<li><strong>扩展说明</strong>：用于存储数据和程序。</li>
+</ul>
+</li>
+</ul>
+<h3 id="通常包含三种类型的内存（Typically-include-three-types-of-memory）"><a href="#通常包含三种类型的内存（Typically-include-three-types-of-memory）" class="headerlink" title="通常包含三种类型的内存（Typically include three types of memory）"></a>通常包含三种类型的内存（Typically include three types of memory）</h3><ul>
+<li>只读内存（ROM）- 存储在卡片生命周期内不变的数据。<ul>
+<li><strong>扩展说明</strong>：用于存储固件和预设的程序代码。</li>
+</ul>
+</li>
+<li>可电擦除编程只读内存（EEPROM）- 存储应用程序数据和程序。<ul>
+<li><strong>扩展说明</strong>：可以被用户或应用程序修改，存储个人化数据和可更新程序。</li>
+</ul>
+</li>
+<li>随机访问内存（RAM）- 存储执行应用程序时产生的临时数据。<ul>
+<li><strong>扩展说明</strong>：用于处理数据和运行应用程序时的即时存储。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h3><p>本页内容为Ulster University的演示文稿页面，介绍了智能卡作为智能令牌的一个重要类别，其便携的信用卡形状、电子界面以及内置的完整微处理器和多种内存类型。智能卡的设计旨在确保数据安全性和处理效率，支持广泛的应用程序，是现代安全验证领域的关键技术之一。</p>
+<h2 id="智能卡与读卡器交互（Smart-Card-Reader-Exchange）"><a href="#智能卡与读卡器交互（Smart-Card-Reader-Exchange）" class="headerlink" title="智能卡与读卡器交互（Smart Card&#x2F;Reader Exchange）"></a>智能卡与读卡器交互（Smart Card&#x2F;Reader Exchange）</h2><h3 id="智能卡激活（Smart-Card-Activation）"><a href="#智能卡激活（Smart-Card-Activation）" class="headerlink" title="智能卡激活（Smart Card Activation）"></a>智能卡激活（Smart Card Activation）</h3><ul>
+<li>智能卡与读卡器进行通信的初始步骤。</li>
+</ul>
+<h3 id="通信过程"><a href="#通信过程" class="headerlink" title="通信过程"></a>通信过程</h3><ul>
+<li>ATR（Answer to reset）<ul>
+<li>智能卡插入读卡器后，读卡器发送一个重置信号，智能卡响应该信号，开始通信过程。</li>
+</ul>
+</li>
+<li>协议协商PTS（Protocol negotiation PTS）<ul>
+<li>读卡器与智能卡协商将使用的通信协议。</li>
+</ul>
+</li>
+<li>协商答复PTS（Negotiation Answer PTS）<ul>
+<li>智能卡确认所协商的协议，并准备接收指令。</li>
+</ul>
+</li>
+<li>命令APDU（Command APDU）<ul>
+<li>应用协议数据单元（APDU）是智能卡和读卡器之间交换的数据包的格式，此处指发送给智能卡的命令。</li>
+</ul>
+</li>
+<li>响应APDU（Response APDU）<ul>
+<li>智能卡执行命令后，以APDU格式回复读卡器。</li>
+</ul>
+</li>
+</ul>
+<h3 id="会话结束（End-of-Session）"><a href="#会话结束（End-of-Session）" class="headerlink" title="会话结束（End of Session）"></a>会话结束（End of Session）</h3><ul>
+<li>通信会话结束，智能卡和读卡器可以断开连接。</li>
+</ul>
+<h3 id="图例解释"><a href="#图例解释" class="headerlink" title="图例解释"></a>图例解释</h3><ul>
+<li>APDU &#x3D; application protocol data unit 应用协议数据单元</li>
+<li>ATR &#x3D; Answer to reset 对重置的回答</li>
+<li>PTS &#x3D; Protocol type selection 协议类型选择</li>
+</ul>
+<h3 id="总结-5"><a href="#总结-5" class="headerlink" title="总结"></a>总结</h3><p>本页内容为Ulster University的演示文稿页面，图解展示了智能卡与读卡器之间的交互流程，包括激活、协议协商、命令发送和响应等步骤，直至会话结束。这一过程确保了智能卡可以正确地与读卡器进行数据交换，执行安全验证和其他应用程序操作。</p>
+<h2 id="生物特征认证（Biometric-Authentication）"><a href="#生物特征认证（Biometric-Authentication）" class="headerlink" title="生物特征认证（Biometric Authentication）"></a>生物特征认证（Biometric Authentication）</h2><h3 id="认证方式"><a href="#认证方式" class="headerlink" title="认证方式"></a>认证方式</h3><ul>
+<li>尝试基于独特的身体特征对个体进行认证。<ul>
+<li><strong>扩展说明</strong>：利用人的生物特征，如指纹、虹膜等，因其唯一性用于确认身份。</li>
+</ul>
+</li>
+</ul>
+<h3 id="基础原理"><a href="#基础原理" class="headerlink" title="基础原理"></a>基础原理</h3><ul>
+<li>基于模式识别（Based on pattern recognition）。<ul>
+<li><strong>扩展说明</strong>：通过分析生物特征的复杂模式来验证个体的身份。</li>
+</ul>
+</li>
+</ul>
+<h3 id="技术与成本"><a href="#技术与成本" class="headerlink" title="技术与成本"></a>技术与成本</h3><ul>
+<li>与密码和令牌相比，技术上更复杂且成本更高（Is technically complex and expensive when compared to passwords and tokens）。<ul>
+<li><strong>扩展说明</strong>：生物认证系统需要高端硬件和软件支持，因此成本较高。</li>
+</ul>
+</li>
+</ul>
+<h3 id="物理特征包括"><a href="#物理特征包括" class="headerlink" title="物理特征包括"></a>物理特征包括</h3><ul>
+<li>面部特征（Facial characteristics）</li>
+<li>指纹（Fingerprints）</li>
+<li>手部几何（Hand geometry）</li>
+<li>视网膜图案（Retinal pattern）</li>
+<li>虹膜（Iris）</li>
+<li>签名（Signature）</li>
+<li>语音（Voice）<ul>
+<li><strong>扩展说明</strong>：这些特征由于其独特性和难以复制的特点，被用于安全认证。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-6"><a href="#总结-6" class="headerlink" title="总结"></a>总结</h3><p>本页内容为Ulster University的演示文稿页面，讲解了生物特征认证的基本概念、原理和所涉及的技术复杂性及成本。它涵盖了多种生物特征，强调了这种认证方式在保障安全性方面相较于传统密码和令牌所具有的优势，同时也指出了其成本和技术实施的挑战。</p>
+<h2 id="生物特征认证成本与准确性比较（Biometric-Authentication-Cost-Versus-Accuracy）"><a href="#生物特征认证成本与准确性比较（Biometric-Authentication-Cost-Versus-Accuracy）" class="headerlink" title="生物特征认证成本与准确性比较（Biometric Authentication Cost Versus Accuracy）"></a>生物特征认证成本与准确性比较（Biometric Authentication Cost Versus Accuracy）</h2><h3 id="图表解读"><a href="#图表解读" class="headerlink" title="图表解读"></a>图表解读</h3><ul>
+<li>横轴表示准确性（Accuracy），纵轴表示成本（Cost）。</li>
+</ul>
+<h3 id="生物特征种类"><a href="#生物特征种类" class="headerlink" title="生物特征种类"></a>生物特征种类</h3><ul>
+<li>手部（Hand）</li>
+<li>签名（Signature）</li>
+<li>面部（Face）</li>
+<li>语音（Voice）</li>
+<li>指纹（Finger）</li>
+<li>视网膜（Retina）</li>
+<li>虹膜（Iris）<ul>
+<li><strong>扩展说明</strong>：从图中可以看出，虹膜和视网膜认证的准确性较高，但成本也较高；而手部、签名、面部和语音认证的成本较低，但准确性也相对较低。</li>
+</ul>
+</li>
+</ul>
+<h3 id="图例说明"><a href="#图例说明" class="headerlink" title="图例说明"></a>图例说明</h3><ul>
+<li>图3.8 成本与准确性的比较：不同生物特征在用户认证方案中的特点（Figure 3.8 Cost Versus Accuracy of Various Biometric Characteristics in User Authentication Schemes）。</li>
+</ul>
+<h3 id="总结-7"><a href="#总结-7" class="headerlink" title="总结"></a>总结</h3><p>本页内容为Ulster University的演示文稿页面，通过图表形式展示了不同生物特征认证方式在成本和准确性上的对比。图表显示虹膜和视网膜认证在保证较高准确性的同时，其成本也相对较高，而其他诸如面部、语音等认证方式虽然成本较低，但准确性相对较低。这一信息对于选择适合特定应用场景的生物特征认证技术非常重要。</p>
+<h2 id="生物特征认证系统（Biometric-Authentication-System）"><a href="#生物特征认证系统（Biometric-Authentication-System）" class="headerlink" title="生物特征认证系统（Biometric Authentication System）"></a>生物特征认证系统（Biometric Authentication System）</h2><h3 id="生物特征认证过程"><a href="#生物特征认证过程" class="headerlink" title="生物特征认证过程"></a>生物特征认证过程</h3><ul>
+<li>生物特征认证系统包括注册（Enrollment）、验证（Verification）和识别（Identification）三个基本过程。</li>
+</ul>
+<h3 id="a-注册（Enrollment）"><a href="#a-注册（Enrollment）" class="headerlink" title="(a) 注册（Enrollment）"></a>(a) 注册（Enrollment）</h3><ol>
+<li>用户通过用户界面输入姓名（PIN）。</li>
+<li>生物特征传感器捕获生物特征数据。</li>
+<li>特征提取器提取生物特征。</li>
+<li>提取的特征被存储在生物特征数据库中。</li>
+</ol>
+<h3 id="b-验证（Verification）"><a href="#b-验证（Verification）" class="headerlink" title="(b) 验证（Verification）"></a>(b) 验证（Verification）</h3><ol>
+<li>用户通过用户界面输入姓名（PIN）。</li>
+<li>生物特征传感器捕获生物特征数据。</li>
+<li>特征提取器提取特征。</li>
+<li>特征匹配器将提取的特征与数据库中的单一模板比对，返回验证结果（真&#x2F;假）。</li>
+</ol>
+<h3 id="c-识别（Identification）"><a href="#c-识别（Identification）" class="headerlink" title="(c) 识别（Identification）"></a>(c) 识别（Identification）</h3><ol>
+<li>用户界面不需要用户提前输入身份信息。</li>
+<li>生物特征传感器捕获生物特征数据。</li>
+<li>特征提取器提取特征。</li>
+<li>特征匹配器将提取的特征与数据库中的多个模板进行比对，确定用户身份或返回“用户未识别”。</li>
+</ol>
+<h3 id="图例说明-1"><a href="#图例说明-1" class="headerlink" title="图例说明"></a>图例说明</h3><ul>
+<li>图3.9 通用生物特征系统。注册过程创建了用户与用户生物特征之间的关联。根据应用，用户认证可以涉及验证声称的用户是否为实际用户，或识别未知用户（Figure 3.9 A Generic Biometric System. Enrollment creates an association between a user and the user’s biometric characteristics. Depending on the application, user authentication either involves verifying that a claimed user is the actual user or identifying an unknown user）。</li>
+</ul>
+<h3 id="总结-8"><a href="#总结-8" class="headerlink" title="总结"></a>总结</h3><p>本页内容为Ulster University的演示文稿页面，图解阐述了生物特征认证系统的三个关键步骤：注册、验证和识别。通过这三个步骤，系统能够确保用户的身份匹配其预先注册的生物特征，保障安全性。此过程对于理解如何通过生物特征来控制对敏感系统的访问至关重要。</p>
+<h2 id="访问控制政策分类-Access-Control-Policy-Categories"><a href="#访问控制政策分类-Access-Control-Policy-Categories" class="headerlink" title="访问控制政策分类 (Access Control Policy Categories)"></a>访问控制政策分类 (Access Control Policy Categories)</h2><h3 id="属性基于访问控制-ABAC-Attribute-based-access-control"><a href="#属性基于访问控制-ABAC-Attribute-based-access-control" class="headerlink" title="属性基于访问控制 (ABAC - Attribute-based access control)"></a>属性基于访问控制 (ABAC - Attribute-based access control)</h3><ul>
+<li><strong>定义</strong>: 依据属性（如用户、资源、环境条件）来决定访问权限的策略。</li>
+<li><strong>优势</strong>: 灵活性高，可实现复杂的访问控制决策。</li>
+<li><strong>适用情景</strong>: 对访问控制有细粒度需求的场合。</li>
+</ul>
+<h3 id="自主访问控制-DAC-Discretionary-access-control"><a href="#自主访问控制-DAC-Discretionary-access-control" class="headerlink" title="自主访问控制 (DAC - Discretionary access control)"></a>自主访问控制 (DAC - Discretionary access control)</h3><ul>
+<li><strong>定义</strong>: 资源拥有者或管理员控制访问权限的模式。</li>
+<li><strong>优势</strong>: 管理简便，用户可控性强。</li>
+<li><strong>适用情景</strong>: 个人或小团队资源共享。</li>
+</ul>
+<h3 id="强制访问控制-MAC-Mandatory-access-control"><a href="#强制访问控制-MAC-Mandatory-access-control" class="headerlink" title="强制访问控制 (MAC - Mandatory access control)"></a>强制访问控制 (MAC - Mandatory access control)</h3><ul>
+<li><strong>定义</strong>: 系统级的访问控制策略，不由个别用户控制。</li>
+<li><strong>优势</strong>: 安全性高，防泄露能力强。</li>
+<li><strong>适用情景</strong>: 需要高安全级别的环境，如政府或军事。</li>
+</ul>
+<h3 id="角色基于访问控制-RBAC-Role-based-access-control"><a href="#角色基于访问控制-RBAC-Role-based-access-control" class="headerlink" title="角色基于访问控制 (RBAC - Role-based access control)"></a>角色基于访问控制 (RBAC - Role-based access control)</h3><ul>
+<li><strong>定义</strong>: 依据用户的角色分配权限的访问控制策略。</li>
+<li><strong>优势</strong>: 易于管理，适应性强。</li>
+<li><strong>适用情景</strong>: 角色分明的组织结构，如公司部门。</li>
+</ul>
+<h3 id="总结-9"><a href="#总结-9" class="headerlink" title="总结"></a>总结</h3><p>这个图表整合了四种主要的访问控制政策，每种政策都有其独特的定义、优势和适用场景。ABAC的灵活性适合复杂环境，DAC适合小规模环境，MAC适用于安全要求极高的场合，而RBAC便于大型组织中的权限管理。</p>
+<h2 id="网络攻击-Cyber-attacks"><a href="#网络攻击-Cyber-attacks" class="headerlink" title="网络攻击 (Cyber attacks)"></a>网络攻击 (Cyber attacks)</h2><h3 id="客户端攻击-Clients-Attacks"><a href="#客户端攻击-Clients-Attacks" class="headerlink" title="客户端攻击 (Clients Attacks)"></a>客户端攻击 (Clients Attacks)</h3><ul>
+<li><strong>目标</strong>: 针对系统的客户端组件，利用软件或硬件的漏洞进行攻击。</li>
+<li><strong>举例</strong>: <ul>
+<li><strong>网络钓鱼 (Phishing)</strong>: 常见的客户端攻击形式。攻击者发送欺骗性电子邮件或消息给用户，诱导用户泄露敏感信息，如登录凭据。</li>
+</ul>
+</li>
+</ul>
+<h3 id="重放攻击-Replay-Attacks"><a href="#重放攻击-Replay-Attacks" class="headerlink" title="重放攻击 (Replay Attacks)"></a>重放攻击 (Replay Attacks)</h3><ul>
+<li><strong>操作</strong>: 捕获并重新传输两方之间交换的数据，目的通常是为了获取未授权的访问或执行恶意行为。</li>
+<li><strong>举例</strong>: <ul>
+<li><strong>针对安全访问控制系统的重放攻击</strong>: 攻击者截获一个合法用户的加密访问请求，然后重新播放这个请求以获得对安全设施的未授权进入。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-10"><a href="#总结-10" class="headerlink" title="总结"></a>总结</h3><p>本节内容介绍了两种常见的网络攻击方式：客户端攻击和重放攻击。客户端攻击主要是通过利用客户端的软硬件漏洞来进行，例如通过网络钓鱼诱导用户泄露信息。重放攻击则涉及到数据的截获与重新传输，以便非法获取系统的访问权。了解这些攻击方式有助于我们更好地防范网络安全威胁。</p>
+<h2 id="网络攻击-Cyber-attacks-1"><a href="#网络攻击-Cyber-attacks-1" class="headerlink" title="网络攻击 (Cyber attacks)"></a>网络攻击 (Cyber attacks)</h2><h3 id="主机攻击-Host-Attacks"><a href="#主机攻击-Host-Attacks" class="headerlink" title="主机攻击 (Host Attacks)"></a>主机攻击 (Host Attacks)</h3><ul>
+<li><strong>目标</strong>: 针对特定主机或计算机系统的漏洞进行攻击，目的是为了未授权访问或破坏主机的完整性。</li>
+<li><strong>举例</strong>:<ul>
+<li><strong>远程代码执行攻击</strong>: 攻击者利用主机软件中的漏洞，远程执行恶意代码，可能导致攻击者控制整个系统。</li>
+</ul>
+</li>
+</ul>
+<h3 id="窃听攻击-Eavesdropping-Attacks"><a href="#窃听攻击-Eavesdropping-Attacks" class="headerlink" title="窃听攻击 (Eavesdropping Attacks)"></a>窃听攻击 (Eavesdropping Attacks)</h3><ul>
+<li><strong>操作</strong>: 在不知情的情况下，拦截和监控两个或多个方之间的通讯，以获取敏感信息。</li>
+<li><strong>举例</strong>:<ul>
+<li><strong>流量嗅探</strong>: 常见的窃听攻击形式。攻击者监听未加密的网络流量，在不安全的网络上捕获并分析诸如登录凭据或个人消息等敏感信息。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-11"><a href="#总结-11" class="headerlink" title="总结"></a>总结</h3><p>本节内容详细介绍了两种类型的网络攻击——主机攻击和窃听攻击。主机攻击通过利用系统漏洞进行远程代码执行，可能导致攻击者获得系统控制权。窃听攻击则通过拦截通信获取敏感信息，如通过流量嗅探来监听网络数据包。了解这些攻击手段对于提高网络安全意识和防范措施至关重要。</p>
+<h2 id="网络攻击-Cyber-attacks-2"><a href="#网络攻击-Cyber-attacks-2" class="headerlink" title="网络攻击 (Cyber attacks)"></a>网络攻击 (Cyber attacks)</h2><h3 id="服务拒绝攻击-DoS-Denial-of-Service-Attacks"><a href="#服务拒绝攻击-DoS-Denial-of-Service-Attacks" class="headerlink" title="服务拒绝攻击 (DoS - Denial of Service Attacks)"></a>服务拒绝攻击 (DoS - Denial of Service Attacks)</h3><ul>
+<li><strong>目标</strong>: 中断系统或网络的正常运行，通过发送大量请求或流量使其无法为合法用户服务。</li>
+<li><strong>举例</strong>:<ul>
+<li><strong>Ping Flood</strong>: 攻击者向目标服务器或网络发送大量的ping请求，导致服务器无法处理合法请求，从而无法响应。</li>
+</ul>
+</li>
+</ul>
+<h3 id="木马攻击-Trojan-Horse-Attacks"><a href="#木马攻击-Trojan-Horse-Attacks" class="headerlink" title="木马攻击 (Trojan Horse Attacks)"></a>木马攻击 (Trojan Horse Attacks)</h3><ul>
+<li><strong>操作</strong>: 伪装成合法或良性软件的恶意软件。一旦安装，这些软件可以在用户不知情的情况下执行恶意操作。</li>
+<li><strong>举例</strong>:<ul>
+<li><strong>假冒杀毒软件</strong>: 攻击者可能会创建一个假的杀毒软件包并在线分发。用户下载并安装后，无意中将自己的系统感染了恶意软件，从而给攻击者提供了未授权的计算机访问权限。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-12"><a href="#总结-12" class="headerlink" title="总结"></a>总结</h3><p>本节讲解了服务拒绝攻击和木马攻击两种网络攻击方式。服务拒绝攻击通过大量流量中断服务，木马攻击则通过假装是合法软件来进行系统渗透。了解这些常见的网络攻击手法，有助于我们采取预防措施，保护网络安全。</p>
+<h2 id="访问控制定义-Access-Control-Definitions"><a href="#访问控制定义-Access-Control-Definitions" class="headerlink" title="访问控制定义 (Access Control Definitions)"></a>访问控制定义 (Access Control Definitions)</h2><h3 id="NISTIR-7298定义-NISTIR-7298-defines-access-control-as"><a href="#NISTIR-7298定义-NISTIR-7298-defines-access-control-as" class="headerlink" title="NISTIR 7298定义 (NISTIR 7298 defines access control as)"></a>NISTIR 7298定义 (NISTIR 7298 defines access control as)</h3><ul>
+<li><strong>定义</strong>: 访问控制是指授予或拒绝特定请求的过程，这些请求包括获取和使用信息以及相关的信息处理服务，以及进入特定的物理设施。</li>
+<li><strong>要点</strong>:<ul>
+<li>信息和信息处理服务的访问</li>
+<li>物理设施的进入</li>
+</ul>
+</li>
+</ul>
+<h3 id="RFC-4949定义-RFC-4949-defines-access-control-as"><a href="#RFC-4949定义-RFC-4949-defines-access-control-as" class="headerlink" title="RFC 4949定义 (RFC 4949 defines access control as)"></a>RFC 4949定义 (RFC 4949 defines access control as)</h3><ul>
+<li><strong>定义</strong>: 访问控制是一个过程，系统资源的使用受到安全政策的规范，并且只有授权实体（用户、程序、过程或其他系统）才能根据该政策使用这些资源。</li>
+<li><strong>要点</strong>:<ul>
+<li>系统资源的使用</li>
+<li>安全政策的规范</li>
+<li>授权实体的权限</li>
+</ul>
+</li>
+</ul>
+<h3 id="访问控制原则-Access-Control-Principles"><a href="#访问控制原则-Access-Control-Principles" class="headerlink" title="访问控制原则 (Access Control Principles)"></a>访问控制原则 (Access Control Principles)</h3><ul>
+<li><strong>概述</strong>: 从广义上说，计算机安全的所有方面都涉及到访问控制。</li>
+<li><strong>RFC 4949定义计算机安全</strong>:<ul>
+<li><strong>定义</strong>: 计算机安全是指实施和确保计算机系统安全服务的措施，特别是那些确保访问控制服务的措施。</li>
+<li><strong>要点</strong>:<ul>
+<li>安全服务的实施和确保</li>
+<li>访问控制的重要性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-13"><a href="#总结-13" class="headerlink" title="总结"></a>总结</h3><p>这三张幻灯片提供了访问控制的定义和原则。NISTIR 7298和RFC 4949均对访问控制给出了定义，强调了授权、安全政策和资源使用的重要性。此外，RFC 4949还强调了计算机安全的定义，指出确保访问控制服务是计算机安全的一个关键组成部分。这些定义和原则为我们理解和实施有效的访问控制策略提供了基础。</p>
+<h2 id="访问控制原则-Access-Control-Principles-1"><a href="#访问控制原则-Access-Control-Principles-1" class="headerlink" title="访问控制原则 (Access Control Principles)"></a>访问控制原则 (Access Control Principles)</h2><h3 id="安全管理员-Security-administrator"><a href="#安全管理员-Security-administrator" class="headerlink" title="安全管理员 (Security administrator)"></a>安全管理员 (Security administrator)</h3><ul>
+<li>负责管理授权数据库，设置和维护访问控制策略。</li>
+</ul>
+<h3 id="用户-User"><a href="#用户-User" class="headerlink" title="用户 (User)"></a>用户 (User)</h3><ul>
+<li>需要通过身份验证和访问控制功能来获取系统资源的使用权。</li>
+</ul>
+<h3 id="身份验证功能-Authentication-function"><a href="#身份验证功能-Authentication-function" class="headerlink" title="身份验证功能 (Authentication function)"></a>身份验证功能 (Authentication function)</h3><ul>
+<li>确定请求者是否为声称的用户。</li>
+</ul>
+<h3 id="访问控制功能-Access-control-function"><a href="#访问控制功能-Access-control-function" class="headerlink" title="访问控制功能 (Access control function)"></a>访问控制功能 (Access control function)</h3><ul>
+<li>根据授权数据库的策略决定用户是否有权访问特定资源。</li>
+</ul>
+<h3 id="系统资源-System-resources"><a href="#系统资源-System-resources" class="headerlink" title="系统资源 (System resources)"></a>系统资源 (System resources)</h3><ul>
+<li>包括文件、数据库和其他资源，它们需要通过访问控制功能来保护。</li>
+</ul>
+<h3 id="审计-Auditing"><a href="#审计-Auditing" class="headerlink" title="审计 (Auditing)"></a>审计 (Auditing)</h3><ul>
+<li>跟踪和记录访问控制事件，以便于事后的检查和分析。</li>
+</ul>
+<h3 id="图表解释-Figure-Explanation"><a href="#图表解释-Figure-Explanation" class="headerlink" title="图表解释 (Figure Explanation)"></a>图表解释 (Figure Explanation)</h3><ul>
+<li>图表展示了安全管理员、用户、身份验证、访问控制和审计之间的关系。安全管理员管理授权数据库，用户通过身份验证来请求资源，访问控制功能根据策略来授予或拒绝请求，审计功能则记录所有相关事件。</li>
+</ul>
+<h3 id="总结-14"><a href="#总结-14" class="headerlink" title="总结"></a>总结</h3><p>本图表详细说明了访问控制的不同组成部分及其相互关系。安全管理员负责设置访问权限，用户需要经过身份验证，访问控制功能基于授权来允许或禁止资源访问，审计则用于安全监控和合规性检查。</p>
+<h2 id="访问控制政策分类-Access-Control-Policy-Categories-1"><a href="#访问控制政策分类-Access-Control-Policy-Categories-1" class="headerlink" title="访问控制政策分类 (Access Control Policy Categories)"></a>访问控制政策分类 (Access Control Policy Categories)</h2><h3 id="属性基于访问控制-ABAC-Attribute-based-access-control-1"><a href="#属性基于访问控制-ABAC-Attribute-based-access-control-1" class="headerlink" title="属性基于访问控制 (ABAC - Attribute-based access control)"></a>属性基于访问控制 (ABAC - Attribute-based access control)</h3><ul>
+<li><strong>定义</strong>: 根据用户、资源和环境属性来确定访问权限。</li>
+<li><strong>特点</strong>: 提供了细粒度的访问控制，可以根据多种属性进行灵活配置。</li>
+</ul>
+<h3 id="自主访问控制-DAC-Discretionary-access-control-1"><a href="#自主访问控制-DAC-Discretionary-access-control-1" class="headerlink" title="自主访问控制 (DAC - Discretionary access control)"></a>自主访问控制 (DAC - Discretionary access control)</h3><ul>
+<li><strong>定义</strong>: 资源的拥有者或管理员对访问权限进行控制。</li>
+<li><strong>特点</strong>: 更加灵活，允许用户或管理员对资源的访问进行自主管理。</li>
+</ul>
+<h3 id="强制访问控制-MAC-Mandatory-access-control-1"><a href="#强制访问控制-MAC-Mandatory-access-control-1" class="headerlink" title="强制访问控制 (MAC - Mandatory access control)"></a>强制访问控制 (MAC - Mandatory access control)</h3><ul>
+<li><strong>定义</strong>: 访问权限由系统级的政策控制，不由个体用户决定。</li>
+<li><strong>特点</strong>: 更加严格，通常用于需要高安全级别的环境。</li>
+</ul>
+<h3 id="角色基于访问控制-RBAC-Role-based-access-control-1"><a href="#角色基于访问控制-RBAC-Role-based-access-control-1" class="headerlink" title="角色基于访问控制 (RBAC - Role-based access control)"></a>角色基于访问控制 (RBAC - Role-based access control)</h3><ul>
+<li><strong>定义</strong>: 根据用户的角色来分配访问权限。</li>
+<li><strong>特点</strong>: 简化了权限管理，用户按角色获得相应的访问权限。</li>
+</ul>
+<h3 id="图表解释"><a href="#图表解释" class="headerlink" title="图表解释"></a>图表解释</h3><ul>
+<li>图表显示了四种访问控制政策之间的关系：ABAC、DAC、MAC和RBAC。每种访问控制都有其独特的应用场景和特点。ABAC侧重于属性的细粒度控制，DAC提供灵活性，MAC适用于安全性要求高的环境，而RBAC则便于管理大型组织的权限。</li>
+</ul>
+<h3 id="总结-15"><a href="#总结-15" class="headerlink" title="总结"></a>总结</h3><p>这个图表总结了四种主要的访问控制政策，它们各自有不同的定义和特点，适用于不同的安全需求和环境。理解这些不同的访问控制政策对于设计和实施有效的安全策略至关重要。</p>
+<h2 id="访问控制政策-Access-Control-Policies"><a href="#访问控制政策-Access-Control-Policies" class="headerlink" title="访问控制政策 (Access Control Policies)"></a>访问控制政策 (Access Control Policies)</h2><h3 id="自主访问控制-DAC-Discretionary-access-control-2"><a href="#自主访问控制-DAC-Discretionary-access-control-2" class="headerlink" title="自主访问控制 (DAC - Discretionary access control)"></a>自主访问控制 (DAC - Discretionary access control)</h3><ul>
+<li><strong>基于身份</strong>: 根据请求者的身份来控制访问。</li>
+<li><strong>访问规则</strong>: 依据授权规则（权限）确定请求者允许或不允许做的操作。</li>
+<li><strong>图表解释</strong>: 图表展示了自主访问控制中的关系，所有者可以指定哪些用户或用户组可以访问对象。</li>
+</ul>
+<h3 id="总结-16"><a href="#总结-16" class="headerlink" title="总结"></a>总结</h3><p>自主访问控制（DAC）是一种基于资源所有者定义的权限来控制访问的方法。在DAC模型中，所有者可以指定哪些用户或用户组有权访问特定的资源，如文件或数据库等。这种方法的灵活性较高，因为它允许所有者根据自身的判断来分配权限。</p>
+<h2 id="访问控制政策-Access-Control-Policies-1"><a href="#访问控制政策-Access-Control-Policies-1" class="headerlink" title="访问控制政策 (Access Control Policies)"></a>访问控制政策 (Access Control Policies)</h2><h3 id="强制访问控制-MAC-Mandatory-access-control-2"><a href="#强制访问控制-MAC-Mandatory-access-control-2" class="headerlink" title="强制访问控制 (MAC - Mandatory access control)"></a>强制访问控制 (MAC - Mandatory access control)</h3><ul>
+<li><strong>基于安全标签</strong>: 根据安全标签与安全级别的对比来控制访问。</li>
+<li><strong>安全级别</strong>: 包括顶级秘密（Top Secret）、秘密（Secret）、机密（Confidential）和公开（Public）。</li>
+<li><strong>图表解释</strong>: 图表显示了用户和资源（对象）之间的关系，以及不同的权限级别。用户必须拥有足够的安全级别才能访问对应级别的资源。</li>
+</ul>
+<h3 id="总结-17"><a href="#总结-17" class="headerlink" title="总结"></a>总结</h3><p>强制访问控制（MAC）是一种非常严格的访问控制形式，主要用于政府和军事环境。在MAC政策下，访问决策基于用户的安全等级和数据的分类等级，确保只有授权的用户才能访问敏感信息。</p>
+<h2 id="访问控制政策-Access-Control-Policies-2"><a href="#访问控制政策-Access-Control-Policies-2" class="headerlink" title="访问控制政策 (Access Control Policies)"></a>访问控制政策 (Access Control Policies)</h2><h3 id="基于角色的访问控制-RBAC-Role-based-access-control"><a href="#基于角色的访问控制-RBAC-Role-based-access-control" class="headerlink" title="基于角色的访问控制 (RBAC - Role-based access control)"></a>基于角色的访问控制 (RBAC - Role-based access control)</h3><ul>
+<li><strong>基于角色控制</strong>: 根据用户在系统中的角色来控制访问权限。</li>
+<li><strong>访问规则</strong>: 明确说明不同角色的用户允许访问的资源。</li>
+<li><strong>图表解释</strong>: 图表展示了销售（Sales）、财务（Finance）和工程（Engineering）等不同部门的角色以及他们可以访问的数据库、工资单和代码库等资源。</li>
+</ul>
+<h3 id="总结-18"><a href="#总结-18" class="headerlink" title="总结"></a>总结</h3><p>基于角色的访问控制（RBAC）是一种常见的访问控制方法，它依据用户的职责和角色来分配相应的访问权限。这种方法有助于简化权限管理，因为它允许企业根据角色而非个别用户来统一控制访问权限，从而提高了安全性和效率。</p>
+<h2 id="访问控制策略-Access-Control-Policies"><a href="#访问控制策略-Access-Control-Policies" class="headerlink" title="访问控制策略 (Access Control Policies)"></a>访问控制策略 (Access Control Policies)</h2><h3 id="基于属性的访问控制-ABAC"><a href="#基于属性的访问控制-ABAC" class="headerlink" title="基于属性的访问控制 (ABAC)"></a>基于属性的访问控制 (ABAC)</h3><ul>
+<li><strong>控制访问基于以下因素</strong>：<ul>
+<li>用户的属性</li>
+<li>待访问资源的属性</li>
+<li>当前的环境条件</li>
+</ul>
+</li>
+</ul>
+<h4 id="用户属性-User-attributes"><a href="#用户属性-User-attributes" class="headerlink" title="用户属性 (User attributes)"></a>用户属性 (User attributes)</h4><ul>
+<li><strong>包括但不限于</strong>：<ul>
+<li>姓名 (Name)</li>
+<li>角色 (Role)</li>
+<li>安全级别 (Security clearance)</li>
+</ul>
+</li>
+</ul>
+<h4 id="资源属性-Resource-attributes"><a href="#资源属性-Resource-attributes" class="headerlink" title="资源属性 (Resource attributes)"></a>资源属性 (Resource attributes)</h4><ul>
+<li><strong>定义资源的特性</strong>：<ul>
+<li>创建日期 (Creation date)</li>
+<li>资源所有者 (Resource owner)</li>
+<li>数据敏感性 (Data sensitivity)</li>
+</ul>
+</li>
+</ul>
+<h4 id="环境属性-Environmental-attributes"><a href="#环境属性-Environmental-attributes" class="headerlink" title="环境属性 (Environmental attributes)"></a>环境属性 (Environmental attributes)</h4><ul>
+<li><strong>环境因素可能影响访问决策</strong>：<ul>
+<li>访问时间 (Access time)</li>
+<li>数据位置 (Data location)</li>
+<li>威胁级别 (Threat levels)</li>
+</ul>
+</li>
+</ul>
+<h3 id="图表解释-1"><a href="#图表解释-1" class="headerlink" title="图表解释"></a>图表解释</h3><ul>
+<li><strong>图表显示了ABAC模型的结构</strong>：<ul>
+<li>如何根据用户属性、资源属性和环境属性来决定访问权限。</li>
+<li>属性之间的关系和它们如何相互作用以形成访问控制决策。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-19"><a href="#总结-19" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>基于属性的访问控制 (ABAC) 是一种动态的安全策略，它根据用户、资源和环境的多个属性来控制对系统的访问。这种方法提供了高度的灵活性和精细的访问控制，适用于需要复杂和详细访问规则的场合。</li>
+</ul>
+<h2 id="主体、客体和访问权限-Subjects-Objects-and-Access-Rights"><a href="#主体、客体和访问权限-Subjects-Objects-and-Access-Rights" class="headerlink" title="主体、客体和访问权限 (Subjects, Objects, and Access Rights)"></a>主体、客体和访问权限 (Subjects, Objects, and Access Rights)</h2><h3 id="主体-Subject"><a href="#主体-Subject" class="headerlink" title="主体 (Subject)"></a>主体 (Subject)</h3><ul>
+<li><strong>定义</strong>：能够访问客体的实体。</li>
+<li><strong>分类</strong>：<ul>
+<li>主体 (Subject)</li>
+<li>拥有者 (Owner)</li>
+<li>组 (Group)</li>
+</ul>
+</li>
+</ul>
+<h3 id="客体-Object"><a href="#客体-Object" class="headerlink" title="客体 (Object)"></a>客体 (Object)</h3><ul>
+<li><strong>定义</strong>：访问受控的资源。</li>
+<li><strong>功能</strong>：<ul>
+<li>用于包含和&#x2F;或接收信息。</li>
+</ul>
+</li>
+</ul>
+<h3 id="访问权限-Access-right"><a href="#访问权限-Access-right" class="headerlink" title="访问权限 (Access right)"></a>访问权限 (Access right)</h3><ul>
+<li><strong>描述</strong>：主体访问客体的方式。</li>
+<li><strong>可能包括的权限</strong>：<ul>
+<li>读取 (Read)</li>
+<li>写入 (Write)</li>
+<li>执行 (Execute)</li>
+<li>删除 (Delete)</li>
+<li>创建 (Create)</li>
+<li>搜索 (Search)</li>
+</ul>
+</li>
+</ul>
+<h3 id="图表解释-2"><a href="#图表解释-2" class="headerlink" title="图表解释"></a>图表解释</h3><ul>
+<li>本图表明确区分了信息系统中的访问主体、客体以及它们之间的访问权限。</li>
+<li><strong>主体</strong>：是指可以对客体执行操作的用户或进程。</li>
+<li><strong>客体</strong>：是指系统中的文件、数据库记录或任何其他资源。</li>
+<li><strong>访问权限</strong>：决定主体对客体的操作类型，如读取或修改等。</li>
+</ul>
+<h3 id="总结-20"><a href="#总结-20" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>在信息安全领域，理解主体、客体和访问权限之间的关系至关重要。主体是请求访问的实体，客体是被访问的资源，而访问权限则定义了主体对客体的访问类型。此图表清晰地描绘了这一安全模型的基本框架。</li>
+</ul>
+<h2 id="自主访问控制-Discretionary-Access-Control-DAC"><a href="#自主访问控制-Discretionary-Access-Control-DAC" class="headerlink" title="自主访问控制 (Discretionary Access Control, DAC)"></a>自主访问控制 (Discretionary Access Control, DAC)</h2><ul>
+<li><p><strong>定义</strong>：一种安全模式，允许实体授予其它实体访问权限，甚至可能违反自身的权限设定来实现资源共享。</p>
+</li>
+<li><p><strong>实现方式</strong>：</p>
+<ul>
+<li>通常使用访问矩阵来提供。</li>
+</ul>
+</li>
+<li><p><strong>矩阵的维度</strong>：</p>
+<ul>
+<li>一维包括被识别的主体，它们可能尝试访问资源。</li>
+<li>另一维则列出了可能被访问的对象。</li>
+</ul>
+</li>
+<li><p><strong>矩阵条目</strong>：</p>
+<ul>
+<li>每个条目指示了特定主体对特定对象的访问权限。</li>
+</ul>
+</li>
+</ul>
+<h3 id="矩阵的结构解释"><a href="#矩阵的结构解释" class="headerlink" title="矩阵的结构解释"></a>矩阵的结构解释</h3><ul>
+<li>访问矩阵通常是一个二维表格，其中一维代表访问控制系统中的主体，另一维代表对象。</li>
+<li>表格中的每个条目对应一个特定的访问权限，比如读取、写入或执行等。</li>
+</ul>
+<h3 id="总结-21"><a href="#总结-21" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>自主访问控制（DAC）是一种基于主体自行决定其资源访问权限的模型，其特点是灵活性高，允许用户间相互授予权限。访问矩阵是实现DAC的常用工具，它详细地列出了谁可以访问什么资源，以及允许进行的操作。</li>
+</ul>
+<h2 id="访问控制结构-Access-control-structure"><a href="#访问控制结构-Access-control-structure" class="headerlink" title="访问控制结构 (Access control structure)"></a>访问控制结构 (Access control structure)</h2><h3 id="访问矩阵-Access-matrix"><a href="#访问矩阵-Access-matrix" class="headerlink" title="访问矩阵 (Access matrix)"></a>访问矩阵 (Access matrix)</h3><ul>
+<li><p>**主体 (SUBJECTS)**：</p>
+<ul>
+<li>用户 A (User A)</li>
+<li>用户 B (User B)</li>
+<li>用户 C (User C)</li>
+</ul>
+</li>
+<li><p>**客体 (OBJECTS)**：</p>
+<ul>
+<li>文件 1 (File 1)</li>
+<li>文件 2 (File 2)</li>
+<li>文件 3 (File 3)</li>
+<li>文件 4 (File 4)</li>
+</ul>
+</li>
+<li><p><strong>权限分配</strong>：</p>
+<ul>
+<li>用户 A 拥有文件 1 和文件 3 的所有权，可读写。</li>
+<li>用户 B 对文件 2 有所有权，可读写；对文件 3 有写权限；对文件 4 有读权限。</li>
+<li>用户 C 对文件 1 有读写权限；对文件 2 有读权限；对文件 4 有所有权，可读写。</li>
+</ul>
+</li>
+</ul>
+<h3 id="图表解释-3"><a href="#图表解释-3" class="headerlink" title="图表解释"></a>图表解释</h3><ul>
+<li>访问矩阵是一个二维表格，主体（如用户）在一维，客体（如文件）在另一维。</li>
+<li>表格中的每个单元格指示主体对客体拥有的权限，例如“Own”表示所有权，“Read”表示读取权限，“Write”表示写入权限。</li>
+</ul>
+<h3 id="总结-22"><a href="#总结-22" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>这个访问矩阵图展示了不同用户对不同文件的访问权限。它是理解自主访问控制（DAC）模型中权限分配的一个直观工具，表格的每个单元格明确了谁可以以什么方式访问哪个资源。</li>
+</ul>
+<h2 id="访问控制结构-Access-control-structure-1"><a href="#访问控制结构-Access-control-structure-1" class="headerlink" title="访问控制结构 (Access control structure)"></a>访问控制结构 (Access control structure)</h2><h3 id="访问控制列表-Access-control-lists-for-files-of-part-a"><a href="#访问控制列表-Access-control-lists-for-files-of-part-a" class="headerlink" title="访问控制列表 (Access control lists for files of part (a))"></a>访问控制列表 (Access control lists for files of part (a))</h3><ul>
+<li><p>**文件 1 (File 1)**：</p>
+<ul>
+<li>用户 A (User A)：拥有所有权限 (Own)，可读 (R)，可写 (W)</li>
+<li>用户 B (User B)：可读 (R)</li>
+<li>用户 C (User C)：可读 (R)，可写 (W)</li>
+</ul>
+</li>
+<li><p>**文件 2 (File 2)**：</p>
+<ul>
+<li>用户 B (User B)：拥有所有权限 (Own)，可读 (R)，可写 (W)</li>
+<li>用户 C (User C)：可读 (R)</li>
+</ul>
+</li>
+<li><p>**文件 3 (File 3)**：</p>
+<ul>
+<li>用户 A (User A)：拥有所有权限 (Own)，可读 (R)，可写 (W)</li>
+<li>用户 B (User B)：可写 (W)</li>
+</ul>
+</li>
+<li><p>**文件 4 (File 4)**：</p>
+<ul>
+<li>用户 B (User B)：可读 (R)</li>
+<li>用户 C (User C)：拥有所有权限 (Own)，可读 (R)，可写 (W)</li>
+</ul>
+</li>
+</ul>
+<h3 id="权能列表-Capability-lists-for-files-of-part-a"><a href="#权能列表-Capability-lists-for-files-of-part-a" class="headerlink" title="权能列表 (Capability lists for files of part (a))"></a>权能列表 (Capability lists for files of part (a))</h3><ul>
+<li><p>**用户 A (User A)**：</p>
+<ul>
+<li>文件 1 (File 1) 和 文件 3 (File 3)：拥有所有权限 (Own)，可读 (R)，可写 (W)</li>
+</ul>
+</li>
+<li><p>**用户 B (User B)**：</p>
+<ul>
+<li>文件 1 (File 1)：可读 (R)</li>
+<li>文件 2 (File 2)：拥有所有权限 (Own)，可读 (R)，可写 (W)</li>
+<li>文件 3 (File 3)：可写 (W)</li>
+<li>文件 4 (File 4)：可读 (R)</li>
+</ul>
+</li>
+<li><p>**用户 C (User C)**：</p>
+<ul>
+<li>文件 1 (File 1)：可读 (R)，可写 (W)</li>
+<li>文件 2 (File 2)：可读 (R)</li>
+<li>文件 4 (File 4)：拥有所有权限 (Own)，可读 (R)，可写 (W)</li>
+</ul>
+</li>
+</ul>
+<h3 id="图表解释-4"><a href="#图表解释-4" class="headerlink" title="图表解释"></a>图表解释</h3><ul>
+<li>本图表展示了访问控制列表和权能列表的两种访问控制结构。</li>
+<li>访问控制列表按文件列出每个用户的权限。</li>
+<li>权能列表则是按用户列出其对每个文件的权限。</li>
+</ul>
+<h3 id="总结-23"><a href="#总结-23" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>访问控制列表和权能列表是实现访问控制的两种常见结构。访问控制列表针对每个文件列出所有具有访问权限的用户及其权限类型。权能列表则从用户的角度出发，列出他们对每个文件所拥有的权限。这些结构帮助系统维护权限的清晰分配和管理。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/10/16/C398-w4-User%20Authentication%20and%20Access%20Control/">http://example.com/2023/10/16/C398-w4-User%20Authentication%20and%20Access%20Control/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Week4/">Week4</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/10/16/week%204%20lab/" title="Week4-Lab"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">Week4-Lab</div></div></a></div><div class="next-post pull-right"><a href="/2023/10/10/W3%20(LEC)%20-%20SaaP%20-%20SaaS/" title="W3 (LEC) - SaaP - SaaS"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">W3 (LEC) - SaaP - SaaS</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/10/29/T4/" title="T4"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-29</div><div class="title">T4</div></div></a></div><div><a href="/2023/10/23/W4%20(LEC)%20-%20Story%20Driven%20Approach/" title="W4 (LEC) - Story Driven Approach"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-23</div><div class="title">W4 (LEC) - Story Driven Approach</div></div></a></div><div><a href="/2023/10/18/Week4%20Challenge/" title="Week4-Challenge"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-18</div><div class="title">Week4-Challenge</div></div></a></div><div><a href="/2023/10/17/Week4%20pratical/" title="Week4-pratical"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-17</div><div class="title">Week4-pratical</div></div></a></div><div><a href="/2023/10/17/W4%20(LEC)-Requirements%20Process/" title="W4 (LEC)-Requirements Process"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-17</div><div class="title">W4 (LEC)-Requirements Process</div></div></a></div><div><a href="/2023/10/17/W4%20(TUT)-Splitting%20User%20Stories/" title="W4 (TUT)-Splitting User Stories"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-17</div><div class="title">W4 (TUT)-Splitting User Stories</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E4%BB%8B%E7%BB%8D-Introduction-to-Digital-User-Authentication"><span class="toc-number">1.</span> <span class="toc-text">数字用户认证介绍 (Introduction to Digital User Authentication)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81%E5%AE%9A%E4%B9%89-Definition-of-Digital-User-Authentication"><span class="toc-number">1.1.</span> <span class="toc-text">数字用户认证定义 (Definition of Digital User Authentication)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E8%A7%A3%E9%87%8A-Branch-Explanation"><span class="toc-number">1.2.</span> <span class="toc-text">分支解释 (Branch Explanation)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E6%96%B9%E6%B3%95-Authenticating-User-Identity"><span class="toc-number">2.</span> <span class="toc-text">用户身份验证方法 (Authenticating User Identity)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%89%8B%E6%AE%B5-The-four-means-of-authenticating-user-identity-are-based-on"><span class="toc-number">2.1.</span> <span class="toc-text">身份验证的四种手段 (The four means of authenticating user identity are based on)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%9B%A0%E7%B4%A0%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81-Multifactor-Authentication"><span class="toc-number">3.</span> <span class="toc-text">多因素身份验证 (Multifactor Authentication)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%9B%A0%E7%B4%A0%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E8%BF%87%E7%A8%8B-The-Process-of-Multifactor-Authentication"><span class="toc-number">3.1.</span> <span class="toc-text">多因素身份验证过程 (The Process of Multifactor Authentication)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A-Explanation-of-the-Diagram"><span class="toc-number">3.2.</span> <span class="toc-text">图表解释 (Explanation of the Diagram)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%AF%86%E7%A0%81%E7%9A%84%E8%AE%A4%E8%AF%81-Password-Based-Authentication"><span class="toc-number">4.</span> <span class="toc-text">基于密码的认证 (Password-Based Authentication)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E6%B5%81%E7%A8%8B-Authentication-Process"><span class="toc-number">4.1.</span> <span class="toc-text">认证流程 (Authentication Process)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7ID%E7%9A%84%E4%BD%9C%E7%94%A8-The-Role-of-User-ID"><span class="toc-number">4.2.</span> <span class="toc-text">用户ID的作用 (The Role of User ID)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%AF%86%E7%A0%81%E7%9A%84%E8%AE%A4%E8%AF%81%E6%9C%BA%E5%88%B6-Password-Based-Authentication-Mechanism"><span class="toc-number">5.</span> <span class="toc-text">基于密码的认证机制 (Password-Based Authentication Mechanism)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E9%AA%8C%E8%AF%81%E6%B5%81%E7%A8%8B-Password-Verification-Process"><span class="toc-number">5.1.</span> <span class="toc-text">密码验证流程 (Password Verification Process)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UNIX%E5%AF%86%E7%A0%81%E6%96%B9%E6%A1%88%E5%9B%BE%E8%A7%A3-UNIX-Password-Scheme-Diagram"><span class="toc-number">5.2.</span> <span class="toc-text">UNIX密码方案图解 (UNIX Password Scheme Diagram)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E6%BC%8F%E6%B4%9E-Password-Vulnerabilities"><span class="toc-number">6.</span> <span class="toc-text">密码漏洞 (Password Vulnerabilities)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E6%BC%8F%E6%B4%9E%E7%B1%BB%E5%9E%8B-Types-of-Password-Vulnerabilities"><span class="toc-number">6.1.</span> <span class="toc-text">密码漏洞类型 (Types of Password Vulnerabilities)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E6%8A%80%E6%9C%AF-Password-Cracking-Techniques"><span class="toc-number">7.</span> <span class="toc-text">密码破解技术 (Password Cracking Techniques)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E6%96%B9%E6%B3%95-Common-Password-Cracking-Methods"><span class="toc-number">7.1.</span> <span class="toc-text">常见的密码破解方法 (Common Password Cracking Methods)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E6%94%BB%E5%87%BB-Dictionary-Attacks"><span class="toc-number">8.</span> <span class="toc-text">字典攻击 (Dictionary Attacks)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E6%94%BB%E5%87%BB%E7%9A%84%E8%BF%87%E7%A8%8B-The-Process-of-Dictionary-Attacks"><span class="toc-number">8.1.</span> <span class="toc-text">字典攻击的过程 (The Process of Dictionary Attacks)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E5%85%B8%E6%94%BB%E5%87%BB%E6%9C%BA%E5%88%B6-Dictionary-Attack-Mechanism"><span class="toc-number">8.2.</span> <span class="toc-text">字典攻击机制 (Dictionary Attack Mechanism)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%A9%E8%99%B9%E8%A1%A8%E6%94%BB%E5%87%BB-Rainbow-Table-Attacks"><span class="toc-number">9.</span> <span class="toc-text">彩虹表攻击 (Rainbow Table Attacks)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A9%E8%99%B9%E8%A1%A8%E6%94%BB%E5%87%BB%E7%9A%84%E5%8E%9F%E7%90%86-Principles-of-Rainbow-Table-Attacks"><span class="toc-number">9.1.</span> <span class="toc-text">彩虹表攻击的原理 (Principles of Rainbow Table Attacks)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A9%E8%99%B9%E8%A1%A8%E9%93%BE%E7%9A%84%E8%A7%A3%E9%87%8A-Explanation-of-a-Rainbow-Table-Chain"><span class="toc-number">9.2.</span> <span class="toc-text">彩虹表链的解释 (Explanation of a Rainbow Table Chain)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%B0%E4%BB%A3%E5%AF%86%E7%A0%81%E7%AD%96%E7%95%A5-Modern-Approaches-to-Password-Policy"><span class="toc-number">10.</span> <span class="toc-text">现代密码策略 (Modern Approaches to Password Policy)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%AD%96%E7%95%A5%E7%9A%84%E8%A6%81%E7%82%B9-Key-Points-of-Password-Policy"><span class="toc-number">10.1.</span> <span class="toc-text">密码策略的要点 (Key Points of Password Policy)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E6%8A%80%E6%9C%AF%E7%9A%84%E8%BF%9B%E6%AD%A5-Advancements-in-Password-Cracking-Techniques"><span class="toc-number">10.2.</span> <span class="toc-text">密码破解技术的进步 (Advancements in Password-Cracking Techniques)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E5%AF%86%E7%A0%81%E7%9A%84%E7%A0%94%E7%A9%B6-Studying-Actual-Passwords"><span class="toc-number">10.3.</span> <span class="toc-text">实际密码的研究 (Studying Actual Passwords)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E6%96%87%E4%BB%B6%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%EF%BC%88Password-File-Access-Control%EF%BC%89"><span class="toc-number">11.</span> <span class="toc-text">密码文件访问控制（Password File Access Control）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81%E6%9D%A5%E9%98%BB%E6%AD%A2%E7%A6%BB%E7%BA%BF%E7%8C%9C%E6%B5%8B%E6%94%BB%E5%87%BB%EF%BC%88Can-block-offline-guessing-attacks-by-denying-access-to-encrypted-passwords%EF%BC%89"><span class="toc-number">11.1.</span> <span class="toc-text">可以通过拒绝访问加密密码来阻止离线猜测攻击（Can block offline guessing attacks by denying access to encrypted passwords）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E7%82%B9%EF%BC%88Vulnerabilities%EF%BC%89"><span class="toc-number">11.2.</span> <span class="toc-text">弱点（Vulnerabilities）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">11.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E9%80%89%E6%8B%A9%E7%AD%96%E7%95%A5%EF%BC%88Password-Selection-Strategies%EF%BC%89"><span class="toc-number">12.</span> <span class="toc-text">密码选择策略（Password Selection Strategies）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E6%95%99%E8%82%B2%EF%BC%88User-education%EF%BC%89"><span class="toc-number">12.1.</span> <span class="toc-text">用户教育（User education）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%EF%BC%88Computer-generated-passwords%EF%BC%89"><span class="toc-number">12.2.</span> <span class="toc-text">计算机生成密码（Computer generated passwords）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BA%94%E5%BC%8F%E5%AF%86%E7%A0%81%E6%A3%80%E6%9F%A5%EF%BC%88Reactive-password-checking%EF%BC%89"><span class="toc-number">12.3.</span> <span class="toc-text">反应式密码检查（Reactive password checking）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%AF%86%E7%A0%81%E6%94%BF%E7%AD%96-%E4%B8%BB%E5%8A%A8%E5%AF%86%E7%A0%81%E6%A3%80%E6%9F%A5%EF%BC%88Complex-password-policy-Proactive-Password-checker%EF%BC%89"><span class="toc-number">12.4.</span> <span class="toc-text">复杂密码政策 &#x2F; 主动密码检查（Complex password policy &#x2F; Proactive Password checker）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-number">12.5.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E5%BF%86%E5%8D%A1%EF%BC%88Memory-Cards%EF%BC%89"><span class="toc-number">13.</span> <span class="toc-text">记忆卡（Memory Cards）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7"><span class="toc-number">13.1.</span> <span class="toc-text">基本特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">13.2.</span> <span class="toc-text">使用方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7%E6%8F%90%E5%8D%87"><span class="toc-number">13.3.</span> <span class="toc-text">安全性提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B0%E5%BF%86%E5%8D%A1%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">13.4.</span> <span class="toc-text">记忆卡的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-2"><span class="toc-number">13.5.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E4%BB%A4%E7%89%8C%EF%BC%88Smart-Tokens%EF%BC%89"><span class="toc-number">14.</span> <span class="toc-text">智能令牌（Smart Tokens）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E7%89%B9%E6%80%A7%EF%BC%88Physical-characteristics%EF%BC%89"><span class="toc-number">14.1.</span> <span class="toc-text">物理特性（Physical characteristics）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%EF%BC%88User-interface%EF%BC%89"><span class="toc-number">14.2.</span> <span class="toc-text">用户界面（User interface）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%AD%90%E7%95%8C%E9%9D%A2%EF%BC%88Electronic-interface%EF%BC%89"><span class="toc-number">14.3.</span> <span class="toc-text">电子界面（Electronic interface）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE%EF%BC%88Authentication-protocol%EF%BC%89"><span class="toc-number">14.4.</span> <span class="toc-text">认证协议（Authentication protocol）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-3"><span class="toc-number">14.5.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E5%8D%A1%EF%BC%88Smart-Cards%EF%BC%89"><span class="toc-number">15.</span> <span class="toc-text">智能卡（Smart Cards）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E6%99%BA%E8%83%BD%E4%BB%A4%E7%89%8C%E7%B1%BB%E5%88%AB%EF%BC%88Most-important-category-of-smart-token%EF%BC%89"><span class="toc-number">15.1.</span> <span class="toc-text">最重要的智能令牌类别（Most important category of smart token）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E5%86%85%E5%AE%B9%EF%BC%88Contain%EF%BC%89"><span class="toc-number">15.2.</span> <span class="toc-text">包含内容（Contain）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E5%B8%B8%E5%8C%85%E5%90%AB%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%86%85%E5%AD%98%EF%BC%88Typically-include-three-types-of-memory%EF%BC%89"><span class="toc-number">15.3.</span> <span class="toc-text">通常包含三种类型的内存（Typically include three types of memory）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-4"><span class="toc-number">15.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E5%8D%A1%E4%B8%8E%E8%AF%BB%E5%8D%A1%E5%99%A8%E4%BA%A4%E4%BA%92%EF%BC%88Smart-Card-Reader-Exchange%EF%BC%89"><span class="toc-number">16.</span> <span class="toc-text">智能卡与读卡器交互（Smart Card&#x2F;Reader Exchange）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E5%8D%A1%E6%BF%80%E6%B4%BB%EF%BC%88Smart-Card-Activation%EF%BC%89"><span class="toc-number">16.1.</span> <span class="toc-text">智能卡激活（Smart Card Activation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E8%BF%87%E7%A8%8B"><span class="toc-number">16.2.</span> <span class="toc-text">通信过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%9A%E8%AF%9D%E7%BB%93%E6%9D%9F%EF%BC%88End-of-Session%EF%BC%89"><span class="toc-number">16.3.</span> <span class="toc-text">会话结束（End of Session）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E4%BE%8B%E8%A7%A3%E9%87%8A"><span class="toc-number">16.4.</span> <span class="toc-text">图例解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-5"><span class="toc-number">16.5.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E7%89%A9%E7%89%B9%E5%BE%81%E8%AE%A4%E8%AF%81%EF%BC%88Biometric-Authentication%EF%BC%89"><span class="toc-number">17.</span> <span class="toc-text">生物特征认证（Biometric Authentication）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E6%96%B9%E5%BC%8F"><span class="toc-number">17.1.</span> <span class="toc-text">认证方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%8E%9F%E7%90%86"><span class="toc-number">17.2.</span> <span class="toc-text">基础原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%B8%8E%E6%88%90%E6%9C%AC"><span class="toc-number">17.3.</span> <span class="toc-text">技术与成本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E7%89%B9%E5%BE%81%E5%8C%85%E6%8B%AC"><span class="toc-number">17.4.</span> <span class="toc-text">物理特征包括</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-6"><span class="toc-number">17.5.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E7%89%A9%E7%89%B9%E5%BE%81%E8%AE%A4%E8%AF%81%E6%88%90%E6%9C%AC%E4%B8%8E%E5%87%86%E7%A1%AE%E6%80%A7%E6%AF%94%E8%BE%83%EF%BC%88Biometric-Authentication-Cost-Versus-Accuracy%EF%BC%89"><span class="toc-number">18.</span> <span class="toc-text">生物特征认证成本与准确性比较（Biometric Authentication Cost Versus Accuracy）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E8%AF%BB"><span class="toc-number">18.1.</span> <span class="toc-text">图表解读</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E7%89%A9%E7%89%B9%E5%BE%81%E7%A7%8D%E7%B1%BB"><span class="toc-number">18.2.</span> <span class="toc-text">生物特征种类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E4%BE%8B%E8%AF%B4%E6%98%8E"><span class="toc-number">18.3.</span> <span class="toc-text">图例说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-7"><span class="toc-number">18.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E7%89%A9%E7%89%B9%E5%BE%81%E8%AE%A4%E8%AF%81%E7%B3%BB%E7%BB%9F%EF%BC%88Biometric-Authentication-System%EF%BC%89"><span class="toc-number">19.</span> <span class="toc-text">生物特征认证系统（Biometric Authentication System）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E7%89%A9%E7%89%B9%E5%BE%81%E8%AE%A4%E8%AF%81%E8%BF%87%E7%A8%8B"><span class="toc-number">19.1.</span> <span class="toc-text">生物特征认证过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a-%E6%B3%A8%E5%86%8C%EF%BC%88Enrollment%EF%BC%89"><span class="toc-number">19.2.</span> <span class="toc-text">(a) 注册（Enrollment）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#b-%E9%AA%8C%E8%AF%81%EF%BC%88Verification%EF%BC%89"><span class="toc-number">19.3.</span> <span class="toc-text">(b) 验证（Verification）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#c-%E8%AF%86%E5%88%AB%EF%BC%88Identification%EF%BC%89"><span class="toc-number">19.4.</span> <span class="toc-text">(c) 识别（Identification）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E4%BE%8B%E8%AF%B4%E6%98%8E-1"><span class="toc-number">19.5.</span> <span class="toc-text">图例说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-8"><span class="toc-number">19.6.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E6%94%BF%E7%AD%96%E5%88%86%E7%B1%BB-Access-Control-Policy-Categories"><span class="toc-number">20.</span> <span class="toc-text">访问控制政策分类 (Access Control Policy Categories)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%9F%BA%E4%BA%8E%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-ABAC-Attribute-based-access-control"><span class="toc-number">20.1.</span> <span class="toc-text">属性基于访问控制 (ABAC - Attribute-based access control)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E4%B8%BB%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-DAC-Discretionary-access-control"><span class="toc-number">20.2.</span> <span class="toc-text">自主访问控制 (DAC - Discretionary access control)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-MAC-Mandatory-access-control"><span class="toc-number">20.3.</span> <span class="toc-text">强制访问控制 (MAC - Mandatory access control)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E8%89%B2%E5%9F%BA%E4%BA%8E%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-RBAC-Role-based-access-control"><span class="toc-number">20.4.</span> <span class="toc-text">角色基于访问控制 (RBAC - Role-based access control)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-9"><span class="toc-number">20.5.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB-Cyber-attacks"><span class="toc-number">21.</span> <span class="toc-text">网络攻击 (Cyber attacks)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%94%BB%E5%87%BB-Clients-Attacks"><span class="toc-number">21.1.</span> <span class="toc-text">客户端攻击 (Clients Attacks)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E6%94%BE%E6%94%BB%E5%87%BB-Replay-Attacks"><span class="toc-number">21.2.</span> <span class="toc-text">重放攻击 (Replay Attacks)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-10"><span class="toc-number">21.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB-Cyber-attacks-1"><span class="toc-number">22.</span> <span class="toc-text">网络攻击 (Cyber attacks)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA%E6%94%BB%E5%87%BB-Host-Attacks"><span class="toc-number">22.1.</span> <span class="toc-text">主机攻击 (Host Attacks)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%83%E5%90%AC%E6%94%BB%E5%87%BB-Eavesdropping-Attacks"><span class="toc-number">22.2.</span> <span class="toc-text">窃听攻击 (Eavesdropping Attacks)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-11"><span class="toc-number">22.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB-Cyber-attacks-2"><span class="toc-number">23.</span> <span class="toc-text">网络攻击 (Cyber attacks)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E6%8B%92%E7%BB%9D%E6%94%BB%E5%87%BB-DoS-Denial-of-Service-Attacks"><span class="toc-number">23.1.</span> <span class="toc-text">服务拒绝攻击 (DoS - Denial of Service Attacks)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%A8%E9%A9%AC%E6%94%BB%E5%87%BB-Trojan-Horse-Attacks"><span class="toc-number">23.2.</span> <span class="toc-text">木马攻击 (Trojan Horse Attacks)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-12"><span class="toc-number">23.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%AE%9A%E4%B9%89-Access-Control-Definitions"><span class="toc-number">24.</span> <span class="toc-text">访问控制定义 (Access Control Definitions)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NISTIR-7298%E5%AE%9A%E4%B9%89-NISTIR-7298-defines-access-control-as"><span class="toc-number">24.1.</span> <span class="toc-text">NISTIR 7298定义 (NISTIR 7298 defines access control as)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RFC-4949%E5%AE%9A%E4%B9%89-RFC-4949-defines-access-control-as"><span class="toc-number">24.2.</span> <span class="toc-text">RFC 4949定义 (RFC 4949 defines access control as)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%8E%9F%E5%88%99-Access-Control-Principles"><span class="toc-number">24.3.</span> <span class="toc-text">访问控制原则 (Access Control Principles)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-13"><span class="toc-number">24.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%8E%9F%E5%88%99-Access-Control-Principles-1"><span class="toc-number">25.</span> <span class="toc-text">访问控制原则 (Access Control Principles)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E5%91%98-Security-administrator"><span class="toc-number">25.1.</span> <span class="toc-text">安全管理员 (Security administrator)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7-User"><span class="toc-number">25.2.</span> <span class="toc-text">用户 (User)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E5%8A%9F%E8%83%BD-Authentication-function"><span class="toc-number">25.3.</span> <span class="toc-text">身份验证功能 (Authentication function)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%8A%9F%E8%83%BD-Access-control-function"><span class="toc-number">25.4.</span> <span class="toc-text">访问控制功能 (Access control function)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90-System-resources"><span class="toc-number">25.5.</span> <span class="toc-text">系统资源 (System resources)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A1%E8%AE%A1-Auditing"><span class="toc-number">25.6.</span> <span class="toc-text">审计 (Auditing)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A-Figure-Explanation"><span class="toc-number">25.7.</span> <span class="toc-text">图表解释 (Figure Explanation)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-14"><span class="toc-number">25.8.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E6%94%BF%E7%AD%96%E5%88%86%E7%B1%BB-Access-Control-Policy-Categories-1"><span class="toc-number">26.</span> <span class="toc-text">访问控制政策分类 (Access Control Policy Categories)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%9F%BA%E4%BA%8E%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-ABAC-Attribute-based-access-control-1"><span class="toc-number">26.1.</span> <span class="toc-text">属性基于访问控制 (ABAC - Attribute-based access control)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E4%B8%BB%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-DAC-Discretionary-access-control-1"><span class="toc-number">26.2.</span> <span class="toc-text">自主访问控制 (DAC - Discretionary access control)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-MAC-Mandatory-access-control-1"><span class="toc-number">26.3.</span> <span class="toc-text">强制访问控制 (MAC - Mandatory access control)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E8%89%B2%E5%9F%BA%E4%BA%8E%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-RBAC-Role-based-access-control-1"><span class="toc-number">26.4.</span> <span class="toc-text">角色基于访问控制 (RBAC - Role-based access control)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A"><span class="toc-number">26.5.</span> <span class="toc-text">图表解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-15"><span class="toc-number">26.6.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E6%94%BF%E7%AD%96-Access-Control-Policies"><span class="toc-number">27.</span> <span class="toc-text">访问控制政策 (Access Control Policies)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E4%B8%BB%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-DAC-Discretionary-access-control-2"><span class="toc-number">27.1.</span> <span class="toc-text">自主访问控制 (DAC - Discretionary access control)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-16"><span class="toc-number">27.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E6%94%BF%E7%AD%96-Access-Control-Policies-1"><span class="toc-number">28.</span> <span class="toc-text">访问控制政策 (Access Control Policies)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-MAC-Mandatory-access-control-2"><span class="toc-number">28.1.</span> <span class="toc-text">强制访问控制 (MAC - Mandatory access control)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-17"><span class="toc-number">28.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E6%94%BF%E7%AD%96-Access-Control-Policies-2"><span class="toc-number">29.</span> <span class="toc-text">访问控制政策 (Access Control Policies)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%A7%92%E8%89%B2%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-RBAC-Role-based-access-control"><span class="toc-number">29.1.</span> <span class="toc-text">基于角色的访问控制 (RBAC - Role-based access control)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-18"><span class="toc-number">29.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E7%AD%96%E7%95%A5-Access-Control-Policies"><span class="toc-number">30.</span> <span class="toc-text">访问控制策略 (Access Control Policies)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%B1%9E%E6%80%A7%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-ABAC"><span class="toc-number">30.1.</span> <span class="toc-text">基于属性的访问控制 (ABAC)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%B1%9E%E6%80%A7-User-attributes"><span class="toc-number">30.1.1.</span> <span class="toc-text">用户属性 (User attributes)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E5%B1%9E%E6%80%A7-Resource-attributes"><span class="toc-number">30.1.2.</span> <span class="toc-text">资源属性 (Resource attributes)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%B1%9E%E6%80%A7-Environmental-attributes"><span class="toc-number">30.1.3.</span> <span class="toc-text">环境属性 (Environmental attributes)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A-1"><span class="toc-number">30.2.</span> <span class="toc-text">图表解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-19"><span class="toc-number">30.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E4%BD%93%E3%80%81%E5%AE%A2%E4%BD%93%E5%92%8C%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90-Subjects-Objects-and-Access-Rights"><span class="toc-number">31.</span> <span class="toc-text">主体、客体和访问权限 (Subjects, Objects, and Access Rights)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E4%BD%93-Subject"><span class="toc-number">31.1.</span> <span class="toc-text">主体 (Subject)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E4%BD%93-Object"><span class="toc-number">31.2.</span> <span class="toc-text">客体 (Object)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90-Access-right"><span class="toc-number">31.3.</span> <span class="toc-text">访问权限 (Access right)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A-2"><span class="toc-number">31.4.</span> <span class="toc-text">图表解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-20"><span class="toc-number">31.5.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E4%B8%BB%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6-Discretionary-Access-Control-DAC"><span class="toc-number">32.</span> <span class="toc-text">自主访问控制 (Discretionary Access Control, DAC)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%BB%93%E6%9E%84%E8%A7%A3%E9%87%8A"><span class="toc-number">32.1.</span> <span class="toc-text">矩阵的结构解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-21"><span class="toc-number">32.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84-Access-control-structure"><span class="toc-number">33.</span> <span class="toc-text">访问控制结构 (Access control structure)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E7%9F%A9%E9%98%B5-Access-matrix"><span class="toc-number">33.1.</span> <span class="toc-text">访问矩阵 (Access matrix)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A-3"><span class="toc-number">33.2.</span> <span class="toc-text">图表解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-22"><span class="toc-number">33.3.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84-Access-control-structure-1"><span class="toc-number">34.</span> <span class="toc-text">访问控制结构 (Access control structure)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8-Access-control-lists-for-files-of-part-a"><span class="toc-number">34.1.</span> <span class="toc-text">访问控制列表 (Access control lists for files of part (a))</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E8%83%BD%E5%88%97%E8%A1%A8-Capability-lists-for-files-of-part-a"><span class="toc-number">34.2.</span> <span class="toc-text">权能列表 (Capability lists for files of part (a))</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A-4"><span class="toc-number">34.3.</span> <span class="toc-text">图表解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-23"><span class="toc-number">34.4.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/09/W7%20(LEC)%20-%20Usability%20-%20Empirical%20Approach.pdf/" title="W7 (LEC) - Usability - Empirical Approach.pdf">W7 (LEC) - Usability - Empirical Approach.pdf</a><time datetime="2023-11-09T01:50:40.000Z" title="Created 2023-11-09 01:50:40">2023-11-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/09/W7%20(TUT)%20-%20Beyond%20Usability%20-%20PET/" title="W7 (TUT) - Beyond Usability - PET.pdf">W7 (TUT) - Beyond Usability - PET.pdf</a><time datetime="2023-11-09T01:50:40.000Z" title="Created 2023-11-09 01:50:40">2023-11-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/07/B1/" title="B1">B1</a><time datetime="2023-11-07T15:55:36.000Z" title="Created 2023-11-07 15:55:36">2023-11-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/06/C398-w7-Internet%20Security%20Protocols%20and%20standards/" title="Internet Security Protocols and standards">Internet Security Protocols and standards</a><time datetime="2023-11-06T15:23:35.000Z" title="Created 2023-11-06 15:23:35">2023-11-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/02/W6%20(TUT)%20-%20Splitting%20User%20Stories%20-%20Part%202.pdf/" title="W6 (TUT) - Splitting User Stories - Part 2.pdf">W6 (TUT) - Splitting User Stories - Part 2.pdf</a><time datetime="2023-11-02T01:50:40.000Z" title="Created 2023-11-02 01:50:40">2023-11-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
