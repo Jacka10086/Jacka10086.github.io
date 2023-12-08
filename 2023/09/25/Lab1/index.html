@@ -1,0 +1,385 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>LAB1 | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1 Introduction实验1 - Wireshark入门 (Lab 1 - An Introduction to Wireshark)目标 (Objective) 介绍Wireshark软件并展示如何在数据包中表示协议和分层。  要求 (Requirements) Wireshark: 实验使用Wireshark软件工具来捕获和检查数据包追踪。数据包追踪是网络上某个位置的流量记录，就像抓取了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LAB1">
+<meta property="og:url" content="http://example.com/2023/09/25/Lab1/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="1 Introduction实验1 - Wireshark入门 (Lab 1 - An Introduction to Wireshark)目标 (Objective) 介绍Wireshark软件并展示如何在数据包中表示协议和分层。  要求 (Requirements) Wireshark: 实验使用Wireshark软件工具来捕获和检查数据包追踪。数据包追踪是网络上某个位置的流量记录，就像抓取了">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2023-09-25T04:56:17.000Z">
+<meta property="article:modified_time" content="2023-11-16T21:25:57.946Z">
+<meta property="article:author" content="Jacka10086">
+<meta property="article:tag" content="Week1">
+<meta property="article:tag" content="398CW1">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/09/25/Lab1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LAB1',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-16 21:25:57'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">LAB1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-09-25T04:56:17.000Z" title="Created 2023-09-25 05:56:17">2023-09-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-11-16T21:25:57.946Z" title="Updated 2023-11-16 21:25:57">2023-11-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Com398/">Com398</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="LAB1"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1 Introduction"></a>1 Introduction</h1><h2 id="实验1-Wireshark入门-Lab-1-An-Introduction-to-Wireshark"><a href="#实验1-Wireshark入门-Lab-1-An-Introduction-to-Wireshark" class="headerlink" title="实验1 - Wireshark入门 (Lab 1 - An Introduction to Wireshark)"></a>实验1 - Wireshark入门 (Lab 1 - An Introduction to Wireshark)</h2><h3 id="目标-Objective"><a href="#目标-Objective" class="headerlink" title="目标 (Objective)"></a>目标 (Objective)</h3><ul>
+<li>介绍Wireshark软件并展示如何在数据包中表示协议和分层。</li>
+</ul>
+<h3 id="要求-Requirements"><a href="#要求-Requirements" class="headerlink" title="要求 (Requirements)"></a>要求 (Requirements)</h3><ul>
+<li><p><strong>Wireshark</strong>: 实验使用Wireshark软件工具来捕获和检查数据包追踪。数据包追踪是网络上某个位置的流量记录，就像抓取了通过特定线路的所有比特快照一样。每个数据包的追踪记录了时间戳，以及构成数据包的比特，从底层头部到高层内容。</p>
+</li>
+<li><p>Wireshark支持大多数操作系统，包括Windows（本实验将关注Windows，因为这是学校实验室中可用的操作系统）、Mac和Linux。它提供了一个图形用户界面，显示了数据包序列和比特的意义，这些比特在解释为协议头和数据时。它通过类型对数据包进行彩色编码，并有各种过滤和分析数据包的方法，以便让你调查网络协议的行为。如果你的电脑上还没有安装Wireshark，可以从<a target="_blank" rel="noopener" href="http://www.wireshark.org下载(应安装版本1.12.7).wireshark.org推荐的免费教程系列“wireshark入门”和sharkfest频道可在youtube上找到./">www.wireshark.org下载（应安装版本1.12.7）。Wireshark.org推荐的免费教程系列“Wireshark入门”和SharkFest频道可在YouTube上找到。</a></p>
+</li>
+</ul>
+<p><em>实验1总结：这个实验的目的是介绍Wireshark工具，并说明数据包中协议和分层是如何表示的。要求部分详细说明了实验的软件要求，包括支持的操作系统和Wireshark的基本用途。同时提供了学习资源的链接。</em></p>
+<h2 id="步骤1：抓取数据包-Step-1-Capture-a-Trace"><a href="#步骤1：抓取数据包-Step-1-Capture-a-Trace" class="headerlink" title="步骤1：抓取数据包 (Step 1: Capture a Trace)"></a>步骤1：抓取数据包 (Step 1: Capture a Trace)</h2><ul>
+<li>本步骤可以跳过，直接进入步骤2，如果你继续操作的话请按照下面的过程来捕获网络流量。</li>
+<li>首先使用curl命令来获取一个页面的数据，比如使用<code>curl http://www.google.com</code>命令在Windows PowerShell中。这将验证获取命令是否有效，并且你可以检查是否收到了预期的内容。如果使用不同的URL而fetch命令不工作，你可能需要检查网络连接或者URL本身。</li>
+<li>使用Wireshark开始一个实时的数据包捕获，选择正确的网络接口，并开始捕获。</li>
+</ul>
+<h3 id="设置Wireshark捕获选项-Figure-1-Setting-up-the-capture-options"><a href="#设置Wireshark捕获选项-Figure-1-Setting-up-the-capture-options" class="headerlink" title="设置Wireshark捕获选项 (Figure 1: Setting up the capture options)"></a>设置Wireshark捕获选项 (Figure 1: Setting up the capture options)</h3><ul>
+<li>在Wireshark中选择正确的网络接口，配置捕获设置。</li>
+<li>确保选择“仅捕获与本机相关的包”来避免捕获无关的网络流量。</li>
+</ul>
+<h3 id="重复fetch过程-Step-4"><a href="#重复fetch过程-Step-4" class="headerlink" title="重复fetch过程 (Step 4)"></a>重复fetch过程 (Step 4)</h3><ul>
+<li>当捕获开始后，重复使用fetch命令来获取内容。Wireshark会记录下来内容的传输过程。</li>
+</ul>
+<h3 id="查看和分析数据包-Step-5"><a href="#查看和分析数据包-Step-5" class="headerlink" title="查看和分析数据包 (Step 5)"></a>查看和分析数据包 (Step 5)</h3><ul>
+<li>如果fetch过程成功，返回到Wireshark并使用菜单或按钮停止追踪。</li>
+<li>你会看到Wireshark窗口上显示了多个数据包，大多数数据包会被标记为绿色。成功捕获了数据包。</li>
+</ul>
+<h3 id="数据包追踪示例-Figure-2-Packet-trace-of-traffic"><a href="#数据包追踪示例-Figure-2-Packet-trace-of-traffic" class="headerlink" title="数据包追踪示例 (Figure 2: Packet trace of traffic)"></a>数据包追踪示例 (Figure 2: Packet trace of traffic)</h3><ul>
+<li>展示了Wireshark中的数据包追踪示例，包括每个数据包的基本信息，如源地址、目的地址和协议等。</li>
+</ul>
+<p><em>步骤1总结：本节介绍了如何使用Wireshark进行网络数据包捕获的完整过程，包括使用curl命令测试网络连接，设置Wireshark捕获选项，重复获取过程，并成功查看和分析数据包。示例图表清晰展示了捕获的数据包详细信息。</em></p>
+<h2 id="步骤2：检查数据包-Step-2-Inspect-the-Trace"><a href="#步骤2：检查数据包-Step-2-Inspect-the-Trace" class="headerlink" title="步骤2：检查数据包 (Step 2: Inspect the Trace)"></a>步骤2：检查数据包 (Step 2: Inspect the Trace)</h2><ul>
+<li>Wireshark将以层次结构显示选定的数据包，包括每一层提供的协议。数据包的头部信息在顶部面板显示，而底部面板则展示了数据包的二进制内容。在网络层次结构中，每一个信息块都被称为帧。在传输层，它被称为段，在应用层，它被称为消息。</li>
+</ul>
+<h3 id="协议栈结构-Figure-3-Remember-Protocol-stack-for-a-web-fetch"><a href="#协议栈结构-Figure-3-Remember-Protocol-stack-for-a-web-fetch" class="headerlink" title="协议栈结构 (Figure 3: Remember: Protocol stack for a web fetch)"></a>协议栈结构 (Figure 3: Remember: Protocol stack for a web fetch)</h3><ul>
+<li>选择一个包含HTTP协议的数据包并详细查看，来了解其协议栈的结构。你可以通过点击<code>+</code>号来扩展看到每一层的细节。</li>
+<li>在Wireshark中，“帧”是描述整个数据包的记录，并不是真正的协议。</li>
+</ul>
+<h3 id="查看HTTP-GET请求和响应-Figure-4-Inspecting-a-HTTP-“200-OK”-response"><a href="#查看HTTP-GET请求和响应-Figure-4-Inspecting-a-HTTP-“200-OK”-response" class="headerlink" title="查看HTTP GET请求和响应 (Figure 4: Inspecting a HTTP “200 OK” response)"></a>查看HTTP GET请求和响应 (Figure 4: Inspecting a HTTP “200 OK” response)</h3><ul>
+<li>选择一个HTTP GET请求的数据包，查看其结构与HTTP GET响应的数据包结构进行对比。响应数据包应该包含“200 OK”状态码。</li>
+<li>在追踪详情面板中，你可以看到标记为“111 reassembled TCP segments”的区域，这表示响应由多个TCP段重新组合而成。</li>
+</ul>
+<p><em>步骤2总结：本节介绍了如何使用Wireshark检查网络数据包的详细信息。强调了理解数据包层次结构的重要性，并指导如何检查HTTP GET请求及其响应。图表详细展示了协议栈结构和HTTP“200 OK”响应的检查方法。</em></p>
+<h2 id="步骤3：协议开销-Step-3-Protocol-Overhead"><a href="#步骤3：协议开销-Step-3-Protocol-Overhead" class="headerlink" title="步骤3：协议开销 (Step 3: Protocol Overhead)"></a>步骤3：协议开销 (Step 3: Protocol Overhead)</h2><ul>
+<li><p>估计下载过程中协议开销的比例，或者说下载字节中被协议头占用的百分比。</p>
+</li>
+<li><p>考虑HTTP数据（包括头部和消息）为网络传输的有用数据，而将下层的头部信息（TCP、IP、以太网）视为开销。</p>
+</li>
+<li><p>我们希望这些开销尽可能小，以便大部分比特用于携带应用程序关心的内容。</p>
+</li>
+<li><p>为了计算这个，首先只查看单次网页获取过程中下载方向的数据包。</p>
+<ul>
+<li>这些数据包应该从一个短的TCP数据包开始，通常被描述为SYN ACK，表示连接的开始。</li>
+<li>中间大多数是较长的数据包（大约1到1.5KB），最后一个是HTTP数据包，这是下载的主要部分。</li>
+<li>最后可能会以一个短的TCP数据包结束，表示连接的结束。</li>
+</ul>
+</li>
+<li><p>对于每个数据包，可以检查它在以太网&#x2F;IP&#x2F;TCP头部形式的开销，以及它在TCP负载中携带的有用HTTP数据量。</p>
+</li>
+<li><p>你也可以在Wireshark中查看HTTP数据包，了解所有下载数据包中的TCP负载数据量。</p>
+</li>
+</ul>
+<p><em>步骤3总结：本节指导如何在Wireshark中估算下载过程中的协议开销，包括如何识别有用数据和开销，并计算它们在下载数据中所占的比例。这个步骤对于了解网络传输效率和优化网络性能非常重要。</em></p>
+<h1 id="2-Lab1-solutions"><a href="#2-Lab1-solutions" class="headerlink" title="2 Lab1 solutions"></a>2 Lab1 solutions</h1><h2 id="解决方案-协议层-Solutions-Protocol-Layers"><a href="#解决方案-协议层-Solutions-Protocol-Layers" class="headerlink" title="解决方案 - 协议层 (Solutions - Protocol Layers)"></a>解决方案 - 协议层 (Solutions - Protocol Layers)</h2><ul>
+<li>这些解决方案是基于我们的捕获和使用工具，你的答案会因为不同的网络设置而有所不同。然而，我们提供了这些解决方案，以帮助你理解你的答案是否正确。</li>
+</ul>
+<h3 id="数据包结构-Packet-Structure"><a href="#数据包结构-Packet-Structure" class="headerlink" title="数据包结构 (Packet Structure)"></a>数据包结构 (Packet Structure)</h3><ul>
+<li>**以太网头部 (Ethernet header)**：14字节</li>
+<li>**IP头部 (IP header)**：20字节</li>
+<li>**TCP头部 (TCP header)**：20字节</li>
+<li>**HTTP数据 (HTTP data)**：112字节</li>
+<li>**总计 (Total)**：166字节</li>
+</ul>
+<h4 id="图表解释-Figure-1-Protocol-layer-structure-of-the-HTTP-GET-packet"><a href="#图表解释-Figure-1-Protocol-layer-structure-of-the-HTTP-GET-packet" class="headerlink" title="图表解释 (Figure 1: Protocol layer structure of the HTTP GET packet)"></a>图表解释 (Figure 1: Protocol layer structure of the HTTP GET packet)</h4><ul>
+<li>描述了HTTP GET数据包的协议层结构，展示了从以太网层到HTTP层每层的数据大小。</li>
+</ul>
+<h3 id="需要注意的几个特点"><a href="#需要注意的几个特点" class="headerlink" title="需要注意的几个特点"></a>需要注意的几个特点</h3><ul>
+<li>头部信息的顺序（以太网、IP、TCP、HTTP）表示了数据包通过网络时的协议栈结构。</li>
+<li>数据包大小可能因操作系统而异，如IPv6头部可能比IPv4大，可选的TCP头部字段可能会有所不同。</li>
+<li>HTTP消息的大小取决于用于发送web请求的工具和URL。</li>
+</ul>
+<h3 id="协议开销-Protocol-Overhead"><a href="#协议开销-Protocol-Overhead" class="headerlink" title="协议开销 (Protocol Overhead)"></a>协议开销 (Protocol Overhead)</h3><ul>
+<li>在我们的追踪中，大的下载数据包大小为1484字节，其中以太网、IP和TCP头部的总和是54字节，这导致了3.6%的协议开销。对所有下载数据包估计，协议开销可能稍高，但不会高很多。</li>
+</ul>
+<h4 id="计算开销"><a href="#计算开销" class="headerlink" title="计算开销"></a>计算开销</h4><ul>
+<li>HTTP数据加上头部 &#x3D; 14937字节（在HTTP数据包中看到的）</li>
+<li>总开销 &#x3D; (总字节 - HTTP数据字节) &#x2F; 总字节 &#x3D; 5.0%</li>
+</ul>
+<p><em>解决方案部分总结：这一节提供了关于如何理解和计算网络传输中协议层的开销。通过分析数据包结构和计算开销百分比，可以更深入地理解数据在网络中的传输效率。</em></p>
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><h2 id="实验练习-TCP-Lab-Exercise-TCP"><a href="#实验练习-TCP-Lab-Exercise-TCP" class="headerlink" title="实验练习 - TCP (Lab Exercise - TCP)"></a>实验练习 - TCP (Lab Exercise - TCP)</h2><h3 id="目标-Objective-1"><a href="#目标-Objective-1" class="headerlink" title="目标 (Objective)"></a>目标 (Objective)</h3><ul>
+<li>观察TCP（传输控制协议）的细节。TCP是互联网中使用的主要传输层协议。在做实验之前复习相关的教材部分。</li>
+</ul>
+<h3 id="要求-Requirements-1"><a href="#要求-Requirements-1" class="headerlink" title="要求 (Requirements)"></a>要求 (Requirements)</h3><ul>
+<li><p><strong>Wireshark</strong>: 使用Wireshark捕获或检查网络上某处的数据包追踪。Wireshark支持大多数操作系统，包括Windows、Mac和Linux，提供了图形界面展示数据包序列及其代表的协议头和数据。Wireshark可以用于网络故障排查，并有多种过滤和分析数据包的方法。如果你的电脑上还没有安装Wireshark，可以从官网下载，并建议观看“Wireshark简介”的5分钟视频。</p>
+</li>
+<li><p><strong>wget &#x2F; curl</strong>: 实验使用wget（Linux和Windows）和curl（Mac）来获取网络资源。与Web浏览器不同，这些命令行程序允许你精确控制获取的URL。Linux下可以通过包管理器安装wget，Windows下wget作为二进制文件提供，Mac下curl与操作系统一起安装。这些工具都有许多选项，可以通过<code>wget --help</code>或<code>curl --help</code>来查看。</p>
+</li>
+<li><p><strong>浏览器</strong>: 实验还使用Web浏览器来作为工作负载进行获取网页操作。任何Web浏览器都可以使用。</p>
+</li>
+</ul>
+<p><em>实验练习总结：这一节介绍了TCP实验的目的和要求，包括如何使用Wireshark观察TCP通信的细节，以及如何使用wget、curl和浏览器获取网络资源。提供了实验前的准备和学习资源，确保实验的顺利进行。</em></p>
+<h2 id="实验步骤1：捕获一个追踪-Step-1-Capture-a-Trace"><a href="#实验步骤1：捕获一个追踪-Step-1-Capture-a-Trace" class="headerlink" title="实验步骤1：捕获一个追踪 (Step 1: Capture a Trace)"></a>实验步骤1：捕获一个追踪 (Step 1: Capture a Trace)</h2><h3 id="目标-Objective-2"><a href="#目标-Objective-2" class="headerlink" title="目标 (Objective)"></a>目标 (Objective)</h3><ul>
+<li>本实验旨在捕获一个TCP连接的追踪，并发送适量的数据，了解TCP协议的细节。</li>
+</ul>
+<h3 id="方法-Procedure"><a href="#方法-Procedure" class="headerlink" title="方法 (Procedure)"></a>方法 (Procedure)</h3><ol>
+<li><p>查找一个适中大小的单个资源，例如图片（JPG）或PDF文档，确保资源是通过HTTP而非HTTPS下载。</p>
+</li>
+<li><p>使用<code>wget</code>或<code>curl</code>命令验证至少能够检索到200 KB的内容，并持续数秒网络时间。例如使用命令<code>wget http://demo.borland.com/testsite/downloads/3rdPartyLicenseTexts.pdf</code>。</p>
+<ul>
+<li><strong>图1</strong>: 展示了使用<code>wget</code>在Windows上成功获取网络资源。</li>
+<li><strong>图2</strong>: 展示了使用<code>curl</code>在Mac上成功获取网络资源。</li>
+</ul>
+</li>
+</ol>
+<h3 id="图表解释-Figures-Explanation"><a href="#图表解释-Figures-Explanation" class="headerlink" title="图表解释 (Figures Explanation)"></a>图表解释 (Figures Explanation)</h3><ul>
+<li><strong>图3</strong>: 展示了如何在Wireshark中设置捕获选项。</li>
+<li><strong>图4</strong>: 展示了TCP流量的追踪，详细显示了TCP头部的信息。</li>
+</ul>
+<h3 id="详细步骤-Detailed-Steps"><a href="#详细步骤-Detailed-Steps" class="headerlink" title="详细步骤 (Detailed Steps)"></a>详细步骤 (Detailed Steps)</h3><ol start="3">
+<li>启动Wireshark并开始捕获，使用之前的<code>wget</code>&#x2F;<code>curl</code>命令来启动追踪。</li>
+<li>数据包捕获开始后，重复执行<code>wget</code>&#x2F;<code>curl</code>命令。此时，Wireshark将记录数据包。</li>
+<li>命令完成后，回到Wireshark停止追踪，此时应该能看到类似于图4所示的追踪。</li>
+</ol>
+<p><em>步骤1总结：本节描述了如何通过使用命令行工具获取网络资源，并使用Wireshark来捕获这一过程中的TCP连接追踪，从而理解TCP协议的工作机制。提供了详细步骤和图表以帮助理解整个过程。</em></p>
+<h2 id="步骤2：检查追踪-Step-2-Inspect-the-Trace"><a href="#步骤2：检查追踪-Step-2-Inspect-the-Trace" class="headerlink" title="步骤2：检查追踪 (Step 2: Inspect the Trace)"></a>步骤2：检查追踪 (Step 2: Inspect the Trace)</h2><ul>
+<li>在追踪的中间选择一个标记为TCP协议的长数据包。展开TCP协议部分，所有包除了初始的HTTP GET和最后的HTTP响应数据包都应标记为TCP。</li>
+</ul>
+<h3 id="观察到的字段-Observed-Fields"><a href="#观察到的字段-Observed-Fields" class="headerlink" title="观察到的字段 (Observed Fields)"></a>观察到的字段 (Observed Fields)</h3><ul>
+<li><p><strong>源端口 (Source port)</strong> 和 **目的端口 (Destination port)**：这是TCP在IP地址之上添加的地址信息，源端口通常是80，因为这是标准的web服务器端口。</p>
+</li>
+<li><p><strong>序列号 (Sequence number)</strong> 字段：它显示了第一个负载字节在字节流中的位置。</p>
+</li>
+<li><p>**确认号 (Acknowledgement field)**：它显示了反向字节流中最后接收到的位置。</p>
+</li>
+<li><p>**头部长度 (Header length)**：显示了TCP头部的长度。</p>
+</li>
+<li><p><strong>标志 (Flags) 字段</strong>：有多个标志位，指示TCP段的类型，你可以展开查看可能的标志。</p>
+</li>
+<li><p>**校验和 (Checksum)**：用来检测传输错误。</p>
+</li>
+<li><p>可能还有其他的Wireshark提供的信息行帮助你解释数据包，本部分只覆盖了传输网络中的字段。</p>
+</li>
+</ul>
+<p><em>步骤2总结：本节描述了如何在Wireshark中检查TCP数据包的详细信息，提供了关于数据包结构的关键字段的解释，这对理解TCP数据包的构成至关重要。</em></p>
+<h2 id="步骤3：TCP连接建立-拆除-Step-3-TCP-Connection-Setup-Teardown"><a href="#步骤3：TCP连接建立-拆除-Step-3-TCP-Connection-Setup-Teardown" class="headerlink" title="步骤3：TCP连接建立&#x2F;拆除 (Step 3: TCP Connection Setup&#x2F;Teardown)"></a>步骤3：TCP连接建立&#x2F;拆除 (Step 3: TCP Connection Setup&#x2F;Teardown)</h2><h3 id="三次握手-Three-Way-Handshake"><a href="#三次握手-Three-Way-Handshake" class="headerlink" title="三次握手 (Three-Way Handshake)"></a>三次握手 (Three-Way Handshake)</h3><ul>
+<li>要观察“三次握手”过程，需寻找带有SYN标志的TCP数据包，通常出现在追踪的开始部分。可以使用过滤表达式“tcp.flags.syn&#x3D;&#x3D;1”来找到这些数据包。</li>
+<li>三次握手开始时，你的计算机将发送一个SYN数据包到远程服务器，远程服务器应该回复一个带有SYN和ACK标志的数据包，然后你的计算机会发送一个ACK数据包，完成握手。</li>
+</ul>
+<h3 id="连接选项-Connection-Options"><a href="#连接选项-Connection-Options" class="headerlink" title="连接选项 (Connection Options)"></a>连接选项 (Connection Options)</h3><ul>
+<li>TCP SYN数据包在建立连接时会协商参数，例如最大段大小（MSS）和时间戳，这些选项用于估计往返时间（RTT）。</li>
+<li>一些选项，如NOP和End of Option用于格式化，但不宣告能力。</li>
+</ul>
+<h4 id="问题-Question"><a href="#问题-Question" class="headerlink" title="问题 (Question)"></a>问题 (Question)</h4><ol>
+<li>你的追踪中的SYN数据包携带了哪些TCP选项？</li>
+</ol>
+<h3 id="连接拆除-FIN-RST-Teardown"><a href="#连接拆除-FIN-RST-Teardown" class="headerlink" title="连接拆除 (FIN&#x2F;RST Teardown)"></a>连接拆除 (FIN&#x2F;RST Teardown)</h3><ul>
+<li>下载完成后，TCP连接将通过发送FIN分段来拆除。每一侧都会发送FIN来确认接收到的FIN，并最终可能通过RST来突然终止连接。</li>
+</ul>
+<p><em>步骤3总结：本节介绍了TCP连接的建立和拆除过程，包括三次握手和连接的正常或突然终止，以及在连接建立过程中协商的TCP选项。</em></p>
+<h2 id="步骤4：TCP数据传输-Step-4-TCP-Data-Transfer"><a href="#步骤4：TCP数据传输-Step-4-TCP-Data-Transfer" class="headerlink" title="步骤4：TCP数据传输 (Step 4: TCP Data Transfer)"></a>步骤4：TCP数据传输 (Step 4: TCP Data Transfer)</h2><ul>
+<li>TCP连接的中间部分是数据传输或下载，这是我们追踪的主要事件。为了全面了解，我们首先查看下载速率随时间的变化。</li>
+</ul>
+<h3 id="如何分析-How-to-Analyze"><a href="#如何分析-How-to-Analyze" class="headerlink" title="如何分析 (How to Analyze)"></a>如何分析 (How to Analyze)</h3><ul>
+<li>在“统计”菜单下选择“IO Graph”。</li>
+<li>调整图表以显示随时间变化的下载速率。</li>
+<li>因为我们的追踪是在接收数据的计算机附近进行的，所以不使用“TCP Stream Graph”。</li>
+</ul>
+<h4 id="图表设置-Graph-Settings"><a href="#图表设置-Graph-Settings" class="headerlink" title="图表设置 (Graph Settings)"></a>图表设置 (Graph Settings)</h4><ul>
+<li>在x轴上调整时间间隔（tick interval），以便能够清晰地看到整个追踪的行为，推荐使用100毫秒作为时间间隔。</li>
+<li>添加过滤表达式来仅显示下载数据包，如使用过滤器“tcp.port &#x3D;&#x3D; 80”。</li>
+</ul>
+<h3 id="图表解释-Graph-Explanation"><a href="#图表解释-Graph-Explanation" class="headerlink" title="图表解释 (Graph Explanation)"></a>图表解释 (Graph Explanation)</h3><ul>
+<li>图表显示了下载速率从零快速增加到稳定状态的样本下载速率，这是一个缓慢启动的典型示例。</li>
+<li>当连接从<code>wget</code>&#x2F;<code>curl</code>运行时，下载速率约为2.5 Mbps。</li>
+<li>下载过程通常相对平稳直到完成，理想情况下应该是这样，但由于多种原因，下载速率可能会有变化，比如服务器而不是网络设置了下载速率，或者数据包在传输过程中丢失。</li>
+</ul>
+<p><em>步骤4总结：本节详细介绍了如何使用Wireshark的“IO Graph”功能来观察和分析TCP数据传输的下载速率，以及如何通过调整时间间隔和设置过滤器来获取准确的图表表示。</em></p>
+<h2 id="步骤4：TCP数据传输-Step-4-TCP-Data-Transfer-1"><a href="#步骤4：TCP数据传输-Step-4-TCP-Data-Transfer-1" class="headerlink" title="步骤4：TCP数据传输 (Step 4: TCP Data Transfer)"></a>步骤4：TCP数据传输 (Step 4: TCP Data Transfer)</h2><ul>
+<li>TCP连接的中间部分是数据传输或下载，这是我们追踪的主要事件。为了全面了解，我们首先查看下载速率随时间的变化。</li>
+</ul>
+<h3 id="如何分析-How-to-Analyze-1"><a href="#如何分析-How-to-Analyze-1" class="headerlink" title="如何分析 (How to Analyze)"></a>如何分析 (How to Analyze)</h3><ul>
+<li>在“统计”菜单下选择“IO Graph”。</li>
+<li>调整图表以显示随时间变化的下载速率。</li>
+<li>因为我们的追踪是在接收数据的计算机附近进行的，所以不使用“TCP Stream Graph”。</li>
+</ul>
+<h4 id="图表设置-Graph-Settings-1"><a href="#图表设置-Graph-Settings-1" class="headerlink" title="图表设置 (Graph Settings)"></a>图表设置 (Graph Settings)</h4><ul>
+<li>在x轴上调整时间间隔（tick interval），以便能够清晰地看到整个追踪的行为，推荐使用100毫秒作为时间间隔。</li>
+<li>添加过滤表达式来仅显示下载数据包，如使用过滤器“tcp.port &#x3D;&#x3D; 80”。</li>
+</ul>
+<h3 id="图表解释-Graph-Explanation-1"><a href="#图表解释-Graph-Explanation-1" class="headerlink" title="图表解释 (Graph Explanation)"></a>图表解释 (Graph Explanation)</h3><ul>
+<li>图表显示了下载速率从零快速增加到稳定状态的样本下载速率，这是一个缓慢启动的典型示例。</li>
+<li>当连接从<code>wget</code>&#x2F;<code>curl</code>运行时，下载速率约为2.5 Mbps。</li>
+<li>下载过程通常相对平稳直到完成，理想情况下应该是这样，但由于多种原因，下载速率可能会有变化，比如服务器而不是网络设置了下载速率，或者数据包在传输过程中丢失。</li>
+</ul>
+<p><em>步骤4总结：本节详细介绍了如何使用Wireshark的“IO Graph”功能来观察和分析TCP数据传输的下载速率，以及如何通过调整时间间隔和设置过滤器来获取准确的图表表示。</em></p>
+<h2 id="理解数据传输的问题-Questions-to-Understand-Data-Transfer"><a href="#理解数据传输的问题-Questions-to-Understand-Data-Transfer" class="headerlink" title="理解数据传输的问题 (Questions to Understand Data Transfer)"></a>理解数据传输的问题 (Questions to Understand Data Transfer)</h2><p>为了展示对数据传输的理解，请回答以下问题：</p>
+<ol>
+<li><p><strong>下载方向的大致数据速率是多少？</strong> 一旦TCP连接运行良好，就需要估计每秒传输的数据包数量和每秒传输的比特数。</p>
+</li>
+<li><p><strong>这个下载速率中有多少百分比是内容？</strong> 显示您的计算方法。要找出答案，需要查看一个典型的下载数据包，它应该与其他大量类似的下载数据包相似。你可以看到数据包的长度以及它包含的TCP有效负载字节数。</p>
+</li>
+<li><p><strong>上传方向的大致数据速率是多少？</strong> 估计由于ACK数据包每秒传输的数据包数量和每秒传输的比特数。</p>
+</li>
+</ol>
+<p><em>问题总结：这些问题旨在测试对TCP下载和上传过程中数据速率的理解。要回答这些问题，需要分析特定的数据包，并从中推断出数据速率和有效内容的百分比。</em></p>
+<h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><h2 id="解决方案-TCP-Solutions-TCP"><a href="#解决方案-TCP-Solutions-TCP" class="headerlink" title="解决方案 - TCP (Solutions - TCP)"></a>解决方案 - TCP (Solutions - TCP)</h2><p>这些解决方案基于我们的捕获和使用工具。您的答案可能会因为网络设置的不同而有所差异。不过，我们提供这些解决方案以帮助您判断自己的答案是否正确。</p>
+<h3 id="步骤3：TCP连接建立-拆除-Step-3-TCP-Connection-Setup-Teardown-1"><a href="#步骤3：TCP连接建立-拆除-Step-3-TCP-Connection-Setup-Teardown-1" class="headerlink" title="步骤3：TCP连接建立&#x2F;拆除 (Step 3: TCP Connection Setup&#x2F;Teardown)"></a>步骤3：TCP连接建立&#x2F;拆除 (Step 3: TCP Connection Setup&#x2F;Teardown)</h3><h4 id="三次握手-Three-Way-Handshake-1"><a href="#三次握手-Three-Way-Handshake-1" class="headerlink" title="三次握手 (Three-Way Handshake)"></a>三次握手 (Three-Way Handshake)</h4><ul>
+<li>在图1中展示了TCP三次握手的时间序列图。</li>
+<li><strong>要点</strong>:<ul>
+<li>初始SYN包不包含ACK编号，仅包含序列号。</li>
+<li>我们的Wireshark配置为显示相对序列号。</li>
+<li>ACK号是相应序列号加1。</li>
+<li>在数据段中，序列号和ACK号保持先前的值不变。</li>
+</ul>
+</li>
+</ul>
+<h4 id="连接拆除-FIN-RST-Teardown-1"><a href="#连接拆除-FIN-RST-Teardown-1" class="headerlink" title="连接拆除 (FIN&#x2F;RST Teardown)"></a>连接拆除 (FIN&#x2F;RST Teardown)</h4><ul>
+<li>如图3所示，展示了一个FIN拆除的时间序列图。</li>
+<li><strong>要点</strong>:<ul>
+<li>拆除可以由计算机发起，也可能由服务器发起。</li>
+<li>与SYN相同，FIN占用一个序列号。</li>
+</ul>
+</li>
+</ul>
+<h3 id="步骤4：TCP数据传输-Step-4-TCP-Data-Transfer-2"><a href="#步骤4：TCP数据传输-Step-4-TCP-Data-Transfer-2" class="headerlink" title="步骤4：TCP数据传输 (Step 4: TCP Data Transfer)"></a>步骤4：TCP数据传输 (Step 4: TCP Data Transfer)</h3><h4 id="对问题的回答-Answers-to-the-Questions"><a href="#对问题的回答-Answers-to-the-Questions" class="headerlink" title="对问题的回答 (Answers to the Questions)"></a>对问题的回答 (Answers to the Questions)</h4><ol>
+<li>TCP选项包括最大段大小、窗口比例、SACK允许和时间戳。这些选项在两个方向上都被使用。</li>
+<li>下载数据包的长度为1434字节，其中1368字节是携带内容的TCP有效载荷。因此下载内容占95%。</li>
+</ol>
+<p><em>总结：本部分提供了TCP连接建立和拆除的详细解释，包括三次握手和连接终止的过程，以及TCP数据传输中的数据速率和内容百分比的计算。</em></p>
+<h1 id="5"><a href="#5" class="headerlink" title="5"></a>5</h1></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/09/25/Lab1/">http://example.com/2023/09/25/Lab1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Week1/">Week1</a><a class="post-meta__tags" href="/tags/398CW1/">398CW1</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/09/25/C398-w1-Overview/" title="Overview"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">Overview</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/25/week2-practical/" title="week2-practical"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">week2-practical</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/09/25/C398-w1-Overview/" title="Overview"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-25</div><div class="title">Overview</div></div></a></div><div><a href="/2023/10/29/T1/" title="T1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-29</div><div class="title">T1</div></div></a></div><div><a href="/2023/09/26/Week1-practical/" title="Week1-practical"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-26</div><div class="title">Week1-practical</div></div></a></div><div><a href="/2023/09/26/Week1-Challenge/" title="Week1-Challenge"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-26</div><div class="title">Week1-Challenge</div></div></a></div><div><a href="/2023/09/26/W1%20(LEC)%20-%20Module%20Introduction/" title="W1 (LEC) - Module Introduction"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-26</div><div class="title">W1 (LEC) - Module Introduction</div></div></a></div><div><a href="/2023/11/15/Lab8/" title="LAB8"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-15</div><div class="title">LAB8</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Introduction"><span class="toc-number">1.</span> <span class="toc-text">1 Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C1-Wireshark%E5%85%A5%E9%97%A8-Lab-1-An-Introduction-to-Wireshark"><span class="toc-number">1.1.</span> <span class="toc-text">实验1 - Wireshark入门 (Lab 1 - An Introduction to Wireshark)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-Objective"><span class="toc-number">1.1.1.</span> <span class="toc-text">目标 (Objective)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A6%81%E6%B1%82-Requirements"><span class="toc-number">1.1.2.</span> <span class="toc-text">要求 (Requirements)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A41%EF%BC%9A%E6%8A%93%E5%8F%96%E6%95%B0%E6%8D%AE%E5%8C%85-Step-1-Capture-a-Trace"><span class="toc-number">1.2.</span> <span class="toc-text">步骤1：抓取数据包 (Step 1: Capture a Trace)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEWireshark%E6%8D%95%E8%8E%B7%E9%80%89%E9%A1%B9-Figure-1-Setting-up-the-capture-options"><span class="toc-number">1.2.1.</span> <span class="toc-text">设置Wireshark捕获选项 (Figure 1: Setting up the capture options)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%A4%8Dfetch%E8%BF%87%E7%A8%8B-Step-4"><span class="toc-number">1.2.2.</span> <span class="toc-text">重复fetch过程 (Step 4)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%92%8C%E5%88%86%E6%9E%90%E6%95%B0%E6%8D%AE%E5%8C%85-Step-5"><span class="toc-number">1.2.3.</span> <span class="toc-text">查看和分析数据包 (Step 5)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E8%BF%BD%E8%B8%AA%E7%A4%BA%E4%BE%8B-Figure-2-Packet-trace-of-traffic"><span class="toc-number">1.2.4.</span> <span class="toc-text">数据包追踪示例 (Figure 2: Packet trace of traffic)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A42%EF%BC%9A%E6%A3%80%E6%9F%A5%E6%95%B0%E6%8D%AE%E5%8C%85-Step-2-Inspect-the-Trace"><span class="toc-number">1.3.</span> <span class="toc-text">步骤2：检查数据包 (Step 2: Inspect the Trace)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E6%A0%88%E7%BB%93%E6%9E%84-Figure-3-Remember-Protocol-stack-for-a-web-fetch"><span class="toc-number">1.3.1.</span> <span class="toc-text">协议栈结构 (Figure 3: Remember: Protocol stack for a web fetch)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8BHTTP-GET%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94-Figure-4-Inspecting-a-HTTP-%E2%80%9C200-OK%E2%80%9D-response"><span class="toc-number">1.3.2.</span> <span class="toc-text">查看HTTP GET请求和响应 (Figure 4: Inspecting a HTTP “200 OK” response)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A43%EF%BC%9A%E5%8D%8F%E8%AE%AE%E5%BC%80%E9%94%80-Step-3-Protocol-Overhead"><span class="toc-number">1.4.</span> <span class="toc-text">步骤3：协议开销 (Step 3: Protocol Overhead)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Lab1-solutions"><span class="toc-number">2.</span> <span class="toc-text">2 Lab1 solutions</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%E5%8D%8F%E8%AE%AE%E5%B1%82-Solutions-Protocol-Layers"><span class="toc-number">2.1.</span> <span class="toc-text">解决方案 - 协议层 (Solutions - Protocol Layers)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E7%BB%93%E6%9E%84-Packet-Structure"><span class="toc-number">2.1.1.</span> <span class="toc-text">数据包结构 (Packet Structure)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A-Figure-1-Protocol-layer-structure-of-the-HTTP-GET-packet"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">图表解释 (Figure 1: Protocol layer structure of the HTTP GET packet)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%87%A0%E4%B8%AA%E7%89%B9%E7%82%B9"><span class="toc-number">2.1.2.</span> <span class="toc-text">需要注意的几个特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E5%BC%80%E9%94%80-Protocol-Overhead"><span class="toc-number">2.1.3.</span> <span class="toc-text">协议开销 (Protocol Overhead)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%BC%80%E9%94%80"><span class="toc-number">2.1.3.1.</span> <span class="toc-text">计算开销</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3"><span class="toc-number">3.</span> <span class="toc-text">3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%83%E4%B9%A0-TCP-Lab-Exercise-TCP"><span class="toc-number">3.1.</span> <span class="toc-text">实验练习 - TCP (Lab Exercise - TCP)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-Objective-1"><span class="toc-number">3.1.1.</span> <span class="toc-text">目标 (Objective)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A6%81%E6%B1%82-Requirements-1"><span class="toc-number">3.1.2.</span> <span class="toc-text">要求 (Requirements)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A41%EF%BC%9A%E6%8D%95%E8%8E%B7%E4%B8%80%E4%B8%AA%E8%BF%BD%E8%B8%AA-Step-1-Capture-a-Trace"><span class="toc-number">3.2.</span> <span class="toc-text">实验步骤1：捕获一个追踪 (Step 1: Capture a Trace)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87-Objective-2"><span class="toc-number">3.2.1.</span> <span class="toc-text">目标 (Objective)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-Procedure"><span class="toc-number">3.2.2.</span> <span class="toc-text">方法 (Procedure)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A-Figures-Explanation"><span class="toc-number">3.2.3.</span> <span class="toc-text">图表解释 (Figures Explanation)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4-Detailed-Steps"><span class="toc-number">3.2.4.</span> <span class="toc-text">详细步骤 (Detailed Steps)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A42%EF%BC%9A%E6%A3%80%E6%9F%A5%E8%BF%BD%E8%B8%AA-Step-2-Inspect-the-Trace"><span class="toc-number">3.3.</span> <span class="toc-text">步骤2：检查追踪 (Step 2: Inspect the Trace)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E5%88%B0%E7%9A%84%E5%AD%97%E6%AE%B5-Observed-Fields"><span class="toc-number">3.3.1.</span> <span class="toc-text">观察到的字段 (Observed Fields)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A43%EF%BC%9ATCP%E8%BF%9E%E6%8E%A5%E5%BB%BA%E7%AB%8B-%E6%8B%86%E9%99%A4-Step-3-TCP-Connection-Setup-Teardown"><span class="toc-number">3.4.</span> <span class="toc-text">步骤3：TCP连接建立&#x2F;拆除 (Step 3: TCP Connection Setup&#x2F;Teardown)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B-Three-Way-Handshake"><span class="toc-number">3.4.1.</span> <span class="toc-text">三次握手 (Three-Way Handshake)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E9%80%89%E9%A1%B9-Connection-Options"><span class="toc-number">3.4.2.</span> <span class="toc-text">连接选项 (Connection Options)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98-Question"><span class="toc-number">3.4.2.1.</span> <span class="toc-text">问题 (Question)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%8B%86%E9%99%A4-FIN-RST-Teardown"><span class="toc-number">3.4.3.</span> <span class="toc-text">连接拆除 (FIN&#x2F;RST Teardown)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A44%EF%BC%9ATCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93-Step-4-TCP-Data-Transfer"><span class="toc-number">3.5.</span> <span class="toc-text">步骤4：TCP数据传输 (Step 4: TCP Data Transfer)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90-How-to-Analyze"><span class="toc-number">3.5.1.</span> <span class="toc-text">如何分析 (How to Analyze)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%AE%BE%E7%BD%AE-Graph-Settings"><span class="toc-number">3.5.1.1.</span> <span class="toc-text">图表设置 (Graph Settings)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A-Graph-Explanation"><span class="toc-number">3.5.2.</span> <span class="toc-text">图表解释 (Graph Explanation)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A44%EF%BC%9ATCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93-Step-4-TCP-Data-Transfer-1"><span class="toc-number">3.6.</span> <span class="toc-text">步骤4：TCP数据传输 (Step 4: TCP Data Transfer)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90-How-to-Analyze-1"><span class="toc-number">3.6.1.</span> <span class="toc-text">如何分析 (How to Analyze)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%AE%BE%E7%BD%AE-Graph-Settings-1"><span class="toc-number">3.6.1.1.</span> <span class="toc-text">图表设置 (Graph Settings)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A-Graph-Explanation-1"><span class="toc-number">3.6.2.</span> <span class="toc-text">图表解释 (Graph Explanation)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%A7%A3%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E7%9A%84%E9%97%AE%E9%A2%98-Questions-to-Understand-Data-Transfer"><span class="toc-number">3.7.</span> <span class="toc-text">理解数据传输的问题 (Questions to Understand Data Transfer)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4"><span class="toc-number">4.</span> <span class="toc-text">4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-TCP-Solutions-TCP"><span class="toc-number">4.1.</span> <span class="toc-text">解决方案 - TCP (Solutions - TCP)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A43%EF%BC%9ATCP%E8%BF%9E%E6%8E%A5%E5%BB%BA%E7%AB%8B-%E6%8B%86%E9%99%A4-Step-3-TCP-Connection-Setup-Teardown-1"><span class="toc-number">4.1.1.</span> <span class="toc-text">步骤3：TCP连接建立&#x2F;拆除 (Step 3: TCP Connection Setup&#x2F;Teardown)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B-Three-Way-Handshake-1"><span class="toc-number">4.1.1.1.</span> <span class="toc-text">三次握手 (Three-Way Handshake)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%8B%86%E9%99%A4-FIN-RST-Teardown-1"><span class="toc-number">4.1.1.2.</span> <span class="toc-text">连接拆除 (FIN&#x2F;RST Teardown)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A44%EF%BC%9ATCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93-Step-4-TCP-Data-Transfer-2"><span class="toc-number">4.1.2.</span> <span class="toc-text">步骤4：TCP数据传输 (Step 4: TCP Data Transfer)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E9%97%AE%E9%A2%98%E7%9A%84%E5%9B%9E%E7%AD%94-Answers-to-the-Questions"><span class="toc-number">4.1.2.1.</span> <span class="toc-text">对问题的回答 (Answers to the Questions)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5"><span class="toc-number">5.</span> <span class="toc-text">5</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/A1-3/" title="A1.3">A1.3</a><time datetime="2023-12-07T19:17:01.000Z" title="Created 2023-12-07 19:17:01">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/A1-2/" title="A1.2">A1.2</a><time datetime="2023-12-07T19:08:14.000Z" title="Created 2023-12-07 19:08:14">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/A1-1/" title="A1.1">A1.1</a><time datetime="2023-12-07T18:28:53.000Z" title="Created 2023-12-07 18:28:53">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/0-CW2-C435/" title="435CW2">435CW2</a><time datetime="2023-12-07T15:53:55.000Z" title="Created 2023-12-07 15:53:55">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/03/0-CaseStudy-C410/" title="0-CaseStudy-C410">0-CaseStudy-C410</a><time datetime="2023-12-03T19:02:27.000Z" title="Created 2023-12-03 19:02:27">2023-12-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>B2.1 | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="COM410 编程实践课程B2.1 排序介绍 定义排序  排序是将一组项目基于特定标准进行排列的过程。 我们生活中处处可以看到排序的例子，如按字母顺序排列的联系人列表、按数值排序的扑克牌、按日期或标题排序的书籍等。   总结：本部分介绍了排序的定义和生活中的排序例子，强调了排序在组织信息时的普遍性和重要性。    B2.2 排序的实际应用 排序的例子  一个手机上的联系人列表，通常按照字母顺序排列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="B2.1">
+<meta property="og:url" content="http://example.com/2023/11/30/B2-1/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="COM410 编程实践课程B2.1 排序介绍 定义排序  排序是将一组项目基于特定标准进行排列的过程。 我们生活中处处可以看到排序的例子，如按字母顺序排列的联系人列表、按数值排序的扑克牌、按日期或标题排序的书籍等。   总结：本部分介绍了排序的定义和生活中的排序例子，强调了排序在组织信息时的普遍性和重要性。    B2.2 排序的实际应用 排序的例子  一个手机上的联系人列表，通常按照字母顺序排列">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2023-11-30T19:06:25.000Z">
+<meta property="article:modified_time" content="2023-12-01T15:17:59.429Z">
+<meta property="article:author" content="Jacka10086">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/11/30/B2-1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'B2.1',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-01 15:17:59'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">B2.1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-11-30T19:06:25.000Z" title="Created 2023-11-30 19:06:25">2023-11-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-12-01T15:17:59.429Z" title="Updated 2023-12-01 15:17:59">2023-12-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="B2.1"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="COM410-编程实践课程"><a href="#COM410-编程实践课程" class="headerlink" title="COM410 编程实践课程"></a>COM410 编程实践课程</h2><h3 id="B2-1-排序介绍"><a href="#B2-1-排序介绍" class="headerlink" title="B2.1 排序介绍"></a>B2.1 排序介绍</h3><ul>
+<li><p><strong>定义排序</strong></p>
+<ul>
+<li>排序是将一组项目基于特定标准进行排列的过程。</li>
+<li>我们生活中处处可以看到排序的例子，如按字母顺序排列的联系人列表、按数值排序的扑克牌、按日期或标题排序的书籍等。</li>
+</ul>
+<blockquote>
+<p><strong>总结</strong>：本部分介绍了排序的定义和生活中的排序例子，强调了排序在组织信息时的普遍性和重要性。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="B2-2-排序的实际应用"><a href="#B2-2-排序的实际应用" class="headerlink" title="B2.2 排序的实际应用"></a>B2.2 排序的实际应用</h3><ul>
+<li><p><strong>排序的例子</strong></p>
+<ul>
+<li>一个手机上的联系人列表，通常按照字母顺序排列。</li>
+<li>一副扑克牌，可能按照数字或者花色来排序。</li>
+<li>一排书籍，可以按照出版日期或者书脊上的标题进行排序。</li>
+</ul>
+<blockquote>
+<p><strong>总结</strong>：这一部分通过具体的例子说明了排序在不同场景下的应用，帮助学生理解排序的多样性和实用性。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="The-Java-Comparable-Interface-Java-可比较接口"><a href="#The-Java-Comparable-Interface-Java-可比较接口" class="headerlink" title="The Java Comparable Interface (Java 可比较接口)"></a>The Java Comparable Interface (Java 可比较接口)</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li><p>必须能够比较一个对象与另一个对象，以定义能够对任意对象集合进行排序的算法。</p>
+</li>
+<li><p>虽然我们的大多数例子将会对整数进行排序，但Java实现将能对任何实现了Comparable接口的对象进行排序。</p>
+</li>
+<li><p>Comparable接口包含一个<code>compareTo()</code>方法，它被设计用来返回一个整数，指定两个对象之间的关系。</p>
+<blockquote>
+<p><strong>总结</strong>：本节介绍了Java中Comparable接口的重要性，它允许我们定义如何对对象集合进行排序。<code>compareTo()</code>方法是这一过程的核心，它通过返回一个整数来表达两个对象之间的关系。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="compareTo-方法的实现"><a href="#compareTo-方法的实现" class="headerlink" title="compareTo() 方法的实现"></a><code>compareTo()</code> 方法的实现</h3><ul>
+<li><p><code>compareTo()</code> 方法的实现应当：</p>
+<ul>
+<li>确立对象间的完全排序。</li>
+<li>如果<code>obj1</code>小于、等于或大于<code>obj2</code>，则分别返回一个负整数（通常为-1）、零或正整数（通常为1）。</li>
+</ul>
+<p><img src="/%E6%88%AA%E5%B1%8F2023-11-30_19.07.02.png" alt="比较示意图"></p>
+<ul>
+<li>图中展示了三种可能的比较结果：<code>obj1</code>小于<code>obj2</code>时返回-1，<code>obj1</code>等于<code>obj2</code>时返回0，<code>obj1</code>大于<code>obj2</code>时返回1。</li>
+</ul>
+<blockquote>
+<p><strong>总结</strong>：这部分详细解释了<code>compareTo()</code>方法如何实现，以及它如何通过返回不同的整数值来定义两个对象之间的大小关系。图示帮助理解这一点，展现了不同的比较结果对应的返回值。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Scenario-–-Comparing-Cards-场景-–-比较扑克牌"><a href="#Scenario-–-Comparing-Cards-场景-–-比较扑克牌" class="headerlink" title="Scenario – Comparing Cards (场景 – 比较扑克牌)"></a>Scenario – Comparing Cards (场景 – 比较扑克牌)</h2><h3 id="任务说明"><a href="#任务说明" class="headerlink" title="任务说明"></a>任务说明</h3><ul>
+<li><p>在您的<code>DataStructures</code>项目中，修改<code>Card</code>类以实现<code>Comparable</code>接口。</p>
+<ul>
+<li>添加一个<code>compareTo()</code>方法，它接受一个卡牌对象作为参数。如果当前卡牌的等级高于参数卡牌，返回1；如果低于，返回-1；如果等级相同，则返回0。</li>
+<li>如果您的类中还没有<code>getRankValue()</code>方法，您可能需要实现另一个访问器方法来返回卡牌的等级值，以便它们能够被比较。</li>
+</ul>
+</li>
+<li><p>修改<code>CardTest</code>类以生成两张随机卡牌，比较它们的等级值，并报告比较结果。</p>
+<blockquote>
+<p><strong>总结</strong>：这部分提供了一个实际的编程场景，指导如何在Java中实现对象的比较逻辑。它详细描述了如何在<code>Card</code>类中添加<code>compareTo()</code>方法，并如何通过<code>CardTest</code>类验证这些方法的正确性。这是面向对象编程中多态性和接口使用的一个实际例子。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Sorting-排序"><a href="#Sorting-排序" class="headerlink" title="Sorting (排序)"></a>Sorting (排序)</h2><h3 id="排序的概念"><a href="#排序的概念" class="headerlink" title="排序的概念"></a>排序的概念</h3><ul>
+<li>比较两个对象的方式取决于对象的性质和它们的属性（如标题、作者、大小、高度、颜色、名称等）。</li>
+<li>目前，我们寻找的算法能够将集合中的<code>n</code>个条目进行排序，使得：<code>entry 1 ≤ entry 2 ≤ ... ≤ entry n</code>。</li>
+</ul>
+<h3 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h3><ul>
+<li><p>通常情况下，排序一个数组比排序一个链表更为简单。</p>
+</li>
+<li><p>我们的算法将重新排列数组中的<code>n</code>个值，使得：<code>a[0] ≤ a[1] ≤ ... ≤ a[n - 1]</code>。</p>
+<blockquote>
+<p><strong>总结</strong>：这部分讲述了排序的基本原理，说明了排序取决于对象的属性。它还指出，对于算法来说，数组排序通常比链表排序来得更简单，因为数组的连续内存布局使得它们更容易被访问和重新排列。这是计算机科学中数据结构和算法基本概念的核心部分。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Swapping-Elements-交换元素"><a href="#Swapping-Elements-交换元素" class="headerlink" title="Swapping Elements (交换元素)"></a>Swapping Elements (交换元素)</h2><h3 id="数组元素交换概念"><a href="#数组元素交换概念" class="headerlink" title="数组元素交换概念"></a>数组元素交换概念</h3><ul>
+<li>我们有一个包含5个元素的数组 <code>char[] letters = &#123; &quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot; &#125;;</code>。</li>
+<li>直接复制一个数组单元格的值到另一个单元格将导致数据丢失。</li>
+</ul>
+<h3 id="交换过程"><a href="#交换过程" class="headerlink" title="交换过程"></a>交换过程</h3><ul>
+<li>我们希望交换元素1（”B”）和元素3（”D”）的内容。</li>
+<li>解决方案是使用一个临时变量来完成交换，以避免数据丢失。</li>
+</ul>
+<h3 id="交换步骤"><a href="#交换步骤" class="headerlink" title="交换步骤"></a>交换步骤</h3><ol>
+<li>将元素1的值复制到临时变量中：<code>char temp = letters[1];</code></li>
+<li>将元素3的值复制到元素1的位置：<code>letters[1] = letters[3];</code></li>
+<li>将临时变量中的值（原始元素1）复制到元素3的位置：<code>letters[3] = temp;</code></li>
+</ol>
+<blockquote>
+<p><strong>总结</strong>：本节说明了在数组中交换两个元素的正确方法。通过使用临时变量，我们可以确保在交换过程中不会丢失任何数据。这是计算机科学中基础而重要的数组操作技巧。</p>
+</blockquote>
+<h2 id="Scenario-–-Manipulating-Cards-场景-–-操纵扑克牌"><a href="#Scenario-–-Manipulating-Cards-场景-–-操纵扑克牌" class="headerlink" title="Scenario – Manipulating Cards (场景 – 操纵扑克牌)"></a>Scenario – Manipulating Cards (场景 – 操纵扑克牌)</h2><h3 id="任务说明-1"><a href="#任务说明-1" class="headerlink" title="任务说明"></a>任务说明</h3><ul>
+<li><p>在您的<code>DataStructures</code>项目中，实现一个名为<code>RankedCards</code>的类，功能如下：</p>
+<ul>
+<li>应用程序应生成5张随机卡牌并将它们存储在一个数组中。</li>
+<li>一旦所有卡牌都被生成，找到等级最高的卡牌（如果有多张等级相同的最高卡牌，则取第一张）。</li>
+<li>将等级最高的卡牌与数组中最后一个位置的卡牌交换。</li>
+<li>将卡牌集合打印到终端窗口。</li>
+</ul>
+<blockquote>
+<p><strong>总结</strong>：这个场景要求学生在一个数据结构项目中实现一个能够处理扑克牌排序的类。通过生成、识别和操作卡牌数组中的元素，这个任务练习了数组操作和对象比较的基本编程技能。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Bubble-Sort-冒泡排序"><a href="#Bubble-Sort-冒泡排序" class="headerlink" title="Bubble Sort (冒泡排序)"></a>Bubble Sort (冒泡排序)</h2><h3 id="排序过程"><a href="#排序过程" class="headerlink" title="排序过程"></a>排序过程</h3><ul>
+<li>冒泡排序通过重复比较相邻元素并在必要时交换它们的位置来对值列表进行排序。<ul>
+<li>扫描列表，如果相邻元素的顺序不正确就交换它们（这样做会将最大的值“冒泡”到顶部）。</li>
+<li>再次扫描列表，将第二大的值“冒泡”上来。</li>
+<li>重复这个过程，直到所有元素都在列表中的正确位置上。</li>
+</ul>
+</li>
+</ul>
+<h3 id="交换操作"><a href="#交换操作" class="headerlink" title="交换操作"></a>交换操作</h3><ul>
+<li><p>每次交换操作都会将一个元素移动到其最终正确的位置。</p>
+<blockquote>
+<p><strong>总结</strong>：冒泡排序是一种简单的排序算法，它重复遍历要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。遍历数列的工作是重复进行的，直到没有再需要交换的元素，这意味着数列已经排序完成。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Bubble-Sort-冒泡排序-1"><a href="#Bubble-Sort-冒泡排序-1" class="headerlink" title="Bubble Sort (冒泡排序)"></a>Bubble Sort (冒泡排序)</h2><h3 id="第一次遍历"><a href="#第一次遍历" class="headerlink" title="第一次遍历"></a>第一次遍历</h3><ul>
+<li>考虑数组的第一次遍历，目的是将最大的值移动到数组的最后一个元素。<ul>
+<li>从数组的第一个元素开始，比较相邻的元素并进行交换，以确保较大的数值“冒泡”到数组的顶端。</li>
+<li>第一次遍历结束时，最大的元素会被放置在数组的最后一个位置。</li>
+</ul>
+</li>
+</ul>
+<h3 id="剩余的遍历"><a href="#剩余的遍历" class="headerlink" title="剩余的遍历"></a>剩余的遍历</h3><ul>
+<li>在随后的每次遍历中，重复上述过程，但每次都可以忽略已经排序好的最后一个元素。<ul>
+<li>每次遍历都会找到未排序部分的最大元素，并将其“冒泡”到正确的位置。</li>
+<li>这个过程会重复进行，直到所有的元素都正确排序。</li>
+</ul>
+</li>
+</ul>
+<h3 id="可视化过程"><a href="#可视化过程" class="headerlink" title="可视化过程"></a>可视化过程</h3><ul>
+<li><p>下面的图表展示了冒泡排序的每一步：</p>
+<ul>
+<li><img src="/%E6%88%AA%E5%B1%8F2023-11-30_19.07.14.png" alt="Bubble Sort First Pass"></li>
+<li><img src="/%E6%88%AA%E5%B1%8F2023-11-30_19.07.15.png" alt="Bubble Sort Remaining Passes"></li>
+</ul>
+<blockquote>
+<p><strong>总结</strong>：通过可视化的例子，冒泡排序的概念变得更加清晰。每一次遍历都将最大的元素移动到正确的位置，就像气泡从水底升到水面一样。重复这个过程直到整个数组都被正确排序。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="冒泡排序-第一版本（Bubble-Sort-version-1）"><a href="#冒泡排序-第一版本（Bubble-Sort-version-1）" class="headerlink" title="冒泡排序 - 第一版本（Bubble Sort - version 1）"></a>冒泡排序 - 第一版本（Bubble Sort - version 1）</h2><ul>
+<li><p><strong>算法伪代码</strong>（Pseudocode of algorithm）</p>
+<ul>
+<li>冒泡排序算法对数组<code>a</code>中的条目进行排序。</li>
+<li>设置最后位置为数组长度减1。</li>
+<li>设置内部最后位置为最后位置。</li>
+<li>从0循环到最后位置减1。</li>
+<li>内部从0循环到内部最后减1。</li>
+<li>如果条目<code>a[j]</code>和<code>a[j+1]</code>顺序错误，则交换位置。</li>
+<li>将内部最后位置减1设置为内部最后。</li>
+</ul>
+<blockquote>
+<p>伪代码提供了冒泡排序的基本步骤，通过比较相邻元素的顺序来进行排序，如果顺序错误则交换它们的位置。</p>
+</blockquote>
+</li>
+<li><p><strong>效果评价</strong>（Works OK）</p>
+<ul>
+<li>这种方法可以工作，但可能会在数组已经排序后仍然继续检查值。</li>
+</ul>
+<blockquote>
+<p>评价指出虽然该算法能够完成排序任务，但其效率不是最优的，因为它没有在数组已经排序好之后停止检查。</p>
+</blockquote>
+</li>
+<li><p><strong>改进方案</strong>（A better approach）</p>
+<ul>
+<li>一个更好的方法是跟踪已经进行的交换，并在没有更多交换时停止。</li>
+</ul>
+<blockquote>
+<p>改进方案建议通过跟踪交换操作来优化算法，从而在数组已经排序完成时停止算法运行，以提高效率。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本段内容描述了冒泡排序算法的一个版本，包括其伪代码、效果评价以及改进方案。伪代码详细列出了算法的步骤，效果评价指出了其潜在的效率问题，改进方案则提出了一种优化方法。</p>
+<h2 id="冒泡排序-改进版（Bubble-Sort-improved）"><a href="#冒泡排序-改进版（Bubble-Sort-improved）" class="headerlink" title="冒泡排序 - 改进版（Bubble Sort - improved）"></a>冒泡排序 - 改进版（Bubble Sort - improved）</h2><ul>
+<li><p><strong>算法改进点</strong>（Keep track of the last swap made and exit when none is required）</p>
+<ul>
+<li>跟踪最后一次交换的位置，如果不需要交换则退出算法。</li>
+</ul>
+<blockquote>
+<p>通过记录最后一次交换的位置，算法可以在确定数组已经排序完成后立即终止，从而提高效率。</p>
+</blockquote>
+</li>
+<li><p><strong>改进后的伪代码</strong>（Algorithm bubbleSort(a)）</p>
+<ul>
+<li>设置第一个位置为0。</li>
+<li>设置最后位置为数组长度减1。</li>
+<li>当第一个位置小于最后位置时，进行以下操作：<ul>
+<li>将最后交换位置设置为第一个位置。</li>
+<li>从第一个位置循环到最后位置减1。</li>
+<li>如果条目<code>a[i]</code>和<code>a[i+1]</code>顺序错误，则交换位置，并将最后交换位置设置为<code>i</code>。</li>
+<li>将最后位置设置为最后交换的位置。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>改进后的伪代码展示了一个更高效的冒泡排序算法，它通过减少不必要的比较来缩短排序时间。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>改进版的冒泡排序通过跟踪交换操作，减少了排序过程中的无用比较，提高了算法的效率。伪代码清晰地展示了改进后的排序步骤，使得算法在达到排序目的后可以更快地完成。</p>
+<h2 id="场景（Scenario）"><a href="#场景（Scenario）" class="headerlink" title="场景（Scenario）"></a>场景（Scenario）</h2><ul>
+<li><p><strong>项目实施</strong>（In a new project called Sorting）</p>
+<ul>
+<li>在一个名为<code>Sorting</code>的新项目中，实现一个改进的冒泡排序算法，该算法在一个名为<code>BubbleSort</code>的类中。</li>
+<li>通过让它对一个包含10个整数的数组进行排序来确认其操作。</li>
+</ul>
+<blockquote>
+<p>项目要求在一个新建的项目中实现一个改进版的冒泡排序算法，并通过排序一个具体的数组来验证算法的正确性。</p>
+</blockquote>
+</li>
+<li><p><strong>功能增加</strong>（Add code）</p>
+<ul>
+<li>添加代码以显示数组在过程开始和结束时的状态。</li>
+<li>添加代码来计数比较和交换的次数，并在排序完成后报告这些值。</li>
+</ul>
+<blockquote>
+<p>功能增加部分要求开发者增加显示数组状态和计数操作的功能，以便更好地了解算法的执行过程及效率。</p>
+</blockquote>
+</li>
+<li><p><strong>性能检测</strong>（Check its performance）</p>
+<ul>
+<li>检查其性能：<ul>
+<li>当数组处于随机顺序时(i)。</li>
+<li>当数组已经处于排序顺序时(ii)。</li>
+<li>当数组处于逆序时(iii)。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>性能检测要求测试改进的冒泡排序算法在不同数组状态下的表现，以评估其效率和效果。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>本段内容描述了在一个名为<code>Sorting</code>的项目中实现改进的冒泡排序算法的场景。需要添加的代码功能包括显示数组状态和计数排序操作，以及在不同的数组状态下检测算法性能的要求。这些要求旨在帮助开发者更好地理解和优化排序算法的性能。</p>
+<h2 id="冒泡排序的效率（Efficiency-of-Bubble-Sort）"><a href="#冒泡排序的效率（Efficiency-of-Bubble-Sort）" class="headerlink" title="冒泡排序的效率（Efficiency of Bubble Sort）"></a>冒泡排序的效率（Efficiency of Bubble Sort）</h2><ul>
+<li><p><strong>改进后的冒泡排序</strong>（The improved Bubble Sort）</p>
+<ul>
+<li>改进后的冒泡排序保持对最后一次交换的记录，从而避免了主循环中的冗余步骤。</li>
+</ul>
+<blockquote>
+<p>该点强调了改进后冒泡排序算法的效率优势，即通过记录交换来避免不必要的循环迭代。</p>
+</blockquote>
+</li>
+<li><p><strong>最佳情况</strong>（Best case）</p>
+<ul>
+<li>如果数组已经是升序排列的，冒泡排序只需进行<code>N-1</code>次比较和0次交换，时间复杂度为<code>O(n)</code>。</li>
+</ul>
+<blockquote>
+<p>最佳情况说明了在数组已经有序的情况下，算法的运行时间与数组大小呈线性关系，效率较高。</p>
+</blockquote>
+</li>
+<li><p><strong>最坏情况</strong>（Worst case）</p>
+<ul>
+<li>如果数组是降序排列的，处理过程需要<code>N-1</code>次遍历；在第<code>i</code>次遍历中，会有<code>N-i</code>次比较和<code>N-i</code>次交换，因此外循环和内循环的时间复杂度都是<code>O(n)</code>，整体为<code>O(n^2)</code>。</li>
+</ul>
+<blockquote>
+<p>最坏情况描述了在数组完全逆序的情况下，算法的运行时间与数组大小的平方成正比，效率较低。</p>
+</blockquote>
+</li>
+<li><p><strong>平均情况</strong>（Average case）</p>
+<ul>
+<li>平均情况更为复杂，因为可能会跳过一些遍历，但平均的遍历次数和交换次数仍然是<code>O(n)</code>，因此总的时间复杂度为<code>O(n^2)</code>。</li>
+</ul>
+<blockquote>
+<p>平均情况讨论了在一般随机数组中，算法的平均效率仍然受到<code>N^2</code>级别的影响，但由于可能跳过某些遍历，实际性能可能会有所提高。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><p>本段内容讨论了冒泡排序算法的效率，包括改进后的冒泡排序避免冗余步骤的优点，以及在最佳、最坏和平均三种情况下的时间复杂度。改进后的冒泡排序在最佳情况下效率显著，但在平均和最坏情况下，时间复杂度仍然是<code>O(n^2)</code>，这表明尽管进行了优化，冒泡排序在处理大型数据集时可能仍然不是最优选择。</p>
+<h2 id="场景（Scenario）-1"><a href="#场景（Scenario）-1" class="headerlink" title="场景（Scenario）"></a>场景（Scenario）</h2><ul>
+<li><p><strong>验证改进的冒泡排序时间复杂度</strong>（Prove that the improved Bubble Sort has a time signature of O(n^2)）</p>
+<ul>
+<li>通过为<code>BubbleSort</code>类添加以下功能来证明改进的冒泡排序具有<code>O(n^2)</code>的时间复杂度。</li>
+</ul>
+<blockquote>
+<p>目标是证明通过实验，改进的冒泡排序算法符合理论上的时间复杂度预期。</p>
+</blockquote>
+</li>
+<li><p><strong>功能实现</strong>（Functionality to your BubbleSort class）</p>
+<ul>
+<li>生成大小为100, 200, 400, 800, 1600, 3200和6400的随机整数数组，并测量排序每个数组所需的时间。</li>
+<li>对每种大小的数组执行1000次计时排序（每次都使用新的随机内容），并记录总执行时间。</li>
+<li>将结果以数组大小和1000次排序操作的总执行时间的值对列表形式呈现。</li>
+</ul>
+<blockquote>
+<p>功能实现部分要求通过大量的实验来收集数据，以便于分析和证明算法的时间复杂度。</p>
+</blockquote>
+</li>
+<li><p><strong>注意事项</strong>（Note）</p>
+<ul>
+<li>记得从冒泡排序方法中移除所有非必要的代码（例如，生成控制台输出或计数比较&#x2F;交换的代码）。</li>
+</ul>
+<blockquote>
+<p>注意事项提醒开发者在进行性能测试时，应该移除任何可能影响实验结果的非核心功能代码。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h3><p>本段内容描述了一个实验场景，旨在通过添加特定功能到<code>BubbleSort</code>类并进行大量的排序操作来验证改进的冒泡排序算法的时间复杂度为<code>O(n^2)</code>。这要求开发者实现功能来生成随机数组，执行排序，并收集执行时间数据，同时注意保持测试环境的纯净，确保测试结果的准确性。</p>
+<h2 id="COM410-编程实践-COM410-Programming-Practice"><a href="#COM410-编程实践-COM410-Programming-Practice" class="headerlink" title="COM410 编程实践 (COM410 Programming Practice)"></a>COM410 编程实践 (COM410 Programming Practice)</h2><h3 id="B2-2-改进的排序技术-B2-2-Improved-Sorting-Techniques"><a href="#B2-2-改进的排序技术-B2-2-Improved-Sorting-Techniques" class="headerlink" title="B2.2 改进的排序技术 (B2.2 Improved Sorting Techniques)"></a>B2.2 改进的排序技术 (B2.2 Improved Sorting Techniques)</h3><p>此部分讲述了在数据结构和算法中对传统排序方法的改进。这些改进可能包括更高效的算法或对已知算法的优化，以处理大数据集。</p>
+<h4 id="改进的排序技术概述"><a href="#改进的排序技术概述" class="headerlink" title="改进的排序技术概述"></a>改进的排序技术概述</h4><ul>
+<li>这里将介绍几种改进后的排序方法。</li>
+<li>比较它们与传统排序技术的不同之处。</li>
+<li>探讨这些技术在处理大规模数据集时的优势。</li>
+</ul>
+<h4 id="改进技术的示例"><a href="#改进技术的示例" class="headerlink" title="改进技术的示例"></a>改进技术的示例</h4><ul>
+<li>可能包括快速排序、归并排序等算法。</li>
+<li>每种算法的工作原理及其效率。</li>
+<li>如何选择合适的算法针对特定的问题。</li>
+</ul>
+<h3 id="O-n²-方法的局限性-Limitations-of-O-n²-methods"><a href="#O-n²-方法的局限性-Limitations-of-O-n²-methods" class="headerlink" title="O(n²) 方法的局限性 (Limitations of O(n²) methods)"></a>O(n²) 方法的局限性 (Limitations of O(n²) methods)</h3><p>这部分详细解释了时间复杂度为O(n²)的排序算法，如冒泡排序、选择排序和插入排序的局限性。</p>
+<h4 id="O-n²-算法简介"><a href="#O-n²-算法简介" class="headerlink" title="O(n²)算法简介"></a>O(n²)算法简介</h4><ul>
+<li>这些算法在小数据集上表现良好。</li>
+<li>随着数据量的增加，它们的效率会急剧下降。</li>
+</ul>
+<h4 id="O-n²-算法的具体局限"><a href="#O-n²-算法的具体局限" class="headerlink" title="O(n²)算法的具体局限"></a>O(n²)算法的具体局限</h4><ul>
+<li><strong>冒泡排序</strong>：实现简单，但效率低下。</li>
+<li><strong>选择排序</strong>和<strong>插入排序</strong>：与冒泡排序类似，但在不同情况下可能更有效。</li>
+<li>所有这些算法都有执行时间与要排序元素数量的平方成正比，随着元素数量的增加，排序时间急剧增长。</li>
+<li>这些方法不适合大数据集的排序。</li>
+</ul>
+<p>在这个部分中，我们总结了O(n²)算法在处理大规模数据集时的不足，这也是为什么在现代应用中，更倾向于使用时间复杂度更低的算法，如快速排序或归并排序。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/11/30/B2-1/">http://example.com/2023/11/30/B2-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/01/B2-2/" title="B2.2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">B2.2</div></div></a></div><div class="next-post pull-right"><a href="/2023/11/30/B1-3/" title="1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">1</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#COM410-%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%AF%BE%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">COM410 编程实践课程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#B2-1-%E6%8E%92%E5%BA%8F%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">B2.1 排序介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B2-2-%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">B2.2 排序的实际应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Java-Comparable-Interface-Java-%E5%8F%AF%E6%AF%94%E8%BE%83%E6%8E%A5%E5%8F%A3"><span class="toc-number">2.</span> <span class="toc-text">The Java Comparable Interface (Java 可比较接口)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#compareTo-%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.2.</span> <span class="toc-text">compareTo() 方法的实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scenario-%E2%80%93-Comparing-Cards-%E5%9C%BA%E6%99%AF-%E2%80%93-%E6%AF%94%E8%BE%83%E6%89%91%E5%85%8B%E7%89%8C"><span class="toc-number">3.</span> <span class="toc-text">Scenario – Comparing Cards (场景 – 比较扑克牌)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E8%AF%B4%E6%98%8E"><span class="toc-number">3.1.</span> <span class="toc-text">任务说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sorting-%E6%8E%92%E5%BA%8F"><span class="toc-number">4.</span> <span class="toc-text">Sorting (排序)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">4.1.</span> <span class="toc-text">排序的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F"><span class="toc-number">4.2.</span> <span class="toc-text">数组排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swapping-Elements-%E4%BA%A4%E6%8D%A2%E5%85%83%E7%B4%A0"><span class="toc-number">5.</span> <span class="toc-text">Swapping Elements (交换元素)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%BA%A4%E6%8D%A2%E6%A6%82%E5%BF%B5"><span class="toc-number">5.1.</span> <span class="toc-text">数组元素交换概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E8%BF%87%E7%A8%8B"><span class="toc-number">5.2.</span> <span class="toc-text">交换过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%AD%A5%E9%AA%A4"><span class="toc-number">5.3.</span> <span class="toc-text">交换步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scenario-%E2%80%93-Manipulating-Cards-%E5%9C%BA%E6%99%AF-%E2%80%93-%E6%93%8D%E7%BA%B5%E6%89%91%E5%85%8B%E7%89%8C"><span class="toc-number">6.</span> <span class="toc-text">Scenario – Manipulating Cards (场景 – 操纵扑克牌)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E8%AF%B4%E6%98%8E-1"><span class="toc-number">6.1.</span> <span class="toc-text">任务说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bubble-Sort-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="toc-number">7.</span> <span class="toc-text">Bubble Sort (冒泡排序)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E8%BF%87%E7%A8%8B"><span class="toc-number">7.1.</span> <span class="toc-text">排序过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%93%8D%E4%BD%9C"><span class="toc-number">7.2.</span> <span class="toc-text">交换操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bubble-Sort-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F-1"><span class="toc-number">8.</span> <span class="toc-text">Bubble Sort (冒泡排序)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%81%8D%E5%8E%86"><span class="toc-number">8.1.</span> <span class="toc-text">第一次遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%A9%E4%BD%99%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-number">8.2.</span> <span class="toc-text">剩余的遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%E8%BF%87%E7%A8%8B"><span class="toc-number">8.3.</span> <span class="toc-text">可视化过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F-%E7%AC%AC%E4%B8%80%E7%89%88%E6%9C%AC%EF%BC%88Bubble-Sort-version-1%EF%BC%89"><span class="toc-number">9.</span> <span class="toc-text">冒泡排序 - 第一版本（Bubble Sort - version 1）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">9.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F-%E6%94%B9%E8%BF%9B%E7%89%88%EF%BC%88Bubble-Sort-improved%EF%BC%89"><span class="toc-number">10.</span> <span class="toc-text">冒泡排序 - 改进版（Bubble Sort - improved）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-number">10.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%EF%BC%88Scenario%EF%BC%89"><span class="toc-number">11.</span> <span class="toc-text">场景（Scenario）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-2"><span class="toc-number">11.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E7%9A%84%E6%95%88%E7%8E%87%EF%BC%88Efficiency-of-Bubble-Sort%EF%BC%89"><span class="toc-number">12.</span> <span class="toc-text">冒泡排序的效率（Efficiency of Bubble Sort）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-3"><span class="toc-number">12.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%EF%BC%88Scenario%EF%BC%89-1"><span class="toc-number">13.</span> <span class="toc-text">场景（Scenario）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-4"><span class="toc-number">13.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#COM410-%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5-COM410-Programming-Practice"><span class="toc-number">14.</span> <span class="toc-text">COM410 编程实践 (COM410 Programming Practice)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#B2-2-%E6%94%B9%E8%BF%9B%E7%9A%84%E6%8E%92%E5%BA%8F%E6%8A%80%E6%9C%AF-B2-2-Improved-Sorting-Techniques"><span class="toc-number">14.1.</span> <span class="toc-text">B2.2 改进的排序技术 (B2.2 Improved Sorting Techniques)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B%E7%9A%84%E6%8E%92%E5%BA%8F%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0"><span class="toc-number">14.1.1.</span> <span class="toc-text">改进的排序技术概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A4%BA%E4%BE%8B"><span class="toc-number">14.1.2.</span> <span class="toc-text">改进技术的示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#O-n%C2%B2-%E6%96%B9%E6%B3%95%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7-Limitations-of-O-n%C2%B2-methods"><span class="toc-number">14.2.</span> <span class="toc-text">O(n²) 方法的局限性 (Limitations of O(n²) methods)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#O-n%C2%B2-%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="toc-number">14.2.1.</span> <span class="toc-text">O(n²)算法简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#O-n%C2%B2-%E7%AE%97%E6%B3%95%E7%9A%84%E5%85%B7%E4%BD%93%E5%B1%80%E9%99%90"><span class="toc-number">14.2.2.</span> <span class="toc-text">O(n²)算法的具体局限</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/A1-3/" title="A1.3">A1.3</a><time datetime="2023-12-07T19:17:01.000Z" title="Created 2023-12-07 19:17:01">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/A1-2/" title="A1.2">A1.2</a><time datetime="2023-12-07T19:08:14.000Z" title="Created 2023-12-07 19:08:14">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/A1-1/" title="A1.1">A1.1</a><time datetime="2023-12-07T18:28:53.000Z" title="Created 2023-12-07 18:28:53">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/0-CW2-C435/" title="435CW2">435CW2</a><time datetime="2023-12-07T15:53:55.000Z" title="Created 2023-12-07 15:53:55">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/03/0-CaseStudy-C410/" title="0-CaseStudy-C410">0-CaseStudy-C410</a><time datetime="2023-12-03T19:02:27.000Z" title="Created 2023-12-03 19:02:27">2023-12-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

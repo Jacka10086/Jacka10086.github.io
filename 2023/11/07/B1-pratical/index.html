@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>B1-pratical | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="SumAnalysis.javaSumAnalysis 类（SumAnalysis 类）SumAnalysis 类是一个用Java编写的类，它包含了三种计算从1加到n的整数和的方法，以及一个主方法用于测试这些方法的性能。 方法概览（方法概览） sumA(int n): 使用单层for循环实现累加。 sumB(int n): 通过两层嵌套的for循环进行累加。 sumC(int n): 利用数学公式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="B1-pratical">
+<meta property="og:url" content="http://example.com/2023/11/07/B1-pratical/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="SumAnalysis.javaSumAnalysis 类（SumAnalysis 类）SumAnalysis 类是一个用Java编写的类，它包含了三种计算从1加到n的整数和的方法，以及一个主方法用于测试这些方法的性能。 方法概览（方法概览） sumA(int n): 使用单层for循环实现累加。 sumB(int n): 通过两层嵌套的for循环进行累加。 sumC(int n): 利用数学公式">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2023-11-07T15:55:36.000Z">
+<meta property="article:modified_time" content="2023-12-03T18:55:41.264Z">
+<meta property="article:author" content="Jacka10086">
+<meta property="article:tag" content="week 7">
+<meta property="article:tag" content="Algorithm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/11/07/B1-pratical/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'B1-pratical',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-03 18:55:41'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">B1-pratical</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-11-07T15:55:36.000Z" title="Created 2023-11-07 15:55:36">2023-11-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-12-03T18:55:41.264Z" title="Updated 2023-12-03 18:55:41">2023-12-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Com410/">Com410</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="B1-pratical"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="SumAnalysis-java"><a href="#SumAnalysis-java" class="headerlink" title="SumAnalysis.java"></a>SumAnalysis.java</h1><h2 id="SumAnalysis-类（SumAnalysis-类）"><a href="#SumAnalysis-类（SumAnalysis-类）" class="headerlink" title="SumAnalysis 类（SumAnalysis 类）"></a>SumAnalysis 类（SumAnalysis 类）</h2><p>SumAnalysis 类是一个用Java编写的类，它包含了三种计算从1加到n的整数和的方法，以及一个主方法用于测试这些方法的性能。</p>
+<h3 id="方法概览（方法概览）"><a href="#方法概览（方法概览）" class="headerlink" title="方法概览（方法概览）"></a>方法概览（方法概览）</h3><ul>
+<li><code>sumA(int n)</code>: 使用单层for循环实现累加。</li>
+<li><code>sumB(int n)</code>: 通过两层嵌套的for循环进行累加。</li>
+<li><code>sumC(int n)</code>: 利用数学公式直接计算和。</li>
+</ul>
+<h4 id="sumA-方法（sumA-方法）"><a href="#sumA-方法（sumA-方法）" class="headerlink" title="sumA 方法（sumA 方法）"></a>sumA 方法（sumA 方法）</h4><ul>
+<li>使用基本的for循环从1加到n。</li>
+<li>对于较小的n值，性能表现良好。</li>
+</ul>
+<h4 id="sumB-方法（sumB-方法）"><a href="#sumB-方法（sumB-方法）" class="headerlink" title="sumB 方法（sumB 方法）"></a>sumB 方法（sumB 方法）</h4><ul>
+<li>使用两个嵌套的for循环来计算总和。</li>
+<li>对于每个i，循环会重复加1，直到i。</li>
+<li>这种方法的性能随着n的增加而显著下降。</li>
+</ul>
+<h4 id="sumC-方法（sumC-方法）"><a href="#sumC-方法（sumC-方法）" class="headerlink" title="sumC 方法（sumC 方法）"></a>sumC 方法（sumC 方法）</h4><ul>
+<li>使用数学公式<code>n*(n+1)/2</code>直接计算和。</li>
+<li>无论n的大小如何，这种方法都能迅速给出结果。</li>
+</ul>
+<h3 id="性能测试（性能测试）"><a href="#性能测试（性能测试）" class="headerlink" title="性能测试（性能测试）"></a>性能测试（性能测试）</h3><ul>
+<li>主方法中包含了性能测试的代码。</li>
+<li>测试了一系列不同的输入大小（1, 10, 100, 1000, 10000, 100000, 1000000）。</li>
+<li>通过记录方法调用前后的系统时间来计算每种方法的执行时间。</li>
+<li>测试结果通过打印输出，可以直观地比较不同方法的效率。</li>
+</ul>
+<h3 id="测试结果分析（测试结果分析）"><a href="#测试结果分析（测试结果分析）" class="headerlink" title="测试结果分析（测试结果分析）"></a>测试结果分析（测试结果分析）</h3><ul>
+<li><code>sumA</code> 方法对于小的n值效率高，但随着n增大，性能下降。</li>
+<li><code>sumB</code> 方法的性能普遍较差，因为它的计算复杂度较高。</li>
+<li><code>sumC</code> 方法因为使用了数学公式，因此在所有情况下都有最好的性能。</li>
+</ul>
+<p>总结：SumAnalysis 类展示了三种计算整数和的方法，并通过主方法对这些方法进行了性能测试。测试结果表明，直接使用数学公式的sumC方法性能最优，而嵌套循环的sumB方法性能最差，sumA方法则在n值不大时表现良好。</p>
+<h2 id="操作符解释（操作符解释）"><a href="#操作符解释（操作符解释）" class="headerlink" title="操作符解释（操作符解释）"></a>操作符解释（操作符解释）</h2><p>在Java编程语言中，<code>&lt;=</code> 和 <code>+=</code> 是两种常用的操作符，它们在编写代码时承担着不同的功能。</p>
+<h3 id="比较操作符"><a href="#比较操作符" class="headerlink" title="比较操作符 &lt;=（比较操作符 &lt;=）"></a>比较操作符 <code>&lt;=</code>（比较操作符 <code>&lt;=</code>）</h3><ul>
+<li><code>&lt;=</code> 用于比较两个数值或变量的大小。</li>
+<li>当左侧的值小于或等于右侧的值时，表达式返回 <code>true</code>。</li>
+<li>例如：在表达式 <code>5 &lt;= 10</code> 中，结果是 <code>true</code>。</li>
+</ul>
+<h4 id="比较操作符的使用场景（比较操作符的使用场景）"><a href="#比较操作符的使用场景（比较操作符的使用场景）" class="headerlink" title="比较操作符的使用场景（比较操作符的使用场景）"></a>比较操作符的使用场景（比较操作符的使用场景）</h4><ul>
+<li>常用于控制流语句中，如 <code>if</code> 条件或 <code>while</code> 循环。</li>
+<li>可以用于确保一个值不超过某个特定的上限。</li>
+</ul>
+<h3 id="赋值操作符-（赋值操作符-）"><a href="#赋值操作符-（赋值操作符-）" class="headerlink" title="赋值操作符 +=（赋值操作符 +=）"></a>赋值操作符 <code>+=</code>（赋值操作符 <code>+=</code>）</h3><ul>
+<li><code>+=</code> 是将右侧的值与左侧的变量相加后，再赋值给左侧的变量。</li>
+<li>它是 <code>x = x + y</code> 的简化形式。</li>
+<li>例如：如果变量 <code>x</code> 的初始值为 <code>5</code>，执行 <code>x += 10</code> 后，<code>x</code> 的新值为 <code>15</code>。</li>
+</ul>
+<h4 id="赋值操作符的使用场景（赋值操作符的使用场景）"><a href="#赋值操作符的使用场景（赋值操作符的使用场景）" class="headerlink" title="赋值操作符的使用场景（赋值操作符的使用场景）"></a>赋值操作符的使用场景（赋值操作符的使用场景）</h4><ul>
+<li>用于简化代码，避免重复引用变量名。</li>
+<li>常用于循环和累加操作中。</li>
+</ul>
+<p>总结：<code>&lt;=</code> 是一个比较操作符，用于判断一个值是否小于或等于另一个值。<code>+=</code> 是一个赋值操作符，用于将一个值添加到变量上并更新该变量的值。这两个操作符在编程中非常有用，能够帮助程序员编写更简洁、高效的代码。</p>
+<h2 id="System-nanoTime-方法解释（System-nanoTime-方法解释）"><a href="#System-nanoTime-方法解释（System-nanoTime-方法解释）" class="headerlink" title="System.nanoTime 方法解释（System.nanoTime 方法解释）"></a>System.nanoTime 方法解释（System.nanoTime 方法解释）</h2><p>在Java中，<code>System.nanoTime()</code> 是一个非常有用的方法，用于获取高精度的当前时间值，其单位是纳秒。</p>
+<h3 id="System-nanoTime-的作用（System-nanoTime-的作用）"><a href="#System-nanoTime-的作用（System-nanoTime-的作用）" class="headerlink" title="System.nanoTime() 的作用（System.nanoTime() 的作用）"></a>System.nanoTime() 的作用（System.nanoTime() 的作用）</h3><ul>
+<li>返回从某个固定但未指定的起点（比如JVM启动时间）到当前的时间差，单位为纳秒。</li>
+<li>主要用于测量时间间隔或性能分析。</li>
+</ul>
+<h4 id="如何使用-System-nanoTime（如何使用-System-nanoTime）"><a href="#如何使用-System-nanoTime（如何使用-System-nanoTime）" class="headerlink" title="如何使用 System.nanoTime（如何使用 System.nanoTime）"></a>如何使用 System.nanoTime（如何使用 System.nanoTime）</h4><ul>
+<li>在代码执行前后调用 <code>System.nanoTime()</code>，然后计算两次调用结果的差值。</li>
+<li>可以用这种方式来测量某段代码的执行时间。</li>
+</ul>
+<h4 id="System-nanoTime-与-System-currentTimeMillis-的区别（System-nanoTime-与-System-currentTimeMillis-的区别）"><a href="#System-nanoTime-与-System-currentTimeMillis-的区别（System-nanoTime-与-System-currentTimeMillis-的区别）" class="headerlink" title="System.nanoTime 与 System.currentTimeMillis 的区别（System.nanoTime 与 System.currentTimeMillis 的区别）"></a>System.nanoTime 与 System.currentTimeMillis 的区别（System.nanoTime 与 System.currentTimeMillis 的区别）</h4><ul>
+<li><code>System.currentTimeMillis()</code> 返回的是当前的时间戳，单位是毫秒，它表示的是相对于Epoch（1970年1月1日）的时间。</li>
+<li><code>System.nanoTime()</code> 更适合测量时间间隔，不受系统时间调整的影响。</li>
+</ul>
+<h3 id="注意事项（注意事项）"><a href="#注意事项（注意事项）" class="headerlink" title="注意事项（注意事项）"></a>注意事项（注意事项）</h3><ul>
+<li><code>System.nanoTime()</code> 不应该用来获取实际日期和时间。</li>
+<li>它的值是相对的，只有两个 <code>nanoTime</code> 值之间的差值才是有意义的。</li>
+</ul>
+<p>总结：<code>System.nanoTime()</code> 是一个在Java中用于精确测量时间间隔的方法，它提供了纳秒级别的精度。这个方法通常用于性能测试，以确保代码运行的高效性。它不适合用于获取当前日期和时间，而是专门设计来计算执行时间和时间差的。</p>
+<h2 id="sumA方法执行时间测试代码解释（sumA方法执行时间测试代码解释）"><a href="#sumA方法执行时间测试代码解释（sumA方法执行时间测试代码解释）" class="headerlink" title="sumA方法执行时间测试代码解释（sumA方法执行时间测试代码解释）"></a>sumA方法执行时间测试代码解释（sumA方法执行时间测试代码解释）</h2><p>这段Java代码用于测量名为sumA的方法执行所需的时间。</p>
+<h3 id="获取执行前的时间（获取执行前的时间）"><a href="#获取执行前的时间（获取执行前的时间）" class="headerlink" title="获取执行前的时间（获取执行前的时间）"></a>获取执行前的时间（获取执行前的时间）</h3><ul>
+<li><code>start = System.nanoTime();</code>：此行代码记录了sumA方法执行前的时间点。</li>
+<li><code>System.nanoTime()</code> 返回一个长整型数值，代表当前时间的纳秒数。</li>
+</ul>
+<h3 id="执行方法并获取结果（执行方法并获取结果）"><a href="#执行方法并获取结果（执行方法并获取结果）" class="headerlink" title="执行方法并获取结果（执行方法并获取结果）"></a>执行方法并获取结果（执行方法并获取结果）</h3><ul>
+<li><code>result = sumA(time);</code>：调用sumA方法，计算从1加到某个整数（time）的和。</li>
+<li>sumA方法接受一个整数类型的参数，并返回计算结果。</li>
+</ul>
+<h3 id="计算方法执行时间（计算方法执行时间）"><a href="#计算方法执行时间（计算方法执行时间）" class="headerlink" title="计算方法执行时间（计算方法执行时间）"></a>计算方法执行时间（计算方法执行时间）</h3><ul>
+<li><code>duration = System.nanoTime() - start;</code>：这行代码通过计算当前时间与start变量之间的差值来得出sumA方法的执行时间。</li>
+<li>得到的duration变量是sumA方法执行时间的纳秒表示。</li>
+</ul>
+<h3 id="打印执行时间（打印执行时间）"><a href="#打印执行时间（打印执行时间）" class="headerlink" title="打印执行时间（打印执行时间）"></a>打印执行时间（打印执行时间）</h3><ul>
+<li><code>System.out.printf(&quot;%15d&quot;, duration);</code>：使用格式化输出来打印duration变量的值。</li>
+<li>“%15d”指定输出格式为15个字符宽的十进制整数，如果数值字符数不足15个，则左侧用空格填充。</li>
+</ul>
+<p>总结：此代码段通过记录sumA方法执行前后的时间点，使用<code>System.nanoTime()</code>来计算sumA方法执行所需的时间，并以格式化的方式打印出来。这种方法可以精确到纳秒，非常适合于性能测试和优化。</p>
+<h2 id="for-each循环打印数组元素（for-each循环打印数组元素）"><a href="#for-each循环打印数组元素（for-each循环打印数组元素）" class="headerlink" title="for-each循环打印数组元素（for-each循环打印数组元素）"></a>for-each循环打印数组元素（for-each循环打印数组元素）</h2><p>这段代码演示了如何使用Java中的for-each循环遍历数组或集合，并格式化打印每个元素。</p>
+<h3 id="for-each循环（for-each循环）"><a href="#for-each循环（for-each循环）" class="headerlink" title="for-each循环（for-each循环）"></a>for-each循环（for-each循环）</h3><ul>
+<li><code>for (int time : times)</code>：此构造表示对名为times的整数数组或可迭代集合中的每个元素进行遍历。</li>
+<li>在每次迭代中，集合中的当前元素被赋值给变量<code>time</code>。</li>
+</ul>
+<h3 id="格式化输出（格式化输出）"><a href="#格式化输出（格式化输出）" class="headerlink" title="格式化输出（格式化输出）"></a>格式化输出（格式化输出）</h3><ul>
+<li><code>System.out.printf(&quot;%15d&quot;, time);</code>：这行代码使用了<code>printf</code>方法，按照指定的格式输出变量<code>time</code>。</li>
+<li><code>&quot;%15d&quot;</code>是格式化字符串，意味着打印的整数将占据宽度为15个字符的空间，左侧不足部分用空格填充。</li>
+</ul>
+<h3 id="代码作用（代码作用）"><a href="#代码作用（代码作用）" class="headerlink" title="代码作用（代码作用）"></a>代码作用（代码作用）</h3><ul>
+<li>循环遍历times数组或集合，按格式打印出每个元素。</li>
+<li>输出结果在控制台上是对齐的，便于阅读和比较。</li>
+</ul>
+<p>总结：这段代码通过for-each循环结合格式化输出方法，依次打印出数组或集合中的所有整数，每个数字占据固定宽度的字符空间，保持了输出的整洁和一致性。</p>
+<h1 id="Sumintegers-java"><a href="#Sumintegers-java" class="headerlink" title="Sumintegers.java"></a>Sumintegers.java</h1><h2 id="Sumintegers-类（Sumintegers-类）"><a href="#Sumintegers-类（Sumintegers-类）" class="headerlink" title="Sumintegers 类（Sumintegers 类）"></a>Sumintegers 类（Sumintegers 类）</h2><p>Sumintegers 类在Java中用于展示不同方法计算1到n的整数之和，并测试这些方法的性能。</p>
+<h3 id="sumA-方法（sumA-方法）-1"><a href="#sumA-方法（sumA-方法）-1" class="headerlink" title="sumA 方法（sumA 方法）"></a>sumA 方法（sumA 方法）</h3><ul>
+<li><code>sumA(int n)</code>: 使用单个for循环累加从1到n的整数。</li>
+<li>适合于小范围的整数累加。</li>
+</ul>
+<h3 id="sumB-方法（sumB-方法）-1"><a href="#sumB-方法（sumB-方法）-1" class="headerlink" title="sumB 方法（sumB 方法）"></a>sumB 方法（sumB 方法）</h3><ul>
+<li><code>sumB(int n)</code>: 采用嵌套for循环，对每个i加1，直到i。</li>
+<li>由于其复杂性，此方法在大数值时可能效率较低。</li>
+</ul>
+<h3 id="sumC-方法（sumC-方法）-1"><a href="#sumC-方法（sumC-方法）-1" class="headerlink" title="sumC 方法（sumC 方法）"></a>sumC 方法（sumC 方法）</h3><ul>
+<li><code>sumC(int n)</code>: 利用数学公式<code>n*(n+1)/2</code>直接计算和。</li>
+<li>这是计算整数和的最快方法，因为它不依赖于循环。</li>
+</ul>
+<h3 id="性能测试（性能测试）-1"><a href="#性能测试（性能测试）-1" class="headerlink" title="性能测试（性能测试）"></a>性能测试（性能测试）</h3><ul>
+<li>主方法中通过对每种方法调用计时来测试性能。</li>
+<li>输入大小固定为10000，通过<code>System.nanoTime</code>来记录时间。</li>
+<li>执行时间的计算基于方法调用前后的时间差。</li>
+</ul>
+<h3 id="执行时间的打印（执行时间的打印）"><a href="#执行时间的打印（执行时间的打印）" class="headerlink" title="执行时间的打印（执行时间的打印）"></a>执行时间的打印（执行时间的打印）</h3><ul>
+<li>将每种方法的执行时间打印到控制台，格式化输出，便于比较。</li>
+</ul>
+<p>总结：Sumintegers 类包含了三种计算整数之和的方法。sumA适合小范围整数计算，sumB在大数值时效率不高，而sumC由于使用数学公式，无论n的大小，都能快速计算出结果。主方法中的性能测试显示了不同方法在处理相同任务时的执行时间，提供了性能比较的直观数据。</p>
+<h2 id="类比较：SumAnalysis-与-Sumintegers（类比较：SumAnalysis-与-Sumintegers）"><a href="#类比较：SumAnalysis-与-Sumintegers（类比较：SumAnalysis-与-Sumintegers）" class="headerlink" title="类比较：SumAnalysis 与 Sumintegers（类比较：SumAnalysis 与 Sumintegers）"></a>类比较：SumAnalysis 与 Sumintegers（类比较：SumAnalysis 与 Sumintegers）</h2><p>这两个Java类都包含计算从1加到n的和的方法，但它们在测试方法和输出格式上存在差异。</p>
+<h3 id="包路径（包路径）"><a href="#包路径（包路径）" class="headerlink" title="包路径（包路径）"></a>包路径（包路径）</h3><ul>
+<li>两个类都在 <code>Assignments.Com410.B1</code> 包路径下。</li>
+<li>这表明它们可能是同一作业或项目的一部分。</li>
+</ul>
+<h3 id="类名（类名）"><a href="#类名（类名）" class="headerlink" title="类名（类名）"></a>类名（类名）</h3><ul>
+<li><code>SumAnalysis</code> 和 <code>Sumintegers</code> 是两个不同的类名。</li>
+</ul>
+<h3 id="方法实现（方法实现）"><a href="#方法实现（方法实现）" class="headerlink" title="方法实现（方法实现）"></a>方法实现（方法实现）</h3><ul>
+<li>两个类中的 <code>sumA</code>、<code>sumB</code> 和 <code>sumC</code> 方法在逻辑上是相同的。</li>
+</ul>
+<h3 id="主方法（main）（主方法（main））"><a href="#主方法（main）（主方法（main））" class="headerlink" title="主方法（main）（主方法（main））"></a>主方法（main）（主方法（main））</h3><ul>
+<li><code>SumAnalysis</code> 执行了一个详尽的效率测试，遍历了一个数值数组。</li>
+<li><code>Sumintegers</code> 执行了一个简单的效率比较，仅测试了一次。</li>
+</ul>
+<h3 id="输出格式（输出格式）"><a href="#输出格式（输出格式）" class="headerlink" title="输出格式（输出格式）"></a>输出格式（输出格式）</h3><ul>
+<li><code>SumAnalysis</code> 生成了格式化的表格输出。</li>
+<li><code>Sumintegers</code> 仅打印了每次测试的连续行。</li>
+</ul>
+<h3 id="测试范围（测试范围）"><a href="#测试范围（测试范围）" class="headerlink" title="测试范围（测试范围）"></a>测试范围（测试范围）</h3><ul>
+<li><code>SumAnalysis</code> 测试了更广泛的输入范围。</li>
+<li><code>Sumintegers</code> 仅限于输入大小10000。</li>
+</ul>
+<h3 id="代码组织（代码组织）"><a href="#代码组织（代码组织）" class="headerlink" title="代码组织（代码组织）"></a>代码组织（代码组织）</h3><ul>
+<li><code>SumAnalysis</code> 使用 <code>printf</code> 方法来格式化输出。</li>
+<li><code>Sumintegers</code> 使用 <code>println</code> 方法简单地输出。</li>
+</ul>
+<h3 id="变量定义（变量定义）"><a href="#变量定义（变量定义）" class="headerlink" title="变量定义（变量定义）"></a>变量定义（变量定义）</h3><ul>
+<li><code>SumAnalysis</code> 中使用了 <code>result</code> 变量来存储方法结果。</li>
+<li><code>Sumintegers</code> 直接在打印语句中调用方法。</li>
+</ul>
+<p>总结：尽管 <code>SumAnalysis</code> 和 <code>Sumintegers</code> 在实现求和方法上相同，但它们在测试范围、输出格式以及代码组织上有所不同。<code>SumAnalysis</code> 提供了一个更全面的测试框架，适用于详细的性能分析，而 <code>Sumintegers</code> 更侧重于简单的性能比较。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/11/07/B1-pratical/">http://example.com/2023/11/07/B1-pratical/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/week-7/">week 7</a><a class="post-meta__tags" href="/tags/Algorithm/">Algorithm</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/11/09/W7%20(TUT)%20-%20Beyond%20Usability%20-%20PET/" title="W7 (TUT) - Beyond Usability - PET.pdf"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">W7 (TUT) - Beyond Usability - PET.pdf</div></div></a></div><div class="next-post pull-right"><a href="/2023/11/06/C398-w7-Internet%20Security%20Protocols%20and%20standards/" title="Internet Security Protocols and standards"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Internet Security Protocols and standards</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SumAnalysis-java"><span class="toc-number">1.</span> <span class="toc-text">SumAnalysis.java</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SumAnalysis-%E7%B1%BB%EF%BC%88SumAnalysis-%E7%B1%BB%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">SumAnalysis 类（SumAnalysis 类）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E6%A6%82%E8%A7%88%EF%BC%88%E6%96%B9%E6%B3%95%E6%A6%82%E8%A7%88%EF%BC%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">方法概览（方法概览）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sumA-%E6%96%B9%E6%B3%95%EF%BC%88sumA-%E6%96%B9%E6%B3%95%EF%BC%89"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">sumA 方法（sumA 方法）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sumB-%E6%96%B9%E6%B3%95%EF%BC%88sumB-%E6%96%B9%E6%B3%95%EF%BC%89"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">sumB 方法（sumB 方法）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sumC-%E6%96%B9%E6%B3%95%EF%BC%88sumC-%E6%96%B9%E6%B3%95%EF%BC%89"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">sumC 方法（sumC 方法）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%EF%BC%88%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%EF%BC%89"><span class="toc-number">1.1.2.</span> <span class="toc-text">性能测试（性能测试）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90%EF%BC%88%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90%EF%BC%89"><span class="toc-number">1.1.3.</span> <span class="toc-text">测试结果分析（测试结果分析）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%AC%A6%E8%A7%A3%E9%87%8A%EF%BC%88%E6%93%8D%E4%BD%9C%E7%AC%A6%E8%A7%A3%E9%87%8A%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">操作符解释（操作符解释）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-number">1.2.1.</span> <span class="toc-text">比较操作符 &lt;&#x3D;（比较操作符 &lt;&#x3D;）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E6%93%8D%E4%BD%9C%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%88%E6%AF%94%E8%BE%83%E6%93%8D%E4%BD%9C%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%89"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">比较操作符的使用场景（比较操作符的使用场景）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C%E7%AC%A6-%EF%BC%88%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C%E7%AC%A6-%EF%BC%89"><span class="toc-number">1.2.2.</span> <span class="toc-text">赋值操作符 +&#x3D;（赋值操作符 +&#x3D;）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%88%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%89"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">赋值操作符的使用场景（赋值操作符的使用场景）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#System-nanoTime-%E6%96%B9%E6%B3%95%E8%A7%A3%E9%87%8A%EF%BC%88System-nanoTime-%E6%96%B9%E6%B3%95%E8%A7%A3%E9%87%8A%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">System.nanoTime 方法解释（System.nanoTime 方法解释）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#System-nanoTime-%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%88System-nanoTime-%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%89"><span class="toc-number">1.3.1.</span> <span class="toc-text">System.nanoTime() 的作用（System.nanoTime() 的作用）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-System-nanoTime%EF%BC%88%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-System-nanoTime%EF%BC%89"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">如何使用 System.nanoTime（如何使用 System.nanoTime）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#System-nanoTime-%E4%B8%8E-System-currentTimeMillis-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%88System-nanoTime-%E4%B8%8E-System-currentTimeMillis-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%89"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">System.nanoTime 与 System.currentTimeMillis 的区别（System.nanoTime 与 System.currentTimeMillis 的区别）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%88%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%89"><span class="toc-number">1.3.2.</span> <span class="toc-text">注意事项（注意事项）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sumA%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A%EF%BC%88sumA%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">sumA方法执行时间测试代码解释（sumA方法执行时间测试代码解释）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%89%A7%E8%A1%8C%E5%89%8D%E7%9A%84%E6%97%B6%E9%97%B4%EF%BC%88%E8%8E%B7%E5%8F%96%E6%89%A7%E8%A1%8C%E5%89%8D%E7%9A%84%E6%97%B6%E9%97%B4%EF%BC%89"><span class="toc-number">1.4.1.</span> <span class="toc-text">获取执行前的时间（获取执行前的时间）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E6%96%B9%E6%B3%95%E5%B9%B6%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C%EF%BC%88%E6%89%A7%E8%A1%8C%E6%96%B9%E6%B3%95%E5%B9%B6%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C%EF%BC%89"><span class="toc-number">1.4.2.</span> <span class="toc-text">执行方法并获取结果（执行方法并获取结果）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%EF%BC%88%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%EF%BC%89"><span class="toc-number">1.4.3.</span> <span class="toc-text">计算方法执行时间（计算方法执行时间）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%8D%B0%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%EF%BC%88%E6%89%93%E5%8D%B0%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%EF%BC%89"><span class="toc-number">1.4.4.</span> <span class="toc-text">打印执行时间（打印执行时间）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for-each%E5%BE%AA%E7%8E%AF%E6%89%93%E5%8D%B0%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%EF%BC%88for-each%E5%BE%AA%E7%8E%AF%E6%89%93%E5%8D%B0%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%EF%BC%89"><span class="toc-number">1.5.</span> <span class="toc-text">for-each循环打印数组元素（for-each循环打印数组元素）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for-each%E5%BE%AA%E7%8E%AF%EF%BC%88for-each%E5%BE%AA%E7%8E%AF%EF%BC%89"><span class="toc-number">1.5.1.</span> <span class="toc-text">for-each循环（for-each循环）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA%EF%BC%88%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA%EF%BC%89"><span class="toc-number">1.5.2.</span> <span class="toc-text">格式化输出（格式化输出）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E4%BD%9C%E7%94%A8%EF%BC%88%E4%BB%A3%E7%A0%81%E4%BD%9C%E7%94%A8%EF%BC%89"><span class="toc-number">1.5.3.</span> <span class="toc-text">代码作用（代码作用）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sumintegers-java"><span class="toc-number">2.</span> <span class="toc-text">Sumintegers.java</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Sumintegers-%E7%B1%BB%EF%BC%88Sumintegers-%E7%B1%BB%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">Sumintegers 类（Sumintegers 类）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sumA-%E6%96%B9%E6%B3%95%EF%BC%88sumA-%E6%96%B9%E6%B3%95%EF%BC%89-1"><span class="toc-number">2.1.1.</span> <span class="toc-text">sumA 方法（sumA 方法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sumB-%E6%96%B9%E6%B3%95%EF%BC%88sumB-%E6%96%B9%E6%B3%95%EF%BC%89-1"><span class="toc-number">2.1.2.</span> <span class="toc-text">sumB 方法（sumB 方法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sumC-%E6%96%B9%E6%B3%95%EF%BC%88sumC-%E6%96%B9%E6%B3%95%EF%BC%89-1"><span class="toc-number">2.1.3.</span> <span class="toc-text">sumC 方法（sumC 方法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%EF%BC%88%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%EF%BC%89-1"><span class="toc-number">2.1.4.</span> <span class="toc-text">性能测试（性能测试）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E7%9A%84%E6%89%93%E5%8D%B0%EF%BC%88%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E7%9A%84%E6%89%93%E5%8D%B0%EF%BC%89"><span class="toc-number">2.1.5.</span> <span class="toc-text">执行时间的打印（执行时间的打印）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E6%AF%94%E8%BE%83%EF%BC%9ASumAnalysis-%E4%B8%8E-Sumintegers%EF%BC%88%E7%B1%BB%E6%AF%94%E8%BE%83%EF%BC%9ASumAnalysis-%E4%B8%8E-Sumintegers%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">类比较：SumAnalysis 与 Sumintegers（类比较：SumAnalysis 与 Sumintegers）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E8%B7%AF%E5%BE%84%EF%BC%88%E5%8C%85%E8%B7%AF%E5%BE%84%EF%BC%89"><span class="toc-number">2.2.1.</span> <span class="toc-text">包路径（包路径）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%90%8D%EF%BC%88%E7%B1%BB%E5%90%8D%EF%BC%89"><span class="toc-number">2.2.2.</span> <span class="toc-text">类名（类名）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%88%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%89"><span class="toc-number">2.2.3.</span> <span class="toc-text">方法实现（方法实现）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%96%B9%E6%B3%95%EF%BC%88main%EF%BC%89%EF%BC%88%E4%B8%BB%E6%96%B9%E6%B3%95%EF%BC%88main%EF%BC%89%EF%BC%89"><span class="toc-number">2.2.4.</span> <span class="toc-text">主方法（main）（主方法（main））</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%EF%BC%88%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%EF%BC%89"><span class="toc-number">2.2.5.</span> <span class="toc-text">输出格式（输出格式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E8%8C%83%E5%9B%B4%EF%BC%88%E6%B5%8B%E8%AF%95%E8%8C%83%E5%9B%B4%EF%BC%89"><span class="toc-number">2.2.6.</span> <span class="toc-text">测试范围（测试范围）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%BB%84%E7%BB%87%EF%BC%88%E4%BB%A3%E7%A0%81%E7%BB%84%E7%BB%87%EF%BC%89"><span class="toc-number">2.2.7.</span> <span class="toc-text">代码组织（代码组织）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89%EF%BC%88%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89%EF%BC%89"><span class="toc-number">2.2.8.</span> <span class="toc-text">变量定义（变量定义）</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/A1-3/" title="A1.3">A1.3</a><time datetime="2023-12-07T19:17:01.000Z" title="Created 2023-12-07 19:17:01">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/A1-2/" title="A1.2">A1.2</a><time datetime="2023-12-07T19:08:14.000Z" title="Created 2023-12-07 19:08:14">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/A1-1/" title="A1.1">A1.1</a><time datetime="2023-12-07T18:28:53.000Z" title="Created 2023-12-07 18:28:53">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/0-CW2-C435/" title="435CW2">435CW2</a><time datetime="2023-12-07T15:53:55.000Z" title="Created 2023-12-07 15:53:55">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/03/0-CaseStudy-C410/" title="0-CaseStudy-C410">0-CaseStudy-C410</a><time datetime="2023-12-03T19:02:27.000Z" title="Created 2023-12-03 19:02:27">2023-12-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
