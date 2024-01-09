@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>T6 | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="COM410 Programming in Practice (COM410 编程实践)T6. Developing Secure Code (T6. 开发安全代码) 程序员必须在他们的代码中包含故障安全措施，以确保程序对用户的安全。 Java为你管理内存，检查数组索引的有效性，并且是类型安全的。 然而，一个错误可能会使代码变得脆弱。 通过包括预期错误的检查，你可以练习故障安全编程。  Secur">
+<meta property="og:type" content="article">
+<meta property="og:title" content="T6">
+<meta property="og:url" content="http://example.com/2023/12/20/T6/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="COM410 Programming in Practice (COM410 编程实践)T6. Developing Secure Code (T6. 开发安全代码) 程序员必须在他们的代码中包含故障安全措施，以确保程序对用户的安全。 Java为你管理内存，检查数组索引的有效性，并且是类型安全的。 然而，一个错误可能会使代码变得脆弱。 通过包括预期错误的检查，你可以练习故障安全编程。  Secur">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2023-12-20T03:01:32.000Z">
+<meta property="article:modified_time" content="2023-12-20T03:07:42.750Z">
+<meta property="article:author" content="Jacka10086">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/12/20/T6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'T6',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-20 03:07:42'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">T6</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-12-20T03:01:32.000Z" title="Created 2023-12-20 03:01:32">2023-12-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-12-20T03:07:42.750Z" title="Updated 2023-12-20 03:07:42">2023-12-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="T6"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="COM410-Programming-in-Practice-COM410-编程实践"><a href="#COM410-Programming-in-Practice-COM410-编程实践" class="headerlink" title="COM410 Programming in Practice (COM410 编程实践)"></a>COM410 Programming in Practice (COM410 编程实践)</h2><h3 id="T6-Developing-Secure-Code-T6-开发安全代码"><a href="#T6-Developing-Secure-Code-T6-开发安全代码" class="headerlink" title="T6. Developing Secure Code (T6. 开发安全代码)"></a>T6. Developing Secure Code (T6. 开发安全代码)</h3><ul>
+<li>程序员必须在他们的代码中包含故障安全措施，以确保程序对用户的安全。</li>
+<li>Java为你管理内存，检查数组索引的有效性，并且是类型安全的。</li>
+<li>然而，一个错误可能会使代码变得脆弱。</li>
+<li>通过包括预期错误的检查，你可以练习故障安全编程。</li>
+</ul>
+<h3 id="Secure-Implementation-安全实施"><a href="#Secure-Implementation-安全实施" class="headerlink" title="Secure Implementation (安全实施)"></a>Secure Implementation (安全实施)</h3><ul>
+<li>在实现抽象数据类型（ADT）时，应该提出以下问题：<ol>
+<li>如果构造函数没有完全执行会发生什么？</li>
+<li>如果客户端尝试在创建集合类型时超过存储限制会发生什么？</li>
+</ol>
+</li>
+</ul>
+<p>总结：本部分强调了在实践编程时开发安全代码的重要性。它提出了确保代码安全的关键问题，并指导程序员如何通过预防措施来避免潜在的安全隐患。</p>
+<h2 id="Securing-the-ArrayBag-保护-ArrayBag"><a href="#Securing-the-ArrayBag-保护-ArrayBag" class="headerlink" title="Securing the ArrayBag (保护 ArrayBag)"></a>Securing the ArrayBag (保护 ArrayBag)</h2><ul>
+<li><p>在<code>ArrayBag</code>类中，我们希望通过以下方式提高代码的安全性：</p>
+<ul>
+<li>为类添加两个额外的数据字段：<ul>
+<li><code>private boolean initialised = false;</code> 为新的实例变量，表示<code>ArrayBag</code>是否已初始化。</li>
+<li><code>private static final int MAX_CAPACITY = 10000;</code> 为新的类变量，定义了<code>ArrayBag</code>的最大容量限制。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>为了确保客户端不能创建一个过大的<code>ArrayBag</code>，构造函数将检查期望容量（作为参数传递）是否超过了<code>MAX_CAPACITY</code>。</p>
+</li>
+<li><p>如果请求的容量过大，构造函数可以抛出异常。</p>
+</li>
+</ul>
+<p>总结：在实现数据结构时考虑安全性非常重要。通过在<code>ArrayBag</code>类中引入初始化标志和最大容量限制，我们可以防止错误的使用方式，从而增强代码的健壮性。</p>
+<h2 id="Securing-the-Implementation-确保实施的安全"><a href="#Securing-the-Implementation-确保实施的安全" class="headerlink" title="Securing the Implementation (确保实施的安全)"></a>Securing the Implementation (确保实施的安全)</h2><ul>
+<li>如果请求的容量在范围内，构造函数仍可能失败（例如，由于内存不足）。</li>
+<li>为了防止这种情况，类的每个关键方法都可以检查状态字段。</li>
+<li>构造函数应将 <code>initialised</code> 设置为 <code>true</code>，以确保对象被正确初始化：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">ArrayBag</span><span class="params">(<span class="type">int</span> capacity)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (capacity &lt;= MAX_CAPACITY) &#123;</span><br><span class="line">        T[] tempBag = (T[]) <span class="keyword">new</span> <span class="title class_">Object</span>[capacity];</span><br><span class="line">        bag = tempBag;</span><br><span class="line">        numberOfEntries = <span class="number">0</span>;</span><br><span class="line">        initialised = <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">&quot;Attempt to create a bag where the capacity exceeds the maximum&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Securing-the-Implementation-确保实现的安全性"><a href="#Securing-the-Implementation-确保实现的安全性" class="headerlink" title="Securing the Implementation (确保实现的安全性)"></a>Securing the Implementation (确保实现的安全性)</h2><h3 id="Check-for-Initialisation-检查初始化"><a href="#Check-for-Initialisation-检查初始化" class="headerlink" title="Check for Initialisation (检查初始化)"></a>Check for Initialisation (检查初始化)</h3><ul>
+<li>由于<code>initialised</code>会在多个方法中检查，可以通过定义一个私有方法来避免重复代码。<ul>
+<li>私有方法 <code>checkInitialisation()</code> 会检查变量是否已初始化，如果没有，则抛出一个 <code>SecurityException</code> 异常。</li>
+</ul>
+</li>
+<li>这个方法可以在类中的其他方法执行操作前被调用。<ul>
+<li>例如，<code>addNewEntry</code> 方法在执行其操作之前会先调用 <code>checkInitialisation()</code>。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Exceptions-Handling-异常处理"><a href="#Exceptions-Handling-异常处理" class="headerlink" title="Exceptions Handling (异常处理)"></a>Exceptions Handling (异常处理)</h3><ul>
+<li>注意：<code>SecurityException</code> 和 <code>IllegalStateException</code> 是标准运行时异常，它们位于 <code>java.lang</code> 包中。</li>
+</ul>
+<p>总结：本页内容介绍了如何通过定义一个私有方法来避免在实现中多次检查初始化的重复代码，并且解释了如何通过在其他方法中调用这个私有方法来确保对象在执行操作前已正确初始化。同时，还强调了 <code>SecurityException</code> 和 <code>IllegalStateException</code> 是标准的运行时异常，它们用于处理程序运行中的错误状态。</p>
+<h2 id="Securing-the-Implementation-确保实现的安全性-1"><a href="#Securing-the-Implementation-确保实现的安全性-1" class="headerlink" title="Securing the Implementation (确保实现的安全性)"></a>Securing the Implementation (确保实现的安全性)</h2><h3 id="Writing-Secure-Java-Code-编写安全的Java代码"><a href="#Writing-Secure-Java-Code-编写安全的Java代码" class="headerlink" title="Writing Secure Java Code (编写安全的Java代码)"></a>Writing Secure Java Code (编写安全的Java代码)</h3><ul>
+<li>为了编写更安全的Java代码，有一些常见的指导原则：<ol>
+<li>将一个类的大多数（如果不是全部）数据字段声明为私有（private），任何公共数据字段都应该是静态（static）和最终的（final），且具有恒定的值。</li>
+<li>不要过分追求巧妙（Don’t be too clever!）。</li>
+<li>避免重复代码；相反，应将这类代码封装到私有方法中，以便其他方法可以调用。</li>
+<li>当构造函数调用一个方法时，确保它不能被覆盖（overridden）。</li>
+</ol>
+</li>
+</ul>
+<h3 id="Class-Declaration-Revision-类声明修订"><a href="#Class-Declaration-Revision-类声明修订" class="headerlink" title="Class Declaration Revision (类声明修订)"></a>Class Declaration Revision (类声明修订)</h3><ul>
+<li>因此，我们修订了 <code>ArrayBag</code> 类的声明：<ul>
+<li><code>public final class ArrayBag&lt;T&gt; implements BagInterface&lt;T&gt; &#123;</code></li>
+</ul>
+</li>
+<li>声明为 <code>final</code> 的类，没有其他类可以继承它。</li>
+<li>一个 <code>final</code> 类因为不能被继承来改变其行为，因此更加安全。</li>
+</ul>
+<p>总结：本节内容强调了编写安全Java代码的重要性，并提出了一些基本指导原则，比如使用私有字段，避免过度巧妙的代码，避免代码重复，并保证构造函数调用的方法不可被覆盖。同时，通过修订类声明为 <code>final</code>，增加了代码的安全性，因为这样的类不能被继承，从而避免了潜在的安全风险。</p>
+<h2 id="Scenario-情景"><a href="#Scenario-情景" class="headerlink" title="Scenario (情景)"></a>Scenario (情景)</h2><h3 id="Secure-ArrayBag-Implementation-确保ArrayBag实现的安全"><a href="#Secure-ArrayBag-Implementation-确保ArrayBag实现的安全" class="headerlink" title="Secure ArrayBag Implementation (确保ArrayBag实现的安全)"></a>Secure ArrayBag Implementation (确保ArrayBag实现的安全)</h3><ul>
+<li><p>确保 <code>ArrayBag</code> 类实现的安全性，通过添加以下内容：</p>
+<ol>
+<li>添加 <code>initialised</code> 和 <code>MAX_CAPACITY</code> 变量。</li>
+<li>更新构造函数以检查所请求的容量是否被允许，并在不允许的情况下抛出异常。如果创建了Bag，应将 <code>initialised</code> 类变量设置为 <code>true</code>。</li>
+<li>添加新的私有方法 <code>checkInitialisation()</code> 以测试 <code>initialised</code> 的值，并在其为 <code>false</code> 时抛出异常。</li>
+<li>在 <code>addNewEntry()</code> 方法的第一个动作中调用新的 <code>checkInitialisation()</code> 方法。</li>
+<li>更新类头部，将 <code>ArrayBag</code> 类定义为 <code>final</code>。</li>
+</ol>
+</li>
+<li><p>检查在进行这些更改后你的实现是否仍然像之前一样工作。</p>
+</li>
+</ul>
+<p>总结：本节内容描述了如何通过添加初始化检查和最大容量变量，更新构造函数，添加新的私有方法进行初始化检查，以及将类声明为 <code>final</code> 来加强 <code>ArrayBag</code> 类的安全性。这些步骤旨在确保在进行必要的安全更新后，类的功能依然保持原有的工作方式。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/20/T6/">http://example.com/2023/12/20/T6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/20/T7/" title="T7"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">T7</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/16/A5-2/" title="A5-2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">A5-2</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#COM410-Programming-in-Practice-COM410-%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5"><span class="toc-number">1.</span> <span class="toc-text">COM410 Programming in Practice (COM410 编程实践)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#T6-Developing-Secure-Code-T6-%E5%BC%80%E5%8F%91%E5%AE%89%E5%85%A8%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.</span> <span class="toc-text">T6. Developing Secure Code (T6. 开发安全代码)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Secure-Implementation-%E5%AE%89%E5%85%A8%E5%AE%9E%E6%96%BD"><span class="toc-number">1.2.</span> <span class="toc-text">Secure Implementation (安全实施)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Securing-the-ArrayBag-%E4%BF%9D%E6%8A%A4-ArrayBag"><span class="toc-number">2.</span> <span class="toc-text">Securing the ArrayBag (保护 ArrayBag)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Securing-the-Implementation-%E7%A1%AE%E4%BF%9D%E5%AE%9E%E6%96%BD%E7%9A%84%E5%AE%89%E5%85%A8"><span class="toc-number">3.</span> <span class="toc-text">Securing the Implementation (确保实施的安全)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Securing-the-Implementation-%E7%A1%AE%E4%BF%9D%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-number">4.</span> <span class="toc-text">Securing the Implementation (确保实现的安全性)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Check-for-Initialisation-%E6%A3%80%E6%9F%A5%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">4.1.</span> <span class="toc-text">Check for Initialisation (检查初始化)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exceptions-Handling-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-number">4.2.</span> <span class="toc-text">Exceptions Handling (异常处理)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Securing-the-Implementation-%E7%A1%AE%E4%BF%9D%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7-1"><span class="toc-number">5.</span> <span class="toc-text">Securing the Implementation (确保实现的安全性)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Writing-Secure-Java-Code-%E7%BC%96%E5%86%99%E5%AE%89%E5%85%A8%E7%9A%84Java%E4%BB%A3%E7%A0%81"><span class="toc-number">5.1.</span> <span class="toc-text">Writing Secure Java Code (编写安全的Java代码)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Class-Declaration-Revision-%E7%B1%BB%E5%A3%B0%E6%98%8E%E4%BF%AE%E8%AE%A2"><span class="toc-number">5.2.</span> <span class="toc-text">Class Declaration Revision (类声明修订)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scenario-%E6%83%85%E6%99%AF"><span class="toc-number">6.</span> <span class="toc-text">Scenario (情景)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Secure-ArrayBag-Implementation-%E7%A1%AE%E4%BF%9DArrayBag%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%AE%89%E5%85%A8"><span class="toc-number">6.1.</span> <span class="toc-text">Secure ArrayBag Implementation (确保ArrayBag实现的安全)</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/21/T8/" title="T8">T8</a><time datetime="2023-12-21T19:39:36.000Z" title="Created 2023-12-21 19:39:36">2023-12-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T7/" title="T7">T7</a><time datetime="2023-12-20T03:17:15.000Z" title="Created 2023-12-20 03:17:15">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T6/" title="T6">T6</a><time datetime="2023-12-20T03:01:32.000Z" title="Created 2023-12-20 03:01:32">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/16/A5-2/" title="A5-2">A5-2</a><time datetime="2023-12-16T05:38:48.000Z" title="Created 2023-12-16 05:38:48">2023-12-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/16/A5-1/" title="A5-1">A5-1</a><time datetime="2023-12-16T05:17:27.000Z" title="Created 2023-12-16 05:17:27">2023-12-16</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,11 +1,13 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>A1.2 | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="article">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>A1.2 | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="COM410 Programming in Practice (COM410 编程实践)A1.2 Inheritance (A1.2 继承) 继承是面向对象编程中的一个核心概念，它允许一个类（子类）继承另一个类（父类）的属性和方法。 通过继承，可以创建具有层次结构的类，增强代码的重用性和可维护性。 在这一部分，我们可能会探讨如何在编程中实现继承，包括关键字和语法的使用。  总结：本部分介绍了编程实">
+<meta property="og:type" content="article">
 <meta property="og:title" content="A1.2">
 <meta property="og:url" content="http://example.com/2023/12/07/A1-2/index.html">
 <meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="COM410 Programming in Practice (COM410 编程实践)A1.2 Inheritance (A1.2 继承) 继承是面向对象编程中的一个核心概念，它允许一个类（子类）继承另一个类（父类）的属性和方法。 通过继承，可以创建具有层次结构的类，增强代码的重用性和可维护性。 在这一部分，我们可能会探讨如何在编程中实现继承，包括关键字和语法的使用。  总结：本部分介绍了编程实">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
 <meta property="article:published_time" content="2023-12-07T19:08:14.000Z">
-<meta property="article:modified_time" content="2023-12-07T19:08:14.480Z">
+<meta property="article:modified_time" content="2023-12-20T02:49:28.044Z">
 <meta property="article:author" content="Jacka10086">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/12/07/A1-2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
@@ -52,8 +54,8 @@
   isPost: true,
   isHome: false,
   isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2023-12-07 19:08:14'
+  isToc: true,
+  postUpdate: '2023-12-20 02:49:28'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -150,4 +152,175 @@
         }
       }
       detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">A1.2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-12-07T19:08:14.000Z" title="Created 2023-12-07 19:08:14">2023-12-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-12-07T19:08:14.480Z" title="Updated 2023-12-07 19:08:14">2023-12-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="A1.2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/07/A1-2/">http://example.com/2023/12/07/A1-2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/07/A1-3/" title="A1.3"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">A1.3</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/07/A1-1/" title="A1.1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">A1.1</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">71</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/A1-3/" title="A1.3">A1.3</a><time datetime="2023-12-07T19:17:01.000Z" title="Created 2023-12-07 19:17:01">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/A1-2/" title="A1.2">A1.2</a><time datetime="2023-12-07T19:08:14.000Z" title="Created 2023-12-07 19:08:14">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/A1-1/" title="A1.1">A1.1</a><time datetime="2023-12-07T18:28:53.000Z" title="Created 2023-12-07 18:28:53">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/07/0-CW2-C435/" title="435CW2">435CW2</a><time datetime="2023-12-07T15:53:55.000Z" title="Created 2023-12-07 15:53:55">2023-12-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/03/0-CaseStudy-C410/" title="0-CaseStudy-C410">0-CaseStudy-C410</a><time datetime="2023-12-03T19:02:27.000Z" title="Created 2023-12-03 19:02:27">2023-12-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">A1.2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-12-07T19:08:14.000Z" title="Created 2023-12-07 19:08:14">2023-12-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-12-20T02:49:28.044Z" title="Updated 2023-12-20 02:49:28">2023-12-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="A1.2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="COM410-Programming-in-Practice-COM410-编程实践"><a href="#COM410-Programming-in-Practice-COM410-编程实践" class="headerlink" title="COM410 Programming in Practice (COM410 编程实践)"></a>COM410 Programming in Practice (COM410 编程实践)</h2><h3 id="A1-2-Inheritance-A1-2-继承"><a href="#A1-2-Inheritance-A1-2-继承" class="headerlink" title="A1.2 Inheritance (A1.2 继承)"></a>A1.2 Inheritance (A1.2 继承)</h3><ul>
+<li>继承是面向对象编程中的一个核心概念，它允许一个类（子类）继承另一个类（父类）的属性和方法。</li>
+<li>通过继承，可以创建具有层次结构的类，增强代码的重用性和可维护性。</li>
+<li>在这一部分，我们可能会探讨如何在编程中实现继承，包括关键字和语法的使用。</li>
+</ul>
+<p>总结：本部分介绍了编程实践课程中的继承概念，强调了其在面向对象编程中的重要性及其在提高代码重用性和可维护性方面的作用。</p>
+<h2 id="Anytown-Street-Plan-Anytown-街道规划"><a href="#Anytown-Street-Plan-Anytown-街道规划" class="headerlink" title="Anytown Street Plan (Anytown 街道规划)"></a>Anytown Street Plan (Anytown 街道规划)</h2><h3 id="Village-Overview-村庄概览"><a href="#Village-Overview-村庄概览" class="headerlink" title="Village Overview (村庄概览)"></a>Village Overview (村庄概览)</h3><ul>
+<li>Anytown 是一个拥有三条街道的小村庄。</li>
+<li>每栋建筑物都通过其地址和所有者（或商业名称）来描述。</li>
+<li>这提供了一个关于如何组织和引用村庄内建筑物的数据结构示例。</li>
+</ul>
+<h3 id="Building-Identification-建筑物识别"><a href="#Building-Identification-建筑物识别" class="headerlink" title="Building Identification (建筑物识别)"></a>Building Identification (建筑物识别)</h3><ul>
+<li>地址：每栋建筑物都有一个独特的地址，如“3 High Street”。</li>
+<li>所有者或商业名称：例如，“Smith’s Newsagent”或“Rex Dog Grooming”。</li>
+<li>我们可以通过地址和所有者来区分不同的建筑物。</li>
+</ul>
+<h3 id="Types-of-Buildings-建筑类型"><a href="#Types-of-Buildings-建筑类型" class="headerlink" title="Types of Buildings (建筑类型)"></a>Types of Buildings (建筑类型)</h3><ul>
+<li>商店（Shops）</li>
+<li>住宅（Houses）</li>
+<li>这个分类有助于我们理解村庄中建筑物的用途和特点。</li>
+</ul>
+<h3 id="Detailed-Street-Plan-详细街道规划"><a href="#Detailed-Street-Plan-详细街道规划" class="headerlink" title="Detailed Street Plan (详细街道规划)"></a>Detailed Street Plan (详细街道规划)</h3><ul>
+<li>图表展示了Anytown的街道布局。</li>
+<li>主要街道（Main Street）和次要街道（High Street 和 Low Street）清晰标出。</li>
+<li>通过颜色和编号标识不同的建筑物，以表明它们的位置和类型。</li>
+</ul>
+<p>总结：这一部分通过详细的街道规划图展示了Anytown村庄的布局，包括街道、商店和住宅的位置。通过这种方式，我们可以更好地理解村庄的结构和组织方式。</p>
+<h2 id="Hierarchy-of-Objects-对象的层次结构"><a href="#Hierarchy-of-Objects-对象的层次结构" class="headerlink" title="Hierarchy of Objects (对象的层次结构)"></a>Hierarchy of Objects (对象的层次结构)</h2><h3 id="General-Concept-总体概念"><a href="#General-Concept-总体概念" class="headerlink" title="General Concept (总体概念)"></a>General Concept (总体概念)</h3><ul>
+<li>商店和住宅被定义为建筑的类型。</li>
+<li>某些属性（attributes）对所有建筑都是通用的，例如地址和所有者。</li>
+<li>其他属性可能特定于商店或住宅，如房屋的卧室数量或商店的员工数量。</li>
+<li>类层次结构允许我们在适当的级别指定属性。</li>
+</ul>
+<p>总结：此部分解释了如何通过类的层次结构来组织不同类型的建筑物对象，以及如何为它们指定共有和特有的属性。</p>
+<h3 id="Specific-Examples-具体示例"><a href="#Specific-Examples-具体示例" class="headerlink" title="Specific Examples (具体示例)"></a>Specific Examples (具体示例)</h3><ul>
+<li><strong>Building 1</strong>:<ul>
+<li>类型：商店</li>
+<li>地址：3 High Street</li>
+<li>所有者：Smith’s Newsagent</li>
+<li>员工数量：5</li>
+<li>年营业额：£250K</li>
+</ul>
+</li>
+<li><strong>Building 2</strong>:<ul>
+<li>类型：住宅</li>
+<li>地址：18 Low Street</li>
+<li>所有者：Mary Jones</li>
+<li>卧室数量：3</li>
+<li>是否有车库：否</li>
+</ul>
+</li>
+</ul>
+<h3 id="Implementation-Details-实现细节"><a href="#Implementation-Details-实现细节" class="headerlink" title="Implementation Details (实现细节)"></a>Implementation Details (实现细节)</h3><ul>
+<li>商店和住宅作为建筑类型的子类将具有额外的属性。</li>
+<li>这些属性将作为实例变量和方法实现，以反映每个建筑类型的特定信息。</li>
+</ul>
+<p>总结：本节提供了两个具体的建筑实例，展示了它们如何在属性和方法上有所区别，从而强调了在编程实践中如何实现和区分不同类型的对象。</p>
+<h2 id="Creating-the-Subclass-创建子类"><a href="#Creating-the-Subclass-创建子类" class="headerlink" title="Creating the Subclass (创建子类)"></a>Creating the Subclass (创建子类)</h2><h3 id="Class-Definition-类定义"><a href="#Class-Definition-类定义" class="headerlink" title="Class Definition (类定义)"></a>Class Definition (类定义)</h3><ul>
+<li><code>House</code>类是<code>Building</code>类的一个子类。</li>
+<li>它具有特定于房屋的值，如卧室数量（<code>numBedrooms</code>）和是否有车库（<code>hasGarage</code>）。</li>
+</ul>
+<h3 id="Constructor-构造函数"><a href="#Constructor-构造函数" class="headerlink" title="Constructor (构造函数)"></a>Constructor (构造函数)</h3><ul>
+<li>构造函数首先调用父类的构造函数，使用<code>super(add, own);</code>传递地址和所有者。</li>
+<li>然后设置房屋特定的值，如<code>this.numBedrooms = beds;</code>和<code>this.hasGarage = garage;</code>。</li>
+</ul>
+<h3 id="House-specific-Properties-房屋特定属性"><a href="#House-specific-Properties-房屋特定属性" class="headerlink" title="House-specific Properties (房屋特定属性)"></a>House-specific Properties (房屋特定属性)</h3><ul>
+<li><code>private int numBedrooms;</code> 定义了一个私有整型变量来存储卧室的数量。</li>
+<li><code>private boolean hasGarage;</code> 定义了一个私有布尔变量来表示房屋是否有车库。</li>
+</ul>
+<h3 id="Summary-总结"><a href="#Summary-总结" class="headerlink" title="Summary (总结)"></a>Summary (总结)</h3><p>本部分展示了如何在Java中创建一个类的子类。<code>House</code>类继承了<code>Building</code>类，并添加了房屋特定的属性。构造函数使用<code>super</code>关键字调用父类构造函数，然后设置子类特有的属性。这是面向对象编程中继承特性的一个实际应用示例，它展示了代码的重用性和扩展性。</p>
+<h2 id="Scenario-情景"><a href="#Scenario-情景" class="headerlink" title="Scenario (情景)"></a>Scenario (情景)</h2><h3 id="Anytown-Project-Update-Anytown-项目更新"><a href="#Anytown-Project-Update-Anytown-项目更新" class="headerlink" title="Anytown Project Update (Anytown 项目更新)"></a>Anytown Project Update (Anytown 项目更新)</h3><ul>
+<li>返回到您的Anytown项目，并做出以下修改：<ol>
+<li>添加新的类<code>House</code> (在新文件<code>House.java</code>中) 和 <code>Shop</code> (在新文件<code>Shop.java</code>中)。<ul>
+<li>这两个类都是<code>Building</code>类的子类。</li>
+<li><code>House</code>有整数类型的实例变量<code>numBedrooms</code>和布尔类型的<code>hasGarage</code>。</li>
+<li><code>Shop</code>有整数类型的实例变量<code>numEmployees</code>和<code>averageTurnover</code>。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="Constructor-Creation-构造函数创建"><a href="#Constructor-Creation-构造函数创建" class="headerlink" title="Constructor Creation (构造函数创建)"></a>Constructor Creation (构造函数创建)</h3><ul>
+<li>为<code>House</code>和<code>Shop</code>类创建构造函数，满足以下条件：<ul>
+<li>(i) 不提供参数时的情况。</li>
+<li>(ii) 提供所有参数时的情况。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Accessor-and-Mutator-Methods-存取器和更改器方法"><a href="#Accessor-and-Mutator-Methods-存取器和更改器方法" class="headerlink" title="Accessor and Mutator Methods (存取器和更改器方法)"></a>Accessor and Mutator Methods (存取器和更改器方法)</h3><ul>
+<li>为两个新类的所有实例变量实现存取器和更改器方法。</li>
+</ul>
+<h3 id="ToString-Method-ToString-方法"><a href="#ToString-Method-ToString-方法" class="headerlink" title="ToString Method (ToString 方法)"></a>ToString Method (ToString 方法)</h3><ul>
+<li>为每个类实现<code>toString()</code>方法，该方法生成一个定制消息。<ul>
+<li>这个消息应该使用超类中的<code>toString()</code>方法。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Implementation-Testing-实现测试"><a href="#Implementation-Testing-实现测试" class="headerlink" title="Implementation Testing (实现测试)"></a>Implementation Testing (实现测试)</h3><ul>
+<li>通过添加代码到类<code>AnytownTest</code>的现有<code>main()</code>方法中来测试您的实现。<ul>
+<li>创建新的<code>House</code>和<code>Shop</code>对象（使用每个构造函数至少一次）。</li>
+<li>验证存取器、更改器和<code>toString()</code>方法的操作。</li>
+</ul>
+</li>
+</ul>
+<p>总结：在这个情景中，我们需要对Anytown项目进行一系列的更新，包括添加新的类和方法，并确保通过测试来验证新实现的功能。这个过程不仅包括编写代码，还包括确保代码的正确性和功能性。</p>
+<h2 id="Scenario-情景-1"><a href="#Scenario-情景-1" class="headerlink" title="Scenario (情景)"></a>Scenario (情景)</h2><h3 id="Anytown-Project-Update-Anytown-项目更新-1"><a href="#Anytown-Project-Update-Anytown-项目更新-1" class="headerlink" title="Anytown Project Update (Anytown 项目更新)"></a>Anytown Project Update (Anytown 项目更新)</h3><ul>
+<li>返回到您的Anytown项目，并做出以下修改：<ol>
+<li>添加新的类<code>House</code> (在新文件<code>House.java</code>中) 和 <code>Shop</code> (在新文件<code>Shop.java</code>中)。<ul>
+<li>这两个类都是<code>Building</code>类的子类。</li>
+<li><code>House</code>有整数类型的实例变量<code>numBedrooms</code>和布尔类型的<code>hasGarage</code>。</li>
+<li><code>Shop</code>有整数类型的实例变量<code>numEmployees</code>和<code>averageTurnover</code>。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="Constructor-Creation-构造函数创建-1"><a href="#Constructor-Creation-构造函数创建-1" class="headerlink" title="Constructor Creation (构造函数创建)"></a>Constructor Creation (构造函数创建)</h3><ul>
+<li>为<code>House</code>和<code>Shop</code>类创建构造函数，满足以下条件：<ul>
+<li>(i) 不提供参数时的情况。</li>
+<li>(ii) 提供所有参数时的情况。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Accessor-and-Mutator-Methods-存取器和更改器方法-1"><a href="#Accessor-and-Mutator-Methods-存取器和更改器方法-1" class="headerlink" title="Accessor and Mutator Methods (存取器和更改器方法)"></a>Accessor and Mutator Methods (存取器和更改器方法)</h3><ul>
+<li>为两个新类的所有实例变量实现存取器和更改器方法。</li>
+</ul>
+<h3 id="ToString-Method-ToString-方法-1"><a href="#ToString-Method-ToString-方法-1" class="headerlink" title="ToString Method (ToString 方法)"></a>ToString Method (ToString 方法)</h3><ul>
+<li>为每个类实现<code>toString()</code>方法，该方法生成一个定制消息。<ul>
+<li>这个消息应该使用超类中的<code>toString()</code>方法。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Implementation-Testing-实现测试-1"><a href="#Implementation-Testing-实现测试-1" class="headerlink" title="Implementation Testing (实现测试)"></a>Implementation Testing (实现测试)</h3><ul>
+<li>通过添加代码到类<code>AnytownTest</code>的现有<code>main()</code>方法中来测试您的实现。<ul>
+<li>创建新的<code>House</code>和<code>Shop</code>对象（使用每个构造函数至少一次）。</li>
+<li>验证存取器、更改器和<code>toString()</code>方法的操作。</li>
+</ul>
+</li>
+</ul>
+<p>总结：在这个情景中，我们需要对Anytown项目进行一系列的更新，包括添加新的类和方法，并确保通过测试来验证新实现的功能。这个过程不仅包括编写代码，还包括确保代码的正确性和功能性。</p>
+<h2 id="Key-Concepts-关键概念"><a href="#Key-Concepts-关键概念" class="headerlink" title="Key Concepts (关键概念)"></a>Key Concepts (关键概念)</h2><h3 id="Inheritance-继承"><a href="#Inheritance-继承" class="headerlink" title="Inheritance (继承)"></a>Inheritance (继承)</h3><ul>
+<li>继承允许子类从超类继承属性和方法。</li>
+<li>这意味着<code>Shop</code>和<code>House</code>这样的子类将继承<code>Building</code>类的所有属性和方法。</li>
+<li>如果需要，属性和方法可以在子类中被覆盖。</li>
+</ul>
+<h3 id="Polymorphism-多态"><a href="#Polymorphism-多态" class="headerlink" title="Polymorphism (多态)"></a>Polymorphism (多态)</h3><ul>
+<li>多态是指在类层次结构中，子类对象可以被视为其超类的实例。</li>
+<li>例如，一个<code>Shop</code>对象可以被视为一个<code>Building</code>，并且可以访问<code>Building</code>类的所有方法。</li>
+</ul>
+<p>总结：继承和多态是面向对象编程中的核心概念。通过继承，子类可以获取超类的属性和方法，而多态允许子类对象以其超类的形式被使用。这些概念共同促成了类的灵活性和代码的可重用性。</p>
+<h2 id="Challenge-挑战"><a href="#Challenge-挑战" class="headerlink" title="Challenge (挑战)"></a>Challenge (挑战)</h2><h3 id="Pet-Hierarchy-宠物层次结构"><a href="#Pet-Hierarchy-宠物层次结构" class="headerlink" title="Pet Hierarchy (宠物层次结构)"></a>Pet Hierarchy (宠物层次结构)</h3><ol>
+<li><p>在一个新的Java项目<code>Pets</code>中，定义一个名为<code>Pet</code>的类，包含实例变量<code>name</code>和<code>age</code>。</p>
+<ul>
+<li>为类<code>Pet</code>提供一个合适的构造器和存取器&#x2F;更改器方法。</li>
+</ul>
+</li>
+<li><p>接下来，定义两个<code>Pet</code>的子类：<code>Cat</code>和<code>Dog</code>。</p>
+<ul>
+<li>每个子类都有一个额外的实例变量<code>breed</code>，用于存储特定类型的猫（如波斯猫、虎斑猫等）或狗（如西班牙猎犬、梗等）。</li>
+</ul>
+</li>
+<li><p>每个子类都应该包含一个名为<code>speak()</code>的方法，返回动物的典型叫声以及对动物的描述，如：</p>
+<ul>
+<li>“Miaow! I am Pixel, a 4 year old tabby,” 或</li>
+<li>“Woof! I am Rex, a 9 year old terrier.”</li>
+</ul>
+</li>
+<li><p>最后，提供一个名为<code>PetTest</code>的类，它包含一个<code>main()</code>方法来测试你的类层次结构。</p>
+</li>
+</ol>
+<h3 id="Summary-总结-1"><a href="#Summary-总结-1" class="headerlink" title="Summary (总结)"></a>Summary (总结)</h3><p>这个挑战要求我们在Java中创建一个宠物类层次结构，涵盖基本的面向对象编程概念，如继承、封装和多态。我们将通过构造器初始化对象，通过存取器&#x2F;更改器方法管理状态，通过<code>speak()</code>方法展示多态性，最后通过<code>PetTest</code>类来验证整个层次结构的功能性。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/07/A1-2/">http://example.com/2023/12/07/A1-2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/07/A1-3/" title="A1.3"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">A1.3</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/07/A1-1/" title="A1.1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">A1.1</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#COM410-Programming-in-Practice-COM410-%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5"><span class="toc-number">1.</span> <span class="toc-text">COM410 Programming in Practice (COM410 编程实践)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A1-2-Inheritance-A1-2-%E7%BB%A7%E6%89%BF"><span class="toc-number">1.1.</span> <span class="toc-text">A1.2 Inheritance (A1.2 继承)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Anytown-Street-Plan-Anytown-%E8%A1%97%E9%81%93%E8%A7%84%E5%88%92"><span class="toc-number">2.</span> <span class="toc-text">Anytown Street Plan (Anytown 街道规划)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Village-Overview-%E6%9D%91%E5%BA%84%E6%A6%82%E8%A7%88"><span class="toc-number">2.1.</span> <span class="toc-text">Village Overview (村庄概览)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Building-Identification-%E5%BB%BA%E7%AD%91%E7%89%A9%E8%AF%86%E5%88%AB"><span class="toc-number">2.2.</span> <span class="toc-text">Building Identification (建筑物识别)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Types-of-Buildings-%E5%BB%BA%E7%AD%91%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">Types of Buildings (建筑类型)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Detailed-Street-Plan-%E8%AF%A6%E7%BB%86%E8%A1%97%E9%81%93%E8%A7%84%E5%88%92"><span class="toc-number">2.4.</span> <span class="toc-text">Detailed Street Plan (详细街道规划)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hierarchy-of-Objects-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">Hierarchy of Objects (对象的层次结构)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#General-Concept-%E6%80%BB%E4%BD%93%E6%A6%82%E5%BF%B5"><span class="toc-number">3.1.</span> <span class="toc-text">General Concept (总体概念)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Specific-Examples-%E5%85%B7%E4%BD%93%E7%A4%BA%E4%BE%8B"><span class="toc-number">3.2.</span> <span class="toc-text">Specific Examples (具体示例)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementation-Details-%E5%AE%9E%E7%8E%B0%E7%BB%86%E8%8A%82"><span class="toc-number">3.3.</span> <span class="toc-text">Implementation Details (实现细节)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Creating-the-Subclass-%E5%88%9B%E5%BB%BA%E5%AD%90%E7%B1%BB"><span class="toc-number">4.</span> <span class="toc-text">Creating the Subclass (创建子类)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Class-Definition-%E7%B1%BB%E5%AE%9A%E4%B9%89"><span class="toc-number">4.1.</span> <span class="toc-text">Class Definition (类定义)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Constructor-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text">Constructor (构造函数)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#House-specific-Properties-%E6%88%BF%E5%B1%8B%E7%89%B9%E5%AE%9A%E5%B1%9E%E6%80%A7"><span class="toc-number">4.3.</span> <span class="toc-text">House-specific Properties (房屋特定属性)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Summary-%E6%80%BB%E7%BB%93"><span class="toc-number">4.4.</span> <span class="toc-text">Summary (总结)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scenario-%E6%83%85%E6%99%AF"><span class="toc-number">5.</span> <span class="toc-text">Scenario (情景)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Anytown-Project-Update-Anytown-%E9%A1%B9%E7%9B%AE%E6%9B%B4%E6%96%B0"><span class="toc-number">5.1.</span> <span class="toc-text">Anytown Project Update (Anytown 项目更新)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Constructor-Creation-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%88%9B%E5%BB%BA"><span class="toc-number">5.2.</span> <span class="toc-text">Constructor Creation (构造函数创建)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Accessor-and-Mutator-Methods-%E5%AD%98%E5%8F%96%E5%99%A8%E5%92%8C%E6%9B%B4%E6%94%B9%E5%99%A8%E6%96%B9%E6%B3%95"><span class="toc-number">5.3.</span> <span class="toc-text">Accessor and Mutator Methods (存取器和更改器方法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ToString-Method-ToString-%E6%96%B9%E6%B3%95"><span class="toc-number">5.4.</span> <span class="toc-text">ToString Method (ToString 方法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementation-Testing-%E5%AE%9E%E7%8E%B0%E6%B5%8B%E8%AF%95"><span class="toc-number">5.5.</span> <span class="toc-text">Implementation Testing (实现测试)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scenario-%E6%83%85%E6%99%AF-1"><span class="toc-number">6.</span> <span class="toc-text">Scenario (情景)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Anytown-Project-Update-Anytown-%E9%A1%B9%E7%9B%AE%E6%9B%B4%E6%96%B0-1"><span class="toc-number">6.1.</span> <span class="toc-text">Anytown Project Update (Anytown 项目更新)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Constructor-Creation-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%88%9B%E5%BB%BA-1"><span class="toc-number">6.2.</span> <span class="toc-text">Constructor Creation (构造函数创建)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Accessor-and-Mutator-Methods-%E5%AD%98%E5%8F%96%E5%99%A8%E5%92%8C%E6%9B%B4%E6%94%B9%E5%99%A8%E6%96%B9%E6%B3%95-1"><span class="toc-number">6.3.</span> <span class="toc-text">Accessor and Mutator Methods (存取器和更改器方法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ToString-Method-ToString-%E6%96%B9%E6%B3%95-1"><span class="toc-number">6.4.</span> <span class="toc-text">ToString Method (ToString 方法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementation-Testing-%E5%AE%9E%E7%8E%B0%E6%B5%8B%E8%AF%95-1"><span class="toc-number">6.5.</span> <span class="toc-text">Implementation Testing (实现测试)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Key-Concepts-%E5%85%B3%E9%94%AE%E6%A6%82%E5%BF%B5"><span class="toc-number">7.</span> <span class="toc-text">Key Concepts (关键概念)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Inheritance-%E7%BB%A7%E6%89%BF"><span class="toc-number">7.1.</span> <span class="toc-text">Inheritance (继承)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Polymorphism-%E5%A4%9A%E6%80%81"><span class="toc-number">7.2.</span> <span class="toc-text">Polymorphism (多态)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Challenge-%E6%8C%91%E6%88%98"><span class="toc-number">8.</span> <span class="toc-text">Challenge (挑战)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pet-Hierarchy-%E5%AE%A0%E7%89%A9%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="toc-number">8.1.</span> <span class="toc-text">Pet Hierarchy (宠物层次结构)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Summary-%E6%80%BB%E7%BB%93-1"><span class="toc-number">8.2.</span> <span class="toc-text">Summary (总结)</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/21/T8/" title="T8">T8</a><time datetime="2023-12-21T19:39:36.000Z" title="Created 2023-12-21 19:39:36">2023-12-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T7/" title="T7">T7</a><time datetime="2023-12-20T03:17:15.000Z" title="Created 2023-12-20 03:17:15">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T6/" title="T6">T6</a><time datetime="2023-12-20T03:01:32.000Z" title="Created 2023-12-20 03:01:32">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/16/A5-2/" title="A5-2">A5-2</a><time datetime="2023-12-16T05:38:48.000Z" title="Created 2023-12-16 05:38:48">2023-12-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/16/A5-1/" title="A5-1">A5-1</a><time datetime="2023-12-16T05:17:27.000Z" title="Created 2023-12-16 05:17:27">2023-12-16</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

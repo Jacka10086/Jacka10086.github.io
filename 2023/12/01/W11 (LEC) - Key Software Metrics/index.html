@@ -1,0 +1,717 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>W11 (LEC) - Key Software Metrics | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="网站测试 (Website Testing)关键考虑因素针对网页开发者。 功能测试 (Functionality Testing) 确保所有功能稳健运作。 涵盖多种功能类型，如表单、Cookies以及数据库完整性。 确保测试用例涵盖边界条件。  安全测试 (Security Testing) 对于网站至关重要。 测试机器人活动检测。 防止SQL脚本注入。  集成测试 (Integration Te">
+<meta property="og:type" content="article">
+<meta property="og:title" content="W11 (LEC) - Key Software Metrics">
+<meta property="og:url" content="http://example.com/2023/12/01/W11%20(LEC)%20-%20Key%20Software%20Metrics/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="网站测试 (Website Testing)关键考虑因素针对网页开发者。 功能测试 (Functionality Testing) 确保所有功能稳健运作。 涵盖多种功能类型，如表单、Cookies以及数据库完整性。 确保测试用例涵盖边界条件。  安全测试 (Security Testing) 对于网站至关重要。 测试机器人活动检测。 防止SQL脚本注入。  集成测试 (Integration Te">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2023-12-01T01:50:40.000Z">
+<meta property="article:modified_time" content="2024-01-09T17:18:34.373Z">
+<meta property="article:author" content="Jacka10086">
+<meta property="article:tag" content="Week11">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/12/01/W11%20(LEC)%20-%20Key%20Software%20Metrics/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'W11 (LEC) - Key Software Metrics',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-09 17:18:34'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">W11 (LEC) - Key Software Metrics</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-12-01T01:50:40.000Z" title="Created 2023-12-01 01:50:40">2023-12-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-01-09T17:18:34.373Z" title="Updated 2024-01-09 17:18:34">2024-01-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Com435/">Com435</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="W11 (LEC) - Key Software Metrics"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="网站测试-Website-Testing"><a href="#网站测试-Website-Testing" class="headerlink" title="网站测试 (Website Testing)"></a>网站测试 (Website Testing)</h2><p>关键考虑因素针对网页开发者。</p>
+<h3 id="功能测试-Functionality-Testing"><a href="#功能测试-Functionality-Testing" class="headerlink" title="功能测试 (Functionality Testing)"></a>功能测试 (Functionality Testing)</h3><ul>
+<li>确保所有功能稳健运作。</li>
+<li>涵盖多种功能类型，如表单、Cookies以及数据库完整性。</li>
+<li>确保测试用例涵盖边界条件。</li>
+</ul>
+<h3 id="安全测试-Security-Testing"><a href="#安全测试-Security-Testing" class="headerlink" title="安全测试 (Security Testing)"></a>安全测试 (Security Testing)</h3><ul>
+<li>对于网站至关重要。</li>
+<li>测试机器人活动检测。</li>
+<li>防止SQL脚本注入。</li>
+</ul>
+<h3 id="集成测试-Integration-Testing"><a href="#集成测试-Integration-Testing" class="headerlink" title="集成测试 (Integration Testing)"></a>集成测试 (Integration Testing)</h3><ul>
+<li>测试所有系统组件是否能够正常协同工作。</li>
+<li>在团队开发环境中尤其重要。</li>
+</ul>
+<h3 id="性能测试-Performance-Testing"><a href="#性能测试-Performance-Testing" class="headerlink" title="性能测试 (Performance Testing)"></a>性能测试 (Performance Testing)</h3><ul>
+<li>帮助确定产品在不同使用情况下的性能。</li>
+<li>包括压力测试、可伸缩性测试和负载测试。</li>
+</ul>
+<h3 id="兼容性测试-Compatibility-Testing"><a href="#兼容性测试-Compatibility-Testing" class="headerlink" title="兼容性测试 (Compatibility Testing)"></a>兼容性测试 (Compatibility Testing)</h3><ul>
+<li>网络应用程序的兼容性至关重要。</li>
+<li>须符合标准规范和法律合规性。</li>
+</ul>
+<h3 id="可用性测试-Usability-Testing"><a href="#可用性测试-Usability-Testing" class="headerlink" title="可用性测试 (Usability Testing)"></a>可用性测试 (Usability Testing)</h3><ul>
+<li>网站应符合可用性标准。</li>
+<li>考虑认知负荷、支持用户目标、信息设计、导航设计以及视觉设计。</li>
+<li>包括所有用户的测试，例如无障碍测试。</li>
+</ul>
+<p>总结：以上内容详细介绍了网站测试的不同方面，旨在确保网站在多方面都能达到预定的标准和用户期望。</p>
+<h2 id="网站测试-Website-testing"><a href="#网站测试-Website-testing" class="headerlink" title="网站测试 (Website testing)"></a>网站测试 (Website testing)</h2><ul>
+<li><strong>关键考虑因素</strong>：为Web开发人员提供关于如何测试网站的重要提示和方法。</li>
+<li><strong>总结</strong>：为网站开发的测试提供了一份指南，强调了测试在整个开发过程中的重要性。</li>
+</ul>
+<h2 id="测试所有方面-Testing-all-aspects"><a href="#测试所有方面-Testing-all-aspects" class="headerlink" title="测试所有方面 (Testing all aspects)"></a>测试所有方面 (Testing all aspects)</h2><ul>
+<li>功能测试 (Functionality testing)</li>
+<li>安全测试 (Security testing)</li>
+<li>集成测试 (Integration testing)</li>
+<li>性能测试 (Performance testing)</li>
+<li>兼容性测试 (Compatibility testing)</li>
+<li>可用性测试 (Usability testing)</li>
+<li><strong>总结</strong>：涵盖了网站测试的不同方面，强调了为确保高质量和用户满意度必须进行全面测试。</li>
+</ul>
+<h2 id="功能性测试-Functionality-Testing"><a href="#功能性测试-Functionality-Testing" class="headerlink" title="功能性测试 (Functionality Testing)"></a>功能性测试 (Functionality Testing)</h2><ul>
+<li>确保所有功能鲁棒性运作</li>
+<li>涉及多种功能类型，例如表单、Cookies和数据库完整性</li>
+<li>测试案例需覆盖边界条件</li>
+<li><strong>总结</strong>：提出了确保网站所有功能都能正常运作的测试方法，以及测试需要覆盖的要点。</li>
+</ul>
+<h2 id="安全测试-Security-Testing-1"><a href="#安全测试-Security-Testing-1" class="headerlink" title="安全测试 (Security Testing)"></a>安全测试 (Security Testing)</h2><ul>
+<li>对于网站来说至关重要</li>
+<li>测试机器人活动检测</li>
+<li>检查避免直接访问服务器文件结构</li>
+<li>防止SQL脚本注入</li>
+<li><strong>总结</strong>：概述了确保网站安全的各种测试，包括预防恶意攻击和数据泄露。</li>
+</ul>
+<h2 id="集成测试-Integration-testing"><a href="#集成测试-Integration-testing" class="headerlink" title="集成测试 (Integration testing)"></a>集成测试 (Integration testing)</h2><ul>
+<li>测试所有系统组件是否正常协同工作</li>
+<li>重要性在于团队开发环境中的应用</li>
+<li><strong>总结</strong>：说明了测试不同系统组件如何整合在一起工作的重要性，以及这在团队合作中的作用。</li>
+</ul>
+<h2 id="性能测试-Performance-Testing-1"><a href="#性能测试-Performance-Testing-1" class="headerlink" title="性能测试 (Performance Testing)"></a>性能测试 (Performance Testing)</h2><ul>
+<li>帮助确定产品在不同用例下的性能</li>
+<li>包括压力测试、可伸缩性测试和负载测试</li>
+<li><strong>总结</strong>：阐述了如何测试产品在不同条件下的性能表现，并强调了多平台测试的必要性。</li>
+</ul>
+<h2 id="兼容性测试-Compatibility-Testing-1"><a href="#兼容性测试-Compatibility-Testing-1" class="headerlink" title="兼容性测试 (Compatibility Testing)"></a>兼容性测试 (Compatibility Testing)</h2><ul>
+<li>您的Web应用程序的兼容性至关重要</li>
+<li>遵守标准、可访问性和法律合规性</li>
+<li>包括浏览器兼容性和操作系统兼容性</li>
+<li><strong>总结</strong>：强调了测试网站在不同浏览器和操作系统上的兼容性的重要性。</li>
+</ul>
+<h2 id="可用性测试-Usability-Testing-1"><a href="#可用性测试-Usability-Testing-1" class="headerlink" title="可用性测试 (Usability Testing)"></a>可用性测试 (Usability Testing)</h2><ul>
+<li>网站应遵守可用性标准</li>
+<li>考虑认知负荷、用户目标支持、信息设计、导航设计和视觉设计</li>
+<li>包括所有用户，即无障碍性测试</li>
+<li><strong>总结</strong>：提出了确保网站符合用户友好性标准的测试方面，包括设计和可访问性考虑。</li>
+</ul>
+<h2 id="敏捷Scrum指标-KPIs（Agile-Scrum-Metrics-KPIs）"><a href="#敏捷Scrum指标-KPIs（Agile-Scrum-Metrics-KPIs）" class="headerlink" title="敏捷Scrum指标 &#x2F; KPIs（Agile Scrum Metrics &#x2F; KPIs）"></a>敏捷Scrum指标 &#x2F; KPIs（Agile Scrum Metrics &#x2F; KPIs）</h2><ul>
+<li>Sprint目标成功（Sprint Goal Success）<ul>
+<li>选择冲刺目标（Select a sprint goal）</li>
+<li>运行冲刺（Run the sprint）</li>
+<li>验证目标是否达成（Validate if the goal is met）</li>
+</ul>
+</li>
+</ul>
+<p>总结：敏捷Scrum的指标或关键绩效指标（KPIs）是用来评估Scrum团队在冲刺期间是否成功实现目标的工具，它们包括选择目标、运行冲刺和验证目标的实现情况。</p>
+<h2 id="Sprint目标成功（Sprint-Goal-Success）"><a href="#Sprint目标成功（Sprint-Goal-Success）" class="headerlink" title="Sprint目标成功（Sprint Goal Success）"></a>Sprint目标成功（Sprint Goal Success）</h2><ul>
+<li>选择冲刺目标（Select a sprint goal）</li>
+<li>运行冲刺（Run the sprint）</li>
+<li>验证目标是否达成（Validate if the goal is met）</li>
+</ul>
+<p>总结：实现Sprint目标是衡量Scrum团队成功的关键因素。这个过程从选择一个具体目标开始，然后执行冲刺，并在结束时验证目标是否已经达成。</p>
+<h2 id="逃逸缺陷（Escaped-Defects）"><a href="#逃逸缺陷（Escaped-Defects）" class="headerlink" title="逃逸缺陷（Escaped Defects）"></a>逃逸缺陷（Escaped Defects）</h2><ul>
+<li><strong>定义</strong>：逃逸缺陷是在软件发布后才被用户发现的缺陷。</li>
+<li><strong>图表说明</strong>：<ul>
+<li>中心圆圈表示代码库，外围圆圈表示生产环境。</li>
+<li>从代码库到生产的箭头显示了缺陷是如何“逃逸”出去的。</li>
+<li>用户在外围圆圈，表示他们与生产环境交互并可能遇到这些缺陷。</li>
+</ul>
+</li>
+</ul>
+<p>总结：逃逸缺陷图表强调了在软件开发生命周期中确保质量的重要性。它说明了缺陷管理的重要性，以及为何需要在早期发现并修复缺陷，避免它们影响到最终用户。</p>
+<h2 id="Team-Velocity（团队速度）"><a href="#Team-Velocity（团队速度）" class="headerlink" title="Team Velocity（团队速度）"></a>Team Velocity（团队速度）</h2><ul>
+<li>团队速度是衡量敏捷团队在一定周期内完成工作量的指标。<ul>
+<li>通常以故事点（Story Points）来量化。</li>
+<li>图表显示了连续的若干个迭代（Sprints）中团队速度的变化。</li>
+</ul>
+</li>
+<li>图中展示了一个警告标志，提醒我们“不要将团队速度作为目标或用于比较团队”。<ul>
+<li>这是因为过度关注速度可能会导致团队牺牲质量以追求速度。</li>
+</ul>
+</li>
+</ul>
+<h3 id="图表解释"><a href="#图表解释" class="headerlink" title="图表解释"></a>图表解释</h3><ul>
+<li>X轴代表迭代编号，从1到10。</li>
+<li>Y轴代表故事点数，是衡量工作量的单位。</li>
+<li>折线图展示了每次迭代团队完成的故事点数。<ul>
+<li>一般希望看到的是稳定或递增的趋势，这表示团队效率在提高。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>此图表是评估敏捷团队效率的一种工具。它有助于团队和组织了解每次迭代能够完成的工作量，从而对未来迭代进行更好的计划和预测。然而，重要的是不要将速度作为团队比较的唯一或主要指标，因为这可能会激励错误的行为，如牺牲质量以提高速度。</p>
+<h2 id="Sprint-Burn-Down（冲刺燃尽图）"><a href="#Sprint-Burn-Down（冲刺燃尽图）" class="headerlink" title="Sprint Burn Down（冲刺燃尽图）"></a>Sprint Burn Down（冲刺燃尽图）</h2><ul>
+<li>冲刺燃尽图用于跟踪冲刺中工作进度。<ul>
+<li>目的是确保团队能在冲刺结束前完成目标。</li>
+<li>图表展示了剩余工作量随时间递减的情况。</li>
+</ul>
+</li>
+</ul>
+<h3 id="图表解释-1"><a href="#图表解释-1" class="headerlink" title="图表解释"></a>图表解释</h3><ul>
+<li>X轴代表时间，通常表示冲刺中的天数。</li>
+<li>Y轴代表剩余的故事点数，表示还需完成的工作量。</li>
+<li>蓝色条形图显示每天结束时剩余的故事点数。</li>
+<li>红色线条代表理想的燃尽速度，即每天应该完成的工作量。<ul>
+<li>如果蓝色条形图低于红线，意味着团队超前于计划。</li>
+<li>如果蓝色条形图高于红线，意味着团队落后于计划。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>冲刺燃尽图是敏捷团队用来确保按时交付的关键工具。通过它，团队可以清晰地看到每天的工作进度，以及与计划的对比。这有助于团队成员调整工作节奏和策略，确保冲刺目标的实现。图表的实时更新和可视化使得团队能够及时发现问题并进行调整，以避免在冲刺结束时才发现大量的未完成工作。</p>
+<h2 id="Agile-Scrum-Metrics-KPIs（敏捷Scrum指标-KPIs）"><a href="#Agile-Scrum-Metrics-KPIs（敏捷Scrum指标-KPIs）" class="headerlink" title="Agile Scrum Metrics &#x2F; KPIs（敏捷Scrum指标&#x2F;KPIs）"></a>Agile Scrum Metrics &#x2F; KPIs（敏捷Scrum指标&#x2F;KPIs）</h2><h3 id="Sprint-Goal-Success（冲刺目标成功）"><a href="#Sprint-Goal-Success（冲刺目标成功）" class="headerlink" title="Sprint Goal Success（冲刺目标成功）"></a>Sprint Goal Success（冲刺目标成功）</h3><ul>
+<li>选择冲刺目标</li>
+<li>运行冲刺</li>
+<li>验证目标是否达成</li>
+<li>总结：冲刺目标的成功取决于明确的目标设定、执行过程以及最终的成果验证。</li>
+</ul>
+<h3 id="Escaped-Defects（逃逸缺陷）"><a href="#Escaped-Defects（逃逸缺陷）" class="headerlink" title="Escaped Defects（逃逸缺陷）"></a>Escaped Defects（逃逸缺陷）</h3><ul>
+<li>从代码库到生产环境中的缺陷</li>
+<li>用户发现的问题</li>
+<li>总结：逃逸缺陷是衡量生产软件质量的一个关键指标，反映了从代码库到用户手中软件的缺陷情况。</li>
+</ul>
+<h3 id="Team-Velocity（团队速度）-1"><a href="#Team-Velocity（团队速度）-1" class="headerlink" title="Team Velocity（团队速度）"></a>Team Velocity（团队速度）</h3><ul>
+<li>以故事点计量的团队速度</li>
+<li>不应作为目标或用于比较团队</li>
+<li>总结：团队速度是衡量团队在冲刺中交付价值的速率，不推荐作为固定目标或比较不同团队的基准。</li>
+</ul>
+<h3 id="Sprint-Burn-Down（冲刺燃尽图）-1"><a href="#Sprint-Burn-Down（冲刺燃尽图）-1" class="headerlink" title="Sprint Burn Down（冲刺燃尽图）"></a>Sprint Burn Down（冲刺燃尽图）</h3><ul>
+<li>每天完成的故事点数</li>
+<li>剩余的工作量</li>
+<li>预估完成日期</li>
+<li>总结：冲刺燃尽图显示了冲刺过程中工作量的减少和团队完成任务的速率。</li>
+</ul>
+<h3 id="Measuring-Business-Goals（衡量业务目标）"><a href="#Measuring-Business-Goals（衡量业务目标）" class="headerlink" title="Measuring Business Goals（衡量业务目标）"></a>Measuring Business Goals（衡量业务目标）</h3><ul>
+<li>上市时间</li>
+<li>投资回报率（ROI）</li>
+<li>资本再部署</li>
+<li>客户满意度</li>
+<li>总结：业务目标的衡量包括多个维度，旨在评估产品上市效率、投资回报、资本使用效率和客户满意度。</li>
+</ul>
+<h3 id="Scrum-Metrics（Scrum指标）"><a href="#Scrum-Metrics（Scrum指标）" class="headerlink" title="Scrum Metrics（Scrum指标）"></a>Scrum Metrics（Scrum指标）</h3><ul>
+<li>每日Scrum和冲刺回顾</li>
+<li>团队满意度</li>
+<li>团队成员流动率</li>
+<li>总结：Scrum指标关注于团队的日常运作、成员满意度以及人员稳定性，是保障团队健康运作的关键因素。</li>
+</ul>
+<h3 id="Scrum-Reporting（Scrum报告）"><a href="#Scrum-Reporting（Scrum报告）" class="headerlink" title="Scrum Reporting（Scrum报告）"></a>Scrum Reporting（Scrum报告）</h3><ul>
+<li>冲刺和发布燃尽图 - 进度概览</li>
+<li>冲刺速度 - 价值交付回顾</li>
+<li>范围变更 - 发布期间添加的故事</li>
+<li>团队容量 - 全职开发者数量？请假情况？参与其他项目？</li>
+<li>逃逸缺陷 - 生产软件的状况</li>
+<li>总结：Scrum报告提供了项目进度、团队表现和软件质量的全面视图，帮助团队和利益相关者理解项目状态。</li>
+</ul>
+<h2 id="敏捷Scrum度量指标-KPIs"><a href="#敏捷Scrum度量指标-KPIs" class="headerlink" title="敏捷Scrum度量指标 &#x2F; KPIs"></a>敏捷Scrum度量指标 &#x2F; KPIs</h2><p>这部分内容提供了关于敏捷Scrum度量指标的概览。主要介绍了在Scrum实践中，哪些关键绩效指标（KPIs）是重要的。</p>
+<h3 id="Sprint-Goal-Success"><a href="#Sprint-Goal-Success" class="headerlink" title="Sprint Goal Success"></a>Sprint Goal Success</h3><ul>
+<li><strong>选择Sprint目标</strong>：团队需要确定一个清晰的目标，以便在Sprint中追求。</li>
+<li><strong>运行Sprint</strong>：在Sprint期间，团队致力于实现设定的目标。</li>
+<li><strong>验证目标是否达成</strong>：在Sprint结束时，需要检查目标是否已经实现，以评估Sprint的成功与否。</li>
+</ul>
+<h3 id="故障逃逸"><a href="#故障逃逸" class="headerlink" title="故障逃逸"></a>故障逃逸</h3><ul>
+<li>展示了代码生产过程中可能出现的问题，并且这些问题是如何在生产环境中被用户发现的。</li>
+</ul>
+<h3 id="Team-Velocity"><a href="#Team-Velocity" class="headerlink" title="Team Velocity"></a>Team Velocity</h3><ul>
+<li><strong>故事点</strong>：以故事点来衡量团队在连续Sprints中的工作量。</li>
+<li><strong>Sprints</strong>：表示时间序列上的Sprint迭代次数。</li>
+<li><strong>警告</strong>：不应将团队速度作为比较团队间差异的目标。</li>
+</ul>
+<h3 id="Sprint-Burn-Down"><a href="#Sprint-Burn-Down" class="headerlink" title="Sprint Burn Down"></a>Sprint Burn Down</h3><ul>
+<li><strong>故事点</strong>：任务完成的量化表示。</li>
+<li><strong>天数</strong>：Sprint周期内的时间流逝。</li>
+<li><strong>Burndown速度</strong>：展示了任务完成的速率。</li>
+</ul>
+<h3 id="测量商业目标"><a href="#测量商业目标" class="headerlink" title="测量商业目标"></a>测量商业目标</h3><ul>
+<li><strong>上市时间</strong>：产品开发到推向市场所需的时间长度。</li>
+<li><strong>ROI</strong>：投资回报率。</li>
+<li><strong>资本再部署</strong>：在产品生命周期中重新分配资本的能力。</li>
+<li><strong>客户满意度</strong>：衡量客户对产品或服务满意程度的指标。</li>
+</ul>
+<h3 id="Scrum度量"><a href="#Scrum度量" class="headerlink" title="Scrum度量"></a>Scrum度量</h3><ul>
+<li><strong>每日Scrum和Sprint回顾</strong>：衡量团队沟通和反思效率的指标。</li>
+<li><strong>团队满意度</strong>：团队成员对工作环境的满意程度。</li>
+<li><strong>团队成员流失率</strong>：团队成员离职的频率。</li>
+</ul>
+<h3 id="Scrum报告"><a href="#Scrum报告" class="headerlink" title="Scrum报告"></a>Scrum报告</h3><ul>
+<li><strong>Sprint和发布倒数</strong>：展示进度的总览。</li>
+<li><strong>Sprint速度</strong>：随时间推移交付价值的回顾。</li>
+<li><strong>范围变化</strong>：在发布过程中增加的故事数量。</li>
+<li><strong>团队容量</strong>：全职开发者的数量？假期？病假？参与其他项目？</li>
+<li><strong>逃逸缺陷</strong>：生产软件的质量如何？</li>
+</ul>
+<p>通过上述内容的概述，我们可以了解到敏捷Scrum实践中各种度量指标和KPIs对于项目管理的重要性。这些指标不仅帮助项目团队监控进度，还能够评估产品的商业价值和客户满意度。</p>
+<h2 id="Team-Velocity-团队效率"><a href="#Team-Velocity-团队效率" class="headerlink" title="Team Velocity (团队效率)"></a>Team Velocity (团队效率)</h2><ul>
+<li><strong>警告</strong>：不要将其作为目标或比较团队的指标。</li>
+<li>本图表显示了10个迭代（Sprint）的故事点（Story Points）变化。</li>
+<li>效率波动表明团队在不同迭代中的工作量有所不同。</li>
+</ul>
+<p>总结：此图表提醒我们不应使用团队效率作为固定目标或比较不同团队间的性能指标。</p>
+<h2 id="Sprint-Burn-Down-冲刺燃尽图"><a href="#Sprint-Burn-Down-冲刺燃尽图" class="headerlink" title="Sprint Burn Down (冲刺燃尽图)"></a>Sprint Burn Down (冲刺燃尽图)</h2><ul>
+<li>展示了一个迭代期间剩余工作量的减少。</li>
+<li>“Burndown velocity”（燃尽速度）线表示理想情况下工作量的减少趋势。</li>
+<li>预估完成日期标记了在当前速度下，所有工作可能完成的时间点。</li>
+</ul>
+<p>总结：冲刺燃尽图帮助团队追踪进度，确保按时完成迭代目标。</p>
+<h2 id="Measuring-Business-Goals-衡量业务目标"><a href="#Measuring-Business-Goals-衡量业务目标" class="headerlink" title="Measuring Business Goals (衡量业务目标)"></a>Measuring Business Goals (衡量业务目标)</h2><ul>
+<li><strong>目标包括</strong>：<ul>
+<li>上市时间</li>
+<li>投资回报率（ROI）</li>
+<li>资本再部署</li>
+<li>客户满意度</li>
+</ul>
+</li>
+</ul>
+<p>总结：企业应以多维度指标来衡量其业务目标的实现情况，这对于指导决策和改进策略至关重要。</p>
+<h2 id="Time-to-Market-上市时间"><a href="#Time-to-Market-上市时间" class="headerlink" title="Time to Market (上市时间)"></a>Time to Market (上市时间)</h2><ul>
+<li>描述了从开发团队开始工作，通过迭代（Sprints）最终实现产品发布，并产生收益的过程。</li>
+<li>图表强调了价值传递的流程，从内部开发到最终用户。</li>
+</ul>
+<p>总结：快速上市是企业成功的关键，它可以加速收入流并提升市场竞争力。</p>
+<h2 id="ROI-投资回报率"><a href="#ROI-投资回报率" class="headerlink" title="ROI (投资回报率)"></a>ROI (投资回报率)</h2><ul>
+<li>对比了运行迭代的成本与产品收入。</li>
+<li>重点是理解成本和收益之间的关系。</li>
+</ul>
+<p>总结：ROI是评估项目财务效益的重要指标，有助于企业决定投资哪些项目。</p>
+<h2 id="合并拉取请求（Merged-Pull-Request）"><a href="#合并拉取请求（Merged-Pull-Request）" class="headerlink" title="合并拉取请求（Merged Pull Request）"></a>合并拉取请求（Merged Pull Request）</h2><ul>
+<li><p><strong>分支（Branch）</strong></p>
+<ul>
+<li><strong>Fork：</strong> 从主分支创建一个分支，开始独立开发。</li>
+<li><strong>Main Branch：</strong> 主分支，所有功能最终合并到此。</li>
+</ul>
+</li>
+<li><p><strong>开发过程（Development Process）</strong></p>
+<ul>
+<li><strong>First commit：</strong> 在分支上的第一个提交，标志着功能开发的开始。</li>
+<li><strong>Commits：</strong> 随着开发的进行，会有多次提交，表示代码的增量改变。</li>
+</ul>
+</li>
+<li><p><strong>代码审查（Code Review）</strong></p>
+<ul>
+<li><strong>Pull request opened：</strong> 开发完成后，创建拉取请求（Pull Request）以请求合并到主分支。</li>
+<li><strong>Comments：</strong> 在拉取请求中，其他团队成员可以进行代码审查，留下评论和建议。</li>
+</ul>
+</li>
+<li><p><strong>合并（Merging）</strong></p>
+<ul>
+<li><strong>Pull request merged：</strong> 审查完成后，如果代码符合标准，则拉取请求被合并到主分支。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>本图表显示了代码从分支到合并入主分支的典型流程。这个过程涵盖了代码的提交、审查和合并操作，以确保代码质量并促进团队协作。合并拉取请求是代码集成和版本控制的关键环节，确保了代码的可维护性和团队的协作效率。</p>
+<h2 id="Sprint中合并的拉取请求（Merged-Pull-Request-in-Sprint）"><a href="#Sprint中合并的拉取请求（Merged-Pull-Request-in-Sprint）" class="headerlink" title="Sprint中合并的拉取请求（Merged Pull Request in Sprint）"></a>Sprint中合并的拉取请求（Merged Pull Request in Sprint）</h2><ul>
+<li><p><strong>图表解释</strong></p>
+<ul>
+<li>时间轴（横轴）：展示了一个Sprint（迭代周期）的时间进度。</li>
+<li>合并的拉取请求（纵轴）：显示了在Sprint周期内合并到主分支的拉取请求数量。</li>
+</ul>
+</li>
+<li><p><strong>数据点分析</strong></p>
+<ul>
+<li><strong>起始点：</strong> Sprint开始时合并的拉取请求数量。</li>
+<li><strong>上升趋势：</strong> 随着Sprint的进行，合并的拉取请求数量呈稳定上升趋势。</li>
+<li><strong>团队平均线：</strong> 表示了团队平均水平的合并拉取请求数量。</li>
+</ul>
+</li>
+<li><p><strong>图表关键点</strong></p>
+<ul>
+<li><strong>稳定上升：</strong> 绿色曲线表示合并拉取请求的数量随时间稳定增长。</li>
+<li><strong>团队平均：</strong> 灰色虚线表示团队的平均合并请求水平。</li>
+<li><strong>当前Sprint：</strong> 曲线末端表示当前Sprint的状态。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><p>此图表描绘了一个Sprint期间合并的拉取请求数量随时间的增长情况。它显示了一个积极的趋势，即随着Sprint的进行，团队能够稳定地完成并合并拉取请求。这个指标可以帮助团队监测和评估他们的交付能力以及与团队平均水平的对比情况。</p>
+<h2 id="Sprint中打开的拉取请求（Opened-Pull-Requests）"><a href="#Sprint中打开的拉取请求（Opened-Pull-Requests）" class="headerlink" title="Sprint中打开的拉取请求（Opened Pull Requests）"></a>Sprint中打开的拉取请求（Opened Pull Requests）</h2><ul>
+<li><p><strong>图表解释</strong></p>
+<ul>
+<li>时间轴（横轴）：表示Sprint（迭代周期）的时间进度。</li>
+<li>打开的拉取请求（纵轴）：显示了在Sprint期间打开的拉取请求数量。</li>
+</ul>
+</li>
+<li><p><strong>数据点分析</strong></p>
+<ul>
+<li><strong>起始点：</strong> Sprint开始时打开的拉取请求数量。</li>
+<li><strong>中点趋势：</strong> 在Sprint中期，打开的拉取请求数量呈稳定上升趋势。</li>
+<li><strong>最大和最小限制：</strong> 图表中标识了健康开发周期内的最大值和最小值限制线。</li>
+</ul>
+</li>
+<li><p><strong>图表关键点</strong></p>
+<ul>
+<li><strong>稳定上升：</strong> 绿色曲线表示在Sprint中期，打开的拉取请求数量稳定增加。</li>
+<li><strong>最大值（Max）：</strong> 黑色虚线代表团队的最大健康拉取请求数限制。</li>
+<li><strong>平均值（Average）：</strong> 黑色虚线表示团队的平均拉取请求数量。</li>
+<li><strong>最小值（Min）：</strong> 黑色虚线代表团队的最小健康拉取请求数限制。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h3><p>该图表展示了Sprint期间打开的拉取请求数量随时间的变化，特别强调了在Sprint中期拉取请求的增加。这个增加在团队设定的最大和最小健康范围内，表明了团队在处理拉取请求方面保持健康的工作节奏。这有助于评估团队的生产力和及时反馈。</p>
+<h2 id="开发中的长时间请求（Long-time-in-development）"><a href="#开发中的长时间请求（Long-time-in-development）" class="headerlink" title="开发中的长时间请求（Long time in development）"></a>开发中的长时间请求（Long time in development）</h2><ul>
+<li><p><strong>图表解释</strong></p>
+<ul>
+<li>横轴（Development Time）：表示开发时间的长度。</li>
+<li>纵轴（Pull Requests）：表示拉取请求的数量及其在开发过程中的持续时间。</li>
+</ul>
+</li>
+<li><p><strong>数据点分析</strong></p>
+<ul>
+<li>每个矩形：代表一个拉取请求及其在开发中的持续时间。</li>
+<li>矩形长度：表示单个拉取请求在开发中所花费的时间。</li>
+<li>矩形位置：对应于在开发过程中的时间点。</li>
+</ul>
+</li>
+<li><p><strong>图表关键点</strong></p>
+<ul>
+<li><strong>平均线（Average）：</strong> 图中灰色水平线，表示拉取请求在开发中的平均持续时间。</li>
+<li><strong>超长时间请求（红色矩形）：</strong> 一个特别长的拉取请求，远超过平均时间，表明该请求在开发中花费了异常长的时间。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-5"><a href="#总结-5" class="headerlink" title="总结"></a>总结</h3><p>这个图表显示了不同拉取请求在开发中所花费的时间，特别突出了一个异常的拉取请求（红色矩形），它在开发中的时间远超过了平均水平。这可能指示了该请求在某个开发阶段遇到了问题，或者需要进行额外的审查和修改，这是开发过程中效率低下的一个标志。团队应该审查这类请求，以找到导致延误的原因，并采取措施防止未来的延误。</p>
+<h2 id="晚期代码波动（Late-Churn）"><a href="#晚期代码波动（Late-Churn）" class="headerlink" title="晚期代码波动（Late Churn）"></a>晚期代码波动（Late Churn）</h2><ul>
+<li><p><strong>图表解释</strong></p>
+<ul>
+<li>横轴（Development Time）：展示了开发时间的流逝。</li>
+<li>纵轴（Code Churn）：指的是在开发周期内代码变动的频率和规模。</li>
+</ul>
+</li>
+<li><p><strong>数据点分析</strong></p>
+<ul>
+<li>曲线：表示代码变动随时间的增加而发生的波动情况。</li>
+<li>曲线上升：意味着代码变动的频率和规模在增加。</li>
+</ul>
+</li>
+<li><p><strong>图表关键点</strong></p>
+<ul>
+<li><strong>晚期代码波动（Late Churn）：</strong> 红色虚线之后的曲线上升区域，这通常指的是开发晚期还有大量的代码变动，这可能是由于重新设计、优化或修复在晚期测试中发现的问题。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-6"><a href="#总结-6" class="headerlink" title="总结"></a>总结</h3><p>该图表揭示了在开发过程的后期，代码变动的频率和规模有显著增加，这通常不是一个好现象，因为它可能意味着项目需求不明确、计划不充分或者存在其他问题。团队应该探究晚期代码波动的原因，并寻求在项目早期阶段解决问题，以减少晚期的波动，确保开发流程的顺利和产品质量。</p>
+<h2 id="GIT-Analytics（GIT分析）"><a href="#GIT-Analytics（GIT分析）" class="headerlink" title="GIT Analytics（GIT分析）"></a>GIT Analytics（GIT分析）</h2><ul>
+<li><h3 id="On-Track-to-Deliver（按计划交付）"><a href="#On-Track-to-Deliver（按计划交付）" class="headerlink" title="On Track to Deliver（按计划交付）"></a>On Track to Deliver（按计划交付）</h3><ul>
+<li>追踪项目是否按照既定的时间表进行，确保按时交付成果。</li>
+</ul>
+</li>
+<li><h3 id="Delivery-Speed（交付速度）"><a href="#Delivery-Speed（交付速度）" class="headerlink" title="Delivery Speed（交付速度）"></a>Delivery Speed（交付速度）</h3><ul>
+<li>分析项目的交付速度，包括从开发到部署的整个周期时间。</li>
+</ul>
+</li>
+<li><h3 id="Identify-Bottlenecks（识别瓶颈）"><a href="#Identify-Bottlenecks（识别瓶颈）" class="headerlink" title="Identify Bottlenecks（识别瓶颈）"></a>Identify Bottlenecks（识别瓶颈）</h3><ul>
+<li>通过GIT日志识别项目开发过程中的瓶颈，以便采取措施加以改进。</li>
+</ul>
+</li>
+<li><h3 id="Productivity（生产力）"><a href="#Productivity（生产力）" class="headerlink" title="Productivity（生产力）"></a>Productivity（生产力）</h3><ul>
+<li>评估团队的生产力，通过提交频率、代码量等指标进行量化。</li>
+</ul>
+</li>
+<li><h3 id="Code-Review（代码审查）"><a href="#Code-Review（代码审查）" class="headerlink" title="Code Review（代码审查）"></a>Code Review（代码审查）</h3><ul>
+<li>检查代码审查的频率和质量，确保代码质量和一致性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Merged-Pull-Request（合并拉取请求）"><a href="#Merged-Pull-Request（合并拉取请求）" class="headerlink" title="Merged Pull Request（合并拉取请求）"></a>Merged Pull Request（合并拉取请求）</h3><ul>
+<li><h4 id="Main-Branch（主分支）"><a href="#Main-Branch（主分支）" class="headerlink" title="Main Branch（主分支）"></a>Main Branch（主分支）</h4><ul>
+<li>描述如何将分支合并到主分支的流程。</li>
+<li><strong>图表解释</strong>：展示了从Fork（分支）、First commit（首次提交）、Pull request opened（拉取请求打开），到Pull request merged（拉取请求合并）的完整流程。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Merged-Pull-Request-in-Sprint（冲刺中的合并拉取请求）"><a href="#Merged-Pull-Request-in-Sprint（冲刺中的合并拉取请求）" class="headerlink" title="Merged Pull Request in Sprint（冲刺中的合并拉取请求）"></a>Merged Pull Request in Sprint（冲刺中的合并拉取请求）</h3><ul>
+<li>描述在冲刺周期内合并拉取请求的数量变化。</li>
+<li><strong>图表解释</strong>：显示了当前冲刺中合并拉取请求数量随时间增加，朝向团队平均水平稳定上升的趋势。</li>
+</ul>
+<h3 id="Opened-Pull-Requests（打开的拉取请求）"><a href="#Opened-Pull-Requests（打开的拉取请求）" class="headerlink" title="Opened Pull Requests（打开的拉取请求）"></a>Opened Pull Requests（打开的拉取请求）</h3><ul>
+<li>评估在冲刺中期打开的拉取请求数量，以及团队对最大和最小限制的遵守情况。</li>
+<li><strong>图表解释</strong>：展示了在冲刺周期内打开的拉取请求数量呈现稳定上升并在最大和最小限制内波动的健康状态。</li>
+</ul>
+<h3 id="Long-Time-in-Development（长时间开发）"><a href="#Long-Time-in-Development（长时间开发）" class="headerlink" title="Long Time in Development（长时间开发）"></a>Long Time in Development（长时间开发）</h3><ul>
+<li>识别开发时间过长的拉取请求。</li>
+<li><strong>图表解释</strong>：描绘了处于开发阶段时间较长的拉取请求，强调需要关注和改进的请求。</li>
+</ul>
+<h3 id="Late-Churn（晚期变更）"><a href="#Late-Churn（晚期变更）" class="headerlink" title="Late Churn（晚期变更）"></a>Late Churn（晚期变更）</h3><ul>
+<li>分析开发晚期代码变更的频率和影响。</li>
+<li><strong>图表解释</strong>：图表显示了开发时间与代码变更的关系，特别强调了晚期变更可能对项目产生的影响。</li>
+</ul>
+<h3 id="Overload-Risk（超载风险）"><a href="#Overload-Risk（超载风险）" class="headerlink" title="Overload Risk（超载风险）"></a>Overload Risk（超载风险）</h3><ul>
+<li>评估项目在特定时间段内面临的过度工作风险。</li>
+<li><strong>图表解释</strong>：图表突出了开放拉取请求数量与时间的关系，以及可能导致超载风险的时间点。</li>
+</ul>
+<h3 id="Backload-Risk（积压风险）"><a href="#Backload-Risk（积压风险）" class="headerlink" title="Backload Risk（积压风险）"></a>Backload Risk（积压风险）</h3><ul>
+<li>关注因未处理的拉取请求而产生的积压风险。</li>
+<li><strong>图表解释</strong>：图表展示了开放拉取请求的积压风险随时间增加的趋势。</li>
+</ul>
+<p>总结：以上Markdown文档为GIT分析的演示提供了详细的结构和内容说明，包括项目交付跟踪、交付速度、瓶颈识别、生产力和代码审查等各个方面。每个主题下都有具体的解释和图表分析，以确保读者能够全面理解各个指标和风险。</p>
+<h2 id="GIT-Analytics（GIT分析）-1"><a href="#GIT-Analytics（GIT分析）-1" class="headerlink" title="GIT Analytics（GIT分析）"></a>GIT Analytics（GIT分析）</h2><ul>
+<li><h3 id="On-Track-to-Deliver（按计划交付）-1"><a href="#On-Track-to-Deliver（按计划交付）-1" class="headerlink" title="On Track to Deliver（按计划交付）"></a>On Track to Deliver（按计划交付）</h3><ul>
+<li>追踪项目是否按照既定的时间表进行，确保按时交付成果。</li>
+</ul>
+</li>
+<li><h3 id="Delivery-Speed（交付速度）-1"><a href="#Delivery-Speed（交付速度）-1" class="headerlink" title="Delivery Speed（交付速度）"></a>Delivery Speed（交付速度）</h3><ul>
+<li>分析项目的交付速度，包括从开发到部署的整个周期时间。</li>
+</ul>
+</li>
+<li><h3 id="Identify-Bottlenecks（识别瓶颈）-1"><a href="#Identify-Bottlenecks（识别瓶颈）-1" class="headerlink" title="Identify Bottlenecks（识别瓶颈）"></a>Identify Bottlenecks（识别瓶颈）</h3><ul>
+<li>通过GIT日志识别项目开发过程中的瓶颈，以便采取措施加以改进。</li>
+</ul>
+</li>
+<li><h3 id="Productivity（生产力）-1"><a href="#Productivity（生产力）-1" class="headerlink" title="Productivity（生产力）"></a>Productivity（生产力）</h3><ul>
+<li>评估团队的生产力，通过提交频率、代码量等指标进行量化。</li>
+</ul>
+</li>
+<li><h3 id="Code-Review（代码审查）-1"><a href="#Code-Review（代码审查）-1" class="headerlink" title="Code Review（代码审查）"></a>Code Review（代码审查）</h3><ul>
+<li>检查代码审查的频率和质量，确保代码质量和一致性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Merged-Pull-Request（合并拉取请求）-1"><a href="#Merged-Pull-Request（合并拉取请求）-1" class="headerlink" title="Merged Pull Request（合并拉取请求）"></a>Merged Pull Request（合并拉取请求）</h3><ul>
+<li><h4 id="Main-Branch（主分支）-1"><a href="#Main-Branch（主分支）-1" class="headerlink" title="Main Branch（主分支）"></a>Main Branch（主分支）</h4><ul>
+<li>描述如何将分支合并到主分支的流程。</li>
+<li><strong>图表解释</strong>：展示了从Fork（分支）、First commit（首次提交）、Pull request opened（拉取请求打开），到Pull request merged（拉取请求合并）的完整流程。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Merged-Pull-Request-in-Sprint（冲刺中的合并拉取请求）-1"><a href="#Merged-Pull-Request-in-Sprint（冲刺中的合并拉取请求）-1" class="headerlink" title="Merged Pull Request in Sprint（冲刺中的合并拉取请求）"></a>Merged Pull Request in Sprint（冲刺中的合并拉取请求）</h3><ul>
+<li>描述在冲刺周期内合并拉取请求的数量变化。</li>
+<li><strong>图表解释</strong>：显示了当前冲刺中合并拉取请求数量随时间增加，朝向团队平均水平稳定上升的趋势。</li>
+</ul>
+<h3 id="Opened-Pull-Requests（打开的拉取请求）-1"><a href="#Opened-Pull-Requests（打开的拉取请求）-1" class="headerlink" title="Opened Pull Requests（打开的拉取请求）"></a>Opened Pull Requests（打开的拉取请求）</h3><ul>
+<li>评估在冲刺中期打开的拉取请求数量，以及团队对最大和最小限制的遵守情况。</li>
+<li><strong>图表解释</strong>：展示了在冲刺周期内打开的拉取请求数量呈现稳定上升并在最大和最小限制内波动的健康状态。</li>
+</ul>
+<h3 id="Long-Time-in-Development（长时间开发）-1"><a href="#Long-Time-in-Development（长时间开发）-1" class="headerlink" title="Long Time in Development（长时间开发）"></a>Long Time in Development（长时间开发）</h3><ul>
+<li>识别开发时间过长的拉取请求。</li>
+<li><strong>图表解释</strong>：描绘了处于开发阶段时间较长的拉取请求，强调需要关注和改进的请求。</li>
+</ul>
+<h3 id="Late-Churn（晚期变更）-1"><a href="#Late-Churn（晚期变更）-1" class="headerlink" title="Late Churn（晚期变更）"></a>Late Churn（晚期变更）</h3><ul>
+<li>分析开发晚期代码变更的频率和影响。</li>
+<li><strong>图表解释</strong>：图表显示了开发时间与代码变更的关系，特别强调了晚期变更可能对项目产生的影响。</li>
+</ul>
+<h3 id="Overload-Risk（超载风险）-1"><a href="#Overload-Risk（超载风险）-1" class="headerlink" title="Overload Risk（超载风险）"></a>Overload Risk（超载风险）</h3><ul>
+<li>评估项目在特定时间段内面临的过度工作风险。</li>
+<li><strong>图表解释</strong>：图表突出了开放拉取请求数量与时间的关系，以及可能导致超载风险的时间点。</li>
+</ul>
+<h3 id="Backload-Risk（积压风险）-1"><a href="#Backload-Risk（积压风险）-1" class="headerlink" title="Backload Risk（积压风险）"></a>Backload Risk（积压风险）</h3><ul>
+<li>关注因未处理的拉取请求而产生的积压风险。</li>
+<li><strong>图表解释</strong>：图表展示了开放拉取请求的积压风险随时间增加的趋势。</li>
+</ul>
+<p>总结：以上Markdown文档为GIT分析的演示提供了详细的结构和内容说明，包括项目交付跟踪、交付速度、瓶颈识别、生产力和代码审查等各个方面。每个主题下都有具体的解释和图表分析，以确保读者能够全面理解各个指标和风险。</p>
+<h2 id="How-we-Deliver（我们如何交付）"><a href="#How-we-Deliver（我们如何交付）" class="headerlink" title="How we Deliver（我们如何交付）"></a>How we Deliver（我们如何交付）</h2><ul>
+<li>讨论了交付策略的总体概述。</li>
+<li>可能涉及项目管理、团队协作、工作流程优化等方面。</li>
+<li>总结：该部分提供了关于项目交付方法和过程的介绍。</li>
+</ul>
+<h2 id="Cycle-Time-aka-Speed（周期时间-也称为速度）"><a href="#Cycle-Time-aka-Speed（周期时间-也称为速度）" class="headerlink" title="Cycle Time - aka Speed（周期时间 - 也称为速度）"></a>Cycle Time - aka Speed（周期时间 - 也称为速度）</h2><ul>
+<li>展示了周期时间的变化趋势，其中周期时间是完成任务所需的时间。</li>
+<li>图表显示了随时间改进的周期时间，呈下降趋势，表明效率提升。</li>
+<li>总结：该图表展示了工作完成速度随时间的提升，反映了流程效率的改进。</li>
+</ul>
+<h2 id="Throughput（吞吐量）"><a href="#Throughput（吞吐量）" class="headerlink" title="Throughput（吞吐量）"></a>Throughput（吞吐量）</h2><ul>
+<li>展示了在不同时间点的吞吐量，即在一定时间内完成的任务数量。</li>
+<li>吞吐量的波动显示了工作负载的变化和团队的产出能力。</li>
+<li>总结：该图表反映了团队在不同时间段的工作产出，通过吞吐量的波动展示了工作效率的变化。</li>
+</ul>
+<h2 id="Merge-Rate（合并率）"><a href="#Merge-Rate（合并率）" class="headerlink" title="Merge Rate（合并率）"></a>Merge Rate（合并率）</h2><ul>
+<li>展示了合并请求的比率，包括所有的请求和已合并的请求。</li>
+<li>通过图表可以看出，合并请求的数量与总请求相比的比例。</li>
+<li>总结：该图表展示了代码合并的效率，通过合并率的数据可以看出团队处理合并请求的能力。</li>
+</ul>
+<h2 id="Surfacing-Inefficiencies（暴露低效）"><a href="#Surfacing-Inefficiencies（暴露低效）" class="headerlink" title="Surfacing Inefficiencies（暴露低效）"></a>Surfacing Inefficiencies（暴露低效）</h2><ul>
+<li>展示了从首次提交到开启拉取请求（Pull Request）的过程中提交的数量和频率。</li>
+<li>该时间线可能用于识别流程中的瓶颈和低效环节。</li>
+<li>总结：该图表用于揭示开发过程中可能存在的低效环节，从而</li>
+</ul>
+<h2 id="When-are-we-Productive（我们何时高效）"><a href="#When-are-we-Productive（我们何时高效）" class="headerlink" title="When are we Productive（我们何时高效）"></a>When are we Productive（我们何时高效）</h2><ul>
+<li>讨论了团队的生产力高峰和低谷。</li>
+<li>可能涉及工作时间管理和高效工作时间段的识别。</li>
+<li>总结：该部分探讨了何时团队最能高效工作，为时间管理和优化工作流程提供参考。</li>
+</ul>
+<h2 id="Activity-Heatmap（活动热力图）"><a href="#Activity-Heatmap（活动热力图）" class="headerlink" title="Activity Heatmap（活动热力图）"></a>Activity Heatmap（活动热力图）</h2><ul>
+<li>通过热力图展示了一周内不同时间段的活动量。</li>
+<li>可以看出哪些时间段是工作活动的高峰期。</li>
+<li>总结：热力图直观显示了团队在一周内各个时间段的工作活跃度，有助于分析和优化工作分配。</li>
+</ul>
+<h2 id="Protecting-Deep-Work（保护深度工作时间）"><a href="#Protecting-Deep-Work（保护深度工作时间）" class="headerlink" title="Protecting Deep Work（保护深度工作时间）"></a>Protecting Deep Work（保护深度工作时间）</h2><ul>
+<li>展示了团队如何安排时间以保护深度工作，避免干扰。</li>
+<li>图表可能标识出容易受到打扰的时间段。</li>
+<li>总结：该图表强调了在特定时间段内保持工作专注的重要性，并尝试减少这些时段的潜在干扰。</li>
+</ul>
+<h2 id="Moving-too-fast（过快移动）"><a href="#Moving-too-fast（过快移动）" class="headerlink" title="Moving too fast（过快移动）"></a>Moving too fast（过快移动）</h2><ul>
+<li>该图表可能展示了快速工作的潜在风险，如未经审查的拉取请求与审查后的请求比率。</li>
+<li>表示团队在速度与质量之间需要找到平衡。</li>
+<li>总结：通过展示未审查和已审查的拉取请求，该图表揭示了过快推进项目可能会导致审查不足和质量问题。</li>
+</ul>
+<h2 id="How-do-we-do-in-code-review（我们如何进行代码审查）"><a href="#How-do-we-do-in-code-review（我们如何进行代码审查）" class="headerlink" title="How do we do in code review（我们如何进行代码审查）"></a>How do we do in code review（我们如何进行代码审查）</h2><ul>
+<li>探讨了代码审查的效率和效果。</li>
+<li>可能涉及审查过程、团队合作以及代码质量保证。</li>
+<li>总结：该部分关注代码审查的实施和改进方法。</li>
+</ul>
+<h2 id="Size-vs-Time-to-Review-moving-too-fast-（大小对比审查时间（过快移动））"><a href="#Size-vs-Time-to-Review-moving-too-fast-（大小对比审查时间（过快移动））" class="headerlink" title="Size vs. Time to Review (moving too fast)（大小对比审查时间（过快移动））"></a>Size vs. Time to Review (moving too fast)（大小对比审查时间（过快移动））</h2><ul>
+<li>展示了拉取请求的大小与审查时间的关系。</li>
+<li>指出过快或过慢审查的问题以及理想的审查“甜蜜点”。</li>
+<li>总结：图表展示了寻找审查效率和质量之间平衡的重要性。</li>
+</ul>
+<h2 id="Response-Time（响应时间）"><a href="#Response-Time（响应时间）" class="headerlink" title="Response Time（响应时间）"></a>Response Time（响应时间）</h2><ul>
+<li>描述了从打开拉取请求到合并请求之间的时间线。</li>
+<li>展示了审查等待时间和第一次评论之间的关系。</li>
+<li>总结：该图表强调了审查过程中快速响应的重要性。</li>
+</ul>
+<h2 id="Pull-Request-Size（拉取请求大小）"><a href="#Pull-Request-Size（拉取请求大小）" class="headerlink" title="Pull Request Size（拉取请求大小）"></a>Pull Request Size（拉取请求大小）</h2><ul>
+<li>展示了不同大小的拉取请求的分布。</li>
+<li>可能用来分析请求大小对于审查复杂性的影响。</li>
+<li>总结：图表通过显示不同大小的拉取请求，强调了管理请求大小以提高审查效率的必要性。</li>
+</ul>
+<h2 id="Review-Distribution（审查分布）"><a href="#Review-Distribution（审查分布）" class="headerlink" title="Review Distribution（审查分布）"></a>Review Distribution（审查分布）</h2><ul>
+<li>展示了审查者的工作量分布。</li>
+<li>指出了可能的工作不均情况，如某些审查者可能超载。</li>
+<li>总结：图表揭示了审查任务分配的不均衡，强调了平衡每个审查者工作量的重要性。</li>
+</ul>
+<h2 id="How-do-we-share-knowledge（我们如何共享知识）"><a href="#How-do-we-share-knowledge（我们如何共享知识）" class="headerlink" title="How do we share knowledge（我们如何共享知识）"></a>How do we share knowledge（我们如何共享知识）</h2><ul>
+<li>探讨了知识共享的策略和方法。</li>
+<li>可能包括文档化、会议、工作坊以及其他知识传播活动。</li>
+<li>总结：该部分讨论了团队如何有效地传播和共享知识，以促进学习和协作。</li>
+</ul>
+<h2 id="Spotting-Bus-Factor（识别巴士因素）"><a href="#Spotting-Bus-Factor（识别巴士因素）" class="headerlink" title="Spotting Bus Factor（识别巴士因素）"></a>Spotting Bus Factor（识别巴士因素）</h2><ul>
+<li>展示了团队成员对项目的依赖程度和项目的风险。</li>
+<li>“巴士因素”指的是关键人员缺失可能对项目造成的影响。</li>
+<li>总结：图表通过识别关键贡献者来分析项目的风险，强调了知识和技能多元化的重要性。</li>
+</ul>
+<h2 id="Encouraging-Communication-Number-of-Reviewers（鼓励交流-审查者数量）"><a href="#Encouraging-Communication-Number-of-Reviewers（鼓励交流-审查者数量）" class="headerlink" title="Encouraging Communication - Number of Reviewers（鼓励交流 - 审查者数量）"></a>Encouraging Communication - Number of Reviewers（鼓励交流 - 审查者数量）</h2><ul>
+<li>展示了审查者的数量对团队交流的影响。</li>
+<li>指出了审查者数量不足可能对项目的风险。</li>
+<li>总结：该图表强调了审查过程中审查者数量对知识共享和沟通的重要性。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/01/W11%20(LEC)%20-%20Key%20Software%20Metrics/">http://example.com/2023/12/01/W11%20(LEC)%20-%20Key%20Software%20Metrics/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Week11/">Week11</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/01/B2-2/" title="B2.2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">B2.2</div></div></a></div><div class="next-post pull-right"><a href="/2023/11/30/B2-1/" title="B2.1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">B2.1</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E6%B5%8B%E8%AF%95-Website-Testing"><span class="toc-number">1.</span> <span class="toc-text">网站测试 (Website Testing)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95-Functionality-Testing"><span class="toc-number">1.1.</span> <span class="toc-text">功能测试 (Functionality Testing)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95-Security-Testing"><span class="toc-number">1.2.</span> <span class="toc-text">安全测试 (Security Testing)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95-Integration-Testing"><span class="toc-number">1.3.</span> <span class="toc-text">集成测试 (Integration Testing)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95-Performance-Testing"><span class="toc-number">1.4.</span> <span class="toc-text">性能测试 (Performance Testing)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%BC%E5%AE%B9%E6%80%A7%E6%B5%8B%E8%AF%95-Compatibility-Testing"><span class="toc-number">1.5.</span> <span class="toc-text">兼容性测试 (Compatibility Testing)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E7%94%A8%E6%80%A7%E6%B5%8B%E8%AF%95-Usability-Testing"><span class="toc-number">1.6.</span> <span class="toc-text">可用性测试 (Usability Testing)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E6%B5%8B%E8%AF%95-Website-testing"><span class="toc-number">2.</span> <span class="toc-text">网站测试 (Website testing)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%89%80%E6%9C%89%E6%96%B9%E9%9D%A2-Testing-all-aspects"><span class="toc-number">3.</span> <span class="toc-text">测试所有方面 (Testing all aspects)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%80%A7%E6%B5%8B%E8%AF%95-Functionality-Testing"><span class="toc-number">4.</span> <span class="toc-text">功能性测试 (Functionality Testing)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95-Security-Testing-1"><span class="toc-number">5.</span> <span class="toc-text">安全测试 (Security Testing)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95-Integration-testing"><span class="toc-number">6.</span> <span class="toc-text">集成测试 (Integration testing)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95-Performance-Testing-1"><span class="toc-number">7.</span> <span class="toc-text">性能测试 (Performance Testing)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%BC%E5%AE%B9%E6%80%A7%E6%B5%8B%E8%AF%95-Compatibility-Testing-1"><span class="toc-number">8.</span> <span class="toc-text">兼容性测试 (Compatibility Testing)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E7%94%A8%E6%80%A7%E6%B5%8B%E8%AF%95-Usability-Testing-1"><span class="toc-number">9.</span> <span class="toc-text">可用性测试 (Usability Testing)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%8F%E6%8D%B7Scrum%E6%8C%87%E6%A0%87-KPIs%EF%BC%88Agile-Scrum-Metrics-KPIs%EF%BC%89"><span class="toc-number">10.</span> <span class="toc-text">敏捷Scrum指标 &#x2F; KPIs（Agile Scrum Metrics &#x2F; KPIs）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sprint%E7%9B%AE%E6%A0%87%E6%88%90%E5%8A%9F%EF%BC%88Sprint-Goal-Success%EF%BC%89"><span class="toc-number">11.</span> <span class="toc-text">Sprint目标成功（Sprint Goal Success）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%83%E9%80%B8%E7%BC%BA%E9%99%B7%EF%BC%88Escaped-Defects%EF%BC%89"><span class="toc-number">12.</span> <span class="toc-text">逃逸缺陷（Escaped Defects）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Team-Velocity%EF%BC%88%E5%9B%A2%E9%98%9F%E9%80%9F%E5%BA%A6%EF%BC%89"><span class="toc-number">13.</span> <span class="toc-text">Team Velocity（团队速度）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A"><span class="toc-number">13.1.</span> <span class="toc-text">图表解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">13.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sprint-Burn-Down%EF%BC%88%E5%86%B2%E5%88%BA%E7%87%83%E5%B0%BD%E5%9B%BE%EF%BC%89"><span class="toc-number">14.</span> <span class="toc-text">Sprint Burn Down（冲刺燃尽图）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A-1"><span class="toc-number">14.1.</span> <span class="toc-text">图表解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-number">14.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Agile-Scrum-Metrics-KPIs%EF%BC%88%E6%95%8F%E6%8D%B7Scrum%E6%8C%87%E6%A0%87-KPIs%EF%BC%89"><span class="toc-number">15.</span> <span class="toc-text">Agile Scrum Metrics &#x2F; KPIs（敏捷Scrum指标&#x2F;KPIs）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sprint-Goal-Success%EF%BC%88%E5%86%B2%E5%88%BA%E7%9B%AE%E6%A0%87%E6%88%90%E5%8A%9F%EF%BC%89"><span class="toc-number">15.1.</span> <span class="toc-text">Sprint Goal Success（冲刺目标成功）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Escaped-Defects%EF%BC%88%E9%80%83%E9%80%B8%E7%BC%BA%E9%99%B7%EF%BC%89"><span class="toc-number">15.2.</span> <span class="toc-text">Escaped Defects（逃逸缺陷）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Team-Velocity%EF%BC%88%E5%9B%A2%E9%98%9F%E9%80%9F%E5%BA%A6%EF%BC%89-1"><span class="toc-number">15.3.</span> <span class="toc-text">Team Velocity（团队速度）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sprint-Burn-Down%EF%BC%88%E5%86%B2%E5%88%BA%E7%87%83%E5%B0%BD%E5%9B%BE%EF%BC%89-1"><span class="toc-number">15.4.</span> <span class="toc-text">Sprint Burn Down（冲刺燃尽图）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Measuring-Business-Goals%EF%BC%88%E8%A1%A1%E9%87%8F%E4%B8%9A%E5%8A%A1%E7%9B%AE%E6%A0%87%EF%BC%89"><span class="toc-number">15.5.</span> <span class="toc-text">Measuring Business Goals（衡量业务目标）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrum-Metrics%EF%BC%88Scrum%E6%8C%87%E6%A0%87%EF%BC%89"><span class="toc-number">15.6.</span> <span class="toc-text">Scrum Metrics（Scrum指标）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrum-Reporting%EF%BC%88Scrum%E6%8A%A5%E5%91%8A%EF%BC%89"><span class="toc-number">15.7.</span> <span class="toc-text">Scrum Reporting（Scrum报告）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%8F%E6%8D%B7Scrum%E5%BA%A6%E9%87%8F%E6%8C%87%E6%A0%87-KPIs"><span class="toc-number">16.</span> <span class="toc-text">敏捷Scrum度量指标 &#x2F; KPIs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sprint-Goal-Success"><span class="toc-number">16.1.</span> <span class="toc-text">Sprint Goal Success</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%85%E9%9A%9C%E9%80%83%E9%80%B8"><span class="toc-number">16.2.</span> <span class="toc-text">故障逃逸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Team-Velocity"><span class="toc-number">16.3.</span> <span class="toc-text">Team Velocity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sprint-Burn-Down"><span class="toc-number">16.4.</span> <span class="toc-text">Sprint Burn Down</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E9%87%8F%E5%95%86%E4%B8%9A%E7%9B%AE%E6%A0%87"><span class="toc-number">16.5.</span> <span class="toc-text">测量商业目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrum%E5%BA%A6%E9%87%8F"><span class="toc-number">16.6.</span> <span class="toc-text">Scrum度量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrum%E6%8A%A5%E5%91%8A"><span class="toc-number">16.7.</span> <span class="toc-text">Scrum报告</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Team-Velocity-%E5%9B%A2%E9%98%9F%E6%95%88%E7%8E%87"><span class="toc-number">17.</span> <span class="toc-text">Team Velocity (团队效率)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sprint-Burn-Down-%E5%86%B2%E5%88%BA%E7%87%83%E5%B0%BD%E5%9B%BE"><span class="toc-number">18.</span> <span class="toc-text">Sprint Burn Down (冲刺燃尽图)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Measuring-Business-Goals-%E8%A1%A1%E9%87%8F%E4%B8%9A%E5%8A%A1%E7%9B%AE%E6%A0%87"><span class="toc-number">19.</span> <span class="toc-text">Measuring Business Goals (衡量业务目标)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Time-to-Market-%E4%B8%8A%E5%B8%82%E6%97%B6%E9%97%B4"><span class="toc-number">20.</span> <span class="toc-text">Time to Market (上市时间)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ROI-%E6%8A%95%E8%B5%84%E5%9B%9E%E6%8A%A5%E7%8E%87"><span class="toc-number">21.</span> <span class="toc-text">ROI (投资回报率)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E6%8B%89%E5%8F%96%E8%AF%B7%E6%B1%82%EF%BC%88Merged-Pull-Request%EF%BC%89"><span class="toc-number">22.</span> <span class="toc-text">合并拉取请求（Merged Pull Request）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-2"><span class="toc-number">22.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sprint%E4%B8%AD%E5%90%88%E5%B9%B6%E7%9A%84%E6%8B%89%E5%8F%96%E8%AF%B7%E6%B1%82%EF%BC%88Merged-Pull-Request-in-Sprint%EF%BC%89"><span class="toc-number">23.</span> <span class="toc-text">Sprint中合并的拉取请求（Merged Pull Request in Sprint）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-3"><span class="toc-number">23.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sprint%E4%B8%AD%E6%89%93%E5%BC%80%E7%9A%84%E6%8B%89%E5%8F%96%E8%AF%B7%E6%B1%82%EF%BC%88Opened-Pull-Requests%EF%BC%89"><span class="toc-number">24.</span> <span class="toc-text">Sprint中打开的拉取请求（Opened Pull Requests）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-4"><span class="toc-number">24.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E9%95%BF%E6%97%B6%E9%97%B4%E8%AF%B7%E6%B1%82%EF%BC%88Long-time-in-development%EF%BC%89"><span class="toc-number">25.</span> <span class="toc-text">开发中的长时间请求（Long time in development）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-5"><span class="toc-number">25.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%9A%E6%9C%9F%E4%BB%A3%E7%A0%81%E6%B3%A2%E5%8A%A8%EF%BC%88Late-Churn%EF%BC%89"><span class="toc-number">26.</span> <span class="toc-text">晚期代码波动（Late Churn）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-6"><span class="toc-number">26.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GIT-Analytics%EF%BC%88GIT%E5%88%86%E6%9E%90%EF%BC%89"><span class="toc-number">27.</span> <span class="toc-text">GIT Analytics（GIT分析）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#On-Track-to-Deliver%EF%BC%88%E6%8C%89%E8%AE%A1%E5%88%92%E4%BA%A4%E4%BB%98%EF%BC%89"><span class="toc-number">27.1.</span> <span class="toc-text">On Track to Deliver（按计划交付）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delivery-Speed%EF%BC%88%E4%BA%A4%E4%BB%98%E9%80%9F%E5%BA%A6%EF%BC%89"><span class="toc-number">27.2.</span> <span class="toc-text">Delivery Speed（交付速度）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Identify-Bottlenecks%EF%BC%88%E8%AF%86%E5%88%AB%E7%93%B6%E9%A2%88%EF%BC%89"><span class="toc-number">27.3.</span> <span class="toc-text">Identify Bottlenecks（识别瓶颈）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Productivity%EF%BC%88%E7%94%9F%E4%BA%A7%E5%8A%9B%EF%BC%89"><span class="toc-number">27.4.</span> <span class="toc-text">Productivity（生产力）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-Review%EF%BC%88%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5%EF%BC%89"><span class="toc-number">27.5.</span> <span class="toc-text">Code Review（代码审查）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Merged-Pull-Request%EF%BC%88%E5%90%88%E5%B9%B6%E6%8B%89%E5%8F%96%E8%AF%B7%E6%B1%82%EF%BC%89"><span class="toc-number">27.6.</span> <span class="toc-text">Merged Pull Request（合并拉取请求）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Main-Branch%EF%BC%88%E4%B8%BB%E5%88%86%E6%94%AF%EF%BC%89"><span class="toc-number">27.6.1.</span> <span class="toc-text">Main Branch（主分支）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Merged-Pull-Request-in-Sprint%EF%BC%88%E5%86%B2%E5%88%BA%E4%B8%AD%E7%9A%84%E5%90%88%E5%B9%B6%E6%8B%89%E5%8F%96%E8%AF%B7%E6%B1%82%EF%BC%89"><span class="toc-number">27.7.</span> <span class="toc-text">Merged Pull Request in Sprint（冲刺中的合并拉取请求）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Opened-Pull-Requests%EF%BC%88%E6%89%93%E5%BC%80%E7%9A%84%E6%8B%89%E5%8F%96%E8%AF%B7%E6%B1%82%EF%BC%89"><span class="toc-number">27.8.</span> <span class="toc-text">Opened Pull Requests（打开的拉取请求）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Long-Time-in-Development%EF%BC%88%E9%95%BF%E6%97%B6%E9%97%B4%E5%BC%80%E5%8F%91%EF%BC%89"><span class="toc-number">27.9.</span> <span class="toc-text">Long Time in Development（长时间开发）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Late-Churn%EF%BC%88%E6%99%9A%E6%9C%9F%E5%8F%98%E6%9B%B4%EF%BC%89"><span class="toc-number">27.10.</span> <span class="toc-text">Late Churn（晚期变更）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Overload-Risk%EF%BC%88%E8%B6%85%E8%BD%BD%E9%A3%8E%E9%99%A9%EF%BC%89"><span class="toc-number">27.11.</span> <span class="toc-text">Overload Risk（超载风险）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Backload-Risk%EF%BC%88%E7%A7%AF%E5%8E%8B%E9%A3%8E%E9%99%A9%EF%BC%89"><span class="toc-number">27.12.</span> <span class="toc-text">Backload Risk（积压风险）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GIT-Analytics%EF%BC%88GIT%E5%88%86%E6%9E%90%EF%BC%89-1"><span class="toc-number">28.</span> <span class="toc-text">GIT Analytics（GIT分析）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#On-Track-to-Deliver%EF%BC%88%E6%8C%89%E8%AE%A1%E5%88%92%E4%BA%A4%E4%BB%98%EF%BC%89-1"><span class="toc-number">28.1.</span> <span class="toc-text">On Track to Deliver（按计划交付）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delivery-Speed%EF%BC%88%E4%BA%A4%E4%BB%98%E9%80%9F%E5%BA%A6%EF%BC%89-1"><span class="toc-number">28.2.</span> <span class="toc-text">Delivery Speed（交付速度）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Identify-Bottlenecks%EF%BC%88%E8%AF%86%E5%88%AB%E7%93%B6%E9%A2%88%EF%BC%89-1"><span class="toc-number">28.3.</span> <span class="toc-text">Identify Bottlenecks（识别瓶颈）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Productivity%EF%BC%88%E7%94%9F%E4%BA%A7%E5%8A%9B%EF%BC%89-1"><span class="toc-number">28.4.</span> <span class="toc-text">Productivity（生产力）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-Review%EF%BC%88%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5%EF%BC%89-1"><span class="toc-number">28.5.</span> <span class="toc-text">Code Review（代码审查）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Merged-Pull-Request%EF%BC%88%E5%90%88%E5%B9%B6%E6%8B%89%E5%8F%96%E8%AF%B7%E6%B1%82%EF%BC%89-1"><span class="toc-number">28.6.</span> <span class="toc-text">Merged Pull Request（合并拉取请求）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Main-Branch%EF%BC%88%E4%B8%BB%E5%88%86%E6%94%AF%EF%BC%89-1"><span class="toc-number">28.6.1.</span> <span class="toc-text">Main Branch（主分支）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Merged-Pull-Request-in-Sprint%EF%BC%88%E5%86%B2%E5%88%BA%E4%B8%AD%E7%9A%84%E5%90%88%E5%B9%B6%E6%8B%89%E5%8F%96%E8%AF%B7%E6%B1%82%EF%BC%89-1"><span class="toc-number">28.7.</span> <span class="toc-text">Merged Pull Request in Sprint（冲刺中的合并拉取请求）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Opened-Pull-Requests%EF%BC%88%E6%89%93%E5%BC%80%E7%9A%84%E6%8B%89%E5%8F%96%E8%AF%B7%E6%B1%82%EF%BC%89-1"><span class="toc-number">28.8.</span> <span class="toc-text">Opened Pull Requests（打开的拉取请求）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Long-Time-in-Development%EF%BC%88%E9%95%BF%E6%97%B6%E9%97%B4%E5%BC%80%E5%8F%91%EF%BC%89-1"><span class="toc-number">28.9.</span> <span class="toc-text">Long Time in Development（长时间开发）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Late-Churn%EF%BC%88%E6%99%9A%E6%9C%9F%E5%8F%98%E6%9B%B4%EF%BC%89-1"><span class="toc-number">28.10.</span> <span class="toc-text">Late Churn（晚期变更）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Overload-Risk%EF%BC%88%E8%B6%85%E8%BD%BD%E9%A3%8E%E9%99%A9%EF%BC%89-1"><span class="toc-number">28.11.</span> <span class="toc-text">Overload Risk（超载风险）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Backload-Risk%EF%BC%88%E7%A7%AF%E5%8E%8B%E9%A3%8E%E9%99%A9%EF%BC%89-1"><span class="toc-number">28.12.</span> <span class="toc-text">Backload Risk（积压风险）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-we-Deliver%EF%BC%88%E6%88%91%E4%BB%AC%E5%A6%82%E4%BD%95%E4%BA%A4%E4%BB%98%EF%BC%89"><span class="toc-number">29.</span> <span class="toc-text">How we Deliver（我们如何交付）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cycle-Time-aka-Speed%EF%BC%88%E5%91%A8%E6%9C%9F%E6%97%B6%E9%97%B4-%E4%B9%9F%E7%A7%B0%E4%B8%BA%E9%80%9F%E5%BA%A6%EF%BC%89"><span class="toc-number">30.</span> <span class="toc-text">Cycle Time - aka Speed（周期时间 - 也称为速度）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Throughput%EF%BC%88%E5%90%9E%E5%90%90%E9%87%8F%EF%BC%89"><span class="toc-number">31.</span> <span class="toc-text">Throughput（吞吐量）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Merge-Rate%EF%BC%88%E5%90%88%E5%B9%B6%E7%8E%87%EF%BC%89"><span class="toc-number">32.</span> <span class="toc-text">Merge Rate（合并率）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Surfacing-Inefficiencies%EF%BC%88%E6%9A%B4%E9%9C%B2%E4%BD%8E%E6%95%88%EF%BC%89"><span class="toc-number">33.</span> <span class="toc-text">Surfacing Inefficiencies（暴露低效）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#When-are-we-Productive%EF%BC%88%E6%88%91%E4%BB%AC%E4%BD%95%E6%97%B6%E9%AB%98%E6%95%88%EF%BC%89"><span class="toc-number">34.</span> <span class="toc-text">When are we Productive（我们何时高效）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Activity-Heatmap%EF%BC%88%E6%B4%BB%E5%8A%A8%E7%83%AD%E5%8A%9B%E5%9B%BE%EF%BC%89"><span class="toc-number">35.</span> <span class="toc-text">Activity Heatmap（活动热力图）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Protecting-Deep-Work%EF%BC%88%E4%BF%9D%E6%8A%A4%E6%B7%B1%E5%BA%A6%E5%B7%A5%E4%BD%9C%E6%97%B6%E9%97%B4%EF%BC%89"><span class="toc-number">36.</span> <span class="toc-text">Protecting Deep Work（保护深度工作时间）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Moving-too-fast%EF%BC%88%E8%BF%87%E5%BF%AB%E7%A7%BB%E5%8A%A8%EF%BC%89"><span class="toc-number">37.</span> <span class="toc-text">Moving too fast（过快移动）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-do-we-do-in-code-review%EF%BC%88%E6%88%91%E4%BB%AC%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5%EF%BC%89"><span class="toc-number">38.</span> <span class="toc-text">How do we do in code review（我们如何进行代码审查）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Size-vs-Time-to-Review-moving-too-fast-%EF%BC%88%E5%A4%A7%E5%B0%8F%E5%AF%B9%E6%AF%94%E5%AE%A1%E6%9F%A5%E6%97%B6%E9%97%B4%EF%BC%88%E8%BF%87%E5%BF%AB%E7%A7%BB%E5%8A%A8%EF%BC%89%EF%BC%89"><span class="toc-number">39.</span> <span class="toc-text">Size vs. Time to Review (moving too fast)（大小对比审查时间（过快移动））</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Response-Time%EF%BC%88%E5%93%8D%E5%BA%94%E6%97%B6%E9%97%B4%EF%BC%89"><span class="toc-number">40.</span> <span class="toc-text">Response Time（响应时间）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pull-Request-Size%EF%BC%88%E6%8B%89%E5%8F%96%E8%AF%B7%E6%B1%82%E5%A4%A7%E5%B0%8F%EF%BC%89"><span class="toc-number">41.</span> <span class="toc-text">Pull Request Size（拉取请求大小）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Review-Distribution%EF%BC%88%E5%AE%A1%E6%9F%A5%E5%88%86%E5%B8%83%EF%BC%89"><span class="toc-number">42.</span> <span class="toc-text">Review Distribution（审查分布）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-do-we-share-knowledge%EF%BC%88%E6%88%91%E4%BB%AC%E5%A6%82%E4%BD%95%E5%85%B1%E4%BA%AB%E7%9F%A5%E8%AF%86%EF%BC%89"><span class="toc-number">43.</span> <span class="toc-text">How do we share knowledge（我们如何共享知识）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spotting-Bus-Factor%EF%BC%88%E8%AF%86%E5%88%AB%E5%B7%B4%E5%A3%AB%E5%9B%A0%E7%B4%A0%EF%BC%89"><span class="toc-number">44.</span> <span class="toc-text">Spotting Bus Factor（识别巴士因素）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Encouraging-Communication-Number-of-Reviewers%EF%BC%88%E9%BC%93%E5%8A%B1%E4%BA%A4%E6%B5%81-%E5%AE%A1%E6%9F%A5%E8%80%85%E6%95%B0%E9%87%8F%EF%BC%89"><span class="toc-number">45.</span> <span class="toc-text">Encouraging Communication - Number of Reviewers（鼓励交流 - 审查者数量）</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/21/T8/" title="T8">T8</a><time datetime="2023-12-21T19:39:36.000Z" title="Created 2023-12-21 19:39:36">2023-12-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T7/" title="T7">T7</a><time datetime="2023-12-20T03:17:15.000Z" title="Created 2023-12-20 03:17:15">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T6/" title="T6">T6</a><time datetime="2023-12-20T03:01:32.000Z" title="Created 2023-12-20 03:01:32">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/16/A5-2/" title="A5-2">A5-2</a><time datetime="2023-12-16T05:38:48.000Z" title="Created 2023-12-16 05:38:48">2023-12-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/16/A5-1/" title="A5-1">A5-1</a><time datetime="2023-12-16T05:17:27.000Z" title="Created 2023-12-16 05:17:27">2023-12-16</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

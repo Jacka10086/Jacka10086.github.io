@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>T8 | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="COM410 编程实践 (COM410 Programming in Practice)T8. 异常处理 (Exception Handling) 异常的定义: 在Java中，异常是程序执行过程中发生的不期望或意外的事件，它会打断程序正常的指令流。  中文总结: 异常是Java程序运行中的意外事件，需要被妥善处理以维持程序的正常运行。   异常和错误的区别:  异常 (Exception): 一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="T8">
+<meta property="og:url" content="http://example.com/2023/12/21/T8/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="COM410 编程实践 (COM410 Programming in Practice)T8. 异常处理 (Exception Handling) 异常的定义: 在Java中，异常是程序执行过程中发生的不期望或意外的事件，它会打断程序正常的指令流。  中文总结: 异常是Java程序运行中的意外事件，需要被妥善处理以维持程序的正常运行。   异常和错误的区别:  异常 (Exception): 一个">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2023-12-21T19:39:36.000Z">
+<meta property="article:modified_time" content="2023-12-21T19:52:28.562Z">
+<meta property="article:author" content="Jacka10086">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/12/21/T8/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'T8',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-21 19:52:28'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">T8</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-12-21T19:39:36.000Z" title="Created 2023-12-21 19:39:36">2023-12-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-12-21T19:52:28.562Z" title="Updated 2023-12-21 19:52:28">2023-12-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="T8"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="COM410-编程实践-COM410-Programming-in-Practice"><a href="#COM410-编程实践-COM410-Programming-in-Practice" class="headerlink" title="COM410 编程实践 (COM410 Programming in Practice)"></a>COM410 编程实践 (COM410 Programming in Practice)</h2><h3 id="T8-异常处理-Exception-Handling"><a href="#T8-异常处理-Exception-Handling" class="headerlink" title="T8. 异常处理 (Exception Handling)"></a>T8. 异常处理 (Exception Handling)</h3><ul>
+<li><p><strong>异常的定义</strong>: 在Java中，异常是程序执行过程中发生的不期望或意外的事件，它会打断程序正常的指令流。</p>
+<ul>
+<li><strong>中文总结</strong>: 异常是Java程序运行中的意外事件，需要被妥善处理以维持程序的正常运行。</li>
+</ul>
+</li>
+<li><p><strong>异常和错误的区别</strong>:</p>
+<ul>
+<li><strong>异常 (Exception)</strong>: 一个合理的应用可能会尝试捕获的条件。<ul>
+<li>异常通常是由程序的错误导致的，可以通过程序代码捕获和处理。</li>
+<li>创建了包含异常名称和描述的Exception对象。</li>
+<li><strong>中文总结</strong>: 异常可以通过程序代码捕获和处理，通常不会导致程序终止。</li>
+</ul>
+</li>
+<li><strong>错误 (Error)</strong>: 程序员控制范围之外的严重问题，合理的应用不应该尝试捕获。<ul>
+<li>错误通常指出了更严重的问题，如系统崩溃或资源不足，这些情况下程序通常无法恢复。</li>
+<li><strong>中文总结</strong>: 错误是严重的问题，通常不应该或无法通过程序代码捕获和处理。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-Summary"><a href="#总结-Summary" class="headerlink" title="总结 (Summary)"></a>总结 (Summary)</h3><ul>
+<li>本节介绍了在Java编程中处理异常的重要性和方法。</li>
+<li>区分了异常和错误，指出了它们的不同处理方式。</li>
+<li>了解异常和错误有助于编写更稳健和可靠的Java程序。</li>
+<li><strong>中文总结</strong>: 异常处理是Java编程实践中的一个关键部分，它帮助程序在面对意外事件时保持稳定和安全。</li>
+</ul>
+<h2 id="异常的成因-What-causes-exceptions"><a href="#异常的成因-What-causes-exceptions" class="headerlink" title="异常的成因 (What causes exceptions?)"></a>异常的成因 (What causes exceptions?)</h2><h3 id="用户输入错误-Invalid-user-input"><a href="#用户输入错误-Invalid-user-input" class="headerlink" title="用户输入错误 (Invalid user input)"></a>用户输入错误 (Invalid user input)</h3><ul>
+<li>用户可能会输入不符合程序预期的数据，如错误的数据格式或范围。</li>
+</ul>
+<h3 id="设备故障-Device-failure"><a href="#设备故障-Device-failure" class="headerlink" title="设备故障 (Device failure)"></a>设备故障 (Device failure)</h3><ul>
+<li>硬件故障如内存损坏、存储器读写错误等。</li>
+</ul>
+<h3 id="网络连接丢失-Loss-of-network-connection"><a href="#网络连接丢失-Loss-of-network-connection" class="headerlink" title="网络连接丢失 (Loss of network connection)"></a>网络连接丢失 (Loss of network connection)</h3><ul>
+<li>网络不稳定或中断会导致程序无法继续执行网络相关的操作。</li>
+</ul>
+<h3 id="打开不可用文件-Opening-an-unavailable-file"><a href="#打开不可用文件-Opening-an-unavailable-file" class="headerlink" title="打开不可用文件 (Opening an unavailable file)"></a>打开不可用文件 (Opening an unavailable file)</h3><ul>
+<li>尝试打开不存在或者无权限访问的文件。</li>
+</ul>
+<h3 id="代码错误-Code-errors"><a href="#代码错误-Code-errors" class="headerlink" title="代码错误 (Code errors)"></a>代码错误 (Code errors)</h3><ul>
+<li>程序中的bug或逻辑错误导致程序无法正常运行。</li>
+</ul>
+<p>总结：<br>在软件开发和使用过程中，异常可以由多种原因引起。无效的用户输入、设备故障、网络连接丢失、尝试打开不可用的文件以及代码错误都是常见的异常成因。了解这些成因有助于开发者在设计程序时考虑更全面的错误处理和异常捕捉机制，以提升软件的稳定性和用户体验。</p>
+<h2 id="Java异常层次结构-Java-Exception-Hierarchy"><a href="#Java异常层次结构-Java-Exception-Hierarchy" class="headerlink" title="Java异常层次结构 (Java Exception Hierarchy)"></a>Java异常层次结构 (Java Exception Hierarchy)</h2><h3 id="基类对象-Object"><a href="#基类对象-Object" class="headerlink" title="基类对象 (Object)"></a>基类对象 (Object)</h3><ul>
+<li>Java中所有类的根基类。</li>
+</ul>
+<h3 id="可抛出基类-Throwable"><a href="#可抛出基类-Throwable" class="headerlink" title="可抛出基类 (Throwable)"></a>可抛出基类 (Throwable)</h3><ul>
+<li>表示所有错误和异常的超类。</li>
+</ul>
+<h4 id="异常-Exceptions"><a href="#异常-Exceptions" class="headerlink" title="异常 (Exceptions)"></a>异常 (Exceptions)</h4><ul>
+<li>表示程序可以处理的条件。</li>
+</ul>
+<h5 id="受检查异常-Checked-Exceptions"><a href="#受检查异常-Checked-Exceptions" class="headerlink" title="受检查异常 (Checked Exceptions)"></a>受检查异常 (Checked Exceptions)</h5><ul>
+<li>需要显式捕获或声明的异常，例如IO异常或编译时异常。</li>
+</ul>
+<h5 id="未受检查异常-Unchecked-Exceptions"><a href="#未受检查异常-Unchecked-Exceptions" class="headerlink" title="未受检查异常 (Unchecked Exceptions)"></a>未受检查异常 (Unchecked Exceptions)</h5><ul>
+<li>程序运行时可能出现的异常，如运行时异常或空指针异常。</li>
+</ul>
+<h4 id="错误-Error"><a href="#错误-Error" class="headerlink" title="错误 (Error)"></a>错误 (Error)</h4><ul>
+<li>表示不期望程序处理的严重问题。</li>
+</ul>
+<h5 id="虚拟机错误-Virtual-Machine-Error"><a href="#虚拟机错误-Virtual-Machine-Error" class="headerlink" title="虚拟机错误 (Virtual Machine Error)"></a>虚拟机错误 (Virtual Machine Error)</h5><ul>
+<li>表示JVM遇到的问题，如系统崩溃或资源不足。</li>
+</ul>
+<h5 id="断言错误-Assertion-Error-etc"><a href="#断言错误-Assertion-Error-etc" class="headerlink" title="断言错误 (Assertion Error etc)"></a>断言错误 (Assertion Error etc)</h5><ul>
+<li>表示当断言失败时抛出的错误。</li>
+</ul>
+<p>总结：<br>Java异常层次结构是Java语言定义的错误和异常的分类方式。在顶层是<code>Throwable</code>类，它分为两个分支：<code>Error</code>和<code>Exceptions</code>。<code>Error</code>类代表了系统级别的严重问题，通常不由程序控制；而<code>Exceptions</code>则分为受检查异常和未受检查异常，前者需要在编译时处理，后者通常是运行时出现的问题。了解这个层次结构对于Java程序员来说是至关重要的，它能帮助他们更好地设计和处理程序中可能出现的各种问题。</p>
+<h2 id="受检异常与非受检异常-Checked-and-unchecked-exceptions"><a href="#受检异常与非受检异常-Checked-and-unchecked-exceptions" class="headerlink" title="受检异常与非受检异常 (Checked and unchecked exceptions)"></a>受检异常与非受检异常 (Checked and unchecked exceptions)</h2><h3 id="受检异常-Checked-exceptions"><a href="#受检异常-Checked-exceptions" class="headerlink" title="受检异常 (Checked exceptions)"></a>受检异常 (Checked exceptions)</h3><ul>
+<li>编译时发生的异常。</li>
+<li>必须在代码中处理，否则会生成编译错误。</li>
+</ul>
+<h3 id="非受检异常-Unchecked-exceptions"><a href="#非受检异常-Unchecked-exceptions" class="headerlink" title="非受检异常 (Unchecked exceptions)"></a>非受检异常 (Unchecked exceptions)</h3><ul>
+<li>不会生成编译错误的异常。</li>
+</ul>
+<h4 id="异常类型-Types-of-Exceptions"><a href="#异常类型-Types-of-Exceptions" class="headerlink" title="异常类型 (Types of Exceptions)"></a>异常类型 (Types of Exceptions)</h4><h5 id="用户定义异常-Use-Defined-Exception"><a href="#用户定义异常-Use-Defined-Exception" class="headerlink" title="用户定义异常 (Use-Defined Exception)"></a>用户定义异常 (Use-Defined Exception)</h5><ul>
+<li>程序员自定义的异常类型。</li>
+</ul>
+<h5 id="内建异常-Built-in-Exception"><a href="#内建异常-Built-in-Exception" class="headerlink" title="内建异常 (Built-in Exception)"></a>内建异常 (Built-in Exception)</h5><h6 id="受检异常-Checked-Exceptions"><a href="#受检异常-Checked-Exceptions" class="headerlink" title="受检异常 (Checked Exceptions)"></a>受检异常 (Checked Exceptions)</h6><ul>
+<li><code>ClassNotFoundException</code>：找不到类异常。</li>
+<li><code>InterruptedException</code>：线程中断异常。</li>
+<li><code>IOException</code>：输入输出异常。</li>
+<li><code>InstantiationException</code>：实例化异常。</li>
+<li><code>SQLException</code>：SQL操作异常。</li>
+<li><code>FileNotFoundException</code>：文件未找到异常。</li>
+</ul>
+<h6 id="非受检异常-Unchecked-Exceptions"><a href="#非受检异常-Unchecked-Exceptions" class="headerlink" title="非受检异常 (Unchecked Exceptions)"></a>非受检异常 (Unchecked Exceptions)</h6><ul>
+<li><code>ArithmeticException</code>：算术运算异常。</li>
+<li><code>ClassCastException</code>：类转换异常。</li>
+<li><code>NullPointerException</code>：空指针异常。</li>
+<li><code>ArrayIndexOutOfBoundsException</code>：数组索引越界异常。</li>
+<li><code>ArrayStoreException</code>：数组存储异常。</li>
+<li><code>IllegalThreadStateException</code>：线程状态非法异常。</li>
+</ul>
+<p>总结：<br>在Java编程中，异常分为受检异常和非受检异常。受检异常必须在编写代码时进行处理，否则会在编译时报错；而非受检异常则不需要显式处理，它们通常表明存在程序运行时错误。Java也允许用户自定义异常，以满足特定的业务需求。这些异常类型的正确处理是编写健壮程序的关键。</p>
+<h2 id="异常处理-Exception-Handling"><a href="#异常处理-Exception-Handling" class="headerlink" title="异常处理 (Exception Handling)"></a>异常处理 (Exception Handling)</h2><h3 id="文件处理抛出检查异常-File-handling-throws-a-checked-exception"><a href="#文件处理抛出检查异常-File-handling-throws-a-checked-exception" class="headerlink" title="文件处理抛出检查异常 (File handling throws a checked exception)"></a>文件处理抛出检查异常 (File handling throws a checked exception)</h3><ul>
+<li>在Java中，文件处理会抛出一个需要处理的检查异常（checked exception）。这意味着，当使用<code>java.io.File</code>类或相关文件操作类时，程序员必须处理可能发生的异常，如文件不存在或读写错误。</li>
+<li>示例代码展示了如何使用<code>Scanner</code>类从文件中读取数据。这里使用了<code>try</code>语句或者在方法签名中添加<code>throws Exception</code>来声明异常。</li>
+</ul>
+<h4 id="代码解释-Code-Explanation"><a href="#代码解释-Code-Explanation" class="headerlink" title="代码解释 (Code Explanation)"></a>代码解释 (Code Explanation)</h4><ul>
+<li><code>import java.util.Scanner;</code>和<code>import java.io.File;</code>语句用于导入Java的扫描器和文件类。</li>
+<li><code>public class Demo</code>定义了一个名为Demo的公共类。</li>
+<li>在<code>public static void main(String[] args) throws Exception</code>方法声明中，<code>throws Exception</code>指明了该方法可能会抛出异常，调用者需要对其进行处理。</li>
+<li><code>File file = new File(&quot;src/textfile.txt&quot;);</code> 创建了一个新的<code>File</code>对象，它代表了源目录下的<code>textfile.txt</code>文件。</li>
+<li><code>Scanner fileInput = new Scanner(file);</code> 创建了一个<code>Scanner</code>对象，用于读取<code>file</code>对象所代表的文件内容。</li>
+<li><code>while</code>循环使用<code>fileInput.hasNextLine()</code>检查文件中是否还有更多行，如果有，则使用<code>System.out.println</code>输出每一行数据。</li>
+</ul>
+<h3 id="总结-Summary-1"><a href="#总结-Summary-1" class="headerlink" title="总结 (Summary)"></a>总结 (Summary)</h3><ul>
+<li>这个屏幕截图展示了Java异常处理的一个场景：文件处理时的检查异常。代码示例提供了一个基础的框架，说明了如何使用<code>File</code>和<code>Scanner</code>类以及如何声明和处理可能出现的异常。总的来说，这段代码强调了异常处理在文件I&#x2F;O操作中的重要性和必要性。</li>
+</ul>
+<h2 id="异常处理-Exception-Handling-1"><a href="#异常处理-Exception-Handling-1" class="headerlink" title="异常处理 (Exception Handling)"></a>异常处理 (Exception Handling)</h2><h3 id="try…catch-语句块-The-try…catch-block"><a href="#try…catch-语句块-The-try…catch-block" class="headerlink" title="try…catch 语句块 (The try…catch block)"></a>try…catch 语句块 (The try…catch block)</h3><ul>
+<li><code>try...catch</code>语句块是Java语言中处理异常的基本结构。当程序执行到<code>try</code>块内的代码时，如果发生异常，程序会跳转到<code>catch</code>块，执行异常处理代码。</li>
+</ul>
+<h4 id="代码结构-Code-Structure"><a href="#代码结构-Code-Structure" class="headerlink" title="代码结构 (Code Structure)"></a>代码结构 (Code Structure)</h4><ul>
+<li><code>try &#123; ... &#125;</code>：这里的<code>...</code>表示可能抛出异常的代码区块。在实际编程中，应当只将有可能抛出异常的代码放入<code>try</code>块中。</li>
+<li><code>catch (ExceptionType e) &#123; ... &#125;</code>：<code>catch</code>块紧跟在<code>try</code>块后面，用来捕获并处理异常。<code>ExceptionType</code>是要捕获的异常类型，而<code>e</code>是该异常的实例。</li>
+<li>在<code>try</code>块中的任何代码一旦抛出异常，执行流将直接跳转到<code>catch</code>块，<code>catch</code>块中的代码用来处理异常。</li>
+</ul>
+<h3 id="总结-Summary-2"><a href="#总结-Summary-2" class="headerlink" title="总结 (Summary)"></a>总结 (Summary)</h3><ul>
+<li>屏幕截图介绍了Java中处理异常的基础结构<code>try...catch</code>语句块。<code>try</code>块包含可能引发异常的代码，而<code>catch</code>块包含处理这些异常的代码。这是Java编程中异常控制流程的核心，旨在为程序提供更健壮的错误处理机制。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/21/T8/">http://example.com/2023/12/21/T8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/12/20/T7/" title="T7"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">T7</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#COM410-%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5-COM410-Programming-in-Practice"><span class="toc-number">1.</span> <span class="toc-text">COM410 编程实践 (COM410 Programming in Practice)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#T8-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86-Exception-Handling"><span class="toc-number">1.1.</span> <span class="toc-text">T8. 异常处理 (Exception Handling)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-Summary"><span class="toc-number">1.2.</span> <span class="toc-text">总结 (Summary)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E7%9A%84%E6%88%90%E5%9B%A0-What-causes-exceptions"><span class="toc-number">2.</span> <span class="toc-text">异常的成因 (What causes exceptions?)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5%E9%94%99%E8%AF%AF-Invalid-user-input"><span class="toc-number">2.1.</span> <span class="toc-text">用户输入错误 (Invalid user input)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C-Device-failure"><span class="toc-number">2.2.</span> <span class="toc-text">设备故障 (Device failure)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E4%B8%A2%E5%A4%B1-Loss-of-network-connection"><span class="toc-number">2.3.</span> <span class="toc-text">网络连接丢失 (Loss of network connection)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E4%B8%8D%E5%8F%AF%E7%94%A8%E6%96%87%E4%BB%B6-Opening-an-unavailable-file"><span class="toc-number">2.4.</span> <span class="toc-text">打开不可用文件 (Opening an unavailable file)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%94%99%E8%AF%AF-Code-errors"><span class="toc-number">2.5.</span> <span class="toc-text">代码错误 (Code errors)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E5%BC%82%E5%B8%B8%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84-Java-Exception-Hierarchy"><span class="toc-number">3.</span> <span class="toc-text">Java异常层次结构 (Java Exception Hierarchy)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%B1%BB%E5%AF%B9%E8%B1%A1-Object"><span class="toc-number">3.1.</span> <span class="toc-text">基类对象 (Object)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E6%8A%9B%E5%87%BA%E5%9F%BA%E7%B1%BB-Throwable"><span class="toc-number">3.2.</span> <span class="toc-text">可抛出基类 (Throwable)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8-Exceptions"><span class="toc-number">3.2.1.</span> <span class="toc-text">异常 (Exceptions)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%97%E6%A3%80%E6%9F%A5%E5%BC%82%E5%B8%B8-Checked-Exceptions"><span class="toc-number">3.2.1.1.</span> <span class="toc-text">受检查异常 (Checked Exceptions)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%AA%E5%8F%97%E6%A3%80%E6%9F%A5%E5%BC%82%E5%B8%B8-Unchecked-Exceptions"><span class="toc-number">3.2.1.2.</span> <span class="toc-text">未受检查异常 (Unchecked Exceptions)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%99%E8%AF%AF-Error"><span class="toc-number">3.2.2.</span> <span class="toc-text">错误 (Error)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%94%99%E8%AF%AF-Virtual-Machine-Error"><span class="toc-number">3.2.2.1.</span> <span class="toc-text">虚拟机错误 (Virtual Machine Error)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%AD%E8%A8%80%E9%94%99%E8%AF%AF-Assertion-Error-etc"><span class="toc-number">3.2.2.2.</span> <span class="toc-text">断言错误 (Assertion Error etc)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%97%E6%A3%80%E5%BC%82%E5%B8%B8%E4%B8%8E%E9%9D%9E%E5%8F%97%E6%A3%80%E5%BC%82%E5%B8%B8-Checked-and-unchecked-exceptions"><span class="toc-number">4.</span> <span class="toc-text">受检异常与非受检异常 (Checked and unchecked exceptions)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%97%E6%A3%80%E5%BC%82%E5%B8%B8-Checked-exceptions"><span class="toc-number">4.1.</span> <span class="toc-text">受检异常 (Checked exceptions)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E5%8F%97%E6%A3%80%E5%BC%82%E5%B8%B8-Unchecked-exceptions"><span class="toc-number">4.2.</span> <span class="toc-text">非受检异常 (Unchecked exceptions)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B-Types-of-Exceptions"><span class="toc-number">4.2.1.</span> <span class="toc-text">异常类型 (Types of Exceptions)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8-Use-Defined-Exception"><span class="toc-number">4.2.1.1.</span> <span class="toc-text">用户定义异常 (Use-Defined Exception)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%86%85%E5%BB%BA%E5%BC%82%E5%B8%B8-Built-in-Exception"><span class="toc-number">4.2.1.2.</span> <span class="toc-text">内建异常 (Built-in Exception)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8F%97%E6%A3%80%E5%BC%82%E5%B8%B8-Checked-Exceptions"><span class="toc-number">4.2.1.2.1.</span> <span class="toc-text">受检异常 (Checked Exceptions)</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%9D%9E%E5%8F%97%E6%A3%80%E5%BC%82%E5%B8%B8-Unchecked-Exceptions"><span class="toc-number">4.2.1.2.2.</span> <span class="toc-text">非受检异常 (Unchecked Exceptions)</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86-Exception-Handling"><span class="toc-number">5.</span> <span class="toc-text">异常处理 (Exception Handling)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E6%8A%9B%E5%87%BA%E6%A3%80%E6%9F%A5%E5%BC%82%E5%B8%B8-File-handling-throws-a-checked-exception"><span class="toc-number">5.1.</span> <span class="toc-text">文件处理抛出检查异常 (File handling throws a checked exception)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A-Code-Explanation"><span class="toc-number">5.1.1.</span> <span class="toc-text">代码解释 (Code Explanation)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-Summary-1"><span class="toc-number">5.2.</span> <span class="toc-text">总结 (Summary)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86-Exception-Handling-1"><span class="toc-number">6.</span> <span class="toc-text">异常处理 (Exception Handling)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#try%E2%80%A6catch-%E8%AF%AD%E5%8F%A5%E5%9D%97-The-try%E2%80%A6catch-block"><span class="toc-number">6.1.</span> <span class="toc-text">try…catch 语句块 (The try…catch block)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84-Code-Structure"><span class="toc-number">6.1.1.</span> <span class="toc-text">代码结构 (Code Structure)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-Summary-2"><span class="toc-number">6.2.</span> <span class="toc-text">总结 (Summary)</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/21/T8/" title="T8">T8</a><time datetime="2023-12-21T19:39:36.000Z" title="Created 2023-12-21 19:39:36">2023-12-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T7/" title="T7">T7</a><time datetime="2023-12-20T03:17:15.000Z" title="Created 2023-12-20 03:17:15">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T6/" title="T6">T6</a><time datetime="2023-12-20T03:01:32.000Z" title="Created 2023-12-20 03:01:32">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/16/A5-2/" title="A5-2">A5-2</a><time datetime="2023-12-16T05:38:48.000Z" title="Created 2023-12-16 05:38:48">2023-12-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/16/A5-1/" title="A5-1">A5-1</a><time datetime="2023-12-16T05:17:27.000Z" title="Created 2023-12-16 05:17:27">2023-12-16</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

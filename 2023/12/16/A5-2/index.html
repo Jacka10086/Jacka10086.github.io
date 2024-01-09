@@ -1,0 +1,488 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>A5-2 | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="COM410 编程实践——队列（COM410 Programming in Practice - Queues）队列在数据组织中的例子（Recall Examples of Data Organisation in Queues） 队列（Queue）- 先进先出，是日常生活中常见的数据组织技术。 例如，在商店排队、计算机科学中的数据结构、生活中的待办事项列表等。    队列的定义和应用（Defin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A5-2">
+<meta property="og:url" content="http://example.com/2023/12/16/A5-2/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="COM410 编程实践——队列（COM410 Programming in Practice - Queues）队列在数据组织中的例子（Recall Examples of Data Organisation in Queues） 队列（Queue）- 先进先出，是日常生活中常见的数据组织技术。 例如，在商店排队、计算机科学中的数据结构、生活中的待办事项列表等。    队列的定义和应用（Defin">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2023-12-16T05:38:48.000Z">
+<meta property="article:modified_time" content="2023-12-16T16:40:16.103Z">
+<meta property="article:author" content="Jacka10086">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/12/16/A5-2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'A5-2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-16 16:40:16'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">A5-2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-12-16T05:38:48.000Z" title="Created 2023-12-16 05:38:48">2023-12-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-12-16T16:40:16.103Z" title="Updated 2023-12-16 16:40:16">2023-12-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="A5-2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="COM410-编程实践——队列（COM410-Programming-in-Practice-Queues）"><a href="#COM410-编程实践——队列（COM410-Programming-in-Practice-Queues）" class="headerlink" title="COM410 编程实践——队列（COM410 Programming in Practice - Queues）"></a>COM410 编程实践——队列（COM410 Programming in Practice - Queues）</h2><h3 id="队列在数据组织中的例子（Recall-Examples-of-Data-Organisation-in-Queues）"><a href="#队列在数据组织中的例子（Recall-Examples-of-Data-Organisation-in-Queues）" class="headerlink" title="队列在数据组织中的例子（Recall Examples of Data Organisation in Queues）"></a>队列在数据组织中的例子（Recall Examples of Data Organisation in Queues）</h3><ul>
+<li>队列（Queue）- 先进先出，是日常生活中常见的数据组织技术。<ul>
+<li>例如，在商店排队、计算机科学中的数据结构、生活中的待办事项列表等。</li>
+</ul>
+</li>
+</ul>
+<h3 id="队列的定义和应用（Definition-and-Application-of-Queues）"><a href="#队列的定义和应用（Definition-and-Application-of-Queues）" class="headerlink" title="队列的定义和应用（Definition and Application of Queues）"></a>队列的定义和应用（Definition and Application of Queues）</h3><ul>
+<li>队列是等候线的另一个称呼。</li>
+<li>在操作系统内部及模拟现实世界事件中使用。</li>
+<li>当过程或事件需要等待时就会用到队列。</li>
+<li>队列的条目是按照先进先出（按时间顺序）组织的。</li>
+</ul>
+<h3 id="队列的灵活性（Flexibility-in-Queues）"><a href="#队列的灵活性（Flexibility-in-Queues）" class="headerlink" title="队列的灵活性（Flexibility in Queues）"></a>队列的灵活性（Flexibility in Queues）</h3><ul>
+<li>有时候需要更多的灵活性：<ul>
+<li>双端队列（deque）允许在最老和最新的条目上进行操作。</li>
+<li>当一个对象的重要性不仅仅依赖于其到达时间时，可以分配优先级（称为优先队列）。</li>
+</ul>
+</li>
+</ul>
+<p>总结：这一系列的幻灯片提供了队列在数据组织中的应用示例，定义了队列，讨论了它们在操作系统和模拟现实世界事件中的使用，并介绍了队列的灵活形式，如双端队列和优先队列。</p>
+<h2 id="队列操作（Queue-Operations）"><a href="#队列操作（Queue-Operations）" class="headerlink" title="队列操作（Queue Operations）"></a>队列操作（Queue Operations）</h2><ul>
+<li>队列抽象数据类型（ADT）像栈一样，按照它们被添加的顺序组织条目。</li>
+<li>队列的行为被描述为 FIFO（先进先出）。</li>
+</ul>
+<h3 id="具体操作（Specific-Operations）"><a href="#具体操作（Specific-Operations）" class="headerlink" title="具体操作（Specific Operations）"></a>具体操作（Specific Operations）</h3><ul>
+<li>所有新增条目都在队列的<strong>后端</strong>添加，队列后端的条目是最新添加到队列的。</li>
+<li>最早添加的条目位于队列的<strong>前端</strong>。</li>
+<li>添加条目到队列的操作通常称为<strong>入队（enqueue）</strong>。</li>
+<li>从队列中移除条目的操作通常称为<strong>出队（dequeue）</strong>。</li>
+</ul>
+<h3 id="图解说明（Diagram-Explanation）"><a href="#图解说明（Diagram-Explanation）" class="headerlink" title="图解说明（Diagram Explanation）"></a>图解说明（Diagram Explanation）</h3><ul>
+<li>示意图展示了队列中条目的排列，以及如何进行入队和出队操作。<ul>
+<li>例如，如果队列中依次添加了 A、B、C 和 D，那么 A 将是第一个出队的，D 将是最后一个出队的。</li>
+</ul>
+</li>
+</ul>
+<p>总结：这段Markdown内容详细说明了队列的基本操作和其FIFO的特性。入队和出队操作是队列最基本的两个操作，它们决定了队列中元素的流动方向和处理顺序。</p>
+<h2 id="队列操作补充（Additional-Queue-Operations）"><a href="#队列操作补充（Additional-Queue-Operations）" class="headerlink" title="队列操作补充（Additional Queue Operations）"></a>队列操作补充（Additional Queue Operations）</h2><ul>
+<li>与栈一样，队列也限制了对其条目的访问（只能查看或检索最早的条目）。</li>
+<li>除了入队（enqueue）和出队（dequeue）操作外，不移除条目而检索队列前端的操作称为 <code>getFront</code>。</li>
+</ul>
+<h3 id="队列的查看限制（Viewing-Restrictions-in-Queues）"><a href="#队列的查看限制（Viewing-Restrictions-in-Queues）" class="headerlink" title="队列的查看限制（Viewing Restrictions in Queues）"></a>队列的查看限制（Viewing Restrictions in Queues）</h3><ul>
+<li>通常情况下，你不能在队列中搜索特定的条目。</li>
+<li>查看不在队列前端的条目的唯一方法是重复移除队列中的条目，直到所需的项到达前端。</li>
+</ul>
+<h3 id="对队列操作的影响（Implications-for-Queue-Operations）"><a href="#对队列操作的影响（Implications-for-Queue-Operations）" class="headerlink" title="对队列操作的影响（Implications for Queue Operations）"></a>对队列操作的影响（Implications for Queue Operations）</h3><ul>
+<li>这意味着队列不适合需要频繁搜索的应用场景。</li>
+<li><code>getFront</code> 操作允许检查队列的第一个元素，但不会改变队列的状态。</li>
+</ul>
+<p>总结：本Markdown内容介绍了队列的额外操作及其访问限制。队列的结构和操作保证了数据的有序处理，但也限制了数据的访问灵活性。</p>
+<h2 id="队列ADT的接口（Interface-for-the-Queue-ADT）"><a href="#队列ADT的接口（Interface-for-the-Queue-ADT）" class="headerlink" title="队列ADT的接口（Interface for the Queue ADT）"></a>队列ADT的接口（Interface for the Queue ADT）</h2><p>队列ADT（Abstract Data Type，抽象数据类型）的接口定义了队列这种数据结构的基本操作。以下是各个方法的详细解释：</p>
+<ul>
+<li><code>public void enqueue(T newEntry);</code><ul>
+<li><strong>入队操作</strong>：将一个新元素添加到队列的尾部。</li>
+</ul>
+</li>
+<li><code>public T dequeue();</code><ul>
+<li><strong>出队操作</strong>：从队列的头部移除一个元素，并将其返回。</li>
+</ul>
+</li>
+<li><code>public T getFront();</code><ul>
+<li><strong>获取队首元素</strong>：返回队列头部的元素，但不从队列中移除它。</li>
+</ul>
+</li>
+<li><code>public boolean empty();</code><ul>
+<li><strong>检查队列是否为空</strong>：如果队列中没有任何元素，则返回<code>true</code>。</li>
+</ul>
+</li>
+<li><code>public void clear();</code><ul>
+<li><strong>清空队列</strong>：移除队列中的所有元素。</li>
+</ul>
+</li>
+</ul>
+<h3 id="入队操作（Enqueue-Operation）"><a href="#入队操作（Enqueue-Operation）" class="headerlink" title="入队操作（Enqueue Operation）"></a>入队操作（Enqueue Operation）</h3><p>入队是队列的基本操作之一，它允许我们将一个新元素添加到队列的末尾。</p>
+<h3 id="出队操作（Dequeue-Operation）"><a href="#出队操作（Dequeue-Operation）" class="headerlink" title="出队操作（Dequeue Operation）"></a>出队操作（Dequeue Operation）</h3><p>出队是另一个基本操作，它移除队列头部的元素，这符合队列先进先出（FIFO）的原则。</p>
+<h3 id="获取队首元素（Get-Front-Element）"><a href="#获取队首元素（Get-Front-Element）" class="headerlink" title="获取队首元素（Get Front Element）"></a>获取队首元素（Get Front Element）</h3><p>获取队首元素允许我们查看队列中的第一个元素，这常用于检查队列的当前状态而不改变其内容。</p>
+<h3 id="检查队列是否为空（Check-if-Queue-is-Empty）"><a href="#检查队列是否为空（Check-if-Queue-is-Empty）" class="headerlink" title="检查队列是否为空（Check if Queue is Empty）"></a>检查队列是否为空（Check if Queue is Empty）</h3><p>这个操作用于判断队列中是否还有元素，它对于防止在空队列上执行出队等操作非常重要。</p>
+<h3 id="清空队列（Clear-Queue）"><a href="#清空队列（Clear-Queue）" class="headerlink" title="清空队列（Clear Queue）"></a>清空队列（Clear Queue）</h3><p>清空队列的操作可以移除所有元素，这在重置队列状态或者在不再需要队列内容时非常有用。</p>
+<p>总结：以上内容详细说明了队列ADT的接口，包括入队、出队、查看队首元素、检查队列是否为空和清空队列等操作。每个操作都有其特定的用途和实现的必要性，它们共同定义了队列这种数据结构的行为和特点。</p>
+<h2 id="Java队列ADT接口（Java-Interface-for-the-Queue-ADT）"><a href="#Java队列ADT接口（Java-Interface-for-the-Queue-ADT）" class="headerlink" title="Java队列ADT接口（Java Interface for the Queue ADT）"></a>Java队列ADT接口（Java Interface for the Queue ADT）</h2><p>Java队列ADT接口规定了队列数据结构的基本操作方法。这些方法包括：</p>
+<ul>
+<li><code>public void add(T newEntry);</code><ul>
+<li><strong>添加操作</strong>：在队列尾部添加一个新的元素。</li>
+</ul>
+</li>
+<li><code>public T remove();</code><ul>
+<li><strong>移除操作</strong>：从队列前端移除一个元素，并将其返回。</li>
+</ul>
+</li>
+<li><code>public T peek();</code><ul>
+<li><strong>检视操作</strong>：返回队列前端的元素，但不从队列中移除它。</li>
+</ul>
+</li>
+<li><code>public boolean isEmpty();</code><ul>
+<li><strong>判断队列是否为空</strong>：检查队列中是否有元素，若无则返回<code>true</code>。</li>
+</ul>
+</li>
+<li><code>public void clear();</code><ul>
+<li><strong>清空队列</strong>：移除队列中的所有元素。</li>
+</ul>
+</li>
+</ul>
+<h3 id="添加操作（Add-Operation）"><a href="#添加操作（Add-Operation）" class="headerlink" title="添加操作（Add Operation）"></a>添加操作（Add Operation）</h3><p>添加操作允许用户在队列的后端插入一个新元素，这是队列的基本特性之一。</p>
+<h3 id="移除操作（Remove-Operation）"><a href="#移除操作（Remove-Operation）" class="headerlink" title="移除操作（Remove Operation）"></a>移除操作（Remove Operation）</h3><p>移除操作从队列的前端删除一个元素，并将其返回，这体现了队列的先入先出（FIFO）原则。</p>
+<h3 id="检视操作（Peek-Operation）"><a href="#检视操作（Peek-Operation）" class="headerlink" title="检视操作（Peek Operation）"></a>检视操作（Peek Operation）</h3><p>检视操作允许用户查看队列前端的元素，这个操作通常用于在不修改队列的情况下，查看即将被处理的元素。</p>
+<h3 id="判断队列是否为空（IsEmpty-Operation）"><a href="#判断队列是否为空（IsEmpty-Operation）" class="headerlink" title="判断队列是否为空（IsEmpty Operation）"></a>判断队列是否为空（IsEmpty Operation）</h3><p>这个操作用于检查队列中是否还剩余元素，它对于避免在空队列上执行某些操作是非常重要的。</p>
+<h3 id="清空队列（Clear-Operation）"><a href="#清空队列（Clear-Operation）" class="headerlink" title="清空队列（Clear Operation）"></a>清空队列（Clear Operation）</h3><p>清空操作用于删除队列中的所有元素，这在用户需要重置队列或清除所有元素时非常有用。</p>
+<p>总结：这段内容详细地解释了Java队列ADT接口中定义的各种操作方法，每个方法都有其独特的功能和用途，它们共同构成了队列这种数据结构的基本操作集合。</p>
+<h2 id="Java队列类（Java-Queue-Class）"><a href="#Java队列类（Java-Queue-Class）" class="headerlink" title="Java队列类（Java Queue Class）"></a>Java队列类（Java Queue Class）</h2><p>Java提供了内置的队列类，可用于实现队列数据结构。以下是使用Java队列类的详细指南：</p>
+<ul>
+<li><p><strong>Java的队列实现</strong></p>
+<ul>
+<li>Java使用<code>java.util.Queue</code>接口提供队列的抽象实现。</li>
+<li><code>LinkedList</code>是<code>Queue</code>接口的一个具体实现类，它在<code>java.util</code>包中。</li>
+</ul>
+</li>
+<li><p><strong>必要的导入</strong></p>
+<ul>
+<li>使用队列之前，必须导入<code>Queue</code>接口和<code>LinkedList</code>类。</li>
+<li><code>import java.util.LinkedList;</code></li>
+<li><code>import java.util.Queue;</code></li>
+</ul>
+</li>
+<li><p><strong>创建队列实例</strong></p>
+<ul>
+<li>实例化一个队列时，通常使用<code>LinkedList</code>类来创建一个<code>Queue</code>接口的实例。</li>
+<li>示例代码：<code>Queue&lt;String&gt; myQueue = new LinkedList&lt;String&gt;();</code></li>
+</ul>
+</li>
+<li><p><strong>使用注意</strong></p>
+<ul>
+<li>在类的顶部导入<code>Queue</code>对象是必须的，以便在类中使用队列。</li>
+<li>由于<code>Queue</code>是一个接口，因此我们需要一个具体的类来实现它，<code>LinkedList</code>是这样一个类。</li>
+</ul>
+</li>
+</ul>
+<h3 id="导入语句（Import-Statements）"><a href="#导入语句（Import-Statements）" class="headerlink" title="导入语句（Import Statements）"></a>导入语句（Import Statements）</h3><ul>
+<li>导入语句是Java程序中的一部分，它告诉编译器从Java API中查找并加载指定的类或接口。</li>
+</ul>
+<h3 id="队列的实例化（Instantiation-of-Queue）"><a href="#队列的实例化（Instantiation-of-Queue）" class="headerlink" title="队列的实例化（Instantiation of Queue）"></a>队列的实例化（Instantiation of Queue）</h3><ul>
+<li>在Java中，我们通过实例化<code>LinkedList</code>类来创建<code>Queue</code>的实例。</li>
+<li>这是因为<code>LinkedList</code>类实现了<code>Queue</code>接口，并提供了队列操作的方法。</li>
+</ul>
+<h3 id="类的结构（Structure-of-the-Class）"><a href="#类的结构（Structure-of-the-Class）" class="headerlink" title="类的结构（Structure of the Class）"></a>类的结构（Structure of the Class）</h3><ul>
+<li>示例中的类名为<code>UsingQueues</code>，它演示了如何在主方法中使用队列。</li>
+</ul>
+<p>总结：本节内容详细介绍了如何在Java中使用队列类，包括导入必要的类、创建队列实例和相关的使用注意事项。通过导入<code>java.util.Queue</code>和<code>java.util.LinkedList</code>，我们可以在Java程序中方便地实现和使用队列数据结构。</p>
+<h2 id="Java-Queue-类（Java-Queue-Class）"><a href="#Java-Queue-类（Java-Queue-Class）" class="headerlink" title="Java Queue 类（Java Queue Class）"></a>Java Queue 类（Java Queue Class）</h2><ul>
+<li>使用 <code>isEmpty()</code> 方法来检测一个队列是否为空，以及 <code>size()</code> 方法来报告队列中包含的元素数量。<ul>
+<li><code>isEmpty()</code> 方法是用来判断队列是否没有任何元素，如果返回 <code>true</code> 则队列为空。</li>
+<li><code>size()</code> 方法返回队列中的元素数量，用于快速获取队列的大小。</li>
+</ul>
+</li>
+<li>新创建的队列初始状态是空的。<ul>
+<li>当我们创建一个队列对象后，它不包含任何元素，因此 <code>isEmpty()</code> 方法会返回 <code>true</code>。</li>
+</ul>
+</li>
+</ul>
+<h3 id="代码解释（Code-Explanation）"><a href="#代码解释（Code-Explanation）" class="headerlink" title="代码解释（Code Explanation）"></a>代码解释（Code Explanation）</h3><ul>
+<li>展示初始队列的代码示例：<ul>
+<li>首先，使用 <code>System.out.println()</code> 方法打印一条消息表明接下来将显示队列的初始状态。</li>
+<li>然后，使用 <code>System.out.println(myQueue)</code> 来打印队列对象，此时队列为空。</li>
+<li>接着是一个 <code>if</code> 判断语句，检查 <code>myQueue.isEmpty()</code> 的返回值。<ul>
+<li>如果队列为空，就打印 “Queue is empty”。</li>
+<li>否则，打印 “Queue contains %d elements”，并且使用 <code>myQueue.size()</code> 来获取队列中的元素数量。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="输出结果（Output-Result）"><a href="#输出结果（Output-Result）" class="headerlink" title="输出结果（Output Result）"></a>输出结果（Output Result）</h3><ul>
+<li>输出展示了初始队列为空的信息：<ul>
+<li><code>[]</code> 表示队列中没有元素。</li>
+<li>紧接着的消息 “Queue is empty” 确认了队列目前是空的状态。</li>
+</ul>
+</li>
+</ul>
+<p>总结：这部分讲述了Java中队列类的基本用法，包括如何检查队列是否为空以及如何获取队列中的元素数量。代码示例展示了如何在Java中声明一个队列，以及如何使用 <code>isEmpty()</code> 和 <code>size()</code> 方法。最后，输出结果证实了新创建的队列默认是空的。</p>
+<h2 id="Java-队列类（Java-Queue-Class）"><a href="#Java-队列类（Java-Queue-Class）" class="headerlink" title="Java 队列类（Java Queue Class）"></a>Java 队列类（Java Queue Class）</h2><ul>
+<li>使用 <code>add()</code> 方法（注意 - 不是 <code>enqueue</code>）来向队列中添加元素。<ul>
+<li><code>add()</code> 方法用于在队列的尾部添加一个新元素。</li>
+</ul>
+</li>
+<li>新元素被添加到队列的后端。<ul>
+<li>这意味着队列遵循先进先出（FIFO）的原则，最新添加的元素位于队列的末尾。</li>
+</ul>
+</li>
+</ul>
+<h3 id="代码解释（Code-Explanation）-1"><a href="#代码解释（Code-Explanation）-1" class="headerlink" title="代码解释（Code Explanation）"></a>代码解释（Code Explanation）</h3><ul>
+<li>代码示例中展示了向队列添加元素的过程：<ul>
+<li>通过 <code>System.out.println()</code> 方法首先打印出正在添加的元素名称。</li>
+<li>使用 <code>myQueue.add(&quot;Adrian&quot;)</code> 向队列中添加名为 Adrian 的元素。</li>
+<li>紧接着，使用同样的方法添加名为 Belle 和 Charles 的元素。</li>
+<li>打印队列对象 <code>myQueue</code> 会显示队列中的所有元素。</li>
+<li>使用 <code>if</code> 语句来判断队列是否为空，如果不为空，则打印出队列包含的元素数量。</li>
+</ul>
+</li>
+</ul>
+<h3 id="输出结果（Output-Result）-1"><a href="#输出结果（Output-Result）-1" class="headerlink" title="输出结果（Output Result）"></a>输出结果（Output Result）</h3><ul>
+<li>输出结果显示了添加元素后的队列状态：<ul>
+<li><code>System.out.println()</code> 输出了 “Adding Adrian, Belle and Charles”，表明了这些元素被添加进队列。</li>
+<li><code>[Adrian, Belle, Charles]</code> 显示了队列中元素的当前顺序。</li>
+<li>“Queue contains 3 elements” 确认了队列中现在有三个元素。</li>
+</ul>
+</li>
+</ul>
+<p>总结：这部分解释了如何使用 <code>add()</code> 方法在Java队列类中添加新元素。示例代码显示了添加元素的具体步骤，并且通过输出结果验证了元素已成功添加到队列中。</p>
+<h2 id="Java-队列类（Java-Queue-Class）-1"><a href="#Java-队列类（Java-Queue-Class）-1" class="headerlink" title="Java 队列类（Java Queue Class）"></a>Java 队列类（Java Queue Class）</h2><ul>
+<li>使用 <code>remove()</code> 方法（注意 - 不是 <code>dequeue</code>）来从队列中移除元素。<ul>
+<li><code>remove()</code> 方法用于从队列的前端移除元素，遵循先进先出的原则。</li>
+</ul>
+</li>
+<li>元素从队列的前端被移除，队列中停留时间最长的元素将是第一个被移除的。<ul>
+<li>这符合队列的基本操作原理，即最先添加进队列的元素将最先被移除。</li>
+</ul>
+</li>
+</ul>
+<h3 id="代码解释（Code-Explanation）-2"><a href="#代码解释（Code-Explanation）-2" class="headerlink" title="代码解释（Code Explanation）"></a>代码解释（Code Explanation）</h3><ul>
+<li>移除队列前端元素的代码示例：<ul>
+<li>使用 <code>System.out.println()</code> 方法打印消息提示将要从队列前端移除元素。</li>
+<li>执行 <code>System.out.println(myQueue.remove())</code>，这将移除队列中的第一个元素，并打印被移除的元素。</li>
+<li>打印队列对象 <code>myQueue</code> 将展示移除元素后的队列内容。</li>
+<li>如果队列现在为空，则使用 <code>if</code> 语句检查并打印 “Queue is empty”。</li>
+<li>如果队列不为空，则打印 “Queue contains %d elements”，显示剩余元素的数量。</li>
+</ul>
+</li>
+</ul>
+<h3 id="输出结果（Output-Result）-2"><a href="#输出结果（Output-Result）-2" class="headerlink" title="输出结果（Output Result）"></a>输出结果（Output Result）</h3><ul>
+<li>输出结果显示了从队列前端移除元素后的状态：<ul>
+<li>“Removing from the front of the queue” 表明了操作的开始。</li>
+<li>移除的元素 ‘Adrian’ 被打印出来，表明它是被移除的元素。</li>
+<li><code>[Belle, Charles]</code> 显示了移除元素后队列中剩余的元素。</li>
+<li>“Queue contains 2 elements” 说明在移除一个元素之后，队列中还剩两个元素。</li>
+</ul>
+</li>
+</ul>
+<p>总结：本节内容介绍了如何使用 <code>remove()</code> 方法来从Java的队列类中移除元素。通过示例代码和输出结果的解释，我们可以理解队列操作的先进先出原则，并看到实际代码执行后队列状态的变化。</p>
+<h2 id="Java-Queue-类（Java-Queue-Class）-1"><a href="#Java-Queue-类（Java-Queue-Class）-1" class="headerlink" title="Java Queue 类（Java Queue Class）"></a>Java Queue 类（Java Queue Class）</h2><h3 id="使用-peek-方法"><a href="#使用-peek-方法" class="headerlink" title="使用 peek() 方法"></a>使用 peek() 方法</h3><ul>
+<li><code>peek()</code> 方法用于返回队列中的元素</li>
+<li>此方法返回队列前端的元素，但<strong>不会移除</strong>该元素</li>
+<li>使用 <code>peek()</code> 操作不会改变队列内容</li>
+</ul>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><ul>
+<li>示例中演示了如何使用 <code>peek()</code> 方法读取队列前端的元素</li>
+<li>当队列不为空时，<code>System.out.println(myQueue.peek());</code> 将打印出队列前端的元素</li>
+<li><code>System.out.println(myQueue);</code> 将打印出队列的当前状态</li>
+<li>使用 <code>if (myQueue.isEmpty())</code> 来检测队列是否为空</li>
+<li>如果队列不为空，则使用 <code>System.out.printf(&quot;Queue contains %d elements\n&quot;, myQueue.size());</code> 打印队列的元素数量</li>
+</ul>
+<h3 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h3><ul>
+<li>输出显示队列前端的元素为 “Belle”</li>
+<li>队列包含的元素有 “Belle” 和 “Charles”</li>
+<li>队列总共包含 2 个元素</li>
+</ul>
+<h3 id="中文总结"><a href="#中文总结" class="headerlink" title="中文总结"></a>中文总结</h3><ul>
+<li>Java的<code>Queue</code>类通过<code>peek()</code>方法允许我们查看队列的首个元素，但不从队列中移除它。示例代码展示了如何使用<code>peek()</code>方法和如何检测队列是否为空，同时也展示了如何计算队列中的元素数量。输出结果确认了<code>peek()</code>方法的功能，并展示了队列中元素的状态。</li>
+</ul>
+<h2 id="Java-队列类（Java-Queue-Class）-2"><a href="#Java-队列类（Java-Queue-Class）-2" class="headerlink" title="Java 队列类（Java Queue Class）"></a>Java 队列类（Java Queue Class）</h2><h3 id="使用-clear-方法"><a href="#使用-clear-方法" class="headerlink" title="使用 clear() 方法"></a>使用 clear() 方法</h3><ul>
+<li><code>clear()</code> 方法用于清空队列</li>
+<li>调用此方法会移除队列中的所有元素</li>
+<li>执行 <code>clear()</code> 操作后队列会恢复到初始的空状态</li>
+</ul>
+<h3 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h3><ul>
+<li>示例展示了如何使用 <code>clear()</code> 方法清空一个队列</li>
+<li><code>myQueue.clear();</code> 会移除队列中的所有元素</li>
+<li><code>System.out.println(myQueue);</code> 用于展示清空后队列的状态</li>
+<li>使用 <code>if (myQueue.isEmpty())</code> 来判断队列是否为空</li>
+<li>如果队列为空，则使用 <code>System.out.println(&quot;Queue is empty&quot;);</code> 来打印队列为空的消息</li>
+<li>注意：代码中 <code>System.out.printf(&quot;Stack contains %d elements\n&quot;, myQueue.size());</code> 应为 <code>System.out.printf(&quot;Queue contains %d elements\n&quot;, myQueue.size());</code> 以正确反映队列状态</li>
+</ul>
+<h3 id="输出结果-1"><a href="#输出结果-1" class="headerlink" title="输出结果"></a>输出结果</h3><ul>
+<li>输出结果显示清空操作后的队列状态为 <code>[]</code>，表示队列为空</li>
+<li>还会打印出 “Queue is empty” 表明队列已经没有任何元素</li>
+</ul>
+<h3 id="中文总结-1"><a href="#中文总结-1" class="headerlink" title="中文总结"></a>中文总结</h3><ul>
+<li><code>Queue</code> 类的 <code>clear()</code> 方法可以清空队列中的所有元素，使队列回到初始的空状态。示例代码中显示了如何操作和检查队列是否为空，以及如何展示队列当前的元素数量。输出结果验证了 <code>clear()</code> 方法执行后队列确实为空。</li>
+</ul>
+<h2 id="Java-队列类（Java-Queue-Class）-3"><a href="#Java-队列类（Java-Queue-Class）-3" class="headerlink" title="Java 队列类（Java Queue Class）"></a>Java 队列类（Java Queue Class）</h2><h3 id="使用-clear-方法-1"><a href="#使用-clear-方法-1" class="headerlink" title="使用 clear() 方法"></a>使用 clear() 方法</h3><ul>
+<li><code>clear()</code> 方法用于清空队列</li>
+<li>调用此方法会移除队列中的所有元素</li>
+<li>执行 <code>clear()</code> 操作后队列会恢复到初始的空状态</li>
+</ul>
+<h3 id="示例代码-2"><a href="#示例代码-2" class="headerlink" title="示例代码"></a>示例代码</h3><ul>
+<li>示例展示了如何使用 <code>clear()</code> 方法清空一个队列</li>
+<li><code>myQueue.clear();</code> 会移除队列中的所有元素</li>
+<li><code>System.out.println(myQueue);</code> 用于展示清空后队列的状态</li>
+<li>使用 <code>if (myQueue.isEmpty())</code> 来判断队列是否为空</li>
+<li>如果队列为空，则使用 <code>System.out.println(&quot;Queue is empty&quot;);</code> 来打印队列为空的消息</li>
+<li>注意：代码中 <code>System.out.printf(&quot;Stack contains %d elements\n&quot;, myQueue.size());</code> 应为 <code>System.out.printf(&quot;Queue contains %d elements\n&quot;, myQueue.size());</code> 以正确反映队列状态</li>
+</ul>
+<h3 id="输出结果-2"><a href="#输出结果-2" class="headerlink" title="输出结果"></a>输出结果</h3><ul>
+<li>输出结果显示清空操作后的队列状态为 <code>[]</code>，表示队列为空</li>
+<li>还会打印出 “Queue is empty” 表明队列已经没有任何元素</li>
+</ul>
+<h3 id="中文总结-2"><a href="#中文总结-2" class="headerlink" title="中文总结"></a>中文总结</h3><ul>
+<li><code>Queue</code> 类的 <code>clear()</code> 方法可以清空队列中的所有元素，使队列回到初始的空状态。示例代码中显示了如何操作和检查队列是否为空，以及如何展示队列当前的元素数量。输出结果验证了 <code>clear()</code> 方法执行后队列确实为空。</li>
+</ul>
+<h2 id="Java-类库说明（Note-on-the-Java-Class-Libraries）"><a href="#Java-类库说明（Note-on-the-Java-Class-Libraries）" class="headerlink" title="Java 类库说明（Note on the Java Class Libraries）"></a>Java 类库说明（Note on the Java Class Libraries）</h2><h3 id="Queue-接口"><a href="#Queue-接口" class="headerlink" title="Queue 接口"></a>Queue 接口</h3><ul>
+<li>Java 类库中的 <code>Queue</code> 被定义为一个接口</li>
+<li>由于接口不能直接实例化，我们需要导入一个实现了 <code>Queue</code> 的类，比如 <code>LinkedList</code></li>
+</ul>
+<h3 id="Queue-的方法"><a href="#Queue-的方法" class="headerlink" title="Queue 的方法"></a>Queue 的方法</h3><ul>
+<li>传统的队列方法如 <code>add()</code>、<code>remove()</code> 和 <code>peek()</code> 是添加、访问和移除数据的唯一手段</li>
+<li>Java 的 <code>Queue</code> 接口从其父类继承了很多方法，这些方法包括了非传统的操作，例如搜索、从中间检索等</li>
+</ul>
+<h3 id="继承关系"><a href="#继承关系" class="headerlink" title="继承关系"></a>继承关系</h3><ul>
+<li><code>Queue</code> 接口继承自 <code>Collection</code> 接口，而 <code>Collection</code> 接口又继承自 <code>Iterable</code> 接口</li>
+<li><code>Queue</code> 接口被 <code>LinkedList</code> 类、<code>PriorityQueue</code> 类和 <code>ArrayDeque</code> 类实现</li>
+</ul>
+<h3 id="本节不使用的方法"><a href="#本节不使用的方法" class="headerlink" title="本节不使用的方法"></a>本节不使用的方法</h3><ul>
+<li>在本节内容中，不会使用 <code>Queue</code> 接口继承来的那些方法</li>
+</ul>
+<h3 id="图表解释"><a href="#图表解释" class="headerlink" title="图表解释"></a>图表解释</h3><ul>
+<li>图表展示了 <code>Queue</code> 接口与其他接口和类的关系</li>
+<li>显示了 <code>Queue</code> 是如何从 <code>Collection</code> 接口继承，并且被不同的类实现</li>
+</ul>
+<h3 id="中文总结-3"><a href="#中文总结-3" class="headerlink" title="中文总结"></a>中文总结</h3><ul>
+<li>这部分内容说明了 Java 类库中 <code>Queue</code> 接口的定义和使用。它强调了 <code>Queue</code> 接口不能直接实例化，而是通过类如 <code>LinkedList</code> 来实现其功能。本节内容还提到了 <code>Queue</code> 接口继承了许多方法，但本节不会讨论这些继承的方法。图表清晰地展示了 <code>Queue</code> 接口在 Java 类库中的位置以及它与其他接口和类的关系。</li>
+</ul>
+<h2 id="场景描述（Scenario）"><a href="#场景描述（Scenario）" class="headerlink" title="场景描述（Scenario）"></a>场景描述（Scenario）</h2><h3 id="新增类实现"><a href="#新增类实现" class="headerlink" title="新增类实现"></a>新增类实现</h3><ul>
+<li>在 <code>DataStructures</code> 项目中添加一个名为 <code>Queues</code> 的新类</li>
+<li>该类用于实现查找字符串中的第一个非重复字符的应用程序</li>
+</ul>
+<h3 id="功能要求"><a href="#功能要求" class="headerlink" title="功能要求"></a>功能要求</h3><ul>
+<li>用户应当通过键盘输入一个字符串</li>
+<li>应当逐个字符检索，从字符串的第一个字符开始，然后将字符入队列</li>
+<li>在字符入队列的同时，应当维护一个计数器记录每个字符出现的次数</li>
+<li>逐个从队列中移除字符，当发现有一个字符的计数器为1时停止，并报告这是第一个非重复字符</li>
+<li>如果没有找到非重复字符，应当向用户报告这一情况</li>
+</ul>
+<h3 id="中文总结-4"><a href="#中文总结-4" class="headerlink" title="中文总结"></a>中文总结</h3><ul>
+<li>这个场景描述了在 <code>DataStructures</code> 项目中添加一个新类 <code>Queues</code> 的要求，用于识别用户输入字符串中的第一个非重复字符。它详细说明了实现的步骤，包括用户输入、字符检索、入队列、计数以及如何处理找到或未找到非重复字符的情况。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/12/16/A5-2/">http://example.com/2023/12/16/A5-2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/20/T6/" title="T6"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">T6</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/16/A5-1/" title="A5-1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">A5-1</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#COM410-%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94%E9%98%9F%E5%88%97%EF%BC%88COM410-Programming-in-Practice-Queues%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">COM410 编程实践——队列（COM410 Programming in Practice - Queues）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E5%9C%A8%E6%95%B0%E6%8D%AE%E7%BB%84%E7%BB%87%E4%B8%AD%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%88Recall-Examples-of-Data-Organisation-in-Queues%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">队列在数据组织中的例子（Recall Examples of Data Organisation in Queues）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E5%BA%94%E7%94%A8%EF%BC%88Definition-and-Application-of-Queues%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">队列的定义和应用（Definition and Application of Queues）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E7%9A%84%E7%81%B5%E6%B4%BB%E6%80%A7%EF%BC%88Flexibility-in-Queues%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">队列的灵活性（Flexibility in Queues）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E6%93%8D%E4%BD%9C%EF%BC%88Queue-Operations%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">队列操作（Queue Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C%EF%BC%88Specific-Operations%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">具体操作（Specific Operations）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3%E8%AF%B4%E6%98%8E%EF%BC%88Diagram-Explanation%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">图解说明（Diagram Explanation）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E6%93%8D%E4%BD%9C%E8%A1%A5%E5%85%85%EF%BC%88Additional-Queue-Operations%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">队列操作补充（Additional Queue Operations）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E7%9A%84%E6%9F%A5%E7%9C%8B%E9%99%90%E5%88%B6%EF%BC%88Viewing-Restrictions-in-Queues%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">队列的查看限制（Viewing Restrictions in Queues）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E9%98%9F%E5%88%97%E6%93%8D%E4%BD%9C%E7%9A%84%E5%BD%B1%E5%93%8D%EF%BC%88Implications-for-Queue-Operations%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">对队列操作的影响（Implications for Queue Operations）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97ADT%E7%9A%84%E6%8E%A5%E5%8F%A3%EF%BC%88Interface-for-the-Queue-ADT%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">队列ADT的接口（Interface for the Queue ADT）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A5%E9%98%9F%E6%93%8D%E4%BD%9C%EF%BC%88Enqueue-Operation%EF%BC%89"><span class="toc-number">4.1.</span> <span class="toc-text">入队操作（Enqueue Operation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BA%E9%98%9F%E6%93%8D%E4%BD%9C%EF%BC%88Dequeue-Operation%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">出队操作（Dequeue Operation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E9%98%9F%E9%A6%96%E5%85%83%E7%B4%A0%EF%BC%88Get-Front-Element%EF%BC%89"><span class="toc-number">4.3.</span> <span class="toc-text">获取队首元素（Get Front Element）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E9%98%9F%E5%88%97%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%EF%BC%88Check-if-Queue-is-Empty%EF%BC%89"><span class="toc-number">4.4.</span> <span class="toc-text">检查队列是否为空（Check if Queue is Empty）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E7%A9%BA%E9%98%9F%E5%88%97%EF%BC%88Clear-Queue%EF%BC%89"><span class="toc-number">4.5.</span> <span class="toc-text">清空队列（Clear Queue）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E9%98%9F%E5%88%97ADT%E6%8E%A5%E5%8F%A3%EF%BC%88Java-Interface-for-the-Queue-ADT%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">Java队列ADT接口（Java Interface for the Queue ADT）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%93%8D%E4%BD%9C%EF%BC%88Add-Operation%EF%BC%89"><span class="toc-number">5.1.</span> <span class="toc-text">添加操作（Add Operation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E9%99%A4%E6%93%8D%E4%BD%9C%EF%BC%88Remove-Operation%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">移除操作（Remove Operation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E8%A7%86%E6%93%8D%E4%BD%9C%EF%BC%88Peek-Operation%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">检视操作（Peek Operation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E9%98%9F%E5%88%97%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%EF%BC%88IsEmpty-Operation%EF%BC%89"><span class="toc-number">5.4.</span> <span class="toc-text">判断队列是否为空（IsEmpty Operation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E7%A9%BA%E9%98%9F%E5%88%97%EF%BC%88Clear-Operation%EF%BC%89"><span class="toc-number">5.5.</span> <span class="toc-text">清空队列（Clear Operation）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E9%98%9F%E5%88%97%E7%B1%BB%EF%BC%88Java-Queue-Class%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">Java队列类（Java Queue Class）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E8%AF%AD%E5%8F%A5%EF%BC%88Import-Statements%EF%BC%89"><span class="toc-number">6.1.</span> <span class="toc-text">导入语句（Import Statements）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E7%9A%84%E5%AE%9E%E4%BE%8B%E5%8C%96%EF%BC%88Instantiation-of-Queue%EF%BC%89"><span class="toc-number">6.2.</span> <span class="toc-text">队列的实例化（Instantiation of Queue）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%88Structure-of-the-Class%EF%BC%89"><span class="toc-number">6.3.</span> <span class="toc-text">类的结构（Structure of the Class）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-Queue-%E7%B1%BB%EF%BC%88Java-Queue-Class%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">Java Queue 类（Java Queue Class）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A%EF%BC%88Code-Explanation%EF%BC%89"><span class="toc-number">7.1.</span> <span class="toc-text">代码解释（Code Explanation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%EF%BC%88Output-Result%EF%BC%89"><span class="toc-number">7.2.</span> <span class="toc-text">输出结果（Output Result）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-%E9%98%9F%E5%88%97%E7%B1%BB%EF%BC%88Java-Queue-Class%EF%BC%89"><span class="toc-number">8.</span> <span class="toc-text">Java 队列类（Java Queue Class）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A%EF%BC%88Code-Explanation%EF%BC%89-1"><span class="toc-number">8.1.</span> <span class="toc-text">代码解释（Code Explanation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%EF%BC%88Output-Result%EF%BC%89-1"><span class="toc-number">8.2.</span> <span class="toc-text">输出结果（Output Result）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-%E9%98%9F%E5%88%97%E7%B1%BB%EF%BC%88Java-Queue-Class%EF%BC%89-1"><span class="toc-number">9.</span> <span class="toc-text">Java 队列类（Java Queue Class）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A%EF%BC%88Code-Explanation%EF%BC%89-2"><span class="toc-number">9.1.</span> <span class="toc-text">代码解释（Code Explanation）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%EF%BC%88Output-Result%EF%BC%89-2"><span class="toc-number">9.2.</span> <span class="toc-text">输出结果（Output Result）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-Queue-%E7%B1%BB%EF%BC%88Java-Queue-Class%EF%BC%89-1"><span class="toc-number">10.</span> <span class="toc-text">Java Queue 类（Java Queue Class）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-peek-%E6%96%B9%E6%B3%95"><span class="toc-number">10.1.</span> <span class="toc-text">使用 peek() 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-number">10.2.</span> <span class="toc-text">示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-number">10.3.</span> <span class="toc-text">输出结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93"><span class="toc-number">10.4.</span> <span class="toc-text">中文总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-%E9%98%9F%E5%88%97%E7%B1%BB%EF%BC%88Java-Queue-Class%EF%BC%89-2"><span class="toc-number">11.</span> <span class="toc-text">Java 队列类（Java Queue Class）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-clear-%E6%96%B9%E6%B3%95"><span class="toc-number">11.1.</span> <span class="toc-text">使用 clear() 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81-1"><span class="toc-number">11.2.</span> <span class="toc-text">示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C-1"><span class="toc-number">11.3.</span> <span class="toc-text">输出结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93-1"><span class="toc-number">11.4.</span> <span class="toc-text">中文总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-%E9%98%9F%E5%88%97%E7%B1%BB%EF%BC%88Java-Queue-Class%EF%BC%89-3"><span class="toc-number">12.</span> <span class="toc-text">Java 队列类（Java Queue Class）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-clear-%E6%96%B9%E6%B3%95-1"><span class="toc-number">12.1.</span> <span class="toc-text">使用 clear() 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81-2"><span class="toc-number">12.2.</span> <span class="toc-text">示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C-2"><span class="toc-number">12.3.</span> <span class="toc-text">输出结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93-2"><span class="toc-number">12.4.</span> <span class="toc-text">中文总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-%E7%B1%BB%E5%BA%93%E8%AF%B4%E6%98%8E%EF%BC%88Note-on-the-Java-Class-Libraries%EF%BC%89"><span class="toc-number">13.</span> <span class="toc-text">Java 类库说明（Note on the Java Class Libraries）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Queue-%E6%8E%A5%E5%8F%A3"><span class="toc-number">13.1.</span> <span class="toc-text">Queue 接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Queue-%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">13.2.</span> <span class="toc-text">Queue 的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB"><span class="toc-number">13.3.</span> <span class="toc-text">继承关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E8%8A%82%E4%B8%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">13.4.</span> <span class="toc-text">本节不使用的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A"><span class="toc-number">13.5.</span> <span class="toc-text">图表解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93-3"><span class="toc-number">13.6.</span> <span class="toc-text">中文总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E6%8F%8F%E8%BF%B0%EF%BC%88Scenario%EF%BC%89"><span class="toc-number">14.</span> <span class="toc-text">场景描述（Scenario）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E7%B1%BB%E5%AE%9E%E7%8E%B0"><span class="toc-number">14.1.</span> <span class="toc-text">新增类实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E8%A6%81%E6%B1%82"><span class="toc-number">14.2.</span> <span class="toc-text">功能要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%E6%80%BB%E7%BB%93-4"><span class="toc-number">14.3.</span> <span class="toc-text">中文总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/21/T8/" title="T8">T8</a><time datetime="2023-12-21T19:39:36.000Z" title="Created 2023-12-21 19:39:36">2023-12-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T7/" title="T7">T7</a><time datetime="2023-12-20T03:17:15.000Z" title="Created 2023-12-20 03:17:15">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T6/" title="T6">T6</a><time datetime="2023-12-20T03:01:32.000Z" title="Created 2023-12-20 03:01:32">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/16/A5-2/" title="A5-2">A5-2</a><time datetime="2023-12-16T05:38:48.000Z" title="Created 2023-12-16 05:38:48">2023-12-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/16/A5-1/" title="A5-1">A5-1</a><time datetime="2023-12-16T05:17:27.000Z" title="Created 2023-12-16 05:17:27">2023-12-16</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
