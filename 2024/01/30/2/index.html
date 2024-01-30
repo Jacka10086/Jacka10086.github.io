@@ -1,0 +1,405 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Com327-week1 | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="缩进（Indentation） 缩进指的是代码行开始的空白区域。 在Python中，缩进非常重要，它不仅仅是为了代码的可读性。 Python使用缩进来表示代码块。  重要性（重要性） 缩进是Python语法的一部分，错误的缩进会导致语法错误。 正确的缩进有助于定义代码的结构，使得逻辑关系更加清晰。  总结：在Python编程中，正确的缩进是必要的，它用于标识代码的结构和逻辑层次，不仅能提高代码的可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Com327-week1">
+<meta property="og:url" content="http://example.com/2024/01/30/2/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="缩进（Indentation） 缩进指的是代码行开始的空白区域。 在Python中，缩进非常重要，它不仅仅是为了代码的可读性。 Python使用缩进来表示代码块。  重要性（重要性） 缩进是Python语法的一部分，错误的缩进会导致语法错误。 正确的缩进有助于定义代码的结构，使得逻辑关系更加清晰。  总结：在Python编程中，正确的缩进是必要的，它用于标识代码的结构和逻辑层次，不仅能提高代码的可">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2024-01-30T04:52:02.000Z">
+<meta property="article:modified_time" content="2024-01-30T05:12:46.100Z">
+<meta property="article:author" content="Jacka10086">
+<meta property="article:tag" content="Com327">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/01/30/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Com327-week1',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-30 05:12:46'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">90</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Com327-week1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-01-30T04:52:02.000Z" title="Created 2024-01-30 04:52:02">2024-01-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-01-30T05:12:46.100Z" title="Updated 2024-01-30 05:12:46">2024-01-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Com327-week1"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="缩进（Indentation）"><a href="#缩进（Indentation）" class="headerlink" title="缩进（Indentation）"></a>缩进（Indentation）</h2><ul>
+<li>缩进指的是代码行开始的空白区域。</li>
+<li>在Python中，缩进非常重要，它不仅仅是为了代码的可读性。</li>
+<li>Python使用缩进来表示代码块。</li>
+</ul>
+<h3 id="重要性（重要性）"><a href="#重要性（重要性）" class="headerlink" title="重要性（重要性）"></a>重要性（重要性）</h3><ul>
+<li>缩进是Python语法的一部分，错误的缩进会导致语法错误。</li>
+<li>正确的缩进有助于定义代码的结构，使得逻辑关系更加清晰。</li>
+</ul>
+<p>总结：在Python编程中，正确的缩进是必要的，它用于标识代码的结构和逻辑层次，不仅能提高代码的可读性，还是语法的一部分。</p>
+<h2 id="嵌套if语句（Nested-if-statements）"><a href="#嵌套if语句（Nested-if-statements）" class="headerlink" title="嵌套if语句（Nested if statements）"></a>嵌套if语句（Nested if statements）</h2><ul>
+<li><code>if</code> 语句可以包含在其他 <code>if</code> 语句内部，这称为嵌套。</li>
+<li>嵌套的 <code>if</code> 语句可以进一步细分和检查条件。</li>
+</ul>
+<h3 id="示例解释（示例解释）"><a href="#示例解释（示例解释）" class="headerlink" title="示例解释（示例解释）"></a>示例解释（示例解释）</h3><ul>
+<li>当外层 <code>if</code> 条件满足时，内层 <code>if</code> 条件才会被检查。</li>
+<li><code>elif</code> 和 <code>else</code> 语句提供了条件分支，以处理不同的情况。</li>
+</ul>
+<p>总结：嵌套 <code>if</code> 语句允许在一个条件成立的基础上进一步检查其他条件，通过多层判断来实现更复杂的逻辑分支。</p>
+<h2 id="条件语句示例（条件语句示例）"><a href="#条件语句示例（条件语句示例）" class="headerlink" title="条件语句示例（条件语句示例）"></a>条件语句示例（条件语句示例）</h2><ul>
+<li>这是一个具体的Python条件语句示例，用于比较变量 <code>var</code> 与特定值的关系。</li>
+</ul>
+<h3 id="代码解读（代码解读）"><a href="#代码解读（代码解读）" class="headerlink" title="代码解读（代码解读）"></a>代码解读（代码解读）</h3><ul>
+<li><code>var</code> 被设置为20，然后通过一系列的 <code>if</code>，<code>elif</code>，和 <code>else</code> 语句来判断它的值。</li>
+<li>每个条件块内部的 <code>print</code> 语句会在其对应的条件为真时执行。</li>
+</ul>
+<h3 id="逻辑错误（逻辑错误）"><a href="#逻辑错误（逻辑错误）" class="headerlink" title="逻辑错误（逻辑错误）"></a>逻辑错误（逻辑错误）</h3><ul>
+<li>示例中存在逻辑错误，例如 <code>elif var == 30:</code> 应该是 <code>elif var == 50:</code>。</li>
+<li>还有 <code>elif var &lt; 50:</code> 条件是多余的，因为如果 <code>var</code> 是小于20的数，它会在第一个 <code>if</code> 中就被捕获。</li>
+</ul>
+<p>总结：这个例子展示了如何使用条件语句来根据变量的值进行不同的操作，但其中包含的逻辑错误也提示我们在编写条件语句时需要仔细检查条件的准确性和完整性。</p>
+<h2 id="变量（Variables）"><a href="#变量（Variables）" class="headerlink" title="变量（Variables）"></a>变量（Variables）</h2><ul>
+<li>变量是内存中的一个命名位置，程序员可以在此存储数据，并可以稍后使用变量名来检索数据。</li>
+<li>程序员可以自由选择变量的名称。</li>
+<li>可以在后续的语句中更改变量的内容。</li>
+</ul>
+<h3 id="变量赋值（变量赋值）"><a href="#变量赋值（变量赋值）" class="headerlink" title="变量赋值（变量赋值）"></a>变量赋值（变量赋值）</h3><ul>
+<li>赋值语句 <code>x = 12.2</code> 和 <code>y = 14</code> 设定了变量 <code>x</code> 和 <code>y</code> 的初始值。</li>
+<li>随后的赋值 <code>x = 100</code> 更新了变量 <code>x</code> 的值。</li>
+</ul>
+<h3 id="图表解释（图表解释）"><a href="#图表解释（图表解释）" class="headerlink" title="图表解释（图表解释）"></a>图表解释（图表解释）</h3><ul>
+<li>图表中展示了变量 <code>x</code> 和 <code>y</code> 的值如何在内存中被存储。</li>
+<li>变量 <code>x</code> 的值从 <code>12.2</code> 更新为 <code>100</code>，显示了变量内容可以被改变。</li>
+</ul>
+<p>总结：变量是存储数据的基本单位，可以被赋予不同的值，且这些值可以在程序执行过程中被修改和更新。</p>
+<h2 id="分配变量的不同方式（Assigning-variables-in-different-ways）"><a href="#分配变量的不同方式（Assigning-variables-in-different-ways）" class="headerlink" title="分配变量的不同方式（Assigning variables in different ways）"></a>分配变量的不同方式（Assigning variables in different ways）</h2><ul>
+<li><code>x = 2</code> 是一个赋值语句，它将数值 <code>2</code> 赋给变量 <code>x</code>。</li>
+<li><code>x = x + 2</code> 使用表达式来更新变量 <code>x</code> 的值。</li>
+<li><code>print(x)</code> 是一个打印语句，用于输出变量 <code>x</code> 的值。</li>
+</ul>
+<h3 id="赋值语句（赋值语句）"><a href="#赋值语句（赋值语句）" class="headerlink" title="赋值语句（赋值语句）"></a>赋值语句（赋值语句）</h3><ul>
+<li>赋值语句用于初始化或更新变量的值。</li>
+<li>通过将变量与一个表达式相结合，可以在保持变量名不变的情况下改变其值。</li>
+</ul>
+<h3 id="打印语句（打印语句）"><a href="#打印语句（打印语句）" class="headerlink" title="打印语句（打印语句）"></a>打印语句（打印语句）</h3><ul>
+<li><code>print</code> 函数用于在屏幕上显示变量或表达式的值。</li>
+<li>它是检查变量当前状态的一种快速方式。</li>
+</ul>
+<p>总结：在编程中，变量可以以多种方式被赋值和使用，理解不同类型的赋值语句对于编写有效代码是至关重要的。</p>
+<h2 id="数值表达式（Numeric-Expressions）"><a href="#数值表达式（Numeric-Expressions）" class="headerlink" title="数值表达式（Numeric Expressions）"></a>数值表达式（Numeric Expressions）</h2><ul>
+<li>由于计算机键盘上缺少数学符号，我们使用“计算机语言”来表示传统的数学操作。</li>
+<li>星号（*）用于表示乘法。</li>
+<li>幂运算（指数，即求幂）在计算机中的表示方式与传统数学中不同。</li>
+</ul>
+<h3 id="基本操作符（基本操作符）"><a href="#基本操作符（基本操作符）" class="headerlink" title="基本操作符（基本操作符）"></a>基本操作符（基本操作符）</h3><ul>
+<li>加号（+）表示加法。</li>
+<li>减号（-）表示减法。</li>
+<li>星号（*）表示乘法。</li>
+<li>斜杠（&#x2F;）表示除法。</li>
+<li>双星号（**）表示幂运算。</li>
+<li>百分号（%）表示取余操作。</li>
+</ul>
+<h3 id="表格解释（表格解释）"><a href="#表格解释（表格解释）" class="headerlink" title="表格解释（表格解释）"></a>表格解释（表格解释）</h3><ul>
+<li>表格列出了常用的数学操作符及其在计算机编程中的对应关系。</li>
+<li>例如，加法用加号（+）表示，而幂运算用双星号（**）表示。</li>
+</ul>
+<p>总结：在编程中，数值表达式使用特定的符号来执行数学运算，这些符号是编程语言中的标准，了解和掌握这些基本操作符对编程至关重要。</p>
+<h2 id="数据结构和数据类型简介（Brief-Intro-to-Data-Structures-Data-Types）"><a href="#数据结构和数据类型简介（Brief-Intro-to-Data-Structures-Data-Types）" class="headerlink" title="数据结构和数据类型简介（Brief Intro to Data Structures &amp; Data Types）"></a>数据结构和数据类型简介（Brief Intro to Data Structures &amp; Data Types）</h2><ul>
+<li>数据结构和数据类型是编程中用于存储和组织数据的基础概念。</li>
+</ul>
+<h3 id="数值类型（Numeric）"><a href="#数值类型（Numeric）" class="headerlink" title="数值类型（Numeric）"></a>数值类型（Numeric）</h3><ul>
+<li>包括整数（int），浮点数（float），复数（complex）。</li>
+</ul>
+<h3 id="布尔类型（Boolean）"><a href="#布尔类型（Boolean）" class="headerlink" title="布尔类型（Boolean）"></a>布尔类型（Boolean）</h3><ul>
+<li>只有两个值：真（True）或假（False）。</li>
+</ul>
+<h3 id="序列类型（Sequence）"><a href="#序列类型（Sequence）" class="headerlink" title="序列类型（Sequence）"></a>序列类型（Sequence）</h3><ul>
+<li>包括字符串（strings），列表（lists），元组（tuples），范围（range）。</li>
+</ul>
+<h3 id="二进制类型（Binary-Types）"><a href="#二进制类型（Binary-Types）" class="headerlink" title="二进制类型（Binary Types）"></a>二进制类型（Binary Types）</h3><ul>
+<li>包括字节（byte），字节数组（bytearrays）。</li>
+</ul>
+<h3 id="映射类型（Mapping-Types）"><a href="#映射类型（Mapping-Types）" class="headerlink" title="映射类型（Mapping Types）"></a>映射类型（Mapping Types）</h3><ul>
+<li>包括字典（dict）。</li>
+</ul>
+<h3 id="集合类型（Set-Types）"><a href="#集合类型（Set-Types）" class="headerlink" title="集合类型（Set Types）"></a>集合类型（Set Types）</h3><ul>
+<li>包括集合（set）和冻结集合（frozenset）。</li>
+</ul>
+<h3 id="特殊数据类型（Specialised-Data-Types）"><a href="#特殊数据类型（Specialised-Data-Types）" class="headerlink" title="特殊数据类型（Specialised Data Types）"></a>特殊数据类型（Specialised Data Types）</h3><ul>
+<li>包括日期和时间类型（例如 TimeDate，timezone，date）和集合（collections）。</li>
+</ul>
+<h3 id="文本类型（Text）"><a href="#文本类型（Text）" class="headerlink" title="文本类型（Text）"></a>文本类型（Text）</h3><ul>
+<li>字符串（str）。</li>
+</ul>
+<p>总结：了解不同的数据类型和数据结构对于有效地存储和处理数据至关重要。它们定义了数据的存储方式，以及我们可以对数据执行的操作类型。</p>
+<h2 id="Python中的控制流（Control-Flow-in-Python）"><a href="#Python中的控制流（Control-Flow-in-Python）" class="headerlink" title="Python中的控制流（Control Flow in Python）"></a>Python中的控制流（Control Flow in Python）</h2><ul>
+<li>控制流是编程中指导程序执行顺序的结构。</li>
+</ul>
+<h3 id="条件语句（Conditional-Statements）"><a href="#条件语句（Conditional-Statements）" class="headerlink" title="条件语句（Conditional Statements）"></a>条件语句（Conditional Statements）</h3><ul>
+<li><code>if</code>：单一条件判断。</li>
+<li><code>if-else</code>：二分支条件判断。</li>
+<li><code>if-elif-else</code>：多分支条件判断。</li>
+<li>嵌套 <code>if-else</code>：在一个 <code>if</code> 或 <code>else</code> 块内部使用另一个 <code>if-else</code> 结构。</li>
+</ul>
+<h3 id="转移语句（Transfer-Statements）"><a href="#转移语句（Transfer-Statements）" class="headerlink" title="转移语句（Transfer Statements）"></a>转移语句（Transfer Statements）</h3><ul>
+<li><code>break</code>：退出当前循环。</li>
+<li><code>continue</code>：跳过当前循环的剩余部分，直接开始下一次循环。</li>
+<li><code>pass</code>：不执行任何操作，常用作占位符。</li>
+</ul>
+<h3 id="迭代语句（Iterative-Statements）"><a href="#迭代语句（Iterative-Statements）" class="headerlink" title="迭代语句（Iterative Statements）"></a>迭代语句（Iterative Statements）</h3><ul>
+<li><code>for</code>：遍历序列的每个元素。</li>
+<li><code>while</code>：当条件为真时重复执行块内的代码。</li>
+</ul>
+<p>总结：控制流包含条件语句、转移语句和迭代语句，它们是构建程序逻辑的关键，允许我们根据不同的条件执行不同的代码路径，或者多次执行某些代码。</p>
+<h2 id="控制流语句类型（Control-Flow-Statement-Types）"><a href="#控制流语句类型（Control-Flow-Statement-Types）" class="headerlink" title="控制流语句类型（Control Flow Statement Types）"></a>控制流语句类型（Control Flow Statement Types）</h2><ul>
+<li>控制流语句是编程中用于决定代码执行顺序的语句。</li>
+</ul>
+<h3 id="顺序执行（Sequential）"><a href="#顺序执行（Sequential）" class="headerlink" title="顺序执行（Sequential）"></a>顺序执行（Sequential）</h3><ul>
+<li>代码按照编写的顺序一步接一步执行。</li>
+</ul>
+<h3 id="条件执行（Conditional）"><a href="#条件执行（Conditional）" class="headerlink" title="条件执行（Conditional）"></a>条件执行（Conditional）</h3><ul>
+<li>代码根据条件判断选择执行路径，如 <code>if</code>、<code>elif</code> 和 <code>else</code> 语句。</li>
+</ul>
+<h3 id="循环执行（Looping）"><a href="#循环执行（Looping）" class="headerlink" title="循环执行（Looping）"></a>循环执行（Looping）</h3><ul>
+<li>代码重复执行，直到满足一定条件，如 <code>for</code> 循环和 <code>while</code> 循环。</li>
+</ul>
+<p>总结：控制流语句定义了程序的执行顺序，包括按顺序执行代码、基于条件判断选择不同路径执行，以及重复执行代码直到满足特定条件为止。这些是编写动态和响应不同情况的程序的基础。</p>
+<h2 id="条件：比较操作符（Conditional-Comparison-Operators）"><a href="#条件：比较操作符（Conditional-Comparison-Operators）" class="headerlink" title="条件：比较操作符（Conditional: Comparison Operators）"></a>条件：比较操作符（Conditional: Comparison Operators）</h2><ul>
+<li>布尔表达式通过提出问题并产生是（Yes）或否（No）的结果来控制程序流程。</li>
+<li>使用比较操作符的布尔表达式评估为真（True）或假（False）。</li>
+<li>比较操作符检查变量的值，但不改变变量。</li>
+</ul>
+<h3 id="比较操作符列表（Comparison-Operators-List）"><a href="#比较操作符列表（Comparison-Operators-List）" class="headerlink" title="比较操作符列表（Comparison Operators List）"></a>比较操作符列表（Comparison Operators List）</h3><ul>
+<li><code>&lt;</code> 表示小于。</li>
+<li><code>&lt;=</code> 表示小于或等于。</li>
+<li><code>==</code> 表示等于。</li>
+<li><code>&gt;=</code> 表示大于或等于。</li>
+<li><code>&gt;</code> 表示大于。</li>
+<li><code>!=</code> 表示不等于。</li>
+<li>注意：“<code>=</code>”用于赋值。</li>
+</ul>
+<h3 id="示例代码（Example-Code）"><a href="#示例代码（Example-Code）" class="headerlink" title="示例代码（Example Code）"></a>示例代码（Example Code）</h3><ul>
+<li><code>x = 5</code> 设置变量 <code>x</code> 的值为5。</li>
+<li><code>if x == 5:</code> 如果 <code>x</code> 等于5，则打印“Equals 5”。</li>
+<li><code>if x &gt; 4:</code> 如果 <code>x</code> 大于4，则打印“Greater than 4”。</li>
+<li><code>if x &gt;= 5:</code> 如果 <code>x</code> 大于或等于5，则打印“Greater than or Equals 5”。</li>
+<li><code>if x &lt; 6:</code> 如果 <code>x</code> 小于6，则打印“Less than 6”。</li>
+<li><code>if x &lt;= 5:</code> 如果 <code>x</code> 小于或等于5，则打印“Less than or Equals 5”。</li>
+<li><code>if x != 6:</code> 如果 <code>x</code> 不等于6，则打印“Not equal 6”。</li>
+</ul>
+<p>总结：比较操作符是编程中用于条件判断的基本工具，它们用于在逻辑表达式中对变量进行比较，并根据比较的结果控制程序的执行流程。</p>
+<h2 id="if语句（if-statements）"><a href="#if语句（if-statements）" class="headerlink" title="if语句（if statements）"></a>if语句（if statements）</h2><ul>
+<li>if语句用于根据指定条件执行代码块。</li>
+</ul>
+<h3 id="示例代码（Example-Code）-1"><a href="#示例代码（Example-Code）-1" class="headerlink" title="示例代码（Example Code）"></a>示例代码（Example Code）</h3><ul>
+<li>初始化两个变量 <code>a</code> 和 <code>b</code> 分别赋值为100和50。</li>
+<li>判断 <code>b</code> 是否大于 <code>a</code>，如果是，则打印 <code>&quot;b is greater than a&quot;</code>。</li>
+<li>如果第一个条件不成立，再判断 <code>a</code> 是否大于 <code>b</code>，如果是，则打印 <code>&quot;a is greater than b&quot;</code>。</li>
+<li>如果以上条件都不成立，再判断 <code>a</code> 和 <code>b</code> 是否相等，如果是，则打印 <code>&quot;a and b are equal&quot;</code>。</li>
+</ul>
+<h3 id="输出（Output）"><a href="#输出（Output）" class="headerlink" title="输出（Output）"></a>输出（Output）</h3><ul>
+<li>因为 <code>a</code> 的值（100）大于 <code>b</code> 的值（50），所以输出 <code>&quot;a is greater than b&quot;</code>。</li>
+</ul>
+<p>总结：if语句及其相关的elif和else语句提供了一种检查条件并根据这些条件执行不同代码块的方法。这是编写逻辑和条件响应代码的基础。</p>
+<h2 id="循环类型（Loop-Types）"><a href="#循环类型（Loop-Types）" class="headerlink" title="循环类型（Loop Types）"></a>循环类型（Loop Types）</h2><ul>
+<li>循环语句允许我们多次执行一个语句或语句组。</li>
+</ul>
+<h3 id="循环基础（Loop-Basics）"><a href="#循环基础（Loop-Basics）" class="headerlink" title="循环基础（Loop Basics）"></a>循环基础（Loop Basics）</h3><ul>
+<li><strong>重复语句（Repetition statements）</strong>或循环用于重复执行一个动作。</li>
+<li><strong>迭代（Iteration）</strong>指的是重复的过程，每次重复称为一次迭代或一次通过。</li>
+<li><strong>循环语句（Loop statement）</strong>允许我们多次执行语句或语句组。</li>
+</ul>
+<h3 id="循环类型（Types-of-Loops）"><a href="#循环类型（Types-of-Loops）" class="headerlink" title="循环类型（Types of Loops）"></a>循环类型（Types of Loops）</h3><ul>
+<li><code>for</code>：用于重复执行某个语句固定的次数。</li>
+<li><code>while</code>：在满足特定布尔条件时重复执行循环。</li>
+<li><code>nested</code>：在一个语句中结合不同的循环类型，例如在<code>if</code>语句内使用<code>while</code>循环。</li>
+</ul>
+<h3 id="for循环（for-Loop）"><a href="#for循环（for-Loop）" class="headerlink" title="for循环（for Loop）"></a>for循环（for Loop）</h3><ul>
+<li><code>for</code>循环用于遍历数据集（例如列表，字典，元组，集合，字符串）。</li>
+<li>使用<code>for var_name in sequence:</code>来迭代序列中的每个元素。</li>
+<li>可以包含一个<code>else</code>块，当循环正常结束时执行。</li>
+</ul>
+<h3 id="while循环（While-Loop）"><a href="#while循环（While-Loop）" class="headerlink" title="while循环（While Loop）"></a>while循环（While Loop）</h3><ul>
+<li><code>while</code>循环会在条件为真时重复执行代码块。</li>
+<li><code>while</code>循环的条件总是首先被检查。如果初始条件不满足，则代码块将永远不会执行。</li>
+</ul>
+<h3 id="while语句（while-statements）"><a href="#while语句（while-statements）" class="headerlink" title="while语句（while statements）"></a>while语句（while statements）</h3><ul>
+<li><code>while</code>循环基于准备好的变量进行操作，这些变量被集成到条件语句中。</li>
+</ul>
+<h3 id="break语句（break-Statement）"><a href="#break语句（break-Statement）" class="headerlink" title="break语句（break Statement）"></a>break语句（break Statement）</h3><ul>
+<li>使用<code>break</code>语句可以停止循环，即使<code>while</code>条件为真。</li>
+</ul>
+<h3 id="continue语句（continue-Statement）"><a href="#continue语句（continue-Statement）" class="headerlink" title="continue语句（continue Statement）"></a>continue语句（continue Statement）</h3><ul>
+<li><code>continue</code>语句允许跳过循环的当前迭代，并继续执行下一次迭代。</li>
+</ul>
+<p>总结：理解不同类型的循环及其用法对于编写能够有效重复执行任务的程序至关重要。循环结构是自动化和简化代码的关键工具。</p>
+<h2 id="变量作用域（Variable-Scope）"><a href="#变量作用域（Variable-Scope）" class="headerlink" title="变量作用域（Variable Scope）"></a>变量作用域（Variable Scope）</h2><ul>
+<li>变量只能在其首次声明的区域内使用，这称为变量的<strong>作用域</strong>。</li>
+</ul>
+<h3 id="作用域概念（Concept-of-Scope）"><a href="#作用域概念（Concept-of-Scope）" class="headerlink" title="作用域概念（Concept of Scope）"></a>作用域概念（Concept of Scope）</h3><ul>
+<li>作用域规则决定了如何在代码中查找变量和名称。</li>
+<li>在Python中，作用域可以使用LEGB来描述，分别代表局部（Local）、封闭（Enclosing）、全局（Global）和内置（Built-in）。</li>
+</ul>
+<h3 id="示例函数（Example-Function）"><a href="#示例函数（Example-Function）" class="headerlink" title="示例函数（Example Function）"></a>示例函数（Example Function）</h3><ul>
+<li>定义了一个函数<code>myScope()</code>，在该函数内声明了变量<code>x</code>并打印它的值。</li>
+<li>调用<code>myScope()</code>函数时，会输出：”Hello there!”</li>
+</ul>
+<h3 id="作用域类型（Scope-Types）"><a href="#作用域类型（Scope-Types）" class="headerlink" title="作用域类型（Scope Types）"></a>作用域类型（Scope Types）</h3><ul>
+<li><strong>局部作用域（Local）</strong>：在函数或代码块内定义的变量。</li>
+<li><strong>封闭作用域（Enclosing）</strong>：在嵌套函数中，外层非全局作用域的变量。</li>
+<li><strong>全局作用域（Global）</strong>：在文件顶层定义的变量。</li>
+<li><strong>内置作用域（Built-in）</strong>：Python语言内置的名称，如<code>print</code>和<code>len</code>。</li>
+</ul>
+<p>总结：理解变量的作用域对于编写清晰、有效且易于维护的代码至关重要。它决定了在何处以及如何访问变量。</p>
+<h2 id="变量的可见性和访问性（Variable-Availability-and-Access）"><a href="#变量的可见性和访问性（Variable-Availability-and-Access）" class="headerlink" title="变量的可见性和访问性（Variable Availability and Access）"></a>变量的可见性和访问性（Variable Availability and Access）</h2><ul>
+<li>函数内创建的变量仅限于该函数的局部作用域内。</li>
+</ul>
+<h3 id="变量作用域（Variable-Scope）-1"><a href="#变量作用域（Variable-Scope）-1" class="headerlink" title="变量作用域（Variable Scope）"></a>变量作用域（Variable Scope）</h3><ul>
+<li>只有在变量声明所在的区域内，该变量才是可用的，这被称为作用域。</li>
+<li>作用域的概念决定了如何在代码中查找变量和名称。</li>
+<li>在Python中，作用域可用LEGB表示，即局部（Local）、封闭（Enclosing）、全局（Global）和内置（Built-in）。</li>
+</ul>
+<h3 id="作用域示例（Scope-Example）"><a href="#作用域示例（Scope-Example）" class="headerlink" title="作用域示例（Scope Example）"></a>作用域示例（Scope Example）</h3><ul>
+<li>一个名为<code>myScope</code>的函数内部创建了变量<code>x</code>，并打印该变量。</li>
+<li>调用<code>myScope()</code>函数时将输出：”Hello there!”</li>
+</ul>
+<h3 id="局部作用域（Local-Scope）"><a href="#局部作用域（Local-Scope）" class="headerlink" title="局部作用域（Local Scope）"></a>局部作用域（Local Scope）</h3><ul>
+<li>函数内部创建的变量属于局部作用域，仅在函数内部可见和可用。</li>
+</ul>
+<h3 id="封闭作用域（Enclosing-Scope）"><a href="#封闭作用域（Enclosing-Scope）" class="headerlink" title="封闭作用域（Enclosing Scope）"></a>封闭作用域（Enclosing Scope）</h3><ul>
+<li>当有嵌套的函数时，外层函数的作用域为封闭作用域。</li>
+</ul>
+<h3 id="全局作用域（Global-Scope）"><a href="#全局作用域（Global-Scope）" class="headerlink" title="全局作用域（Global Scope）"></a>全局作用域（Global Scope）</h3><ul>
+<li>在文件的顶层定义的变量属于全局作用域，整个文件内都可见。</li>
+</ul>
+<h3 id="内置作用域（Built-in-Scope）"><a href="#内置作用域（Built-in-Scope）" class="headerlink" title="内置作用域（Built-in Scope）"></a>内置作用域（Built-in Scope）</h3><ul>
+<li>Python解释器预定义的变量，如<code>print()</code>函数，属于内置作用域。</li>
+</ul>
+<p>总结：理解不同的作用域和如何在Python中使用它们对编写有效和可维护的代码至关重要。变量的作用域决定了你在何处以及如何可以访问这些变量。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/01/30/2/">http://example.com/2024/01/30/2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Com327/">Com327</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/01/29/1/" title="Com301-week1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Com301-week1</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">90</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%A9%E8%BF%9B%EF%BC%88Indentation%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">缩进（Indentation）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E6%80%A7%EF%BC%88%E9%87%8D%E8%A6%81%E6%80%A7%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">重要性（重要性）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97if%E8%AF%AD%E5%8F%A5%EF%BC%88Nested-if-statements%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">嵌套if语句（Nested if statements）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E8%A7%A3%E9%87%8A%EF%BC%88%E7%A4%BA%E4%BE%8B%E8%A7%A3%E9%87%8A%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">示例解释（示例解释）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5%E7%A4%BA%E4%BE%8B%EF%BC%88%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5%E7%A4%BA%E4%BE%8B%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">条件语句示例（条件语句示例）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%A3%E8%AF%BB%EF%BC%88%E4%BB%A3%E7%A0%81%E8%A7%A3%E8%AF%BB%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">代码解读（代码解读）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E9%94%99%E8%AF%AF%EF%BC%88%E9%80%BB%E8%BE%91%E9%94%99%E8%AF%AF%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">逻辑错误（逻辑错误）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%EF%BC%88Variables%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">变量（Variables）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC%EF%BC%88%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC%EF%BC%89"><span class="toc-number">4.1.</span> <span class="toc-text">变量赋值（变量赋值）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A%EF%BC%88%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">图表解释（图表解释）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E9%85%8D%E5%8F%98%E9%87%8F%E7%9A%84%E4%B8%8D%E5%90%8C%E6%96%B9%E5%BC%8F%EF%BC%88Assigning-variables-in-different-ways%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">分配变量的不同方式（Assigning variables in different ways）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E8%AF%AD%E5%8F%A5%EF%BC%88%E8%B5%8B%E5%80%BC%E8%AF%AD%E5%8F%A5%EF%BC%89"><span class="toc-number">5.1.</span> <span class="toc-text">赋值语句（赋值语句）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%8D%B0%E8%AF%AD%E5%8F%A5%EF%BC%88%E6%89%93%E5%8D%B0%E8%AF%AD%E5%8F%A5%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">打印语句（打印语句）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%88Numeric-Expressions%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">数值表达式（Numeric Expressions）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%AC%A6%EF%BC%88%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%AC%A6%EF%BC%89"><span class="toc-number">6.1.</span> <span class="toc-text">基本操作符（基本操作符）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E8%A7%A3%E9%87%8A%EF%BC%88%E8%A1%A8%E6%A0%BC%E8%A7%A3%E9%87%8A%EF%BC%89"><span class="toc-number">6.2.</span> <span class="toc-text">表格解释（表格解释）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%AE%80%E4%BB%8B%EF%BC%88Brief-Intro-to-Data-Structures-Data-Types%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">数据结构和数据类型简介（Brief Intro to Data Structures &amp; Data Types）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%EF%BC%88Numeric%EF%BC%89"><span class="toc-number">7.1.</span> <span class="toc-text">数值类型（Numeric）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B%EF%BC%88Boolean%EF%BC%89"><span class="toc-number">7.2.</span> <span class="toc-text">布尔类型（Boolean）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E7%B1%BB%E5%9E%8B%EF%BC%88Sequence%EF%BC%89"><span class="toc-number">7.3.</span> <span class="toc-text">序列类型（Sequence）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%B1%BB%E5%9E%8B%EF%BC%88Binary-Types%EF%BC%89"><span class="toc-number">7.4.</span> <span class="toc-text">二进制类型（Binary Types）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E7%B1%BB%E5%9E%8B%EF%BC%88Mapping-Types%EF%BC%89"><span class="toc-number">7.5.</span> <span class="toc-text">映射类型（Mapping Types）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%EF%BC%88Set-Types%EF%BC%89"><span class="toc-number">7.6.</span> <span class="toc-text">集合类型（Set Types）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%88Specialised-Data-Types%EF%BC%89"><span class="toc-number">7.7.</span> <span class="toc-text">特殊数据类型（Specialised Data Types）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%B1%BB%E5%9E%8B%EF%BC%88Text%EF%BC%89"><span class="toc-number">7.8.</span> <span class="toc-text">文本类型（Text）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python%E4%B8%AD%E7%9A%84%E6%8E%A7%E5%88%B6%E6%B5%81%EF%BC%88Control-Flow-in-Python%EF%BC%89"><span class="toc-number">8.</span> <span class="toc-text">Python中的控制流（Control Flow in Python）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5%EF%BC%88Conditional-Statements%EF%BC%89"><span class="toc-number">8.1.</span> <span class="toc-text">条件语句（Conditional Statements）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E8%AF%AD%E5%8F%A5%EF%BC%88Transfer-Statements%EF%BC%89"><span class="toc-number">8.2.</span> <span class="toc-text">转移语句（Transfer Statements）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%AD%E4%BB%A3%E8%AF%AD%E5%8F%A5%EF%BC%88Iterative-Statements%EF%BC%89"><span class="toc-number">8.3.</span> <span class="toc-text">迭代语句（Iterative Statements）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E6%B5%81%E8%AF%AD%E5%8F%A5%E7%B1%BB%E5%9E%8B%EF%BC%88Control-Flow-Statement-Types%EF%BC%89"><span class="toc-number">9.</span> <span class="toc-text">控制流语句类型（Control Flow Statement Types）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E6%89%A7%E8%A1%8C%EF%BC%88Sequential%EF%BC%89"><span class="toc-number">9.1.</span> <span class="toc-text">顺序执行（Sequential）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%89%A7%E8%A1%8C%EF%BC%88Conditional%EF%BC%89"><span class="toc-number">9.2.</span> <span class="toc-text">条件执行（Conditional）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%89%A7%E8%A1%8C%EF%BC%88Looping%EF%BC%89"><span class="toc-number">9.3.</span> <span class="toc-text">循环执行（Looping）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%EF%BC%9A%E6%AF%94%E8%BE%83%E6%93%8D%E4%BD%9C%E7%AC%A6%EF%BC%88Conditional-Comparison-Operators%EF%BC%89"><span class="toc-number">10.</span> <span class="toc-text">条件：比较操作符（Conditional: Comparison Operators）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E6%93%8D%E4%BD%9C%E7%AC%A6%E5%88%97%E8%A1%A8%EF%BC%88Comparison-Operators-List%EF%BC%89"><span class="toc-number">10.1.</span> <span class="toc-text">比较操作符列表（Comparison Operators List）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81%EF%BC%88Example-Code%EF%BC%89"><span class="toc-number">10.2.</span> <span class="toc-text">示例代码（Example Code）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#if%E8%AF%AD%E5%8F%A5%EF%BC%88if-statements%EF%BC%89"><span class="toc-number">11.</span> <span class="toc-text">if语句（if statements）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81%EF%BC%88Example-Code%EF%BC%89-1"><span class="toc-number">11.1.</span> <span class="toc-text">示例代码（Example Code）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%88Output%EF%BC%89"><span class="toc-number">11.2.</span> <span class="toc-text">输出（Output）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%B1%BB%E5%9E%8B%EF%BC%88Loop-Types%EF%BC%89"><span class="toc-number">12.</span> <span class="toc-text">循环类型（Loop Types）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E5%9F%BA%E7%A1%80%EF%BC%88Loop-Basics%EF%BC%89"><span class="toc-number">12.1.</span> <span class="toc-text">循环基础（Loop Basics）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%B1%BB%E5%9E%8B%EF%BC%88Types-of-Loops%EF%BC%89"><span class="toc-number">12.2.</span> <span class="toc-text">循环类型（Types of Loops）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF%EF%BC%88for-Loop%EF%BC%89"><span class="toc-number">12.3.</span> <span class="toc-text">for循环（for Loop）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#while%E5%BE%AA%E7%8E%AF%EF%BC%88While-Loop%EF%BC%89"><span class="toc-number">12.4.</span> <span class="toc-text">while循环（While Loop）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#while%E8%AF%AD%E5%8F%A5%EF%BC%88while-statements%EF%BC%89"><span class="toc-number">12.5.</span> <span class="toc-text">while语句（while statements）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#break%E8%AF%AD%E5%8F%A5%EF%BC%88break-Statement%EF%BC%89"><span class="toc-number">12.6.</span> <span class="toc-text">break语句（break Statement）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#continue%E8%AF%AD%E5%8F%A5%EF%BC%88continue-Statement%EF%BC%89"><span class="toc-number">12.7.</span> <span class="toc-text">continue语句（continue Statement）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%88Variable-Scope%EF%BC%89"><span class="toc-number">13.</span> <span class="toc-text">变量作用域（Variable Scope）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E5%BF%B5%EF%BC%88Concept-of-Scope%EF%BC%89"><span class="toc-number">13.1.</span> <span class="toc-text">作用域概念（Concept of Scope）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E5%87%BD%E6%95%B0%EF%BC%88Example-Function%EF%BC%89"><span class="toc-number">13.2.</span> <span class="toc-text">示例函数（Example Function）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%B1%BB%E5%9E%8B%EF%BC%88Scope-Types%EF%BC%89"><span class="toc-number">13.3.</span> <span class="toc-text">作用域类型（Scope Types）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%8F%AF%E8%A7%81%E6%80%A7%E5%92%8C%E8%AE%BF%E9%97%AE%E6%80%A7%EF%BC%88Variable-Availability-and-Access%EF%BC%89"><span class="toc-number">14.</span> <span class="toc-text">变量的可见性和访问性（Variable Availability and Access）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%88Variable-Scope%EF%BC%89-1"><span class="toc-number">14.1.</span> <span class="toc-text">变量作用域（Variable Scope）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%A4%BA%E4%BE%8B%EF%BC%88Scope-Example%EF%BC%89"><span class="toc-number">14.2.</span> <span class="toc-text">作用域示例（Scope Example）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%88Local-Scope%EF%BC%89"><span class="toc-number">14.3.</span> <span class="toc-text">局部作用域（Local Scope）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E9%97%AD%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%88Enclosing-Scope%EF%BC%89"><span class="toc-number">14.4.</span> <span class="toc-text">封闭作用域（Enclosing Scope）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%88Global-Scope%EF%BC%89"><span class="toc-number">14.5.</span> <span class="toc-text">全局作用域（Global Scope）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%88Built-in-Scope%EF%BC%89"><span class="toc-number">14.6.</span> <span class="toc-text">内置作用域（Built-in Scope）</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/30/2/" title="Com327-week1">Com327-week1</a><time datetime="2024-01-30T04:52:02.000Z" title="Created 2024-01-30 04:52:02">2024-01-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/29/1/" title="Com301-week1">Com301-week1</a><time datetime="2024-01-29T18:24:06.000Z" title="Created 2024-01-29 18:24:06">2024-01-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/21/T8/" title="T8">T8</a><time datetime="2023-12-21T19:39:36.000Z" title="Created 2023-12-21 19:39:36">2023-12-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T7/" title="T7">T7</a><time datetime="2023-12-20T03:17:15.000Z" title="Created 2023-12-20 03:17:15">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T6/" title="T6">T6</a><time datetime="2023-12-20T03:01:32.000Z" title="Created 2023-12-20 03:01:32">2023-12-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

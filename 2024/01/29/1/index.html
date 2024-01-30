@@ -1,0 +1,693 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Com301-week1 | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第一周讲座目标： 获取对互联网的“感觉”、“大局观”以及初步介绍和术语解释 后续模块将更深入、详细地探讨   准备进行实验室工作 材料由Omar收集、编辑和综合 来源： CCNA：网络入门 计算机网络：自顶向下方法    概述：互联网是什么？ 什么是协议？ 协议层、服务模型 历史（来源：计算机网络）  总结：本周的讲座是对互联网的一个初步了解，目标是让学生对互联网有一个基本的“感觉”和“大局观”，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Com301-week1">
+<meta property="og:url" content="http://example.com/2024/01/29/1/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="第一周讲座目标： 获取对互联网的“感觉”、“大局观”以及初步介绍和术语解释 后续模块将更深入、详细地探讨   准备进行实验室工作 材料由Omar收集、编辑和综合 来源： CCNA：网络入门 计算机网络：自顶向下方法    概述：互联网是什么？ 什么是协议？ 协议层、服务模型 历史（来源：计算机网络）  总结：本周的讲座是对互联网的一个初步了解，目标是让学生对互联网有一个基本的“感觉”和“大局观”，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2024-01-29T18:24:06.000Z">
+<meta property="article:modified_time" content="2024-01-30T05:12:52.564Z">
+<meta property="article:author" content="Jacka10086">
+<meta property="article:tag" content="Com301">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/01/29/1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Com301-week1',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-30 05:12:52'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">90</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Com301-week1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-01-29T18:24:06.000Z" title="Created 2024-01-29 18:24:06">2024-01-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-01-30T05:12:52.564Z" title="Updated 2024-01-30 05:12:52">2024-01-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Com301-week1"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="第一周讲座"><a href="#第一周讲座" class="headerlink" title="第一周讲座"></a>第一周讲座</h2><h3 id="目标："><a href="#目标：" class="headerlink" title="目标："></a>目标：</h3><ul>
+<li>获取对互联网的“感觉”、“大局观”以及初步介绍和术语解释<ul>
+<li><strong>后续模块将更深入、详细地探讨</strong></li>
+</ul>
+</li>
+<li>准备进行实验室工作</li>
+<li>材料由Omar收集、编辑和综合</li>
+<li>来源：<ul>
+<li>CCNA：网络入门</li>
+<li>计算机网络：自顶向下方法</li>
+</ul>
+</li>
+</ul>
+<h3 id="概述：互联网是什么？"><a href="#概述：互联网是什么？" class="headerlink" title="概述：互联网是什么？"></a>概述：互联网是什么？</h3><ul>
+<li>什么是协议？</li>
+<li>协议层、服务模型</li>
+<li>历史（来源：计算机网络）</li>
+</ul>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>本周的讲座是对互联网的一个初步了解，目标是让学生对互联网有一个基本的“感觉”和“大局观”，并介绍相关术语。内容将在后续课程中展开详细讲解。学生也将为实验室工作做准备，使用的材料由Omar编辑整理，主要来源包括CCNA的网络入门教程以及《计算机网络：自顶向下方法》。概述部分涉及了互联网的定义、协议的概念、网络的不同层次和服务模型，以及网络技术的发展历史。</p>
+<h2 id="No-Boundaries（无界限）"><a href="#No-Boundaries（无界限）" class="headerlink" title="No Boundaries（无界限）"></a>No Boundaries（无界限）</h2><p>网络支持我们的方式包括：</p>
+<ul>
+<li>Learn（学习）</li>
+<li>Communicate（交流）</li>
+<li>Work（工作）</li>
+<li>Play（玩乐）</li>
+</ul>
+<h3 id="“Fun”-Internet-connected-devices（“趣味性”互联网连接设备）"><a href="#“Fun”-Internet-connected-devices（“趣味性”互联网连接设备）" class="headerlink" title="“Fun” Internet-connected devices（“趣味性”互联网连接设备）"></a>“Fun” Internet-connected devices（“趣味性”互联网连接设备）</h3><ul>
+<li>Amazon Echo（亚马逊Echo）</li>
+<li>Security Camera（安全摄像头）</li>
+<li>Internet Refrigerator（互联网冰箱）</li>
+<li>Pacemaker &amp; Monitor（起搏器和监视器）</li>
+<li>Tweet-a-watt: monitor energy use（Tweet-a-watt: 能源使用监控）</li>
+<li>其他多种互联网连接的便携设备，如智能手表、游戏机、数字相框等。</li>
+</ul>
+<h4 id="总结：-1"><a href="#总结：-1" class="headerlink" title="总结："></a>总结：</h4><p>本页展示了互联网如何无界限地支持我们日常生活的各个方面，不仅仅限于学习、交流、工作和娱乐，还包括了一系列“趣味性”的互联网连接设备。这些设备不仅提高了生活的便捷性，也在智能家居、个人健康监控等方面发挥着重要作用。互联网的无处不在进一步推动了现代生活方式的转变，使得生活更加数字化和智能化。</p>
+<h2 id="Internet-history（互联网历史）"><a href="#Internet-history（互联网历史）" class="headerlink" title="Internet history（互联网历史）"></a>Internet history（互联网历史）</h2><h3 id="2005-present-more-new-applications-Internet-is-“everywhere”（2005年至今：更多新应用，互联网无处不在）"><a href="#2005-present-more-new-applications-Internet-is-“everywhere”（2005年至今：更多新应用，互联网无处不在）" class="headerlink" title="2005-present: more new applications, Internet is “everywhere”（2005年至今：更多新应用，互联网无处不在）"></a>2005-present: more new applications, Internet is “everywhere”（2005年至今：更多新应用，互联网无处不在）</h3><ul>
+<li>约18亿设备连接至互联网（2017年数据）<ul>
+<li>smartphones的兴起（例如：iPhone于2007年推出）</li>
+</ul>
+</li>
+<li>宽带接入的积极部署</li>
+<li>高速无线接入的日益普及：4G&#x2F;5G, WiFi</li>
+<li>在线社交网络的出现：<ul>
+<li>Facebook：约25亿用户</li>
+</ul>
+</li>
+<li>服务提供商（如Google, FB, Microsoft）建立自己的网络<ul>
+<li>绕过商业互联网连接，为用户提供“即时”访问搜索、视频内容等</li>
+</ul>
+</li>
+<li>企业在“云”中运行他们的服务（例如：亚马逊网络服务，微软Azure）</li>
+</ul>
+<h4 id="总结：-2"><a href="#总结：-2" class="headerlink" title="总结："></a>总结：</h4><p>本页内容概述了自2005年以来互联网历史的发展，强调了互联网的普及和新应用的不断涌现。自2007年智能手机问世以来，互联网设备的数量激增至180亿，宽带和高速无线接入技术的推广使得互联网覆盖面更广。社交网络的出现，特别是Facebook的用户达到了25亿，显著改变了人们的交流方式。同时，大型服务提供商建立了自己的网络，提供更快的服务，企业也开始越来越多地利用云服务来运营，这些变化共同推动了互联网技术的革新和发展。</p>
+<h2 id="The-Internet-a-“nuts-and-bolts”-view（互联网：一个“螺丝钉”视角）"><a href="#The-Internet-a-“nuts-and-bolts”-view（互联网：一个“螺丝钉”视角）" class="headerlink" title="The Internet: a “nuts and bolts” view（互联网：一个“螺丝钉”视角）"></a>The Internet: a “nuts and bolts” view（互联网：一个“螺丝钉”视角）</h2><p>互联网由数十亿连接的计算设备组成：</p>
+<ul>
+<li>hosts &#x3D; end systems（主机&#x3D;终端系统）<ul>
+<li>在互联网的“边缘”运行网络应用程序</li>
+</ul>
+</li>
+</ul>
+<h3 id="Packet-switches（数据包交换设备）"><a href="#Packet-switches（数据包交换设备）" class="headerlink" title="Packet switches（数据包交换设备）:"></a>Packet switches（数据包交换设备）:</h3><ul>
+<li>forward packets (chunks of data)（转发数据包（数据块））<ul>
+<li>routers, switches（路由器，交换机）</li>
+</ul>
+</li>
+</ul>
+<h3 id="Communication-links（通信链路）"><a href="#Communication-links（通信链路）" class="headerlink" title="Communication links（通信链路）"></a>Communication links（通信链路）</h3><ul>
+<li>fiber, copper, radio, satellite（光纤，铜线，无线电，卫星）</li>
+<li>transmission rate: bandwidth（传输速率：带宽）</li>
+</ul>
+<h3 id="Networks（网络）"><a href="#Networks（网络）" class="headerlink" title="Networks（网络）"></a>Networks（网络）</h3><ul>
+<li>collection of devices, routers, links: managed by an organization（设备、路由器、链路的集合：由组织管理）</li>
+</ul>
+<p>图示解释了互联网结构的基本组成部分，包括各种计算设备、数据包交换设备、通信链路和各类网络。这些元素共同构成了全球互联网的基础架构。主机或终端系统运行网络应用，通过路由器和交换机进行数据传输。通信链路则通过多种介质实现数据的物理传输，带宽决定了传输速率。最终，这些设备和链路形成了网络，由不同的组织进行管理，确保数据的有效传输。</p>
+<h2 id="Overview-of-Network-Components（网络组件概览）"><a href="#Overview-of-Network-Components（网络组件概览）" class="headerlink" title="Overview of Network Components（网络组件概览）"></a>Overview of Network Components（网络组件概览）</h2><p>网络由多个重要组件构成，包括但不限于以下几类：</p>
+<h3 id="Devices（设备）"><a href="#Devices（设备）" class="headerlink" title="Devices（设备）"></a>Devices（设备）</h3><ul>
+<li>包括个人计算设备，如电脑、手机和其他可以连接到局域网（LAN）的设备。</li>
+</ul>
+<h3 id="Internetwork（互联网络）"><a href="#Internetwork（互联网络）" class="headerlink" title="Internetwork（互联网络）"></a>Internetwork（互联网络）</h3><ul>
+<li>设备通过路由器连接形成更大的网络，允许不同局域网的设备相互通信。</li>
+</ul>
+<h3 id="Media（媒介）"><a href="#Media（媒介）" class="headerlink" title="Media（媒介）"></a>Media（媒介）</h3><ul>
+<li>网络设备通过各种传输媒介（如有线或无线）连接到互联网络。</li>
+</ul>
+<h3 id="Services（服务）"><a href="#Services（服务）" class="headerlink" title="Services（服务）"></a>Services（服务）</h3><ul>
+<li>网络提供多种服务，包括软件应用和各类网络过程与规则，如各种协议和配置规则。</li>
+</ul>
+<h4 id="总结：-3"><a href="#总结：-3" class="headerlink" title="总结："></a>总结：</h4><p>这些幻灯片展示了网络组件的概览，强调了设备、互联网络、传输媒介以及网络服务之间的关系。设备是网络中用户直接交互的硬件，如计算机和移动设备。这些设备通过各种媒介连接到局域网，并通过路由器连接到更广泛的互联网络。最终，网络上运行的服务保障了数据的正确传输和处理。这些组件共同工作，形成了我们日常使用的网络环境。</p>
+<h2 id="The-Internet-a-“nuts-and-bolts”-view（互联网：一个“螺丝钉”视角）-1"><a href="#The-Internet-a-“nuts-and-bolts”-view（互联网：一个“螺丝钉”视角）-1" class="headerlink" title="The Internet: a “nuts and bolts” view（互联网：一个“螺丝钉”视角）"></a>The Internet: a “nuts and bolts” view（互联网：一个“螺丝钉”视角）</h2><p>互联网被形象地描述为一个“网络中的网络”：</p>
+<ul>
+<li>Internet: “network of networks”（互联网：网络中的网络）<ul>
+<li>Interconnected ISPs（相互连接的互联网服务提供商）</li>
+</ul>
+</li>
+</ul>
+<h3 id="Protocols-are-everywhere（协议无处不在）"><a href="#Protocols-are-everywhere（协议无处不在）" class="headerlink" title="Protocols are everywhere（协议无处不在）"></a>Protocols are everywhere（协议无处不在）</h3><ul>
+<li>控制消息的发送和接收<ul>
+<li>例如：HTTP（Web），流媒体视频，Skype，TCP，IP，WiFi，4G，以太网</li>
+</ul>
+</li>
+</ul>
+<h3 id="Internet-standards（互联网标准）"><a href="#Internet-standards（互联网标准）" class="headerlink" title="Internet standards（互联网标准）"></a>Internet standards（互联网标准）</h3><ul>
+<li>RFC: Request for Comments（RFC：请求评论）</li>
+<li>IETF: Internet Engineering Task Force（IETF：互联网工程任务组）</li>
+</ul>
+<p>图示展示了不同类型的网络如何通过互联网服务提供商（ISP）连接在一起，以及如何通过各种协议（如HTTP，TCP，IP等）进行通信。此外，还指出了制定互联网标准的机构，如IETF，他们发布RFC文档以征求对新标准的评论和建议。这些标准和协议确保了不同网络设备之间能够有效地通信和协作。</p>
+<h4 id="总结：-4"><a href="#总结：-4" class="headerlink" title="总结："></a>总结：</h4><p>这部分内容阐释了互联网的基本结构和工作原理。互联网由多个ISP构成的网络组成，这些网络通过遵守共同的协议来实现互联。这些协议涵盖了从物理层的以太网和WiFi到应用层的HTTP和流媒体等各个层面。互联网标准由像IETF这样的组织制定，确保全球网络的互操作性和技术的一致性。</p>
+<h2 id="The-Internet-a-“service”-view（互联网：一个“服务”视角）"><a href="#The-Internet-a-“service”-view（互联网：一个“服务”视角）" class="headerlink" title="The Internet: a “service” view（互联网：一个“服务”视角）"></a>The Internet: a “service” view（互联网：一个“服务”视角）</h2><p>互联网不仅是一个由多个网络组成的基础设施，它还提供了多种服务给应用程序：</p>
+<ul>
+<li><p>Infrastructure that provides services to applications（为应用程序提供服务的基础设施）:</p>
+<ul>
+<li>包括网页浏览、流媒体视频、多媒体会议、电子邮件、游戏、电子商务、社交媒体、互联家电等。</li>
+</ul>
+</li>
+<li><p>Provides programming interface to distributed applications（为分布式应用程序提供编程接口）:</p>
+<ul>
+<li>“hooks” allowing sending&#x2F;receiving apps to “connect” to, use Internet transport service（“钩子”，允许发送&#x2F;接收应用程序“连接”到互联网传输服务）</li>
+<li>提供服务选项，类似于邮政服务</li>
+</ul>
+</li>
+</ul>
+<p>图示中展示了互联网如何通过服务提供商连接不同的家庭网络、企业网络以及数据中心网络，以及如何通过协议（如HTTP、Skype）提供服务。互联网作为一个服务平台，允许各种应用程序通过编程接口与之交互，使用其传输服务来进行数据的发送和接收，类似于邮政系统提供不同的邮寄选项。</p>
+<h4 id="总结：-5"><a href="#总结：-5" class="headerlink" title="总结："></a>总结：</h4><p>本节内容从服务的角度对互联网进行了解读，强调了互联网作为基础设施为各种应用提供服务的能力。这些服务包括传统的网络应用如电子邮件和网页浏览，以及现代应用如流媒体和社交媒体。互联网还提供了编程接口，使得分布式应用能够高效地利用其传输服务。这种服务模型使得互联网成为了一个强大的平台，支持着现代数字化生活的各个方面。</p>
+<h2 id="Types-of-Networks（网络类型）"><a href="#Types-of-Networks（网络类型）" class="headerlink" title="Types of Networks（网络类型）"></a>Types of Networks（网络类型）</h2><p>网络根据其覆盖范围和功能被分为不同的类型：</p>
+<ul>
+<li>The two most common types of network infrastructures are（两种最常见的网络基础设施类型是）:<ul>
+<li>Local Area Network (LAN)（局域网）</li>
+<li>Wide Area Network (WAN)（广域网）</li>
+</ul>
+</li>
+</ul>
+<h3 id="Other-types-of-networks-include（其他网络类型包括）"><a href="#Other-types-of-networks-include（其他网络类型包括）" class="headerlink" title="Other types of networks include（其他网络类型包括）:"></a>Other types of networks include（其他网络类型包括）:</h3><ul>
+<li>Metropolitan Area Network (MAN)（都会区域网）</li>
+<li>Wireless LAN (WLAN)（无线局域网）</li>
+<li>Storage Area Network (SAN)（存储区域网）</li>
+</ul>
+<p>图示中展示了这些不同类型的网络的连接方式。局域网通常是在较小的地理区域内，如家庭办公室或企业中心，提供网络连接。广域网则连接更广泛的地理区域，如分支机构。其他类型的网络，如都会区域网，提供城市或大都市区域的网络连接，无线局域网提供无线连接到局域网的方式，而存储区域网则专注于连接数据存储设施。</p>
+<h4 id="总结：-6"><a href="#总结：-6" class="headerlink" title="总结："></a>总结：</h4><p>本节内容介绍了不同类型的网络基础设施。局域网和广域网是两种基本类型，它们根据不同的需求和应用场景构建。都会区域网、无线局域网和存储区域网则是特定用途的网络类型，它们在现代网络架构中也扮演着重要角色，以适应不同的通信和存储需求。</p>
+<h2 id="Local-Area-Networks-vs-Wide-Area-Networks（局域网与广域网）"><a href="#Local-Area-Networks-vs-Wide-Area-Networks（局域网与广域网）" class="headerlink" title="Local Area Networks vs. Wide Area Networks（局域网与广域网）"></a>Local Area Networks vs. Wide Area Networks（局域网与广域网）</h2><h3 id="Local-Area-Networks（局域网）"><a href="#Local-Area-Networks（局域网）" class="headerlink" title="Local Area Networks（局域网）"></a>Local Area Networks（局域网）</h3><ul>
+<li>局域网通常指在较小的地理区域（如办公室、学校或家庭）内的计算机网络。</li>
+</ul>
+<h3 id="Wide-Area-Networks（广域网）"><a href="#Wide-Area-Networks（广域网）" class="headerlink" title="Wide Area Networks（广域网）"></a>Wide Area Networks（广域网）</h3><ul>
+<li>广域网是指连接距离较远、地理位置分散的局域网的网络，这种连接通常被称为WAN。</li>
+</ul>
+<p>图示对比了局域网和广域网的结构。局域网由多个设备（如个人电脑、打印机等）通过交换机连接形成一个网络。而广域网则由多个这样的局域网通过路由器连接，以跨越更广的地理区域。WAN能够连接不同建筑物、城市甚至国家的网络，允许这些局域网之间的通信。</p>
+<h4 id="总结：-7"><a href="#总结：-7" class="headerlink" title="总结："></a>总结：</h4><p>局域网和广域网是网络基础设施的两个基本类型，它们根据连接的地理范围和网络的规模进行分类。局域网用于较小的区域，而广域网则用于连接分散在较大地理范围内的网络。这两种网络类型对于构建覆盖从单个位置到全球范围内的通信网络都是必不可少的。</p>
+<h2 id="The-Internet（互联网）"><a href="#The-Internet（互联网）" class="headerlink" title="The Internet（互联网）"></a>The Internet（互联网）</h2><p>互联网通过广域网服务实现不同局域网之间的互联。</p>
+<ul>
+<li>LANs use WAN services to interconnect（局域网使用广域网服务进行互联）:<ul>
+<li>家庭局域网（Home LAN）</li>
+<li>分支局域网（Branch LAN）</li>
+<li>政府局域网（Government LAN）</li>
+<li>学校局域网（School LAN）</li>
+<li>企业局域网（Enterprise LAN）</li>
+</ul>
+</li>
+</ul>
+<p>图示展示了多个不同类型的局域网如何通过广域网服务连接起来，形成互联网。这些连接可以跨越不同的建筑物、城市甚至国家，允许在全球范围内的数据和信息交换。</p>
+<h4 id="总结：-8"><a href="#总结：-8" class="headerlink" title="总结："></a>总结：</h4><p>这张幻灯片描述了互联网的结构，它是由多个局域网通过广域网服务相互连接而成的。这种结构使得无论是家庭用户、教育机构、企业还是政府机构，都能在全球范围内进行通信和数据交换，突显了互联网作为全球通信基础设施的核心作用。</p>
+<h2 id="Communication-Fundamentals（通信基础）"><a href="#Communication-Fundamentals（通信基础）" class="headerlink" title="Communication Fundamentals（通信基础）"></a>Communication Fundamentals（通信基础）</h2><p>在探讨通信的基础概念时，可以将其分为人类通信和计算机通信两大类：</p>
+<h3 id="Generic-Communication-Model（通用通信模型）"><a href="#Generic-Communication-Model（通用通信模型）" class="headerlink" title="Generic Communication Model（通用通信模型）:"></a>Generic Communication Model（通用通信模型）:</h3><ul>
+<li>消息来源（Message Source）</li>
+<li>发送器（Transmitter）</li>
+<li>传输媒介（Transmission Medium）</li>
+<li>接收器（Receiver）</li>
+<li>消息目的地（Message Destination）</li>
+</ul>
+<p>图示对比了人类通信和计算机通信。在人类通信中，信息的发送和接收通常是通过语言和肢体语言实现的。而在计算机通信中，消息从源头经过一个发送器（比如网络接口卡），通过某种传输媒介（比如有线或无线信号）传输，最终被接收器（另一台计算机的网络接口）接收，并送达至消息的最终目的地（通常是另一台计算机或网络设备）。</p>
+<h4 id="总结：-9"><a href="#总结：-9" class="headerlink" title="总结："></a>总结：</h4><p>本幻灯片简洁地阐释了通信的基本组件，无论是人类之间的通信还是计算机之间的通信。它展示了消息是如何从一个源点传输到一个目的地的，无论是通过人类的交流方式还是通过计算机网络。这种模型是理解网络如何工作的基础，也是设计和实施有效通信策略的关键。</p>
+<h2 id="What’s-a-protocol-（什么是协议？）"><a href="#What’s-a-protocol-（什么是协议？）" class="headerlink" title="What’s a protocol?（什么是协议？）"></a>What’s a protocol?（什么是协议？）</h2><p>协议是通信中必须遵守的规则和格式，无论是人类之间的交流还是计算机网络中的数据交换。</p>
+<h3 id="Human-protocols（人类协议）"><a href="#Human-protocols（人类协议）" class="headerlink" title="Human protocols（人类协议）:"></a>Human protocols（人类协议）:</h3><ul>
+<li>“what’s the time?”（现在几点了？）</li>
+<li>“I have a question”（我有个问题）</li>
+<li>introductions（介绍）</li>
+</ul>
+<p>这些是在特定情况下发送的特定消息，以及在收到消息或其他事件发生时采取的特定行动。</p>
+<h3 id="Network-protocols（网络协议）"><a href="#Network-protocols（网络协议）" class="headerlink" title="Network protocols（网络协议）:"></a>Network protocols（网络协议）:</h3><ul>
+<li>computers (devices) rather than humans（计算机（设备）而非人类）</li>
+<li>all communication activity in Internet governed by protocols（互联网中的所有通信活动都受协议的管理）</li>
+</ul>
+<p>协议定义了网络实体间发送和接收的消息的格式、顺序，以及在消息传输、接收时采取的行动。</p>
+<h4 id="总结：-10"><a href="#总结：-10" class="headerlink" title="总结："></a>总结：</h4><p>本页内容介绍了协议在人类交流和计算机网络中的角色。人类协议涉及日常交流中的惯例，而网络协议是计算机网络中确保信息正确传输和接收的一套标准化规则。这些规则定义了数据包的格式、发送和接收的顺序，以及在数据传输过程中所执行的操作。协议是网络通信能够顺畅进行的基础。</p>
+<h2 id="What’s-a-protocol-（什么是协议？）-1"><a href="#What’s-a-protocol-（什么是协议？）-1" class="headerlink" title="What’s a protocol?（什么是协议？）"></a>What’s a protocol?（什么是协议？）</h2><p>协议是两个或多个通信实体之间交换消息的规则集合。这里比较了人类协议和计算机网络协议：</p>
+<h3 id="A-human-protocol-and-a-computer-network-protocol（人类协议和计算机网络协议）"><a href="#A-human-protocol-and-a-computer-network-protocol（人类协议和计算机网络协议）" class="headerlink" title="A human protocol and a computer network protocol（人类协议和计算机网络协议）:"></a>A human protocol and a computer network protocol（人类协议和计算机网络协议）:</h3><h4 id="Human-Protocol（人类协议）"><a href="#Human-Protocol（人类协议）" class="headerlink" title="Human Protocol（人类协议）:"></a>Human Protocol（人类协议）:</h4><ol>
+<li>Person A says “Hi”</li>
+<li>Person B responds with “Hi”</li>
+<li>Person A asks “Got the time?”</li>
+<li>Person B replies with “2:00”</li>
+</ol>
+<h4 id="Network-Protocol（网络协议）"><a href="#Network-Protocol（网络协议）" class="headerlink" title="Network Protocol（网络协议）:"></a>Network Protocol（网络协议）:</h4><ol>
+<li>Computer sends a TCP connection request to a server</li>
+<li>Server sends a TCP connection response to the computer</li>
+<li>Computer sends a GET request to the server for a webpage (<a target="_blank" rel="noopener" href="http://gaia.cs.umass.edu/kurose_ross">http://gaia.cs.umass.edu/kurose_ross</a>)</li>
+<li>Server sends the requested file to the computer</li>
+</ol>
+<p>这个过程展示了在人类协议中，通信往往是基于礼貌和社交习惯，而计算机网络协议则是基于严格定义的格式和规则来交换数据。</p>
+<h4 id="Q-other-human-protocols-（其他人类协议？）"><a href="#Q-other-human-protocols-（其他人类协议？）" class="headerlink" title="Q: other human protocols?（其他人类协议？）"></a>Q: other human protocols?（其他人类协议？）</h4><ul>
+<li>这个问题暗示读者可以考虑其他的人类交流协议，如握手、告别时说“再见”等。</li>
+</ul>
+<h4 id="总结：-11"><a href="#总结：-11" class="headerlink" title="总结："></a>总结：</h4><p>此幻灯片阐明了协议在人类交流和计算机网络中的作用。在人类交流中，协议通常是基于文化和社会习俗的非正式规则；在计算机网络中，协议则是确保数据准确无误传输的一系列具有特定格式和顺序的正式规则。理解这些基础是理解更复杂网络交互的关键。</p>
+<h2 id="Rule-Establishment（规则建立）"><a href="#Rule-Establishment（规则建立）" class="headerlink" title="Rule Establishment（规则建立）"></a>Rule Establishment（规则建立）</h2><p>在网络通信中，协议定义了数据传输的基本规则，包括以下几个关键方面：</p>
+<ul>
+<li><p>Message Encoding（消息编码）</p>
+<ul>
+<li>定义消息如何转换成信号以便在网络中传输。</li>
+</ul>
+</li>
+<li><p>Message Formatting and Encapsulation（消息格式化和封装）</p>
+<ul>
+<li>规定了消息的结构以及如何将数据打包以进行网络传输。</li>
+</ul>
+</li>
+<li><p>Message Size（消息大小）</p>
+<ul>
+<li>确定消息或数据块的大小限制。</li>
+</ul>
+</li>
+<li><p>Message Timing（消息时序）</p>
+<ul>
+<li>涉及数据传输的时序问题，包括速率、同步等。</li>
+</ul>
+</li>
+<li><p>Message Delivery Options（消息传递选项）</p>
+<ul>
+<li>包括消息的传递方式，如单播、广播或多播。</li>
+</ul>
+</li>
+</ul>
+<p>协议作为通信的基础，确保了网络中的设备能够以一致的方式交换信息。</p>
+<h4 id="总结：-12"><a href="#总结：-12" class="headerlink" title="总结："></a>总结：</h4><p>此幻灯片强调了在网络通信中建立规则的重要性。协议不仅仅是通信中的一组规则，它们是确保信息能够被正确编码、格式化、封装、定时和传递的基础。这些元素共同工作，形成了网络通信的基础框架，是实现有效和高效通信的关键。</p>
+<h2 id="Message-Formatting-and-Encapsulation（消息格式化和封装）"><a href="#Message-Formatting-and-Encapsulation（消息格式化和封装）" class="headerlink" title="Message Formatting and Encapsulation（消息格式化和封装）"></a>Message Formatting and Encapsulation（消息格式化和封装）</h2><p>消息格式化和封装是通信中将信息准备为可传输形式的过程。以下是个人信件和计算机网络消息封装的比较：</p>
+<h3 id="个人信件的元素包括："><a href="#个人信件的元素包括：" class="headerlink" title="个人信件的元素包括："></a>个人信件的元素包括：</h3><ul>
+<li>收件人标识符（An identifier of the recipient）</li>
+<li>问候语或称呼（A salutation or greeting）</li>
+<li>消息内容（The message content）</li>
+<li>结束语（A closing phrase）</li>
+<li>发件人标识符（An identifier of the sender）</li>
+</ul>
+<h3 id="计算机网络消息封装："><a href="#计算机网络消息封装：" class="headerlink" title="计算机网络消息封装："></a>计算机网络消息封装：</h3><ul>
+<li>目的地（Destination）- 物理&#x2F;硬件地址</li>
+<li>来源（Source）- 物理&#x2F;硬件地址</li>
+<li>开始标志（Start Flag）- 消息开始指示符</li>
+<li>收件人（Recipient）- 目的地标识符</li>
+<li>发件人（Sender）- 来源标识符</li>
+<li>封装数据（Encapsulated Data）- 数据内容（比特）</li>
+<li>结束帧（End of Frame）- 消息结束指示符</li>
+</ul>
+<p>图中展示了一个个人信件的地址封装过程和计算机网络消息封装过程。在信件的例子中，我们可以看到信封上的地址标注和信件内容的布局。在计算机网络消息的例子中，我们看到了数据包的各个部分，包括帧的地址和数据本身。</p>
+<h4 id="总结：-13"><a href="#总结：-13" class="headerlink" title="总结："></a>总结：</h4><p>这张幻灯片说明了消息在发送之前如何被组织和封装。无论是在传统的邮政系统中还是在计算机网络中，封装都是确保信息能够到达正确目的地并能够被正确理解的关键步骤。在网络通信中，封装包括了添加源地址、目的地址以及其他控制信息，这样接收方就可以正确地解析并处理消息。</p>
+<h2 id="Message-Size（消息大小）"><a href="#Message-Size（消息大小）" class="headerlink" title="Message Size（消息大小）"></a>Message Size（消息大小）</h2><p>消息大小在人类交流和计算机通信中有着不同的应用和重要性。</p>
+<h3 id="Human-Communication（人类交流）"><a href="#Human-Communication（人类交流）" class="headerlink" title="Human Communication（人类交流）"></a>Human Communication（人类交流）</h3><ul>
+<li>在人类交流中，我们可以连续不断地说话，无需担心消息的大小或长度。</li>
+</ul>
+<h3 id="Computer-Communication（计算机通信）"><a href="#Computer-Communication（计算机通信）" class="headerlink" title="Computer Communication（计算机通信）"></a>Computer Communication（计算机通信）</h3><ul>
+<li>计算机通信中，源主机将长消息分解为满足最小和最大大小要求的多个片段或帧。</li>
+<li>每个帧还将拥有自己的寻址信息。</li>
+<li>在接收主机，这些片段被重建以便处理和解释。</li>
+</ul>
+<p>图示显示了人类交流中的信息传递（例如，一个人对另一个人评论日落的美丽），而在计算机通信中，一个复杂的消息（如文件或数据流）需要被拆分成多个数据包，这些数据包在网络中传输，然后在目的地重新组装成原始消息。</p>
+<h4 id="总结：-14"><a href="#总结：-14" class="headerlink" title="总结："></a>总结：</h4><p>此幻灯片展示了消息大小在不同类型的通信中的重要性。在人类交流中，信息的大小不是问题，但在计算机通信中，大型信息必须被分割成小块，以便它们可以在网络中有效传输。这是网络设计中一个关键的考虑因素，确保了网络的有效性和可靠性。</p>
+<h2 id="Message-Timing（消息时序）"><a href="#Message-Timing（消息时序）" class="headerlink" title="Message Timing（消息时序）"></a>Message Timing（消息时序）</h2><p>消息时序涉及通信过程中的时间规则，包括：</p>
+<h3 id="Rules-of-engagement（参与规则）"><a href="#Rules-of-engagement（参与规则）" class="headerlink" title="Rules of engagement（参与规则）:"></a>Rules of engagement（参与规则）:</h3><ul>
+<li>Access Method（访问方法）</li>
+<li>Flow Control（流量控制）</li>
+<li>Response Timeout（响应超时）</li>
+</ul>
+<p>图示中的人类交流展示了两个人问问题，等待对方的回复。这个过程暗示了消息时序的概念，例如一个人问问题后期望在一定时间内得到回答，而不是无限期地等待。</p>
+<h4 id="总结：-15"><a href="#总结：-15" class="headerlink" title="总结："></a>总结：</h4><p>此幻灯片指出了在任何通信形式中，无论是人类之间还是计算机网络内，都需要遵循特定的时序规则。在计算机网络中，这些规则确保数据的有效流动，防止拥塞，并处理没有按时接收到响应的情况。在人类交流中，这些规则帮助我们维持对话的流畅和有序。</p>
+<h2 id="Protocol-“layers”-and-reference-models（协议“层”与参考模型）"><a href="#Protocol-“layers”-and-reference-models（协议“层”与参考模型）" class="headerlink" title="Protocol “layers” and reference models（协议“层”与参考模型）"></a>Protocol “layers” and reference models（协议“层”与参考模型）</h2><p>网络的结构非常复杂，它由多个“部分”组成：</p>
+<ul>
+<li>hosts（主机）</li>
+<li>routers（路由器）</li>
+<li>links of various media（不同媒介的连接）</li>
+<li>applications（应用程序）</li>
+<li>protocols（协议）</li>
+<li>hardware, software（硬件，软件）</li>
+</ul>
+<h3 id="Question（问题）"><a href="#Question（问题）" class="headerlink" title="Question（问题）:"></a>Question（问题）:</h3><ul>
+<li>is there any hope of organizing structure of network?（有没有可能组织网络结构？）</li>
+<li>…. or at least our discussion of networks?（或者至少是我们对网络的讨论？）</li>
+</ul>
+<p>这张幻灯片提出了一个问题，即在网络的复杂性中是否有可能找到一种组织结构，或者至少对网络进行结构化的讨论。这通常通过引入层次化的协议和参考模型来实现，如著名的OSI七层模型和TCP&#x2F;IP模型，这些模型将网络通信分解为不同的层，每一层负责不同的通信任务和功能。</p>
+<h4 id="总结：-16"><a href="#总结：-16" class="headerlink" title="总结："></a>总结：</h4><p>网络的复杂性可以通过层次化的协议模型来管理和理解。这些模型为设计、讨论和理解网络通信提供了一个结构化的方法，使得网络的不同“部分”可以在一个统一的框架下工作，并为网络的研究、教育和工程实践提供了基础。</p>
+<h2 id="Example-organization-of-air-travel（例子：航空旅行的组织）"><a href="#Example-organization-of-air-travel（例子：航空旅行的组织）" class="headerlink" title="Example: organization of air travel（例子：航空旅行的组织）"></a>Example: organization of air travel（例子：航空旅行的组织）</h2><p>航空旅行的组织可以通过层级服务的概念来理解，每一层都提供特定的服务，并依赖于其下一层的服务。</p>
+<h3 id="Layers（层）"><a href="#Layers（层）" class="headerlink" title="Layers（层）:"></a>Layers（层）:</h3><ul>
+<li>每一层实现一个服务（each layer implements a service）<ul>
+<li>通过其内部层的行动（via its own internal-layer actions）</li>
+<li>依赖于下面一层提供的服务（relying on services provided by layer below）</li>
+</ul>
+</li>
+</ul>
+<h3 id="各层服务的描述（Describe-in-words-the-service-provided-in-each-layer-above）"><a href="#各层服务的描述（Describe-in-words-the-service-provided-in-each-layer-above）" class="headerlink" title="各层服务的描述（Describe in words the service provided in each layer above）:"></a>各层服务的描述（Describe in words the service provided in each layer above）:</h3><ul>
+<li>票务（购买、投诉）- 乘客购买机票和提出服务相关的投诉。</li>
+<li>行李（托运、领取）- 乘客的行李进行托运和在目的地领取。</li>
+<li>登机口（登机、卸载）- 乘客在登机口登机和飞机在登机口卸载乘客。</li>
+<li>跑道（起飞、着陆）- 飞机从跑道起飞和在跑道着陆。</li>
+<li>飞机路线 - 飞机在空中的路线规划。</li>
+</ul>
+<h4 id="总结：-17"><a href="#总结：-17" class="headerlink" title="总结："></a>总结：</h4><p>这张幻灯片通过航空旅行的例子阐释了层级服务模型的概念。在航空旅行中，每个服务层都有明确的职责，从乘客购票开始，到行李处理，再到登机、飞行以及最终降落，每一层都建立在其下层提供的服务之上。这种层次化的服务模型也适用于网络协议的组织，帮助我们理解和管理复杂的网络系统。</p>
+<h2 id="Why-layering-（为什么要分层？）"><a href="#Why-layering-（为什么要分层？）" class="headerlink" title="Why layering?（为什么要分层？）"></a>Why layering?（为什么要分层？）</h2><p>分层是处理复杂系统的一种有效方法，它有以下几个优点：</p>
+<ul>
+<li><p>显式结构允许识别，关系的复杂系统的部分（explicit structure allows identification, relationship of complex system’s pieces）</p>
+<ul>
+<li>为讨论而使用的分层参考模型（layered reference model）</li>
+</ul>
+</li>
+<li><p>模块化使得系统的维护、更新变得容易（modularization eases maintenance, updating of system）</p>
+<ul>
+<li>层的服务实现的变化对系统的其余部分是透明的（change in layer’s service implementation: transparent to rest of system）</li>
+<li>例如，登机口程序的变化不会影响系统的其他部分（e.g., change in gate procedure doesn’t affect rest of system）</li>
+</ul>
+</li>
+</ul>
+<p>这张幻灯片解释了在设计和讨论复杂系统时，采用分层结构的原因。通过将系统划分为多个层，每个层负责不同的功能，可以更容易地识别和理解系统的各个部分如何相互作用。此外，这种模块化方法也使得修改和更新系统的某一部分，如改进一个服务的实现，不会影响到其他层，从而提高了系统的灵活性和可维护性。</p>
+<h4 id="总结：-18"><a href="#总结：-18" class="headerlink" title="总结："></a>总结：</h4><p>分层是管理复杂系统的关键技术，它通过将系统划分为清晰定义的层来简化设计、实施和维护过程。这种方法不仅使得各个部分之间的交互更加清晰，而且还提供了更好的灵活性，因为单个层的更改不会对整个系统产生广泛的影响。</p>
+<h2 id="The-OSI-Reference-Model（OSI参考模型）"><a href="#The-OSI-Reference-Model（OSI参考模型）" class="headerlink" title="The OSI Reference Model（OSI参考模型）"></a>The OSI Reference Model（OSI参考模型）</h2><p>OSI模型是网络通信中使用的一个基础分层模型，它定义了计算机网络通信的七个层次：</p>
+<ol>
+<li>Physical（物理层）</li>
+<li>Data Link（数据链路层）</li>
+<li>Network（网络层）</li>
+<li>Transport（传输层）</li>
+<li>Session（会话层）</li>
+<li>Presentation（表示层）</li>
+<li>Application（应用层）</li>
+</ol>
+<p>每一层负责处理网络通信过程中的不同方面，从物理媒介的电信号传输到最终用户应用程序的数据处理。</p>
+<h4 id="总结：-19"><a href="#总结：-19" class="headerlink" title="总结："></a>总结：</h4><p>OSI参考模型为理解和实施网络通信提供了一个框架。通过这个模型，网络通信被划分为七个独立的层次，每一层都对应特定的功能和协议。这使得网络设计和管理变得更加模块化，每一层可以独立于其他层进行开发和改进。</p>
+<h2 id="Internet-protocol-stack（互联网协议栈）"><a href="#Internet-protocol-stack（互联网协议栈）" class="headerlink" title="Internet protocol stack（互联网协议栈）"></a>Internet protocol stack（互联网协议栈）</h2><p>互联网协议栈是一个分层模型，用于描述网络通信中不同层次的协议和功能。</p>
+<ul>
+<li>application（应用层）: 支持网络应用程序：IMAP, SMTP, HTTP</li>
+<li>transport（传输层）: 进程到进程的数据传输：TCP, UDP</li>
+<li>network（网络层）: 从源到目的地的数据报路由：IP, 路由协议</li>
+<li>link（链路层）: 相邻网络元素之间的数据传输：Ethernet, 802.11 (WiFi), PPP</li>
+<li>physical（物理层）: “在线”上的比特</li>
+</ul>
+<h3 id="TCP-IP-Model（TCP-IP模型）"><a href="#TCP-IP-Model（TCP-IP模型）" class="headerlink" title="TCP&#x2F;IP Model（TCP&#x2F;IP模型）:"></a>TCP&#x2F;IP Model（TCP&#x2F;IP模型）:</h3><ul>
+<li>Application（应用层）: 表示用户数据，并且包含编码和对话控制。</li>
+<li>Transport（传输层）: 支持不同设备间在多样化网络中的通信。</li>
+<li>Internet（互联网层）: 确定网络中的最佳路径。</li>
+<li>Network Access（网络访问层）: 控制构成网络的硬件设备和媒体。</li>
+</ul>
+<p>图示提供了TCP&#x2F;IP模型的概览，该模型是互联网通信的基础，它将不同的网络功能和协议组织成一个分层结构。</p>
+<h4 id="总结：-20"><a href="#总结：-20" class="headerlink" title="总结："></a>总结：</h4><p>互联网协议栈提供了一个明确的框架来理解和实施网络通信。它通过明确的层次结构，使得网络设计、故障诊断和性能优化变得可行。每一层都专注于特定的通信任务，并为上层提供服务，这种分层也有助于标准化通信协议的开发和实现。</p>
+<h2 id="The-Benefits-of-Using-a-Layered-Model（使用分层模型的好处）"><a href="#The-Benefits-of-Using-a-Layered-Model（使用分层模型的好处）" class="headerlink" title="The Benefits of Using a Layered Model（使用分层模型的好处）"></a>The Benefits of Using a Layered Model（使用分层模型的好处）</h2><p>使用分层模型对于理解和设计网络系统是非常有益的。图中展示了两个主要的网络模型：OSI模型和TCP&#x2F;IP模型。</p>
+<ul>
+<li><p>OSI Model（OSI模型）</p>
+<ul>
+<li>Application（应用层）</li>
+<li>Presentation（表示层）</li>
+<li>Session（会话层）</li>
+<li>Transport（传输层）</li>
+<li>Network（网络层）</li>
+<li>Data Link（数据链路层）</li>
+<li>Physical（物理层）</li>
+</ul>
+</li>
+<li><p>TCP&#x2F;IP Protocol Suite（TCP&#x2F;IP协议套件）</p>
+<ul>
+<li>对应于OSI模型的各层，举例包括HTTP, DNS, DHCP, FTP（应用层协议），TCP, UDP（传输层协议），IPv4, IPv6, ICMPv4, ICMPv6（网络层协议），PPP, Frame Relay, Ethernet（数据链路层技术）。</li>
+</ul>
+</li>
+<li><p>TCP&#x2F;IP Model（TCP&#x2F;IP模型）</p>
+<ul>
+<li>Application（应用层）</li>
+<li>Transport（传输层）</li>
+<li>Internet（互联网层）</li>
+<li>Network Access（网络访问层）</li>
+</ul>
+</li>
+</ul>
+<p>重要的是要理解，网络模型仅仅是网络操作的表示，并不是实际的网络本身。分层模型提供了一种方法，可以独立地开发和理解网络的每个部分，并确保整个网络的协调工作。</p>
+<h4 id="总结：-21"><a href="#总结：-21" class="headerlink" title="总结："></a>总结：</h4><p>分层模型的好处在于它提供了一种清晰的方式来组织和理解网络的复杂性。每一层负责特定的功能，并且可以独立于其他层进行创新和改进。模型也促进了跨不同硬件和软件平台的互操作性，以及不同网络技术之间的通信。</p>
+<h2 id="ISO-OSI-reference-model（ISO-OSI参考模型）"><a href="#ISO-OSI-reference-model（ISO-OSI参考模型）" class="headerlink" title="ISO&#x2F;OSI reference model（ISO&#x2F;OSI参考模型）"></a>ISO&#x2F;OSI reference model（ISO&#x2F;OSI参考模型）</h2><p>在ISO&#x2F;OSI模型中，有两层在互联网协议栈中没有直接对应的层：</p>
+<ul>
+<li>presentation（表示层）: 允许应用程序解释数据的意义，例如，加密、压缩、机器特定的约定。</li>
+<li>session（会话层）: 同步、检查点、数据交换的恢复。</li>
+</ul>
+<p>互联网协议栈“缺失”了这些层！</p>
+<ul>
+<li>这些服务，如果需要，必须在应用程序中实现（these services, if needed, must be implemented in application）</li>
+<li>需要吗？（needed?）</li>
+</ul>
+<p>这张幻灯片指出，在实际的互联网协议栈中，并不直接包括表示层和会话层，而这些功能通常被集成到应用程序层中。它引发了一个问题，即这些层在网络通信中是否真的必要，以及它们的功能是否必须由应用程序来承担。</p>
+<h4 id="总结：-22"><a href="#总结：-22" class="headerlink" title="总结："></a>总结：</h4><p>ISO&#x2F;OSI参考模型提供了一个分层的网络通信框架，但并不是所有层都在互联网协议栈中直接实现。表示层和会话层的功能通常被集成到应用程序中，这表明在不同的网络模型中，分层的功能可能会有所不同。这种灵活性允许根据实际需要在不同层次上实现特定的网络功能。</p>
+<h2 id="Network-Protocols（网络协议）"><a href="#Network-Protocols（网络协议）" class="headerlink" title="Network Protocols（网络协议）"></a>Network Protocols（网络协议）</h2><p>网络协议定义了网络通信的多个方面：</p>
+<ul>
+<li>The role of protocols（协议的作用）: 确定通信规则和标准。</li>
+<li>How the message is formatted or structured（消息的格式或结构）: 规定数据包的格式化方式。</li>
+<li>The process by which networking devices share information about pathways（网络设备共享路径信息的过程）: 确定设备如何交换路由和位置信息。</li>
+<li>How and when error and system messages are passed between devices（错误和系统消息如何以及何时在设备间传递）: 规定错误处理和系统通信的机制。</li>
+<li>The setup and termination of data transfer sessions（数据传输会话的建立和终止）: 描述会话的开始和结束过程。</li>
+</ul>
+<h2 id="Protocol-Interaction（协议交互）"><a href="#Protocol-Interaction（协议交互）" class="headerlink" title="Protocol Interaction（协议交互）"></a>Protocol Interaction（协议交互）</h2><p>协议交互描述了在Web服务器和Web客户端之间的通信中不同协议是如何协同工作的。</p>
+<ul>
+<li>在应用层，使用Hypertext Transfer Protocol (HTTP)。</li>
+<li>传输层使用Transmission Control Protocol (TCP)。</li>
+<li>互联网层使用Internet Protocol (IP)。</li>
+<li>网络访问层常用Ethernet。</li>
+</ul>
+<p>这个过程展示了一个简单的HTTP请求和响应过程，如何通过网络的不同层次进行传输，并最终到达用户。</p>
+<h4 id="总结：-23"><a href="#总结：-23" class="headerlink" title="总结："></a>总结：</h4><p>网络协议是网络通信的基石，它们定义了数据如何在网络上被格式化、传输、处理和接收。协议交互展示了不同层次的协议是如何共同作用，以完成从一个设备到另一个设备的数据传输的。理解这些协议及其交互是网络工程和故障排除的关键。</p>
+<h2 id="TCP-IP-Protocol-Suite（TCP-IP-协议套件）"><a href="#TCP-IP-Protocol-Suite（TCP-IP-协议套件）" class="headerlink" title="TCP&#x2F;IP Protocol Suite（TCP&#x2F;IP 协议套件）"></a>TCP&#x2F;IP Protocol Suite（TCP&#x2F;IP 协议套件）</h2><p>TCP&#x2F;IP协议套件是一组用于互联网和相似网络的通信协议。这一套件按功能分为不同的层级。</p>
+<h3 id="Application-Layer（应用层）"><a href="#Application-Layer（应用层）" class="headerlink" title="Application Layer（应用层）"></a>Application Layer（应用层）</h3><ul>
+<li><strong>Name System（命名系统）</strong>: DNS</li>
+<li><strong>Host Config（主机配置）</strong>: BOOTP, DHCP</li>
+<li><strong>Email（电子邮件）</strong>: SMTP, POP, IMAP</li>
+<li><strong>File Transfer（文件传输）</strong>: FTP, TFTP</li>
+<li><strong>Web（网络）</strong>: HTTP</li>
+</ul>
+<h3 id="Transport-Layer（传输层）"><a href="#Transport-Layer（传输层）" class="headerlink" title="Transport Layer（传输层）"></a>Transport Layer（传输层）</h3><ul>
+<li>UDP</li>
+<li>TCP</li>
+</ul>
+<h3 id="Internet-Layer（互联网层）"><a href="#Internet-Layer（互联网层）" class="headerlink" title="Internet Layer（互联网层）"></a>Internet Layer（互联网层）</h3><ul>
+<li>IP</li>
+<li>NAT</li>
+<li>ICMP</li>
+<li>Routing Protocols（路由协议）: OSPF, EIGRP</li>
+</ul>
+<h3 id="Network-Access-Layer（网络访问层）"><a href="#Network-Access-Layer（网络访问层）" class="headerlink" title="Network Access Layer（网络访问层）"></a>Network Access Layer（网络访问层）</h3><ul>
+<li>ARP</li>
+<li>PPP</li>
+<li>Ethernet</li>
+<li>Interface Drivers（接口驱动）</li>
+</ul>
+<p>这些协议层负责不同的网络功能，从物理连接到应用程序之间的数据传输。应用层包括处理数据请求和响应的高级协议。传输层确保数据可靠性。互联网层处理数据包的路由。网络访问层管理与物理网络的接口。</p>
+<h4 id="总结：-24"><a href="#总结：-24" class="headerlink" title="总结："></a>总结：</h4><p>TCP&#x2F;IP协议套件是网络通信的基础，它将通信过程分层处理，以确保数据有效、安全、高效地从一个设备传输到另一个设备。每一层都包含特定的协议，这些协议定义了在该层执行的特定网络任务。</p>
+<h2 id="Protocol-Suites-and-Industry-Standards（协议套件和行业标准）"><a href="#Protocol-Suites-and-Industry-Standards（协议套件和行业标准）" class="headerlink" title="Protocol Suites and Industry Standards（协议套件和行业标准）"></a>Protocol Suites and Industry Standards（协议套件和行业标准）</h2><h3 id="Layer-Name（层名称）"><a href="#Layer-Name（层名称）" class="headerlink" title="Layer Name（层名称）"></a>Layer Name（层名称）</h3><h4 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP&#x2F;IP"></a>TCP&#x2F;IP</h4><ul>
+<li><strong>Application</strong>: HTTP, DNS, DHCP, FTP</li>
+<li><strong>Transport</strong>: TCP, UDP</li>
+<li><strong>Internet</strong>: IPv4, IPv6, ICMPv4, ICMPv6</li>
+<li><strong>Network Access</strong>: Ethernet</li>
+</ul>
+<h4 id="ISO"><a href="#ISO" class="headerlink" title="ISO"></a>ISO</h4><ul>
+<li><strong>Application</strong>: ACSE, ROSE, TRSE, SESE</li>
+<li><strong>Transport</strong>: TP0, TP1, TP2, TP3, TP4</li>
+<li><strong>Internet</strong>: CONP&#x2F;CMNS, CLNP&#x2F;CLNS</li>
+</ul>
+<h4 id="AppleTalk"><a href="#AppleTalk" class="headerlink" title="AppleTalk"></a>AppleTalk</h4><ul>
+<li><strong>Application</strong>: AFP</li>
+<li><strong>Transport</strong>: ATP, AEP, NBP, RTMP</li>
+<li><strong>Internet</strong>: AARP</li>
+</ul>
+<h4 id="Novell-Netware"><a href="#Novell-Netware" class="headerlink" title="Novell Netware"></a>Novell Netware</h4><ul>
+<li><strong>Application</strong>: NDS</li>
+<li><strong>Transport</strong>: SPX</li>
+<li><strong>Internet</strong>: IPX</li>
+</ul>
+<h4 id="Network-Access-Layer-Options"><a href="#Network-Access-Layer-Options" class="headerlink" title="Network Access Layer Options"></a>Network Access Layer Options</h4><ul>
+<li>Ethernet, PPP, Frame Relay, ATM, WLAN</li>
+</ul>
+<p>这个表格展示了不同的网络协议套件和它们在各个层次上的协议。TCP&#x2F;IP是最广泛使用的协议套件，其次是ISO、AppleTalk和Novell Netware。每个套件都设计有特定的协议来处理从物理连接到最终用户应用程序的数据传输。</p>
+<h4 id="总结：-25"><a href="#总结：-25" class="headerlink" title="总结："></a>总结：</h4><p>网络协议套件和行业标准确保不同的计算机和网络设备能够通过标准化的方法进行通信。这些标准涵盖从网络访问层的物理连接到应用层的高级数据处理和服务。</p>
+<h2 id="TCP-IP-Communication-Process（TCP-IP通信过程）"><a href="#TCP-IP-Communication-Process（TCP-IP通信过程）" class="headerlink" title="TCP&#x2F;IP Communication Process（TCP&#x2F;IP通信过程）"></a>TCP&#x2F;IP Communication Process（TCP&#x2F;IP通信过程）</h2><h3 id="Protocol-Operation（协议操作）"><a href="#Protocol-Operation（协议操作）" class="headerlink" title="Protocol Operation（协议操作）"></a>Protocol Operation（协议操作）</h3><ul>
+<li>在TCP&#x2F;IP通信过程中，数据会经历多层封装。首先，在应用层，数据被HTTP协议封装，然后在传输层被TCP协议进一步封装成段（segment）。在网络层，TCP段被IP协议封装成数据包（packet）。最后，在网络接入层，IP数据包被以太网协议封装成帧（frame）。</li>
+</ul>
+<h4 id="Protocol-Encapsulation-Terms（协议封装术语）"><a href="#Protocol-Encapsulation-Terms（协议封装术语）" class="headerlink" title="Protocol Encapsulation Terms（协议封装术语）"></a>Protocol Encapsulation Terms（协议封装术语）</h4><ul>
+<li><strong>Data</strong>: 用户数据</li>
+<li><strong>HTTP Data</strong>: HTTP协议数据</li>
+<li><strong>TCP Segment</strong>: TCP协议段</li>
+<li><strong>IP Packet</strong>: IP协议包</li>
+<li><strong>Ethernet Frame</strong>: 以太网帧</li>
+</ul>
+<p>从下至上的数据流动如下：</p>
+<ol>
+<li><strong>以太网帧</strong>传输IP数据包</li>
+<li><strong>IP数据包</strong>包含TCP段</li>
+<li><strong>TCP段</strong>包含HTTP数据</li>
+<li><strong>HTTP数据</strong>包含最终的用户数据</li>
+</ol>
+<h3 id="图中示意"><a href="#图中示意" class="headerlink" title="图中示意"></a>图中示意</h3><ul>
+<li>图中显示了一个Web服务器和Web客户端之间的通信。数据从服务器出发，通过上述提到的层次进行封装，最后到达客户端，并在客户端进行解封装以获取原始数据。</li>
+</ul>
+<h4 id="总结：-26"><a href="#总结：-26" class="headerlink" title="总结："></a>总结：</h4><p>TCP&#x2F;IP通信过程涉及到多层的数据封装，确保信息能够在网络中安全有效地传输。每一层都有其特定的功能，协同工作以完成数据的发送和接收。</p>
+<h2 id="Internet-Standards（互联网标准）"><a href="#Internet-Standards（互联网标准）" class="headerlink" title="Internet Standards（互联网标准）"></a>Internet Standards（互联网标准）</h2><h3 id="组织机构"><a href="#组织机构" class="headerlink" title="组织机构"></a>组织机构</h3><ul>
+<li><strong>ISOC (Internet Society)</strong>: 负责互联网标准的协调和制定。</li>
+<li><strong>IAB (Internet Architecture Board)</strong>: 对ISOC的技术指导，管理互联网标准化过程。</li>
+<li><strong>IETF (Internet Engineering Task Force)</strong>: 负责互联网标准的开发和推进。<ul>
+<li><strong>IESG (Internet Engineering Steering Group)</strong>: 指导IETF工作。</li>
+<li><strong>工作组</strong>: 执行具体的标准开发任务。</li>
+</ul>
+</li>
+<li><strong>IRTF (Internet Research Task Force)</strong>: 专注于长期研究问题。<ul>
+<li><strong>IRSG (Internet Research Steering Group)</strong>: 指导IRTF工作。</li>
+<li><strong>研究组</strong>: 针对特定研究议题进行工作。</li>
+</ul>
+</li>
+</ul>
+<h3 id="图解说明"><a href="#图解说明" class="headerlink" title="图解说明"></a>图解说明</h3><ul>
+<li>图表展示了互联网标准化机构和相关工作组的层级和关系。ISOC是顶级机构，下辖IAB。IETF和IRTF是实际操作的主体，分别由IESG和IRSG进行管理和指导。工作组和研究组则分别在IETF和IRTF下开展具体的标准制定和研究工作。</li>
+</ul>
+<h4 id="总结：-27"><a href="#总结：-27" class="headerlink" title="总结："></a>总结：</h4><p>互联网标准由一系列组织共同制定和维护，确保了互联网的开放性、互操作性和持续发展。</p>
+<h2 id="Internet-Standards-cont-（互联网标准（续））"><a href="#Internet-Standards-cont-（互联网标准（续））" class="headerlink" title="Internet Standards (cont.)（互联网标准（续））"></a>Internet Standards (cont.)（互联网标准（续））</h2><h3 id="组织机构-1"><a href="#组织机构-1" class="headerlink" title="组织机构"></a>组织机构</h3><ul>
+<li><strong>IANA (Internet Assigned Numbers Authority)</strong>: 负责分配IP地址。</li>
+<li><strong>ICANN (Internet Corporation for Assigned Names and Numbers)</strong>: 负责分配域名和管理DNS。</li>
+</ul>
+<h3 id="分配职能"><a href="#分配职能" class="headerlink" title="分配职能"></a>分配职能</h3><ul>
+<li><strong>IP地址</strong>: 由IANA分配，确保全球唯一性。</li>
+<li><strong>域名</strong>: 也是由IANA管理，通过ICANN进行分配，保证域名系统的正常运行。</li>
+<li><strong>TCP&#x2F;UDP端口号</strong>: 由IANA分配，用于识别发送到特定IP地址的特定服务。</li>
+</ul>
+<h3 id="图解说明-1"><a href="#图解说明-1" class="headerlink" title="图解说明"></a>图解说明</h3><ul>
+<li>图表显示IANA作为核心组织，对IP地址、域名和端口号进行管理。ICANN与IANA关联，主要管理域名相关的任务。</li>
+</ul>
+<h4 id="总结：-28"><a href="#总结：-28" class="headerlink" title="总结："></a>总结：</h4><p>IANA和ICANN是互联网关键数字资源的管理机构，保证了网络地址、域名和端口号的全球统一和互联网的有序运行。</p>
+<h2 id="Electronics-and-Communications-Standards（电子和通信标准）"><a href="#Electronics-and-Communications-Standards（电子和通信标准）" class="headerlink" title="Electronics and Communications Standards（电子和通信标准）"></a>Electronics and Communications Standards（电子和通信标准）</h2><h3 id="IEEE（电气和电子工程师学会）"><a href="#IEEE（电气和电子工程师学会）" class="headerlink" title="IEEE（电气和电子工程师学会）"></a>IEEE（电气和电子工程师学会）</h3><h4 id="IEEE-802-工作组与研究组"><a href="#IEEE-802-工作组与研究组" class="headerlink" title="IEEE 802 工作组与研究组"></a>IEEE 802 工作组与研究组</h4><ul>
+<li><strong>802.1</strong> 高层局域网协议工作组</li>
+<li><strong>802.3</strong> 以太网工作组</li>
+<li><strong>802.11</strong> 无线局域网工作组</li>
+<li><strong>802.15</strong> 无线个人区域网（WPAN）工作组</li>
+<li><strong>802.16</strong> 宽带无线接入工作组</li>
+<li><strong>802.18</strong> 无线电管制技术顾问组</li>
+<li><strong>802.19</strong> 无线共存工作组</li>
+<li><strong>802.21</strong> 媒体独立切换服务工作组</li>
+<li><strong>802.22</strong> 无线区域网工作组</li>
+<li><strong>802.24</strong> 智能网格技术顾问组</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>IEEE 802系列标准覆盖了从局域网和个人区域网到宽带无线接入和无线电管制等多个领域，是通信网络中重要的技术标准和规范。</p>
+<h2 id="Encapsulation（封装）"><a href="#Encapsulation（封装）" class="headerlink" title="Encapsulation（封装）"></a>Encapsulation（封装）</h2><p>在网络通信中，封装是指数据在从源到目的地的传输过程中，通过每一层网络模型添加相应的头部信息。</p>
+<ul>
+<li><p><strong>源（Source）</strong>: 数据包在发送前由应用层发起，然后依次通过传输层、网络层、链路层，最终到达物理层进行传输。</p>
+<ul>
+<li><strong>应用层（Application）</strong>: 处理高级应用程序协议，如HTTP。</li>
+<li><strong>传输层（Transport）</strong>: 例如TCP&#x2F;UDP，负责端到端的通信。</li>
+<li><strong>网络层（Network）</strong>: 处理数据包的路由，例如IP。</li>
+<li><strong>链路层（Link）</strong>: 在局域网内部分配数据包。</li>
+<li><strong>物理层（Physical）</strong>: 实际的物理传输媒介。</li>
+</ul>
+</li>
+<li><p><strong>交换机（Switch）</strong>: 在链路层工作，转发帧到正确的端口。</p>
+</li>
+<li><p><strong>路由器（Router）</strong>: 在网络层工作，根据IP地址决定数据包的最佳路径。</p>
+</li>
+<li><p><strong>目的地（Destination）</strong>: 数据包在到达目的地后，会逆向通过物理层、链路层、网络层、传输层，最后到应用层。</p>
+</li>
+</ul>
+<h4 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h4><p>封装过程涉及到消息在各层次添加头部信息，以确保数据包能在复杂的网络中正确地从源点传输到目的地，并且在到达目的地时能被正确地解封装和处理。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/01/29/1/">http://example.com/2024/01/29/1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Com301/">Com301</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/01/30/2/" title="Com327-week1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">Com327-week1</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/21/T8/" title="T8"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">T8</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">90</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%91%A8%E8%AE%B2%E5%BA%A7"><span class="toc-number">1.</span> <span class="toc-text">第一周讲座</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">目标：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0%EF%BC%9A%E4%BA%92%E8%81%94%E7%BD%91%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.2.</span> <span class="toc-text">概述：互联网是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#No-Boundaries%EF%BC%88%E6%97%A0%E7%95%8C%E9%99%90%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">No Boundaries（无界限）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%9CFun%E2%80%9D-Internet-connected-devices%EF%BC%88%E2%80%9C%E8%B6%A3%E5%91%B3%E6%80%A7%E2%80%9D%E4%BA%92%E8%81%94%E7%BD%91%E8%BF%9E%E6%8E%A5%E8%AE%BE%E5%A4%87%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">“Fun” Internet-connected devices（“趣味性”互联网连接设备）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-1"><span class="toc-number">2.1.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Internet-history%EF%BC%88%E4%BA%92%E8%81%94%E7%BD%91%E5%8E%86%E5%8F%B2%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">Internet history（互联网历史）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2005-present-more-new-applications-Internet-is-%E2%80%9Ceverywhere%E2%80%9D%EF%BC%882005%E5%B9%B4%E8%87%B3%E4%BB%8A%EF%BC%9A%E6%9B%B4%E5%A4%9A%E6%96%B0%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BA%92%E8%81%94%E7%BD%91%E6%97%A0%E5%A4%84%E4%B8%8D%E5%9C%A8%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">2005-present: more new applications, Internet is “everywhere”（2005年至今：更多新应用，互联网无处不在）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-2"><span class="toc-number">3.1.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Internet-a-%E2%80%9Cnuts-and-bolts%E2%80%9D-view%EF%BC%88%E4%BA%92%E8%81%94%E7%BD%91%EF%BC%9A%E4%B8%80%E4%B8%AA%E2%80%9C%E8%9E%BA%E4%B8%9D%E9%92%89%E2%80%9D%E8%A7%86%E8%A7%92%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">The Internet: a “nuts and bolts” view（互联网：一个“螺丝钉”视角）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Packet-switches%EF%BC%88%E6%95%B0%E6%8D%AE%E5%8C%85%E4%BA%A4%E6%8D%A2%E8%AE%BE%E5%A4%87%EF%BC%89"><span class="toc-number">4.1.</span> <span class="toc-text">Packet switches（数据包交换设备）:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Communication-links%EF%BC%88%E9%80%9A%E4%BF%A1%E9%93%BE%E8%B7%AF%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">Communication links（通信链路）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Networks%EF%BC%88%E7%BD%91%E7%BB%9C%EF%BC%89"><span class="toc-number">4.3.</span> <span class="toc-text">Networks（网络）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Overview-of-Network-Components%EF%BC%88%E7%BD%91%E7%BB%9C%E7%BB%84%E4%BB%B6%E6%A6%82%E8%A7%88%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">Overview of Network Components（网络组件概览）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Devices%EF%BC%88%E8%AE%BE%E5%A4%87%EF%BC%89"><span class="toc-number">5.1.</span> <span class="toc-text">Devices（设备）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Internetwork%EF%BC%88%E4%BA%92%E8%81%94%E7%BD%91%E7%BB%9C%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">Internetwork（互联网络）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Media%EF%BC%88%E5%AA%92%E4%BB%8B%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">Media（媒介）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Services%EF%BC%88%E6%9C%8D%E5%8A%A1%EF%BC%89"><span class="toc-number">5.4.</span> <span class="toc-text">Services（服务）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-3"><span class="toc-number">5.4.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Internet-a-%E2%80%9Cnuts-and-bolts%E2%80%9D-view%EF%BC%88%E4%BA%92%E8%81%94%E7%BD%91%EF%BC%9A%E4%B8%80%E4%B8%AA%E2%80%9C%E8%9E%BA%E4%B8%9D%E9%92%89%E2%80%9D%E8%A7%86%E8%A7%92%EF%BC%89-1"><span class="toc-number">6.</span> <span class="toc-text">The Internet: a “nuts and bolts” view（互联网：一个“螺丝钉”视角）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Protocols-are-everywhere%EF%BC%88%E5%8D%8F%E8%AE%AE%E6%97%A0%E5%A4%84%E4%B8%8D%E5%9C%A8%EF%BC%89"><span class="toc-number">6.1.</span> <span class="toc-text">Protocols are everywhere（协议无处不在）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Internet-standards%EF%BC%88%E4%BA%92%E8%81%94%E7%BD%91%E6%A0%87%E5%87%86%EF%BC%89"><span class="toc-number">6.2.</span> <span class="toc-text">Internet standards（互联网标准）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-4"><span class="toc-number">6.2.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Internet-a-%E2%80%9Cservice%E2%80%9D-view%EF%BC%88%E4%BA%92%E8%81%94%E7%BD%91%EF%BC%9A%E4%B8%80%E4%B8%AA%E2%80%9C%E6%9C%8D%E5%8A%A1%E2%80%9D%E8%A7%86%E8%A7%92%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">The Internet: a “service” view（互联网：一个“服务”视角）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-5"><span class="toc-number">7.0.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Types-of-Networks%EF%BC%88%E7%BD%91%E7%BB%9C%E7%B1%BB%E5%9E%8B%EF%BC%89"><span class="toc-number">8.</span> <span class="toc-text">Types of Networks（网络类型）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Other-types-of-networks-include%EF%BC%88%E5%85%B6%E4%BB%96%E7%BD%91%E7%BB%9C%E7%B1%BB%E5%9E%8B%E5%8C%85%E6%8B%AC%EF%BC%89"><span class="toc-number">8.1.</span> <span class="toc-text">Other types of networks include（其他网络类型包括）:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-6"><span class="toc-number">8.1.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Local-Area-Networks-vs-Wide-Area-Networks%EF%BC%88%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8E%E5%B9%BF%E5%9F%9F%E7%BD%91%EF%BC%89"><span class="toc-number">9.</span> <span class="toc-text">Local Area Networks vs. Wide Area Networks（局域网与广域网）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Local-Area-Networks%EF%BC%88%E5%B1%80%E5%9F%9F%E7%BD%91%EF%BC%89"><span class="toc-number">9.1.</span> <span class="toc-text">Local Area Networks（局域网）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Wide-Area-Networks%EF%BC%88%E5%B9%BF%E5%9F%9F%E7%BD%91%EF%BC%89"><span class="toc-number">9.2.</span> <span class="toc-text">Wide Area Networks（广域网）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-7"><span class="toc-number">9.2.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Internet%EF%BC%88%E4%BA%92%E8%81%94%E7%BD%91%EF%BC%89"><span class="toc-number">10.</span> <span class="toc-text">The Internet（互联网）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-8"><span class="toc-number">10.0.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Communication-Fundamentals%EF%BC%88%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80%EF%BC%89"><span class="toc-number">11.</span> <span class="toc-text">Communication Fundamentals（通信基础）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Generic-Communication-Model%EF%BC%88%E9%80%9A%E7%94%A8%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-number">11.1.</span> <span class="toc-text">Generic Communication Model（通用通信模型）:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-9"><span class="toc-number">11.1.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What%E2%80%99s-a-protocol-%EF%BC%88%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%8F%E8%AE%AE%EF%BC%9F%EF%BC%89"><span class="toc-number">12.</span> <span class="toc-text">What’s a protocol?（什么是协议？）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Human-protocols%EF%BC%88%E4%BA%BA%E7%B1%BB%E5%8D%8F%E8%AE%AE%EF%BC%89"><span class="toc-number">12.1.</span> <span class="toc-text">Human protocols（人类协议）:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Network-protocols%EF%BC%88%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%EF%BC%89"><span class="toc-number">12.2.</span> <span class="toc-text">Network protocols（网络协议）:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-10"><span class="toc-number">12.2.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What%E2%80%99s-a-protocol-%EF%BC%88%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%8F%E8%AE%AE%EF%BC%9F%EF%BC%89-1"><span class="toc-number">13.</span> <span class="toc-text">What’s a protocol?（什么是协议？）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-human-protocol-and-a-computer-network-protocol%EF%BC%88%E4%BA%BA%E7%B1%BB%E5%8D%8F%E8%AE%AE%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%EF%BC%89"><span class="toc-number">13.1.</span> <span class="toc-text">A human protocol and a computer network protocol（人类协议和计算机网络协议）:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Human-Protocol%EF%BC%88%E4%BA%BA%E7%B1%BB%E5%8D%8F%E8%AE%AE%EF%BC%89"><span class="toc-number">13.1.1.</span> <span class="toc-text">Human Protocol（人类协议）:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Network-Protocol%EF%BC%88%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%EF%BC%89"><span class="toc-number">13.1.2.</span> <span class="toc-text">Network Protocol（网络协议）:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q-other-human-protocols-%EF%BC%88%E5%85%B6%E4%BB%96%E4%BA%BA%E7%B1%BB%E5%8D%8F%E8%AE%AE%EF%BC%9F%EF%BC%89"><span class="toc-number">13.1.3.</span> <span class="toc-text">Q: other human protocols?（其他人类协议？）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-11"><span class="toc-number">13.1.4.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rule-Establishment%EF%BC%88%E8%A7%84%E5%88%99%E5%BB%BA%E7%AB%8B%EF%BC%89"><span class="toc-number">14.</span> <span class="toc-text">Rule Establishment（规则建立）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-12"><span class="toc-number">14.0.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Message-Formatting-and-Encapsulation%EF%BC%88%E6%B6%88%E6%81%AF%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%92%8C%E5%B0%81%E8%A3%85%EF%BC%89"><span class="toc-number">15.</span> <span class="toc-text">Message Formatting and Encapsulation（消息格式化和封装）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E4%BF%A1%E4%BB%B6%E7%9A%84%E5%85%83%E7%B4%A0%E5%8C%85%E6%8B%AC%EF%BC%9A"><span class="toc-number">15.1.</span> <span class="toc-text">个人信件的元素包括：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%B6%88%E6%81%AF%E5%B0%81%E8%A3%85%EF%BC%9A"><span class="toc-number">15.2.</span> <span class="toc-text">计算机网络消息封装：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-13"><span class="toc-number">15.2.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Message-Size%EF%BC%88%E6%B6%88%E6%81%AF%E5%A4%A7%E5%B0%8F%EF%BC%89"><span class="toc-number">16.</span> <span class="toc-text">Message Size（消息大小）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Human-Communication%EF%BC%88%E4%BA%BA%E7%B1%BB%E4%BA%A4%E6%B5%81%EF%BC%89"><span class="toc-number">16.1.</span> <span class="toc-text">Human Communication（人类交流）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Computer-Communication%EF%BC%88%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E4%BF%A1%EF%BC%89"><span class="toc-number">16.2.</span> <span class="toc-text">Computer Communication（计算机通信）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-14"><span class="toc-number">16.2.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Message-Timing%EF%BC%88%E6%B6%88%E6%81%AF%E6%97%B6%E5%BA%8F%EF%BC%89"><span class="toc-number">17.</span> <span class="toc-text">Message Timing（消息时序）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Rules-of-engagement%EF%BC%88%E5%8F%82%E4%B8%8E%E8%A7%84%E5%88%99%EF%BC%89"><span class="toc-number">17.1.</span> <span class="toc-text">Rules of engagement（参与规则）:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-15"><span class="toc-number">17.1.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Protocol-%E2%80%9Clayers%E2%80%9D-and-reference-models%EF%BC%88%E5%8D%8F%E8%AE%AE%E2%80%9C%E5%B1%82%E2%80%9D%E4%B8%8E%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-number">18.</span> <span class="toc-text">Protocol “layers” and reference models（协议“层”与参考模型）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Question%EF%BC%88%E9%97%AE%E9%A2%98%EF%BC%89"><span class="toc-number">18.1.</span> <span class="toc-text">Question（问题）:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-16"><span class="toc-number">18.1.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example-organization-of-air-travel%EF%BC%88%E4%BE%8B%E5%AD%90%EF%BC%9A%E8%88%AA%E7%A9%BA%E6%97%85%E8%A1%8C%E7%9A%84%E7%BB%84%E7%BB%87%EF%BC%89"><span class="toc-number">19.</span> <span class="toc-text">Example: organization of air travel（例子：航空旅行的组织）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Layers%EF%BC%88%E5%B1%82%EF%BC%89"><span class="toc-number">19.1.</span> <span class="toc-text">Layers（层）:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%84%E5%B1%82%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%8F%8F%E8%BF%B0%EF%BC%88Describe-in-words-the-service-provided-in-each-layer-above%EF%BC%89"><span class="toc-number">19.2.</span> <span class="toc-text">各层服务的描述（Describe in words the service provided in each layer above）:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-17"><span class="toc-number">19.2.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-layering-%EF%BC%88%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%86%E5%B1%82%EF%BC%9F%EF%BC%89"><span class="toc-number">20.</span> <span class="toc-text">Why layering?（为什么要分层？）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-18"><span class="toc-number">20.0.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-OSI-Reference-Model%EF%BC%88OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-number">21.</span> <span class="toc-text">The OSI Reference Model（OSI参考模型）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-19"><span class="toc-number">21.0.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Internet-protocol-stack%EF%BC%88%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E6%A0%88%EF%BC%89"><span class="toc-number">22.</span> <span class="toc-text">Internet protocol stack（互联网协议栈）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP-Model%EF%BC%88TCP-IP%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-number">22.1.</span> <span class="toc-text">TCP&#x2F;IP Model（TCP&#x2F;IP模型）:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-20"><span class="toc-number">22.1.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Benefits-of-Using-a-Layered-Model%EF%BC%88%E4%BD%BF%E7%94%A8%E5%88%86%E5%B1%82%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%A5%BD%E5%A4%84%EF%BC%89"><span class="toc-number">23.</span> <span class="toc-text">The Benefits of Using a Layered Model（使用分层模型的好处）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-21"><span class="toc-number">23.0.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ISO-OSI-reference-model%EF%BC%88ISO-OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-number">24.</span> <span class="toc-text">ISO&#x2F;OSI reference model（ISO&#x2F;OSI参考模型）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-22"><span class="toc-number">24.0.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Network-Protocols%EF%BC%88%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%EF%BC%89"><span class="toc-number">25.</span> <span class="toc-text">Network Protocols（网络协议）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Protocol-Interaction%EF%BC%88%E5%8D%8F%E8%AE%AE%E4%BA%A4%E4%BA%92%EF%BC%89"><span class="toc-number">26.</span> <span class="toc-text">Protocol Interaction（协议交互）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-23"><span class="toc-number">26.0.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-IP-Protocol-Suite%EF%BC%88TCP-IP-%E5%8D%8F%E8%AE%AE%E5%A5%97%E4%BB%B6%EF%BC%89"><span class="toc-number">27.</span> <span class="toc-text">TCP&#x2F;IP Protocol Suite（TCP&#x2F;IP 协议套件）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Application-Layer%EF%BC%88%E5%BA%94%E7%94%A8%E5%B1%82%EF%BC%89"><span class="toc-number">27.1.</span> <span class="toc-text">Application Layer（应用层）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transport-Layer%EF%BC%88%E4%BC%A0%E8%BE%93%E5%B1%82%EF%BC%89"><span class="toc-number">27.2.</span> <span class="toc-text">Transport Layer（传输层）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Internet-Layer%EF%BC%88%E4%BA%92%E8%81%94%E7%BD%91%E5%B1%82%EF%BC%89"><span class="toc-number">27.3.</span> <span class="toc-text">Internet Layer（互联网层）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Network-Access-Layer%EF%BC%88%E7%BD%91%E7%BB%9C%E8%AE%BF%E9%97%AE%E5%B1%82%EF%BC%89"><span class="toc-number">27.4.</span> <span class="toc-text">Network Access Layer（网络访问层）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-24"><span class="toc-number">27.4.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Protocol-Suites-and-Industry-Standards%EF%BC%88%E5%8D%8F%E8%AE%AE%E5%A5%97%E4%BB%B6%E5%92%8C%E8%A1%8C%E4%B8%9A%E6%A0%87%E5%87%86%EF%BC%89"><span class="toc-number">28.</span> <span class="toc-text">Protocol Suites and Industry Standards（协议套件和行业标准）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Layer-Name%EF%BC%88%E5%B1%82%E5%90%8D%E7%A7%B0%EF%BC%89"><span class="toc-number">28.1.</span> <span class="toc-text">Layer Name（层名称）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP-IP"><span class="toc-number">28.1.1.</span> <span class="toc-text">TCP&#x2F;IP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ISO"><span class="toc-number">28.1.2.</span> <span class="toc-text">ISO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AppleTalk"><span class="toc-number">28.1.3.</span> <span class="toc-text">AppleTalk</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Novell-Netware"><span class="toc-number">28.1.4.</span> <span class="toc-text">Novell Netware</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Network-Access-Layer-Options"><span class="toc-number">28.1.5.</span> <span class="toc-text">Network Access Layer Options</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-25"><span class="toc-number">28.1.6.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-IP-Communication-Process%EF%BC%88TCP-IP%E9%80%9A%E4%BF%A1%E8%BF%87%E7%A8%8B%EF%BC%89"><span class="toc-number">29.</span> <span class="toc-text">TCP&#x2F;IP Communication Process（TCP&#x2F;IP通信过程）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Protocol-Operation%EF%BC%88%E5%8D%8F%E8%AE%AE%E6%93%8D%E4%BD%9C%EF%BC%89"><span class="toc-number">29.1.</span> <span class="toc-text">Protocol Operation（协议操作）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Protocol-Encapsulation-Terms%EF%BC%88%E5%8D%8F%E8%AE%AE%E5%B0%81%E8%A3%85%E6%9C%AF%E8%AF%AD%EF%BC%89"><span class="toc-number">29.1.1.</span> <span class="toc-text">Protocol Encapsulation Terms（协议封装术语）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E4%B8%AD%E7%A4%BA%E6%84%8F"><span class="toc-number">29.2.</span> <span class="toc-text">图中示意</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-26"><span class="toc-number">29.2.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Internet-Standards%EF%BC%88%E4%BA%92%E8%81%94%E7%BD%91%E6%A0%87%E5%87%86%EF%BC%89"><span class="toc-number">30.</span> <span class="toc-text">Internet Standards（互联网标准）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E7%BB%87%E6%9C%BA%E6%9E%84"><span class="toc-number">30.1.</span> <span class="toc-text">组织机构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3%E8%AF%B4%E6%98%8E"><span class="toc-number">30.2.</span> <span class="toc-text">图解说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-27"><span class="toc-number">30.2.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Internet-Standards-cont-%EF%BC%88%E4%BA%92%E8%81%94%E7%BD%91%E6%A0%87%E5%87%86%EF%BC%88%E7%BB%AD%EF%BC%89%EF%BC%89"><span class="toc-number">31.</span> <span class="toc-text">Internet Standards (cont.)（互联网标准（续））</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E7%BB%87%E6%9C%BA%E6%9E%84-1"><span class="toc-number">31.1.</span> <span class="toc-text">组织机构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%85%8D%E8%81%8C%E8%83%BD"><span class="toc-number">31.2.</span> <span class="toc-text">分配职能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3%E8%AF%B4%E6%98%8E-1"><span class="toc-number">31.3.</span> <span class="toc-text">图解说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-28"><span class="toc-number">31.3.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Electronics-and-Communications-Standards%EF%BC%88%E7%94%B5%E5%AD%90%E5%92%8C%E9%80%9A%E4%BF%A1%E6%A0%87%E5%87%86%EF%BC%89"><span class="toc-number">32.</span> <span class="toc-text">Electronics and Communications Standards（电子和通信标准）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IEEE%EF%BC%88%E7%94%B5%E6%B0%94%E5%92%8C%E7%94%B5%E5%AD%90%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E4%BC%9A%EF%BC%89"><span class="toc-number">32.1.</span> <span class="toc-text">IEEE（电气和电子工程师学会）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IEEE-802-%E5%B7%A5%E4%BD%9C%E7%BB%84%E4%B8%8E%E7%A0%94%E7%A9%B6%E7%BB%84"><span class="toc-number">32.1.1.</span> <span class="toc-text">IEEE 802 工作组与研究组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">32.1.2.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Encapsulation%EF%BC%88%E5%B0%81%E8%A3%85%EF%BC%89"><span class="toc-number">33.</span> <span class="toc-text">Encapsulation（封装）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-number">33.0.1.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/30/2/" title="Com327-week1">Com327-week1</a><time datetime="2024-01-30T04:52:02.000Z" title="Created 2024-01-30 04:52:02">2024-01-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/29/1/" title="Com301-week1">Com301-week1</a><time datetime="2024-01-29T18:24:06.000Z" title="Created 2024-01-29 18:24:06">2024-01-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/21/T8/" title="T8">T8</a><time datetime="2023-12-21T19:39:36.000Z" title="Created 2023-12-21 19:39:36">2023-12-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T7/" title="T7">T7</a><time datetime="2023-12-20T03:17:15.000Z" title="Created 2023-12-20 03:17:15">2023-12-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/20/T6/" title="T6">T6</a><time datetime="2023-12-20T03:01:32.000Z" title="Created 2023-12-20 03:01:32">2023-12-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
