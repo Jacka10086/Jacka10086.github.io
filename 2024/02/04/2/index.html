@@ -1,0 +1,403 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>2 | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Lab 2 - Switch Settings (实验2 - 交换机设置)Topology (拓扑结构) 图中展示了一个简单的网络拓扑结构，包括两台PC（PC1和PC2）以及两台交换机（S1和S2）。 PC1通过交换机S1连接到PC2，PC2通过交换机S2连接回PC1，形成一个环形网络。  拓扑结构简单清晰，展示了两台PC通过两台交换机互联的基本网络环境。 Addressing Table (地址">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2">
+<meta property="og:url" content="http://example.com/2024/02/04/2/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="Lab 2 - Switch Settings (实验2 - 交换机设置)Topology (拓扑结构) 图中展示了一个简单的网络拓扑结构，包括两台PC（PC1和PC2）以及两台交换机（S1和S2）。 PC1通过交换机S1连接到PC2，PC2通过交换机S2连接回PC1，形成一个环形网络。  拓扑结构简单清晰，展示了两台PC通过两台交换机互联的基本网络环境。 Addressing Table (地址">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2024-02-04T19:04:45.000Z">
+<meta property="article:modified_time" content="2024-02-04T21:22:09.810Z">
+<meta property="article:author" content="Jacka10086">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/02/04/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-02-04 21:22:09'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">97</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-02-04T19:04:45.000Z" title="Created 2024-02-04 19:04:45">2024-02-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-02-04T21:22:09.810Z" title="Updated 2024-02-04 21:22:09">2024-02-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Lab-2-Switch-Settings-实验2-交换机设置"><a href="#Lab-2-Switch-Settings-实验2-交换机设置" class="headerlink" title="Lab 2 - Switch Settings (实验2 - 交换机设置)"></a>Lab 2 - Switch Settings (实验2 - 交换机设置)</h2><h3 id="Topology-拓扑结构"><a href="#Topology-拓扑结构" class="headerlink" title="Topology (拓扑结构)"></a>Topology (拓扑结构)</h3><ul>
+<li>图中展示了一个简单的网络拓扑结构，包括两台PC（PC1和PC2）以及两台交换机（S1和S2）。</li>
+<li>PC1通过交换机S1连接到PC2，PC2通过交换机S2连接回PC1，形成一个环形网络。</li>
+</ul>
+<p>拓扑结构简单清晰，展示了两台PC通过两台交换机互联的基本网络环境。</p>
+<h3 id="Addressing-Table-地址表"><a href="#Addressing-Table-地址表" class="headerlink" title="Addressing Table (地址表)"></a>Addressing Table (地址表)</h3><ul>
+<li>表格列出了设备名称、IP地址和子网掩码。<ul>
+<li>PC1的IP地址为192.168.1.1，子网掩码为255.255.255.0。</li>
+<li>PC2的IP地址为192.168.1.2，子网掩码为255.255.255.0。</li>
+</ul>
+</li>
+</ul>
+<p>地址表为网络配置提供了必要的IP参数，确保了PCs之间的正确通信。</p>
+<h3 id="Objectives-目标"><a href="#Objectives-目标" class="headerlink" title="Objectives (目标)"></a>Objectives (目标)</h3><ol>
+<li><strong>Verify the Default Switch Configuration (验证默认交换机配置)</strong><ul>
+<li>确认交换机出厂设置是否符合网络的基础运行要求。</li>
+</ul>
+</li>
+<li><strong>Configure a Basic Switch Configuration (配置基础交换机设置)</strong><ul>
+<li>设置交换机的基础参数，如名称、密码等。</li>
+</ul>
+</li>
+<li><strong>Configure a MOTD Banner (配置消息日志)</strong><ul>
+<li>设定交换机启动时显示的消息，用于法律声明或欢迎信息等。</li>
+</ul>
+</li>
+<li><strong>Configure the PCs (配置个人计算机)</strong><ul>
+<li>设置PC的IP地址，以符合地址表中的配置。</li>
+</ul>
+</li>
+<li><strong>Save Configuration Files to NVRAM (将配置文件保存到NVRAM)</strong><ul>
+<li>确保配置在交换机重启后依然有效，通过保存到非易失性存储器NVRAM实现。</li>
+</ul>
+</li>
+</ol>
+<p>目标部分概述了实验的主要步骤和目的，为用户提供了完成实验的明确指导。</p>
+<p>总结：本实验指导涉及了网络拓扑结构的识别、网络设备的IP地址配置，以及交换机的基础设置。实验目标确保用户可以按照步骤操作，完成网络设置和配置的基本教学目的。</p>
+<h2 id="Background-背景"><a href="#Background-背景" class="headerlink" title="Background (背景)"></a>Background (背景)</h2><p>在这个实验中，您将首先进行基本的交换机配置。然后，您将通过配置PC上的IP地址来实现基本的连通性，并使用各种show命令来验证配置，使用ping命令来验证PC之间的基本连通性。您还将学习如何通过加密和普通文本密码保护命令行界面（CLI）和控制台端口的访问权限。</p>
+<p>这一部分为整个实验设定了背景，并概述了将要完成的任务。</p>
+<h2 id="Part-1-Verify-the-Default-Switch-Configuration-第一部分-验证默认交换机配置"><a href="#Part-1-Verify-the-Default-Switch-Configuration-第一部分-验证默认交换机配置" class="headerlink" title="Part 1: Verify the Default Switch Configuration (第一部分: 验证默认交换机配置)"></a>Part 1: Verify the Default Switch Configuration (第一部分: 验证默认交换机配置)</h2><h3 id="Step-1-Enter-privileged-EXEC-mode-步骤1-进入特权EXEC模式"><a href="#Step-1-Enter-privileged-EXEC-mode-步骤1-进入特权EXEC模式" class="headerlink" title="Step 1: Enter privileged EXEC mode (步骤1: 进入特权EXEC模式)"></a>Step 1: Enter privileged EXEC mode (步骤1: 进入特权EXEC模式)</h3><ul>
+<li>特权EXEC模式提供了访问所有交换机命令的权限。然而，由于特权命令可以配置操作参数，因此需要用密码来保护，以防止未授权使用。</li>
+<li>要进入特权EXEC模式，需要在CLI中输入 <code>enable</code> 命令。</li>
+</ul>
+<p>通过特权EXEC模式，用户可以访问更高级的配置命令和设备状态信息，这有助于管理员控制网络设备。</p>
+<h3 id="Step-2-Examine-the-current-switch-configuration-步骤2-检查当前交换机配置"><a href="#Step-2-Examine-the-current-switch-configuration-步骤2-检查当前交换机配置" class="headerlink" title="Step 2: Examine the current switch configuration (步骤2: 检查当前交换机配置)"></a>Step 2: Examine the current switch configuration (步骤2: 检查当前交换机配置)</h3><ul>
+<li>使用 <code>show running-config</code> 命令来查看当前交换机的配置。</li>
+<li>根据显示结果回答以下问题：<ol>
+<li>交换机有多少 FastEthernet 接口？答案是24个。</li>
+<li>交换机有多少 Gigabit Ethernet 接口？答案是2个。</li>
+<li>哪个命令可以显示非易失性随机存取存储器（NVRAM）中的当前内容？答案是 <code>show startup-configuration</code>。</li>
+<li>如果显示 <code>startup-config is not present</code>，意味着什么？这表示配置文件没有被保存到NVRAM中，当前只在RAM中。</li>
+</ol>
+</li>
+</ul>
+<p>这一部分指导用户如何查看和理解交换机的当前配置，并能够识别与端口和内存相关的关键信息。</p>
+<p>总结：第一部分的内容向用户介绍了如何验证交换机的默认配置，包括如何进入特权模式，如何查看当前配置，以及如何理解与接口和存储相关的配置信息。</p>
+<h2 id="Part-2-创建基础交换机配置-Part-2-Create-a-Basic-Switch-Configuration"><a href="#Part-2-创建基础交换机配置-Part-2-Create-a-Basic-Switch-Configuration" class="headerlink" title="Part 2: 创建基础交换机配置 (Part 2: Create a Basic Switch Configuration)"></a>Part 2: 创建基础交换机配置 (Part 2: Create a Basic Switch Configuration)</h2><h3 id="Step-1-为交换机命名-Step-1-Assign-a-name-to-a-switch"><a href="#Step-1-为交换机命名-Step-1-Assign-a-name-to-a-switch" class="headerlink" title="Step 1: 为交换机命名 (Step 1: Assign a name to a switch.)"></a>Step 1: 为交换机命名 (Step 1: Assign a name to a switch.)</h3><ul>
+<li>配置交换机参数时，可能需要在不同配置模式之间切换。注意提示符如何随着您在交换机内导航而变化。<ul>
+<li>进入配置模式：<code>Switch&gt; configure terminal</code></li>
+<li>设置主机名：<code>Switch(config)# hostname S1</code></li>
+<li>退出配置模式：<code>S1(config)# exit</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：此步骤主要是为交换机设置一个名称，需要通过不同的命令进入配置模式，设置主机名后再退出。</p>
+</blockquote>
+<h3 id="Step-2-保护控制台线路访问-Step-2-Secure-access-to-the-console-line"><a href="#Step-2-保护控制台线路访问-Step-2-Secure-access-to-the-console-line" class="headerlink" title="Step 2: 保护控制台线路访问 (Step 2: Secure access to the console line.)"></a>Step 2: 保护控制台线路访问 (Step 2: Secure access to the console line.)</h3><ul>
+<li>为了保护控制台线路的访问，需要进入配置线路模式并设置控制台密码。<ul>
+<li>进入控制台线路配置模式：<code>S1&gt; configure terminal</code> → <code>S1(config)# line console 0</code></li>
+<li>设置密码：<code>S1(config-line)# password letmein</code></li>
+<li>启用登录要求：<code>S1(config-line)# login</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：此步骤通过设置密码和启用登录命令来保护控制台线路，以防未经授权的访问。</p>
+</blockquote>
+<ul>
+<li>退出至特权模式并验证控制台口令是否生效。<ul>
+<li>退出配置线路模式：<code>S1(config-line)# exit</code></li>
+<li>退出至特权模式：<code>S1(config)# exit</code></li>
+<li>测试控制台口令：如果系统提示输入密码，说明设置成功。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：执行退出命令回到特权模式，以验证之前设置的控制台密码是否已生效。</p>
+</blockquote>
+<ul>
+<li>如果交换机在登录时没有提示输入密码，说明在第二步中没有正确配置登录参数。</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：如果没有密码提示，则说明登录参数配置不正确，需要重新检查第二步的配置。</p>
+</blockquote>
+<h3 id="注意事项-Note"><a href="#注意事项-Note" class="headerlink" title="注意事项 (Note)"></a>注意事项 (Note)</h3><ul>
+<li>如果交换机在登录时没有提示输入密码，那么就意味着在步骤2中没有正确配置登录参数。</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：这是一个重要的验证步骤，以确保交换机的安全设置按预期工作。</p>
+</blockquote>
+<p><strong>总结</strong>：本部分内容涉及基础的交换机配置，包括为交换机命名和保护控制台线路访问。详细说明了每个步骤中需要执行的命令，以及如何验证配置是否正确。此外，还强调了检查和验证步骤的重要性，确保配置的安全性。</p>
+<h2 id="Step-3-保护特权模式访问-Step-3-Secure-privileged-mode-access"><a href="#Step-3-保护特权模式访问-Step-3-Secure-privileged-mode-access" class="headerlink" title="Step 3: 保护特权模式访问 (Step 3: Secure privileged mode access)"></a>Step 3: 保护特权模式访问 (Step 3: Secure privileged mode access)</h2><ul>
+<li>设置启用密码为<code>c1$c0</code>，该密码用于保护访问特权模式。<ul>
+<li>注意：<code>0</code>是数字零，不是大写的<code>O</code>。</li>
+<li>进入特权模式：<code>S1&gt; enable</code></li>
+<li>进入配置模式设置启用密码：<code>S1(config)# enable password c1$c0</code></li>
+<li>退出配置模式：<code>S1(config)# exit</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：第三步骤是设置进入特权模式的密码，确保只有授权用户才能访问交换机的高级设置。</p>
+</blockquote>
+<h2 id="Step-4-验证特权模式访问是否安全-Step-4-Verify-that-privileged-mode-access-is-secure"><a href="#Step-4-验证特权模式访问是否安全-Step-4-Verify-that-privileged-mode-access-is-secure" class="headerlink" title="Step 4: 验证特权模式访问是否安全 (Step 4: Verify that privileged mode access is secure)"></a>Step 4: 验证特权模式访问是否安全 (Step 4: Verify that privileged mode access is secure)</h2><ul>
+<li>执行退出命令，退出交换机。</li>
+<li>按<Enter>键，并在提示时输入密码，验证特权模式密码是否设置成功。</li>
+<li>第一个密码是用于登录的，第二个密码是进入特权模式时需要的。</li>
+<li>使用<code>show running-config</code>命令来验证配置。</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：第四步骤涉及验证是否已成功设置特权模式密码，以保护交换机的特权模式不被未授权访问。</p>
+</blockquote>
+<h2 id="Step-5-配置加密密码以保护特权模式-Step-5-Configure-an-encrypted-password-to-secure-access-to-privileged-mode"><a href="#Step-5-配置加密密码以保护特权模式-Step-5-Configure-an-encrypted-password-to-secure-access-to-privileged-mode" class="headerlink" title="Step 5: 配置加密密码以保护特权模式 (Step 5: Configure an encrypted password to secure access to privileged mode)"></a>Step 5: 配置加密密码以保护特权模式 (Step 5: Configure an encrypted password to secure access to privileged mode)</h2><ul>
+<li>使用<code>enable secret</code>命令来替换之前的启用密码，以加强安全性。<ul>
+<li>进入特权模式：<code>S1&gt; enable</code></li>
+<li>进入配置模式设置加密的启用密码：<code>S1(config)# enable secret itsasecret</code></li>
+<li>退出配置模式：<code>S1(config)# exit</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：第五步骤是将之前设置的密码更换为加密密码，提升了特权模式访问的安全级别。</p>
+</blockquote>
+<p><strong>总结</strong>：以上步骤详细介绍了如何为交换机设置特权模式密码，以及如何验证和加密这些密码以确保安全。通过这些步骤，可以确保只有授权人员才能访问和修改交换机的特权模式，从而保护网络的安全性。</p>
+<h2 id="Step-6-验证启用密钥是否添加到配置文件-Step-6-Verify-that-the-enable-secret-password-is-added-to-the-configuration-file"><a href="#Step-6-验证启用密钥是否添加到配置文件-Step-6-Verify-that-the-enable-secret-password-is-added-to-the-configuration-file" class="headerlink" title="Step 6: 验证启用密钥是否添加到配置文件 (Step 6: Verify that the enable secret password is added to the configuration file)"></a>Step 6: 验证启用密钥是否添加到配置文件 (Step 6: Verify that the enable secret password is added to the configuration file)</h2><ul>
+<li>使用<code>show running-config</code>命令来验证新配置的启用密钥。<ul>
+<li>可以使用缩写命令：<code>S1# show run</code></li>
+<li>检查启用密钥<code>enable secret</code>如何显示：它应以加密形式出现。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：第六步骤涉及验证启用密钥是否已经加入配置文件，并且其显示方式应为加密形式，以确保配置的安全性。</p>
+</blockquote>
+<h2 id="Step-7-加密启用和控制台密码-Step-7-Encrypt-the-enable-and-console-passwords"><a href="#Step-7-加密启用和控制台密码-Step-7-Encrypt-the-enable-and-console-passwords" class="headerlink" title="Step 7: 加密启用和控制台密码 (Step 7: Encrypt the enable and console passwords)"></a>Step 7: 加密启用和控制台密码 (Step 7: Encrypt the enable and console passwords)</h2><ul>
+<li>之前步骤中虽然<code>enable secret</code>密码已加密，但启用和控制台密码仍是明文。现在将使用<code>service password-encryption</code>命令加密这些密码。<ul>
+<li>进入配置模式并启用密码加密服务：<code>S1# config t</code> → <code>S1(config)# service password-encryption</code></li>
+<li>退出配置模式：<code>S1(config)# exit</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：第七步骤是加密交换机中的启用和控制台密码，确保所有的密码都不以明文形式存储，提高安全性。</p>
+</blockquote>
+<ul>
+<li>如果在交换机上配置更多密码，它们将被自动加密，不再以明文显示。</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：启用密码加密服务后，所有当前和将来设置的密码都将自动加密，增强了安全防护。</p>
+</blockquote>
+<p><strong>总结</strong>：以上步骤详细说明了如何验证启用密钥是否正确添加到配置文件，并介绍了如何使用服务命令来加密现有和未来的密码。这些步骤保证了网络设备的密码不会以明文形式存储，有效防止了密码泄露的风险。</p>
+<h2 id="Part-3-配置MOTD横幅-Part-3-Configure-a-MOTD-Banner"><a href="#Part-3-配置MOTD横幅-Part-3-Configure-a-MOTD-Banner" class="headerlink" title="Part 3: 配置MOTD横幅 (Part 3: Configure a MOTD Banner)"></a>Part 3: 配置MOTD横幅 (Part 3: Configure a MOTD Banner)</h2><h3 id="Step-1-配置每日消息-Step-1-Configure-a-message-of-the-day-MOTD-banner"><a href="#Step-1-配置每日消息-Step-1-Configure-a-message-of-the-day-MOTD-banner" class="headerlink" title="Step 1: 配置每日消息 (Step 1: Configure a message of the day (MOTD) banner)"></a>Step 1: 配置每日消息 (Step 1: Configure a message of the day (MOTD) banner)</h3><ul>
+<li>使用Cisco IOS命令设置MOTD，为任何登录交换机的用户显示消息。<ul>
+<li>进入配置模式：<code>S1(config)# banner motd &quot;This is a secure system. Authorized Access Only!&quot;</code></li>
+<li>退出配置模式：<code>S1(config)# exit</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：步骤一是配置登录时显示的每日消息横幅，用于提示或警告用户关于系统安全和访问权限的信息。</p>
+</blockquote>
+<ul>
+<li>横幅将在哪种情况下显示？当有人通过控制台端口进入交换机时显示。</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：MOTD横幅在用户通过控制台登录时显示，起到提醒和警告的作用。</p>
+</blockquote>
+<ul>
+<li>为什么每个交换机都应该有MOTD横幅？横幅用于警告未授权用户，同时也可以传递给网络人员&#x2F;技术员重要信息。</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：MOTD横幅的目的是为了提醒用户注意安全，防止未经授权的访问，并向网络管理员传达紧急信息。</p>
+</blockquote>
+<h2 id="Part-4-保存配置文件到NVRAM-Part-4-Save-Configuration-Files-to-NVRAM"><a href="#Part-4-保存配置文件到NVRAM-Part-4-Save-Configuration-Files-to-NVRAM" class="headerlink" title="Part 4: 保存配置文件到NVRAM (Part 4: Save Configuration Files to NVRAM)"></a>Part 4: 保存配置文件到NVRAM (Part 4: Save Configuration Files to NVRAM)</h2><h3 id="Step-1-验证配置的准确性-Step-1-Verify-that-the-configuration-is-accurate-using-the-show-run-command"><a href="#Step-1-验证配置的准确性-Step-1-Verify-that-the-configuration-is-accurate-using-the-show-run-command" class="headerlink" title="Step 1: 验证配置的准确性 (Step 1: Verify that the configuration is accurate using the show run command)"></a>Step 1: 验证配置的准确性 (Step 1: Verify that the configuration is accurate using the show run command)</h3><ul>
+<li>使用<code>show run</code>命令验证配置是否正确。</li>
+</ul>
+<h3 id="Step-2-保存配置文件-Step-2-Save-the-configuration-file"><a href="#Step-2-保存配置文件-Step-2-Save-the-configuration-file" class="headerlink" title="Step 2: 保存配置文件 (Step 2: Save the configuration file)"></a>Step 2: 保存配置文件 (Step 2: Save the configuration file)</h3><ul>
+<li>完成基础配置后，需要将运行配置文件备份到NVRAM以确保在重启或断电后配置不会丢失。<ul>
+<li>保存配置文件到启动配置：<code>S1# copy running-config startup-config</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：步骤二是将当前的配置保存到NVRAM，确保配置的持久性。</p>
+</blockquote>
+<ul>
+<li>保存命令的最短缩写是什么？<code>cop r s</code></li>
+</ul>
+<h3 id="Step-3-检查启动配置文件-Step-3-Examine-the-startup-configuration-file"><a href="#Step-3-检查启动配置文件-Step-3-Examine-the-startup-configuration-file" class="headerlink" title="Step 3: 检查启动配置文件 (Step 3: Examine the startup configuration file)"></a>Step 3: 检查启动配置文件 (Step 3: Examine the startup configuration file)</h3><ul>
+<li>使用<code>show startup-config</code>命令查看NVRAM中的内容。</li>
+<li>验证是否所有更改都记录在文件中？是的，它与运行配置相同。</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：步骤三是查看和确认启动配置文件，确保所有更改都已经被正确保存。</p>
+</blockquote>
+<p><strong>总结</strong>：第三部分和第四部分介绍了如何为交换机配置MOTD横幅和保存配置文件到NVRAM。这些步骤确保了交换机在用户登录时显示适当的安全提示信息，并且在系统重启或断电后保持配置不变，增加了系统的稳定性和安全性。</p>
+<h2 id="Part-5-配置S2交换机-Part-5-Configure-S2"><a href="#Part-5-配置S2交换机-Part-5-Configure-S2" class="headerlink" title="Part 5: 配置S2交换机 (Part 5: Configure S2)"></a>Part 5: 配置S2交换机 (Part 5: Configure S2)</h2><h3 id="a-为交换机命名"><a href="#a-为交换机命名" class="headerlink" title="a. 为交换机命名"></a>a. 为交换机命名</h3><ul>
+<li>设置交换机的主机名为S2：<code>Switch(config)# hostname S2</code></li>
+</ul>
+<h3 id="b-保护控制台访问"><a href="#b-保护控制台访问" class="headerlink" title="b. 保护控制台访问"></a>b. 保护控制台访问</h3><ul>
+<li>使用密码<code>letmein</code>来保护控制台访问：<code>S2(config-line)# password letmein</code></li>
+</ul>
+<h3 id="c-配置启用密码和启用密钥"><a href="#c-配置启用密码和启用密钥" class="headerlink" title="c. 配置启用密码和启用密钥"></a>c. 配置启用密码和启用密钥</h3><ul>
+<li>设置启用密码为<code>c1$c0</code>和启用密钥为<code>itsasecret</code>：<code>S2(config)# enable password c1$c0</code> 和 <code>S2(config)# enable secret itsasecret</code></li>
+</ul>
+<h3 id="d-配置登录消息横幅"><a href="#d-配置登录消息横幅" class="headerlink" title="d. 配置登录消息横幅"></a>d. 配置登录消息横幅</h3><ul>
+<li>设置MOTD横幅以警告未授权访问：<code>S2(config)# banner motd # Authorized access only. Unauthorized access is prohibited and violators will be prosecuted to the full extent of the law. #</code></li>
+</ul>
+<h3 id="e-加密所有明文密码"><a href="#e-加密所有明文密码" class="headerlink" title="e. 加密所有明文密码"></a>e. 加密所有明文密码</h3><ul>
+<li>使用服务命令加密所有明文密码：<code>S2(config)# service password-encryption</code></li>
+</ul>
+<h3 id="f-确认配置正确"><a href="#f-确认配置正确" class="headerlink" title="f. 确认配置正确"></a>f. 确认配置正确</h3><ul>
+<li>通过查看运行配置来确认配置正确：<code>S2# show running-config</code></li>
+</ul>
+<h3 id="g-保存配置文件"><a href="#g-保存配置文件" class="headerlink" title="g. 保存配置文件"></a>g. 保存配置文件</h3><ul>
+<li>以防电源断电，保存配置文件以免丢失：<code>S2# copy running-config startup-config</code></li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：第五部分描述了如何对S2交换机进行配置，包括命名交换机、设置控制台密码、配置启用密码和启用密钥、配置MOTD横幅、加密所有明文密码、确认配置正确性以及保存配置文件以确保配置在电源断电时不丢失。这些步骤确保了交换机的安全性和配置的持久性。</p>
+</blockquote>
+<p><strong>总结</strong>：本部分提供了关于如何为S2交换机进行完整配置的详细步骤，从基础设置到安全加固，再到配置的持久化。每个步骤都强调了其在整个配置过程中的重要性和作用，以确保网络设备的稳定和安全运行。</p>
+<h2 id="Part-6-配置个人计算机-Part-6-Configure-the-PCs"><a href="#Part-6-配置个人计算机-Part-6-Configure-the-PCs" class="headerlink" title="Part 6: 配置个人计算机 (Part 6: Configure the PCs)"></a>Part 6: 配置个人计算机 (Part 6: Configure the PCs)</h2><h3 id="Step-1-为两台电脑配置IP地址-Step-1-Configure-both-PCs-with-IP-addresses"><a href="#Step-1-为两台电脑配置IP地址-Step-1-Configure-both-PCs-with-IP-addresses" class="headerlink" title="Step 1: 为两台电脑配置IP地址 (Step 1: Configure both PCs with IP addresses)"></a>Step 1: 为两台电脑配置IP地址 (Step 1: Configure both PCs with IP addresses)</h3><ul>
+<li>点击PC1，然后选择桌面选项卡。</li>
+<li>点击IP配置，根据地址表输入PC1的IP地址为192.168.1.1，子网掩码为255.255.255.0。</li>
+<li>重复步骤a和b为PC2配置IP地址。</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：第一步涉及为两台电脑配置IP地址和子网掩码，使它们能在网络上进行通信。</p>
+</blockquote>
+<h3 id="Step-2-测试与交换机的连通性-Step-2-Test-connectivity-to-switches"><a href="#Step-2-测试与交换机的连通性-Step-2-Test-connectivity-to-switches" class="headerlink" title="Step 2: 测试与交换机的连通性 (Step 2: Test connectivity to switches)"></a>Step 2: 测试与交换机的连通性 (Step 2: Test connectivity to switches)</h3><ul>
+<li>点击PC1，关闭IP配置窗口，如果它仍然打开的话，在桌面选项卡中点击命令提示符。</li>
+<li>输入ping命令和PC2的IP地址，按回车：<code>ping 192.168.1.2</code>。</li>
+</ul>
+<blockquote>
+<p><strong>中文总结</strong>：第二步是测试配置的IP地址是否能够成功连接到网络中的其他设备，这是确保网络通信正常的重要步骤。</p>
+</blockquote>
+<p><strong>总结</strong>：第六部分指导了如何为两台个人计算机配置IP地址并测试它们与网络中其他设备的连通性。这确保了网络中的每台设备都能够相互通信，为网络的正常运作提供了基础。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/02/04/2/">http://example.com/2024/02/04/2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/02/04/2-1/" title="2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">2</div></div></a></div><div class="next-post pull-right"><a href="/2024/02/04/1/" title="1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">1</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">97</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lab-2-Switch-Settings-%E5%AE%9E%E9%AA%8C2-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">Lab 2 - Switch Settings (实验2 - 交换机设置)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Topology-%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">Topology (拓扑结构)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Addressing-Table-%E5%9C%B0%E5%9D%80%E8%A1%A8"><span class="toc-number">1.2.</span> <span class="toc-text">Addressing Table (地址表)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Objectives-%E7%9B%AE%E6%A0%87"><span class="toc-number">1.3.</span> <span class="toc-text">Objectives (目标)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Background-%E8%83%8C%E6%99%AF"><span class="toc-number">2.</span> <span class="toc-text">Background (背景)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-1-Verify-the-Default-Switch-Configuration-%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E9%AA%8C%E8%AF%81%E9%BB%98%E8%AE%A4%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">Part 1: Verify the Default Switch Configuration (第一部分: 验证默认交换机配置)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-1-Enter-privileged-EXEC-mode-%E6%AD%A5%E9%AA%A41-%E8%BF%9B%E5%85%A5%E7%89%B9%E6%9D%83EXEC%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text">Step 1: Enter privileged EXEC mode (步骤1: 进入特权EXEC模式)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-2-Examine-the-current-switch-configuration-%E6%AD%A5%E9%AA%A42-%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8D%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="toc-number">3.2.</span> <span class="toc-text">Step 2: Examine the current switch configuration (步骤2: 检查当前交换机配置)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-2-%E5%88%9B%E5%BB%BA%E5%9F%BA%E7%A1%80%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%85%8D%E7%BD%AE-Part-2-Create-a-Basic-Switch-Configuration"><span class="toc-number">4.</span> <span class="toc-text">Part 2: 创建基础交换机配置 (Part 2: Create a Basic Switch Configuration)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-1-%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%91%BD%E5%90%8D-Step-1-Assign-a-name-to-a-switch"><span class="toc-number">4.1.</span> <span class="toc-text">Step 1: 为交换机命名 (Step 1: Assign a name to a switch.)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-2-%E4%BF%9D%E6%8A%A4%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%BA%BF%E8%B7%AF%E8%AE%BF%E9%97%AE-Step-2-Secure-access-to-the-console-line"><span class="toc-number">4.2.</span> <span class="toc-text">Step 2: 保护控制台线路访问 (Step 2: Secure access to the console line.)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-Note"><span class="toc-number">4.3.</span> <span class="toc-text">注意事项 (Note)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Step-3-%E4%BF%9D%E6%8A%A4%E7%89%B9%E6%9D%83%E6%A8%A1%E5%BC%8F%E8%AE%BF%E9%97%AE-Step-3-Secure-privileged-mode-access"><span class="toc-number">5.</span> <span class="toc-text">Step 3: 保护特权模式访问 (Step 3: Secure privileged mode access)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Step-4-%E9%AA%8C%E8%AF%81%E7%89%B9%E6%9D%83%E6%A8%A1%E5%BC%8F%E8%AE%BF%E9%97%AE%E6%98%AF%E5%90%A6%E5%AE%89%E5%85%A8-Step-4-Verify-that-privileged-mode-access-is-secure"><span class="toc-number">6.</span> <span class="toc-text">Step 4: 验证特权模式访问是否安全 (Step 4: Verify that privileged mode access is secure)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Step-5-%E9%85%8D%E7%BD%AE%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81%E4%BB%A5%E4%BF%9D%E6%8A%A4%E7%89%B9%E6%9D%83%E6%A8%A1%E5%BC%8F-Step-5-Configure-an-encrypted-password-to-secure-access-to-privileged-mode"><span class="toc-number">7.</span> <span class="toc-text">Step 5: 配置加密密码以保护特权模式 (Step 5: Configure an encrypted password to secure access to privileged mode)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Step-6-%E9%AA%8C%E8%AF%81%E5%90%AF%E7%94%A8%E5%AF%86%E9%92%A5%E6%98%AF%E5%90%A6%E6%B7%BB%E5%8A%A0%E5%88%B0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-Step-6-Verify-that-the-enable-secret-password-is-added-to-the-configuration-file"><span class="toc-number">8.</span> <span class="toc-text">Step 6: 验证启用密钥是否添加到配置文件 (Step 6: Verify that the enable secret password is added to the configuration file)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Step-7-%E5%8A%A0%E5%AF%86%E5%90%AF%E7%94%A8%E5%92%8C%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%AF%86%E7%A0%81-Step-7-Encrypt-the-enable-and-console-passwords"><span class="toc-number">9.</span> <span class="toc-text">Step 7: 加密启用和控制台密码 (Step 7: Encrypt the enable and console passwords)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-3-%E9%85%8D%E7%BD%AEMOTD%E6%A8%AA%E5%B9%85-Part-3-Configure-a-MOTD-Banner"><span class="toc-number">10.</span> <span class="toc-text">Part 3: 配置MOTD横幅 (Part 3: Configure a MOTD Banner)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-1-%E9%85%8D%E7%BD%AE%E6%AF%8F%E6%97%A5%E6%B6%88%E6%81%AF-Step-1-Configure-a-message-of-the-day-MOTD-banner"><span class="toc-number">10.1.</span> <span class="toc-text">Step 1: 配置每日消息 (Step 1: Configure a message of the day (MOTD) banner)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-4-%E4%BF%9D%E5%AD%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%B0NVRAM-Part-4-Save-Configuration-Files-to-NVRAM"><span class="toc-number">11.</span> <span class="toc-text">Part 4: 保存配置文件到NVRAM (Part 4: Save Configuration Files to NVRAM)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-1-%E9%AA%8C%E8%AF%81%E9%85%8D%E7%BD%AE%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-Step-1-Verify-that-the-configuration-is-accurate-using-the-show-run-command"><span class="toc-number">11.1.</span> <span class="toc-text">Step 1: 验证配置的准确性 (Step 1: Verify that the configuration is accurate using the show run command)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-2-%E4%BF%9D%E5%AD%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-Step-2-Save-the-configuration-file"><span class="toc-number">11.2.</span> <span class="toc-text">Step 2: 保存配置文件 (Step 2: Save the configuration file)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-3-%E6%A3%80%E6%9F%A5%E5%90%AF%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-Step-3-Examine-the-startup-configuration-file"><span class="toc-number">11.3.</span> <span class="toc-text">Step 3: 检查启动配置文件 (Step 3: Examine the startup configuration file)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-5-%E9%85%8D%E7%BD%AES2%E4%BA%A4%E6%8D%A2%E6%9C%BA-Part-5-Configure-S2"><span class="toc-number">12.</span> <span class="toc-text">Part 5: 配置S2交换机 (Part 5: Configure S2)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a-%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%91%BD%E5%90%8D"><span class="toc-number">12.1.</span> <span class="toc-text">a. 为交换机命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#b-%E4%BF%9D%E6%8A%A4%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%AE%BF%E9%97%AE"><span class="toc-number">12.2.</span> <span class="toc-text">b. 保护控制台访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#c-%E9%85%8D%E7%BD%AE%E5%90%AF%E7%94%A8%E5%AF%86%E7%A0%81%E5%92%8C%E5%90%AF%E7%94%A8%E5%AF%86%E9%92%A5"><span class="toc-number">12.3.</span> <span class="toc-text">c. 配置启用密码和启用密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#d-%E9%85%8D%E7%BD%AE%E7%99%BB%E5%BD%95%E6%B6%88%E6%81%AF%E6%A8%AA%E5%B9%85"><span class="toc-number">12.4.</span> <span class="toc-text">d. 配置登录消息横幅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#e-%E5%8A%A0%E5%AF%86%E6%89%80%E6%9C%89%E6%98%8E%E6%96%87%E5%AF%86%E7%A0%81"><span class="toc-number">12.5.</span> <span class="toc-text">e. 加密所有明文密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#f-%E7%A1%AE%E8%AE%A4%E9%85%8D%E7%BD%AE%E6%AD%A3%E7%A1%AE"><span class="toc-number">12.6.</span> <span class="toc-text">f. 确认配置正确</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#g-%E4%BF%9D%E5%AD%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">12.7.</span> <span class="toc-text">g. 保存配置文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-6-%E9%85%8D%E7%BD%AE%E4%B8%AA%E4%BA%BA%E8%AE%A1%E7%AE%97%E6%9C%BA-Part-6-Configure-the-PCs"><span class="toc-number">13.</span> <span class="toc-text">Part 6: 配置个人计算机 (Part 6: Configure the PCs)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-1-%E4%B8%BA%E4%B8%A4%E5%8F%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AEIP%E5%9C%B0%E5%9D%80-Step-1-Configure-both-PCs-with-IP-addresses"><span class="toc-number">13.1.</span> <span class="toc-text">Step 1: 为两台电脑配置IP地址 (Step 1: Configure both PCs with IP addresses)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-2-%E6%B5%8B%E8%AF%95%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E8%BF%9E%E9%80%9A%E6%80%A7-Step-2-Test-connectivity-to-switches"><span class="toc-number">13.2.</span> <span class="toc-text">Step 2: 测试与交换机的连通性 (Step 2: Test connectivity to switches)</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/04/3/" title="3">3</a><time datetime="2024-02-04T22:37:34.000Z" title="Created 2024-02-04 22:37:34">2024-02-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/04/2-1/" title="2">2</a><time datetime="2024-02-04T21:49:47.000Z" title="Created 2024-02-04 21:49:47">2024-02-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/04/2/" title="2">2</a><time datetime="2024-02-04T19:04:45.000Z" title="Created 2024-02-04 19:04:45">2024-02-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/04/1/" title="1">1</a><time datetime="2024-02-04T18:30:54.000Z" title="Created 2024-02-04 18:30:54">2024-02-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/04/Com327-week1-Scope/" title="Com327-week1-Scope">Com327-week1-Scope</a><time datetime="2024-02-04T07:42:37.000Z" title="Created 2024-02-04 07:42:37">2024-02-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
