@@ -1,0 +1,838 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>431第三周LEC | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="开发者的工作范围与挑战 (Devs who work with:) 使用的工具（Tools used）：  包（Packages）：一般情况下，包都有明确的规范。 Laravel：一个PHP框架，使用Laravel能够提高开发效率。 助手函数（Helpers）：有时候开发者可能对这些助手函数的理解和使用不够清晰。 封装器（Wrappers）：开发者可能会在使用这些封装器时遇到困难。   存在的问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="431第三周LEC">
+<meta property="og:url" content="http://example.com/2024/02/14/431%E7%AC%AC%E4%B8%89%E5%91%A8LEC/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="开发者的工作范围与挑战 (Devs who work with:) 使用的工具（Tools used）：  包（Packages）：一般情况下，包都有明确的规范。 Laravel：一个PHP框架，使用Laravel能够提高开发效率。 助手函数（Helpers）：有时候开发者可能对这些助手函数的理解和使用不够清晰。 封装器（Wrappers）：开发者可能会在使用这些封装器时遇到困难。   存在的问题">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2024-02-14T21:42:49.000Z">
+<meta property="article:modified_time" content="2024-02-15T03:12:22.469Z">
+<meta property="article:author" content="Jacka10086">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/02/14/431%E7%AC%AC%E4%B8%89%E5%91%A8LEC/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '431第三周LEC',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-02-15 03:12:22'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">110</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">431第三周LEC</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-02-14T21:42:49.000Z" title="Created 2024-02-14 21:42:49">2024-02-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-02-15T03:12:22.469Z" title="Updated 2024-02-15 03:12:22">2024-02-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="431第三周LEC"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="开发者的工作范围与挑战-Devs-who-work-with"><a href="#开发者的工作范围与挑战-Devs-who-work-with" class="headerlink" title="开发者的工作范围与挑战 (Devs who work with:)"></a>开发者的工作范围与挑战 (Devs who work with:)</h2><ul>
+<li><p><strong>使用的工具（Tools used）</strong>：</p>
+<ul>
+<li><strong>包（Packages）</strong>：一般情况下，包都有明确的规范。</li>
+<li><strong>Laravel</strong>：一个PHP框架，使用Laravel能够提高开发效率。</li>
+<li><strong>助手函数（Helpers）</strong>：有时候开发者可能对这些助手函数的理解和使用不够清晰。</li>
+<li><strong>封装器（Wrappers）</strong>：开发者可能会在使用这些封装器时遇到困难。</li>
+</ul>
+</li>
+<li><p><strong>存在的问题（Issues）</strong>：</p>
+<ul>
+<li><strong>视觉盲点或技能不足（Blind spots or underdeveloped skills）</strong>：由于不可能在每个方面都成为专家，因此很容易产生盲点或技能不足。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：开发者在使用工具和技术时可能会遇到理解不足或技能不完善的问题，尤其是在使用包、Laravel框架、助手函数和封装器时。</p>
+</blockquote>
+<h2 id="代码格式化建议-How-should-code-be-formatted"><a href="#代码格式化建议-How-should-code-be-formatted" class="headerlink" title="代码格式化建议 (How should code be formatted?)"></a>代码格式化建议 (How should code be formatted?)</h2><ul>
+<li><p><strong>K&amp;R风格（The K&amp;R style）</strong>：</p>
+<ul>
+<li><strong>与Python的缩进不同（Unlike Python’s indentation）</strong>：K&amp;R风格在C语言中很常见，与Python的缩进方式不同。</li>
+<li><strong>类似JAVA（Like JAVA）</strong>：这种风格和JAVA语言中的代码风格相似。</li>
+</ul>
+</li>
+<li><p><strong>推荐遵循的规范（Recommended to follow）</strong>：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-1/">PSR-1</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-12/">PSR-12</a>：遵循这些规范可以在阅读代码时减少认知摩擦。</li>
+</ul>
+</li>
+<li><p><strong>标识符风格（Identifiers）</strong>：</p>
+<ul>
+<li><strong>PascalCase</strong></li>
+<li><strong>camelCase</strong></li>
+<li><strong>snake_case</strong></li>
+</ul>
+</li>
+<li><p><strong>PSR-2代码风格（Code Style: PSR-2）</strong>：</p>
+<ul>
+<li><strong>特点（Feature）</strong>：<ul>
+<li><strong>多行表达式（Multi-line expressions）</strong>：后续行比初始行缩进更深。</li>
+<li><strong>代码块（Code blocks）</strong>：声明的主体开始于新行，而控制流块则在与构造相同的行开始。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：代码格式化对于提高代码的可读性和维护性非常关键。K&amp;R风格、PSR-1和PSR-12是编码时推荐遵循的规范，它们包括了标识符的命名方式和代码块的排版方式。</p>
+</blockquote>
+<h2 id="内容概览-Contents"><a href="#内容概览-Contents" class="headerlink" title="内容概览 (Contents)"></a>内容概览 (Contents)</h2><ul>
+<li><p><strong>Composer包管理器简介（Introducing Composer Package Manager）</strong>：</p>
+<ul>
+<li><strong>一些示例包（Some example packages）</strong>：<ul>
+<li><strong>Carbon（DateTime API）</strong>：一个日期和时间的API包，可以简化日期时间的处理。</li>
+<li><strong>Minify</strong>：减少PHP文件大小的工具。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>数据存取（Storing and retrieving data）</strong>：</p>
+<ul>
+<li><strong>例如从文件中读取数据（E.g., reading data from file）</strong>：介绍了如何使用PHP进行文件操作。</li>
+</ul>
+</li>
+<li><p><strong>数组操作（Working with arrays）</strong>：解释了在PHP中如何处理数组数据结构。</p>
+</li>
+<li><p><strong>尝试集合（Trying out Collections）</strong>：集合是一种PHP数据结构，用于存储和操作一组数据。</p>
+</li>
+</ul>
+<blockquote>
+<p>总结：内容概览部分提供了课程的结构和重点，包括介绍Composer包管理器、数据存取方法、数组操作和集合的使用。</p>
+</blockquote>
+<p>以上是对提供的图片内容的总结和解释，以Markdown格式组织，并以中文进行解释。这样的组织方式有助于快速理解和检索信息。</p>
+<h2 id="Composer与包管理-Composer-and-Packages"><a href="#Composer与包管理-Composer-and-Packages" class="headerlink" title="Composer与包管理 (Composer and Packages)"></a>Composer与包管理 (Composer and Packages)</h2><ul>
+<li><strong>什么是Composer？ (What is composer?)</strong><ul>
+<li><strong>依赖管理器 (Dependency Manager for PHP)</strong></li>
+<li><strong>库管理工具 (Library Management Tool)</strong><ul>
+<li>搜索库 (Search for libraries)</li>
+<li>安装库 (Install)</li>
+<li>更新库 (Update)</li>
+</ul>
+</li>
+<li><strong>在Docker环境中使用 (Keep within the Docker environment!)</strong></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：Composer是PHP的依赖管理器，也是一个库管理工具，可以帮助开发者搜索、安装及更新库。建议在Docker环境中使用以保持一致性和安全。</p>
+</blockquote>
+<h2 id="Composer的配置文件-composer-json-lock-gitignore"><a href="#Composer的配置文件-composer-json-lock-gitignore" class="headerlink" title="Composer的配置文件 (composer.json &amp; .lock &amp; .gitignore)"></a>Composer的配置文件 (composer.json &amp; .lock &amp; .gitignore)</h2><ul>
+<li><strong>.json文件 (<code>.json</code>)</strong><ul>
+<li>文本文件，描述项目正常工作所需的内容 (Text file that describes what your project needs to have to work properly)<ul>
+<li>举例 (Example): <code>&#123;&quot;require&quot;: &#123;&quot;nesbot/carbon&quot;: &quot;2.26&quot;, &quot;matthiasmullie/minify&quot;: &quot;1.3&quot;&#125;&#125;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>.lock文件 (<code>.lock</code>)</strong><ul>
+<li>确保Composer处于正确状态的文件 (Created to ensure Composer has the correct state)</li>
+</ul>
+</li>
+<li><strong>.gitignore文件 (<code>.gitignore</code>)</strong><ul>
+<li>避免不必要的文件或文件夹被包含在版本控制中 (Created to ensure unnecessary files or folders are not retained in a repo)<ul>
+<li>举例 (Examples): <code>composer.phar</code>, <code>php_code/vendor/</code>, <code>.DS_Store</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：<code>composer.json</code>定义了项目的依赖，而<code>.lock</code>文件帮助维护依赖的一致性。<code>.gitignore</code>则确保不相关的文件不会被提交到版本库中。</p>
+</blockquote>
+<h2 id="如何使用Composer-Using-Composer"><a href="#如何使用Composer-Using-Composer" class="headerlink" title="如何使用Composer (Using Composer)"></a>如何使用Composer (Using Composer)</h2><ul>
+<li><strong>Packageist网站 (Packageist Website)</strong><ul>
+<li>定义依赖 (Define Your Dependencies)</li>
+<li>安装Composer (Install Composer In Your Project)</li>
+<li>安装依赖 (Install Dependencies)</li>
+<li>自动加载依赖 (Autoload Dependencies)</li>
+<li>发布包 (Publishing Packages)</li>
+<li>共享私有代码 (Sharing Private Code)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：使用Composer涉及定义项目依赖、安装和更新依赖、自动加载以及发布和共享包。Packageist网站是进行这些操作的主要平台。</p>
+</blockquote>
+<h2 id="受欢迎的包-Popular-packages"><a href="#受欢迎的包-Popular-packages" class="headerlink" title="受欢迎的包 (Popular packages)"></a>受欢迎的包 (Popular packages)</h2><ul>
+<li><strong>Packageist上的流行包 (Popular Packages on Packageist)</strong><ul>
+<li>展示了一些流行的PHP包和其下载量 (Shows some popular PHP packages and their download counts)<ul>
+<li>例如 (Examples): <code>symfony/polyfill-mbstring</code>, <code>psr/log</code>, <code>symfony/console</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：Packageist展示了当前流行的PHP包，这些包被广泛下载和使用，反映了它们在PHP社区中的受欢迎程度。</p>
+</blockquote>
+<p>以上内容以Markdown格式组织，使用中文解释了关于Composer和PHP包管理的基本概念、配置文件以及如何在Packageist上找到并使用流行的包。</p>
+<h2 id="存储与检索数据-Storing-and-Retrieving-Data"><a href="#存储与检索数据-Storing-and-Retrieving-Data" class="headerlink" title="存储与检索数据 (Storing and Retrieving Data)"></a>存储与检索数据 (Storing and Retrieving Data)</h2><ul>
+<li><strong>数据存储方式 (Data Storage)</strong><ul>
+<li>平面文件 (Flat file)<ul>
+<li>文本文件 (Text file)</li>
+<li>XML文件 (XML file)</li>
+<li>JSON格式 (JSON)</li>
+<li>自定义格式 (custom)</li>
+</ul>
+</li>
+<li>数据库 (Database)<ul>
+<li>大型数据集 (Large datasets)</li>
+<li>可搜索性 (Searchable)</li>
+<li>可维护性 (Maintainable)</li>
+<li>易于迁移 (Easy to migrate)</li>
+<li>快速性 (Fast)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：数据可以存储在平面文件中，如文本、XML和JSON格式，或者使用数据库来处理更大型的数据集合。数据库提供搜索、维护、迁移的便利，同时确保了数据处理的速度。</p>
+</blockquote>
+<p>以上内容根据所提供的图片信息以Markdown格式整理，以中文详细说明了数据存储和检索的不同方式和它们的特点。</p>
+<h2 id="了解XML文件-FYI-–-XML-File"><a href="#了解XML文件-FYI-–-XML-File" class="headerlink" title="了解XML文件 (FYI – XML File)"></a>了解XML文件 (FYI – XML File)</h2><ul>
+<li><strong>XML文件简介</strong><ul>
+<li>XML文件是使用标记语言来描述数据结构和内容的文本文件。</li>
+<li>XML代表可扩展标记语言（Extensible Markup Language），意味着它可以为不同目的和应用程序进行扩展和定制。</li>
+<li>XML文件通常用于在不同系统之间存储和交换数据，如网络服务器、数据库和软件应用程序。</li>
+<li>XML具有层次结构，元素被标签包围，并指示它们的名称和属性。元素也可以包含其他元素或文本作为其子元素。</li>
+<li>XML文件既易于人阅读也易于机器处理，这使得它们易于编辑和处理。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：XML文件因其可扩展性和结构化格式而广泛用于数据存储和交换。它的层次结构和人类可读性使其在数据处理中非常有用。</p>
+</blockquote>
+<h2 id="了解JSON-FYI-–-JSON"><a href="#了解JSON-FYI-–-JSON" class="headerlink" title="了解JSON (FYI – JSON)"></a>了解JSON (FYI – JSON)</h2><ul>
+<li><strong>JSON文件简介</strong><ul>
+<li>JSON文件是以JavaScript对象表示法（JavaScript Object Notation）格式存储数据的文件。</li>
+<li>JSON是一种人类可读的、轻量级数据交换格式，基于JavaScript对象语法。</li>
+<li>JSON文件可用于在不同的应用程序或平台之间存储和交换数据，例如网络浏览器、服务器、数据库或移动设备。</li>
+<li>JSON文件通常有<code>.json</code>扩展名，并且可以用任何文本编辑器或JSON解析器打开。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：JSON文件以其简洁性和跨平台的数据交换能力而受到青睐，它基于JavaScript的语法，易于阅读和编写。</p>
+</blockquote>
+<p>以上内容根据所提供的图片信息以Markdown格式整理，以中文详细说明了XML和JSON文件格式的特点以及它们在数据存储和交换中的应用。</p>
+<h2 id="覆盖的主题-Topics-Covered"><a href="#覆盖的主题-Topics-Covered" class="headerlink" title="覆盖的主题 (Topics Covered)"></a>覆盖的主题 (Topics Covered)</h2><ul>
+<li>打开文件 (Opening a file)</li>
+<li>创建并写入文件 (Creating and writing to a file)</li>
+<li>关闭文件 (Closing a file)</li>
+<li>从文件读取 (Reading from a file)</li>
+<li>其他有用的文件功能 (Other useful file functions)</li>
+</ul>
+<blockquote>
+<p>总结：本部分介绍了文件操作的基本概念，包括如何打开、创建、写入、读取和关闭文件，以及其他一些有用的文件操作功能。</p>
+</blockquote>
+<h2 id="如何打开文件-Opening-a-file"><a href="#如何打开文件-Opening-a-file" class="headerlink" title="如何打开文件 (Opening a file)"></a>如何打开文件 (Opening a file)</h2><ul>
+<li>写入 (Writing)<ol>
+<li>打开文件。（如果不存在则创建）</li>
+<li>写入数据到文件。</li>
+<li>关闭文件。</li>
+</ol>
+</li>
+<li>读取 (Reading)<ol>
+<li>打开文件。如果不存在应优雅地退出代码。</li>
+<li>从文件读取数据。</li>
+<li>关闭文件。</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>总结：文件的打开操作依赖于文件是否存在，以及所需的操作类型（读取或写入）。在打开文件进行读取或写入操作后，应当关闭文件以释放资源。</p>
+</blockquote>
+<h2 id="文件模式-fopen-File-Modes-fopen"><a href="#文件模式-fopen-File-Modes-fopen" class="headerlink" title="文件模式 - fopen() (File Modes - fopen())"></a>文件模式 - fopen() (File Modes - fopen())</h2><ul>
+<li>模式 (Mode)<ul>
+<li><code>r</code> 读取 (Read)</li>
+<li><code>r+</code> 读取和写入 (Read and write)</li>
+<li><code>w</code> 写入 (Write)</li>
+<li><code>w+</code> 写入和读取 (Write and read)</li>
+<li><code>x</code> 谨慎写入 (Cautious Write)</li>
+<li><code>x+</code> 谨慎写入和读取 (Cautious Write and Read)</li>
+<li><code>a</code> 追加 (Append)</li>
+<li><code>a+</code> 追加和读取 (Append and Read)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：<code>fopen()</code>函数提供多种模式来打开文件，用于不同的读写操作。选择正确的模式对于文件操作是非常关键的，以确保数据的正确性和程序的稳定性。</p>
+</blockquote>
+<p>以上内容根据所提供的图片信息以Markdown格式整理，以中文详细说明了如何在PHP中打开、读取和写入文件，以及<code>fopen()</code>函数中不同文件模式的用途和特点。</p>
+<h2 id="路径-相对或绝对-Paths-Relative-or-Absolute"><a href="#路径-相对或绝对-Paths-Relative-or-Absolute" class="headerlink" title="路径 - 相对或绝对 (Paths - Relative or Absolute)"></a>路径 - 相对或绝对 (Paths - Relative or Absolute)</h2><ul>
+<li>同时使用两者 (Use both together)</li>
+<li>绝对工作目录可以存储在配置文件中 (Absolute working directory could be stored in a config file)</li>
+<li>所有相对路径可以从绝对路径定义 (All relative paths can be defined from the absolute path)</li>
+</ul>
+<blockquote>
+<p>总结：在项目中，通常会结合使用相对路径和绝对路径。通过在配置文件中定义绝对路径，可以方便地管理和维护项目中文件的位置，同时所有相对路径都将基于这个绝对路径定义，从而提高代码的灵活性和可移植性。</p>
+</blockquote>
+<h2 id="定义文件系统常量-Define-Constants-for-File-System"><a href="#定义文件系统常量-Define-Constants-for-File-System" class="headerlink" title="定义文件系统常量 (Define Constants for File System)"></a>定义文件系统常量 (Define Constants for File System)</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">header</span>(<span class="string">&quot;Content-Type: text/plain&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一些简写常量</span></span><br><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&quot;URL_SEPARATOR&quot;</span>, <span class="string">&#x27;/&#x27;</span>);</span><br><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&quot;DS&quot;</span>, DIRECTORY_SEPARATOR);</span><br><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&quot;PS&quot;</span>, PATH_SEPARATOR);</span><br><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&quot;US&quot;</span>, URL_SEPARATOR);</span><br><span class="line"></span><br><span class="line"><span class="variable">$DOCUMENT_ROOT</span> = <span class="variable">$_SERVER</span>[<span class="string">&#x27;DOCUMENT_ROOT&#x27;</span>];</span><br><span class="line"><span class="comment">// 获取绝对路径</span></span><br><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&#x27;ABSPATH&#x27;</span>, <span class="title function_ invoke__">dirname</span>(<span class="keyword">__FILE__</span>) . <span class="string">&#x27;/&#x27;</span>);</span><br><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&#x27;ROOT&#x27;</span>, <span class="variable">$DOCUMENT_ROOT</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义所需的任何相对路径</span></span><br><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&#x27;UPLOAD_PATH&#x27;</span>, ABSPATH . <span class="string">&#x27;Public&#x27;</span> . DS . <span class="string">&#x27;uploads&#x27;</span> . DS);</span><br><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&#x27;IMAGES_PATH&#x27;</span>, ABSPATH . <span class="string">&#x27;Public&#x27;</span> . DS . <span class="string">&#x27;images&#x27;</span> . DS);</span><br><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&#x27;HELPERS_PATH&#x27;</span>, ABSPATH . <span class="string">&#x27;App&#x27;</span> . DS . <span class="string">&#x27;helpers&#x27;</span> . DS);</span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(URL_SEPARATOR);</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(DS);</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(PS);</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(US);</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(ABSPATH);</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(UPLOAD_PATH);</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(IMAGES_PATH);</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(HELPERS_PATH);</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(ROOT);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>总结：此代码片段演示了如何在PHP中定义用于文件系统的常量。通过这些常量可以更容易地管理文件路径，使代码更加清晰且易于维护。</p>
+</blockquote>
+<h2 id="写入文件-Writing-to-File"><a href="#写入文件-Writing-to-File" class="headerlink" title="写入文件 (Writing to File)"></a>写入文件 (Writing to File)</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&quot;DS&quot;</span>, DIRECTORY_SEPARATOR);</span><br><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&#x27;ABSPATH&#x27;</span>, <span class="title function_ invoke__">dirname</span>(<span class="keyword">__FILE__</span>) . DS);</span><br><span class="line"></span><br><span class="line"><span class="variable">$fileHandle</span> = <span class="title function_ invoke__">fopen</span>(ABSPATH . <span class="string">&quot;COM549-Write Test.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">fwrite</span>(<span class="variable">$fileHandle</span>, <span class="string">&quot;The absolute path to this file is &quot;</span> . ABSPATH);</span><br><span class="line"><span class="title function_ invoke__">fclose</span>(<span class="variable">$fileHandle</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>总结：这段代码展示了如何打开一个文件用于写入，如果文件不存在则创建它。然后将数据写入文件，并在完成后关闭文件以释放资源。</p>
+</blockquote>
+<h2 id="预定义常量-Predefined-Constants"><a href="#预定义常量-Predefined-Constants" class="headerlink" title="预定义常量 (Predefined Constants)"></a>预定义常量 (Predefined Constants)</h2><ul>
+<li><strong>常量名称 (Name)</strong><ul>
+<li><code>__LINE__</code>：当前文件中的行号。</li>
+<li><code>__FILE__</code>：文件的完整路径和文件名，如果使用在include里，则返回包含文件的名称。</li>
+<li><code>__DIR__</code>：文件所在的目录。如果在include中使用，则返回被包含文件的目录，这等同于<code>dirname(__FILE__)</code>。此目录名称不包含尾随斜杠，除非它是根目录。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：预定义常量提供了关于当前脚本信息的便捷方式，如文件名、目录路径等，它们在包含文件、读取文件路径和定位资源时特别有用。</p>
+</blockquote>
+<h2 id="文件锁定-Locking-Files"><a href="#文件锁定-Locking-Files" class="headerlink" title="文件锁定 (Locking Files)"></a>文件锁定 (Locking Files)</h2><ul>
+<li><p><strong>防止文件同时访问 (Prevents simultaneous access to a file)</strong></p>
+<ul>
+<li>使用<code>flock(resource fp, int operation [, int &amp;wouldBlock])</code>进行文件锁定。</li>
+</ul>
+</li>
+<li><p><strong>操作值 (Value of Operation)</strong></p>
+<ul>
+<li><code>LOCK_SH</code>：共享锁定。文件可以与其他人共享。</li>
+<li><code>LOCK_EX</code>：独占锁定。此操作是排他性的；文件不能被共享。</li>
+<li><code>LOCK_UN</code>：释放现有锁定。</li>
+<li><code>LOCK_NB</code>：阻止阻塞，当你尝试获得锁时（Windows中不支持）。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>总结：文件锁定是一种重要的机制，用于防止多个进程或线程同时写入或读取同一文件，从而防止数据损坏或不一致。</p>
+</blockquote>
+<p>以上内容以Markdown格式整理，以中文解释了PHP中的预定义常量和文件锁定功能。这些常量和函数对于文件的安全操作和路径管理是非常重要的。</p>
+<h2 id="获取锁（Acquiring-Lock）"><a href="#获取锁（Acquiring-Lock）" class="headerlink" title="获取锁（Acquiring Lock）"></a>获取锁（Acquiring Lock）</h2><ul>
+<li>当两个或多个进程尝试同时获取同一资源的锁时，通常会发生竞争条件。<ul>
+<li>如果锁实现得当，系统将确保在任何给定时间只有一个进程可以持有锁。</li>
+<li>如果多个进程尝试同时获取锁，一些锁机制将按请求到达的顺序授予锁，而其他机制可能会随机选择。</li>
+<li>不同的锁机制可能会导致不同的行为，例如优先级反转或饥饿。</li>
+</ul>
+</li>
+<li>总结：在多进程环境中，锁用于确保资源在同一时间只被一个进程访问，以防止数据损坏和不一致。</li>
+</ul>
+<h2 id="锁定文件示例（Locking-File-Example）"><a href="#锁定文件示例（Locking-File-Example）" class="headerlink" title="锁定文件示例（Locking File Example）"></a>锁定文件示例（Locking File Example）</h2><ul>
+<li>示例展示了PHP代码中使用文件锁的情况。<ul>
+<li><code>fopen</code>函数用于打开文件，<code>flock</code>用于对文件加锁。</li>
+<li><code>LOCK_EX</code>是排他锁，确保在释放锁之前没有其他进程可以写入文件。</li>
+<li>写入文件后使用<code>flock($ordersFileHandle, LOCK_UN)</code>来释放锁，然后关闭文件句柄。</li>
+</ul>
+</li>
+<li>这段代码确保文件写入操作是原子的，避免了多个进程同时写入同一文件时可能发生的数据冲突。</li>
+<li>总结：PHP中文件锁的使用可以防止在文件写入操作期间发生的数据竞争，确保数据的完整性和一致性。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在进行并发编程时，锁是一种重要的同步机制，用于防止多个线程或进程同时访问同一资源。以上内容展示了在PHP中如何使用文件锁来保证数据的安全性。加锁是为了保证在修改共享资源时的一致性和完整性，而示例代码则是一个具体实现，展示了在文件操作中如何使用锁来防止并发写入带来的问题。</p>
+<h2 id="文件操作函数（Other-Useful-File-Functions）"><a href="#文件操作函数（Other-Useful-File-Functions）" class="headerlink" title="文件操作函数（Other Useful File Functions）"></a>文件操作函数（Other Useful File Functions）</h2><h3 id="读取操作（Reading-Operations）"><a href="#读取操作（Reading-Operations）" class="headerlink" title="读取操作（Reading Operations）"></a>读取操作（Reading Operations）</h3><ul>
+<li><code>feof()</code> - 检测是否已到达文件末尾（End of File）。<ul>
+<li>这个函数通常用在循环读取文件时，来判断是否已读取完全部内容。</li>
+</ul>
+</li>
+<li><code>fgets()</code> - 一次读取文件的一行，直到遇到换行符<code>\n</code>或文件结束符EOF。<ul>
+<li>用于逐行读取大型文件，可以有效控制内存使用。</li>
+</ul>
+</li>
+<li><code>fgetc()</code> - 每次调用读取文件的一个字符。<ul>
+<li>当需要对文件进行逐字符分析时，这个函数非常有用。</li>
+</ul>
+</li>
+</ul>
+<h3 id="写入操作（Writing-Operations）"><a href="#写入操作（Writing-Operations）" class="headerlink" title="写入操作（Writing Operations）"></a>写入操作（Writing Operations）</h3><ul>
+<li><code>fputs()</code> - 将字符串写入文件。<ul>
+<li>适用于添加新内容到文件的特定位置。</li>
+</ul>
+</li>
+<li><code>fputcsv()</code> - 将行格式化为 CSV 并写入文件，结果以数组形式返回。<ul>
+<li>这是处理CSV文件的标准函数，可以自动处理字段分隔和文本包围。</li>
+</ul>
+</li>
+</ul>
+<h3 id="其他操作（Other-Operations）"><a href="#其他操作（Other-Operations）" class="headerlink" title="其他操作（Other Operations）"></a>其他操作（Other Operations）</h3><ul>
+<li><code>fread()</code> - 从文件中读取指定数量的字节。<ul>
+<li>用于读取二进制文件或在已知数据大小时读取特定长度的内容。</li>
+</ul>
+</li>
+<li><code>readfile()</code> - 读取文件的全部内容，并将其直接输出到浏览器。<ul>
+<li>如果要将文件内容直接显示给用户，这是一个方便的函数。</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件信息操作（File-Information-Operations）"><a href="#文件信息操作（File-Information-Operations）" class="headerlink" title="文件信息操作（File Information Operations）"></a>文件信息操作（File Information Operations）</h3><ul>
+<li><code>file_exists()</code> - 检查文件或目录是否存在。<ul>
+<li>在尝试访问文件之前，检查文件是否存在是一个好习惯。</li>
+</ul>
+</li>
+<li><code>filesize()</code> - 获取文件大小，以字节为单位。<ul>
+<li>文件大小信息在许多情况下都很有用，如在用户下载前显示文件大小。</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件指针操作（File-Pointer-Operations）"><a href="#文件指针操作（File-Pointer-Operations）" class="headerlink" title="文件指针操作（File Pointer Operations）"></a>文件指针操作（File Pointer Operations）</h3><ul>
+<li><code>rewind()</code> - 将文件指针重置到文件的开始位置。<ul>
+<li>在多次读取同一个文件时，重置文件指针是必要的。</li>
+</ul>
+</li>
+<li><code>ftell()</code> - 返回文件指针的当前位置。<ul>
+<li>了解当前读&#x2F;写的位置，可以帮助进行更复杂的文件操作。</li>
+</ul>
+</li>
+<li><code>fseek()</code> - 设置文件指针到文件中的指定位置。<ul>
+<li>对于大文件，可能需要移动到文件的特定位置进行读写。</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件删除操作（File-Deletion-Operations）"><a href="#文件删除操作（File-Deletion-Operations）" class="headerlink" title="文件删除操作（File Deletion Operations）"></a>文件删除操作（File Deletion Operations）</h3><ul>
+<li><code>unlink()</code> - 删除文件，并返回操作成功与否的布尔值。<ul>
+<li>当需要从系统中永久移除文件时使用，操作成功返回<code>true</code>，否则返回<code>false</code>。</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>以上列出的是一系列PHP中处理文件的常用函数，涵盖了文件的读取、写入、信息查询、指针操作以及删除等方面。这些函数为文件数据的操作提供了丰富的接口，使得文件的处理既灵活又高效。了解并熟练使用这些函数对于进行文件相关的编程工作是非常重要的。正确地应用这些函数，可以帮助开发者写出更为健壮和可靠的文件处理代码，以确保数据的准确性和程序的稳定性。</p>
+<h2 id="数组（Arrays）"><a href="#数组（Arrays）" class="headerlink" title="数组（Arrays）"></a>数组（Arrays）</h2><h3 id="数组的优点（Advantages）"><a href="#数组的优点（Advantages）" class="headerlink" title="数组的优点（Advantages）"></a>数组的优点（Advantages）</h3><ul>
+<li>单次访问相关联数据组（Single access to a group of data that belongs together）<ul>
+<li>例如，可以使用数组来存储相关的数据，如货币兑换率。</li>
+</ul>
+</li>
+<li>实现其他数据结构（Implement other data structures）<ul>
+<li>数组可以用来实现链表、栈、队列、树和图等复杂数据结构。</li>
+</ul>
+</li>
+<li>数学运算上的便利性（Mathematically convenient for matrices）<ul>
+<li>在进行数学计算，特别是矩阵运算时，数组提供了简单直观的方式来表示数据。</li>
+</ul>
+</li>
+</ul>
+<h3 id="数组的缺点（Disadvantages）"><a href="#数组的缺点（Disadvantages）" class="headerlink" title="数组的缺点（Disadvantages）"></a>数组的缺点（Disadvantages）</h3><ul>
+<li>静态大小（Static size）<ul>
+<li>数组的大小在声明时就需要确定，之后无法改变。</li>
+</ul>
+</li>
+<li>必须预先知道大小（Must know size in advance）<ul>
+<li>在使用数组之前，必须知道所需的数据量大小。</li>
+</ul>
+</li>
+<li>内存问题（Memory issues such as waste）<ul>
+<li>如果数组声明过大，会浪费内存；声明过小，则可能不足以存储所需数据。</li>
+</ul>
+</li>
+</ul>
+<h3 id="PHP中的数组函数（PHP-Array-Functions）"><a href="#PHP中的数组函数（PHP-Array-Functions）" class="headerlink" title="PHP中的数组函数（PHP Array Functions）"></a>PHP中的数组函数（PHP Array Functions）</h3><ul>
+<li>在PHP中，有大量的数组处理函数可供使用，这些函数可以帮助开发者进行数组的创建、修改、分析和其他操作。</li>
+<li>例如，<code>array_count_values()</code>函数可以用来统计数组中每个值出现的次数。</li>
+<li>要查找合适的数组函数，可以访问PHP官方文档网站php.net，并使用搜索功能查找特定的数组函数。</li>
+</ul>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>数组是编程中常用的数据结构，它在数据存储和访问方面提供了诸多便利，但也有其局限性。PHP为数组操作提供了广泛的函数库，能够满足各种数据处理需求。了解这些函数和它们的用法对于开发高效的PHP应用程序至关重要。</p>
+<h2 id="PHP数值索引数组"><a href="#PHP数值索引数组" class="headerlink" title="PHP数值索引数组"></a>PHP数值索引数组</h2><h3 id="基础定义"><a href="#基础定义" class="headerlink" title="基础定义"></a>基础定义</h3><ul>
+<li>数组是一种数据结构，能够存储一系列的值。</li>
+<li>PHP中的数组可以通过 <code>array()</code> 函数或者 <code>[]</code>（PHP 5.4之后）来定义。</li>
+</ul>
+<h3 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h3><ul>
+<li><code>$products1</code> 使用 <code>array()</code> 函数定义了一个包含三个元素的数组。</li>
+<li><code>$products2</code> 使用 <code>[]</code> 这种简写方式定义了同样的数组。</li>
+</ul>
+<h3 id="数组内容"><a href="#数组内容" class="headerlink" title="数组内容"></a>数组内容</h3><ul>
+<li>数组包含了三个字符串元素：”Tires”（轮胎）, “Oil”（油）, “Spark Plugs”（火花塞）。</li>
+<li>这些元素在数组中是按顺序排列的，分别对应索引 0、1 和 2。</li>
+</ul>
+<h3 id="数组输出"><a href="#数组输出" class="headerlink" title="数组输出"></a>数组输出</h3><ul>
+<li><code>var_dump()</code> 函数被用来打印数组的信息，包括每个元素的索引、类型和值。</li>
+</ul>
+<h3 id="图表解释"><a href="#图表解释" class="headerlink" title="图表解释"></a>图表解释</h3><ul>
+<li>右侧的图表展示了数组 <code>$products</code> 的可视化形式。</li>
+<li>图表说明了数组是如何将每个元素与一个数字索引关联起来的，从0开始计数。</li>
+</ul>
+<h3 id="PHP代码执行"><a href="#PHP代码执行" class="headerlink" title="PHP代码执行"></a>PHP代码执行</h3><ul>
+<li>代码执行结果显示 <code>$products1</code> 和 <code>$products2</code> 的结构是一样的。</li>
+<li>数组元素和索引在浏览器中通过 <code>var_dump()</code> 输出显示。</li>
+</ul>
+<h3 id="头部信息"><a href="#头部信息" class="headerlink" title="头部信息"></a>头部信息</h3><ul>
+<li>PHP脚本开始时，有一个 <code>header()</code> 函数调用，这是用来设置内容类型的。</li>
+<li>这里设置的是 <code>&quot;Content-Type: text/plain&quot;</code>，意味着输出应该是纯文本格式。</li>
+</ul>
+<h3 id="PHP版本"><a href="#PHP版本" class="headerlink" title="PHP版本"></a>PHP版本</h3><ul>
+<li>注释指出数组的简写语法（<code>[]</code>）是自PHP 5.4版本起支持的。</li>
+</ul>
+<p>总结：这段PHP代码展示了如何在PHP中定义数值索引数组，并通过 <code>var_dump()</code> 函数输出数组的详细信息。展示了两种定义数组的语法，并通过一个图表解释了数组索引的概念。代码的执行结果证实了两种方式定义的数组结构相同。</p>
+<h2 id="PHP循环访问数值索引数组"><a href="#PHP循环访问数值索引数组" class="headerlink" title="PHP循环访问数值索引数组"></a>PHP循环访问数值索引数组</h2><h3 id="数组与循环"><a href="#数组与循环" class="headerlink" title="数组与循环"></a>数组与循环</h3><ul>
+<li>使用 <code>for</code> 循环来遍历数组是PHP中的常见做法。</li>
+<li>循环开始于索引0，继续直到达到数组长度，由 <code>count($products)</code> 函数确定。</li>
+</ul>
+<h3 id="header-函数"><a href="#header-函数" class="headerlink" title="header 函数"></a><code>header</code> 函数</h3><ul>
+<li><code>header(&quot;Content-Type: text/plain&quot;)</code> 设置响应的内容类型为纯文本，影响输出格式。</li>
+</ul>
+<h3 id="数组初始化-1"><a href="#数组初始化-1" class="headerlink" title="数组初始化"></a>数组初始化</h3><ul>
+<li>数组 <code>$products</code> 使用简写方式 <code>[]</code> 初始化，包含 “Tires”, “Oil”, “Spark Plugs”。</li>
+</ul>
+<h3 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a><code>for</code> 循环</h3><ul>
+<li>初始化变量 <code>$i</code> 为0，条件是 <code>$i</code> 小于数组长度，每次循环结束 <code>$i</code> 自增。</li>
+<li>循环体内使用 <code>echo</code> 语句打印数组中的当前元素。</li>
+</ul>
+<h3 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h3><ul>
+<li>输出显示了数组中的每个元素，每个元素占一行。</li>
+</ul>
+<h3 id="PHP代码执行-1"><a href="#PHP代码执行-1" class="headerlink" title="PHP代码执行"></a>PHP代码执行</h3><ul>
+<li>浏览器窗口展示了执行PHP脚本后的结果：列表中包含 “Tires”, “Oil”, “Spark Plugs”。</li>
+</ul>
+<p>总结：这段PHP代码展示了如何使用 <code>for</code> 循环来访问和打印数值索引数组中的元素。设置了内容类型为纯文本，使得输出格式化为简单的文本形式。循环正确地迭代了数组中的每个元素，并将它们逐行打印出来。</p>
+<h2 id="PHP非数值索引数组"><a href="#PHP非数值索引数组" class="headerlink" title="PHP非数值索引数组"></a>PHP非数值索引数组</h2><h3 id="数组定义和类型"><a href="#数组定义和类型" class="headerlink" title="数组定义和类型"></a>数组定义和类型</h3><ul>
+<li>PHP数组可以是数值索引的，也可以是关联的（非数值索引）。</li>
+<li>数值索引数组使用整数作为索引，关联数组使用键名来访问值。</li>
+</ul>
+<h3 id="数值索引数组"><a href="#数值索引数组" class="headerlink" title="数值索引数组"></a>数值索引数组</h3><ul>
+<li><code>$prices1</code> 定义了一个简单的数值索引数组，包含整数值 100, 10, 4。</li>
+</ul>
+<h3 id="关联数组"><a href="#关联数组" class="headerlink" title="关联数组"></a>关联数组</h3><ul>
+<li><code>$prices2</code> 使用 <code>array()</code> 函数定义了一个关联数组，包含键名 “Tires”, “Oil”, “Spark Plugs” 和它们对应的整数值。</li>
+</ul>
+<h3 id="数组内容输出"><a href="#数组内容输出" class="headerlink" title="数组内容输出"></a>数组内容输出</h3><ul>
+<li><code>var_dump()</code> 函数用来输出数组的结构和内容。</li>
+<li><code>$prices1</code> 输出显示数组索引和对应的整数值。</li>
+<li><code>$prices2</code> 输出显示键名和对应的整数值。</li>
+</ul>
+<h3 id="打印数组元素"><a href="#打印数组元素" class="headerlink" title="打印数组元素"></a>打印数组元素</h3><ul>
+<li>使用 <code>echo</code> 语句打印出 <code>$prices1</code> 和 <code>$prices2</code> 中的各个元素。</li>
+<li>为了访问关联数组的元素，必须使用对应的键名。</li>
+</ul>
+<h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h3><ul>
+<li>浏览器显示了 <code>echo</code> 语句的输出，为每个数组元素的值。</li>
+</ul>
+<h3 id="头部信息-1"><a href="#头部信息-1" class="headerlink" title="头部信息"></a>头部信息</h3><ul>
+<li>与前面的例子一样，使用 <code>header()</code> 函数设置内容类型为纯文本。</li>
+</ul>
+<p>总结：这段PHP代码演示了如何定义和访问数值索引数组和关联数组。通过使用 <code>var_dump()</code> 函数来展示数组结构，并且使用 <code>echo</code> 语句打印出数组中每个元素的值。输出结果直观地展示了两种类型数组的不同之处。</p>
+<h2 id="PHP使用Foreach访问非数值索引数组"><a href="#PHP使用Foreach访问非数值索引数组" class="headerlink" title="PHP使用Foreach访问非数值索引数组"></a>PHP使用Foreach访问非数值索引数组</h2><h3 id="Foreach循环简介"><a href="#Foreach循环简介" class="headerlink" title="Foreach循环简介"></a>Foreach循环简介</h3><ul>
+<li><code>foreach</code> 循环是PHP中专门用于数组的循环结构，可以轻松遍历数组中的每个元素。</li>
+</ul>
+<h3 id="关联数组定义"><a href="#关联数组定义" class="headerlink" title="关联数组定义"></a>关联数组定义</h3><ul>
+<li><code>$prices</code> 是通过 <code>array()</code> 函数定义的关联数组，包含了与 “Tires”, “Oil”, “Spark Plugs” 相关的价格。</li>
+</ul>
+<h3 id="Foreach循环使用"><a href="#Foreach循环使用" class="headerlink" title="Foreach循环使用"></a>Foreach循环使用</h3><ul>
+<li>循环结构 <code>foreach ($prices as $key =&gt; $value)</code> 用于遍历 <code>$prices</code> 数组。</li>
+<li><code>$key</code> 表示数组的键，<code>$value</code> 表示对应的值。</li>
+</ul>
+<h3 id="元素输出"><a href="#元素输出" class="headerlink" title="元素输出"></a>元素输出</h3><ul>
+<li>循环体内使用 <code>echo</code> 语句打印键和值，中间用短横线 “-“ 分隔。</li>
+</ul>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><ul>
+<li>输出每个元素为一行，格式为 “键-值”。</li>
+</ul>
+<h3 id="头部信息-2"><a href="#头部信息-2" class="headerlink" title="头部信息"></a>头部信息</h3><ul>
+<li><code>header(&quot;Content-Type: text/plain&quot;)</code> 函数设置响应的内容类型为纯文本。</li>
+</ul>
+<h3 id="执行结果-1"><a href="#执行结果-1" class="headerlink" title="执行结果"></a>执行结果</h3><ul>
+<li>浏览器窗口展示了执行PHP脚本后的结果：每一行显示一个数组元素的键和值。</li>
+</ul>
+<p>总结：这段PHP代码展示了使用 <code>foreach</code> 循环来遍历关联数组并打印每个键值对。通过设置响应类型为纯文本，确保了输出的格式为简单易读的文本形式。<code>foreach</code> 循环是处理关联数组时非常有用的工具，因为它可以直接提取键和值。</p>
+<h2 id="PHP使用each-函数访问非数值索引数组"><a href="#PHP使用each-函数访问非数值索引数组" class="headerlink" title="PHP使用each()函数访问非数值索引数组"></a>PHP使用each()函数访问非数值索引数组</h2><h3 id="each-函数用法"><a href="#each-函数用法" class="headerlink" title="each()函数用法"></a>each()函数用法</h3><ul>
+<li><code>each()</code> 函数用来返回数组中当前的键值对，并将内部指针向前移动。</li>
+</ul>
+<h3 id="关联数组-1"><a href="#关联数组-1" class="headerlink" title="关联数组"></a>关联数组</h3><ul>
+<li><code>$prices</code> 通过 <code>array()</code> 初始化为一个关联数组，包含 “Tires”, “Oil”, “Spark Plugs” 及其价格。</li>
+</ul>
+<h3 id="循环访问数组"><a href="#循环访问数组" class="headerlink" title="循环访问数组"></a>循环访问数组</h3><ul>
+<li><code>while</code> 循环与 <code>each()</code> 函数结合使用，遍历 <code>$prices</code> 数组的每个元素。</li>
+<li><code>$element</code> 变量在每次迭代中存储由 <code>each()</code> 返回的当前元素。</li>
+</ul>
+<h3 id="输出数组元素"><a href="#输出数组元素" class="headerlink" title="输出数组元素"></a>输出数组元素</h3><ul>
+<li><code>var_dump($element)</code> 输出当前元素的详细信息。</li>
+<li><code>echo</code> 语句用于打印出元素的键和值。</li>
+</ul>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>循环结束后，如果需要重新遍历数组，应使用 <code>reset($prices)</code> 来重置数组内部指针。</li>
+</ul>
+<h3 id="执行结果-2"><a href="#执行结果-2" class="headerlink" title="执行结果"></a>执行结果</h3><ul>
+<li>浏览器显示了每次迭代的 <code>var_dump</code> 输出和 <code>echo</code> 输出，表明每个元素的键和值。</li>
+</ul>
+<h3 id="头部信息-3"><a href="#头部信息-3" class="headerlink" title="头部信息"></a>头部信息</h3><ul>
+<li>与其他例子一样，设置响应头部为纯文本格式。</li>
+</ul>
+<p>总结：这段PHP代码展示了使用 <code>each()</code> 函数在 <code>while</code> 循环中遍历关联数组的方法。代码详细地输出了数组的每个键值对，并通过注释提醒了在重新遍历数组前需要重置内部指针的重要性。</p>
+<h2 id="PHP数组运算符"><a href="#PHP数组运算符" class="headerlink" title="PHP数组运算符"></a>PHP数组运算符</h2><h3 id="运算符概述"><a href="#运算符概述" class="headerlink" title="运算符概述"></a>运算符概述</h3><ul>
+<li>PHP提供了专门的运算符用于数组操作。</li>
+</ul>
+<h3 id="运算符及其作用"><a href="#运算符及其作用" class="headerlink" title="运算符及其作用"></a>运算符及其作用</h3><ul>
+<li><code>+</code>（并集）：<code>$a + $b</code> 会将数组 <code>$b</code> 中的元素添加到数组 <code>$a</code> 中，如果有键名冲突，则 <code>$a</code> 的元素将保持不变。</li>
+<li><code>==</code>（等价）：当数组 <code>$a</code> 和 <code>$b</code> 包含相同的键值对时（不考虑顺序），<code>$a == $b</code> 返回 <code>true</code>。</li>
+<li><code>===</code>（同一性）：只有当 <code>$a</code> 和 <code>$b</code> 包含相同的键值对且顺序及类型都相同时，<code>$a === $b</code> 才返回 <code>true</code>。</li>
+<li><code>!=</code>（不等价）：如果数组 <code>$a</code> 和 <code>$b</code> 不包含相同的键值对，<code>$a != $b</code> 返回 <code>true</code>。</li>
+<li><code>&lt;&gt;</code>（不等价）：与 <code>!=</code> 相同，如果数组 <code>$a</code> 和 <code>$b</code> 不等价，则 <code>$a &lt;&gt; $b</code> 返回 <code>true</code>。</li>
+<li><code>!==</code>（非同一性）：当 <code>$a</code> 和 <code>$b</code> 不包含相同的键值对或顺序及类型有所不同时，<code>$a !== $b</code> 返回 <code>true</code>。</li>
+</ul>
+<h3 id="使用注意"><a href="#使用注意" class="headerlink" title="使用注意"></a>使用注意</h3><ul>
+<li>数组的比较是基于键值对的，而不仅仅是值。</li>
+<li>并集运算符不会改变现有数组，但会创建一个新的数组作为结果。</li>
+</ul>
+<p>总结：了解和使用这些数组运算符对于进行数组操作和比较是非常重要的，它们使得数组数据的处理更加灵活和强大。</p>
+<h2 id="PHP多维数组"><a href="#PHP多维数组" class="headerlink" title="PHP多维数组"></a>PHP多维数组</h2><h3 id="多维数组的定义"><a href="#多维数组的定义" class="headerlink" title="多维数组的定义"></a>多维数组的定义</h3><ul>
+<li>多维数组是指包含一个或多个数组的数组。</li>
+</ul>
+<h3 id="示例中的多维数组"><a href="#示例中的多维数组" class="headerlink" title="示例中的多维数组"></a>示例中的多维数组</h3><ul>
+<li><code>$products</code> 是一个包含三个子数组的多维数组。</li>
+<li>每个子数组代表一个产品，包含产品代码、描述和价格。</li>
+</ul>
+<h3 id="数组结构"><a href="#数组结构" class="headerlink" title="数组结构"></a>数组结构</h3><ul>
+<li><code>$products[0]</code> 包含 “TIR”（产品代码），”Tires”（描述），100（价格）。</li>
+<li><code>$products[1]</code> 包含 “OIL”，”Oil”，10。</li>
+<li><code>$products[2]</code> 包含 “SPK”，”Spark Plugs”，4。</li>
+</ul>
+<h3 id="var-dump输出"><a href="#var-dump输出" class="headerlink" title="var_dump输出"></a>var_dump输出</h3><ul>
+<li><code>var_dump($products)</code> 输出了多维数组的结构和内容。</li>
+</ul>
+<h3 id="头部信息-4"><a href="#头部信息-4" class="headerlink" title="头部信息"></a>头部信息</h3><ul>
+<li>使用 <code>header(&quot;Content-Type: text/plain&quot;)</code> 设置内容类型为纯文本。</li>
+</ul>
+<h3 id="图表解释-1"><a href="#图表解释-1" class="headerlink" title="图表解释"></a>图表解释</h3><ul>
+<li>右侧图表显示了 <code>$products</code> 数组的结构。</li>
+<li>每一行对应一个子数组，列出了产品的代码、描述和价格。</li>
+</ul>
+<h3 id="数组与图表的关联"><a href="#数组与图表的关联" class="headerlink" title="数组与图表的关联"></a>数组与图表的关联</h3><ul>
+<li>PHP数组中的子数组直接对应图表中的每行数据。</li>
+</ul>
+<p>总结：这段PHP代码和图表共同展示了多维数组的定义和使用，其中图表为数组中每个子数组提供了一个直观的视图。理解多维数组在处理类似产品列表这样的数据结构时非常重要。</p>
+<h2 id="PHP访问多维数组"><a href="#PHP访问多维数组" class="headerlink" title="PHP访问多维数组"></a>PHP访问多维数组</h2><h3 id="多维数组定义"><a href="#多维数组定义" class="headerlink" title="多维数组定义"></a>多维数组定义</h3><ul>
+<li><code>$products</code> 定义为多维数组，其中每个元素自身也是一个数组，包含产品的信息。</li>
+</ul>
+<h3 id="访问多维数组"><a href="#访问多维数组" class="headerlink" title="访问多维数组"></a>访问多维数组</h3><ul>
+<li>使用嵌套的 <code>for</code> 循环来访问 <code>$products</code> 数组中的每个元素。</li>
+</ul>
+<h3 id="外层循环"><a href="#外层循环" class="headerlink" title="外层循环"></a>外层循环</h3><ul>
+<li>外层 <code>for</code> 循环遍历 <code>$products</code> 数组中的每个子数组。</li>
+</ul>
+<h3 id="内层循环"><a href="#内层循环" class="headerlink" title="内层循环"></a>内层循环</h3><ul>
+<li>内层 <code>for</code> 循环遍历子数组中的每个元素。</li>
+</ul>
+<h3 id="元素输出-1"><a href="#元素输出-1" class="headerlink" title="元素输出"></a>元素输出</h3><ul>
+<li>使用 <code>echo</code> 语句输出子数组中的每个元素，并用制表符 <code>\t</code> 分隔。</li>
+</ul>
+<h3 id="头部信息-5"><a href="#头部信息-5" class="headerlink" title="头部信息"></a>头部信息</h3><ul>
+<li>通过 <code>header(&quot;Content-Type: text/plain&quot;)</code> 设置输出为纯文本格式。</li>
+</ul>
+<h3 id="输出结果-1"><a href="#输出结果-1" class="headerlink" title="输出结果"></a>输出结果</h3><ul>
+<li>输出结果展示了一个格式化的产品列表，每个产品的信息在新行上显示，每项信息之间用制表符分隔。</li>
+</ul>
+<p>总结：这段PHP代码展示了如何通过嵌套循环来遍历和输出多维数组中的数据。每次迭代输出一个产品的完整信息，格式化文本输出使得信息易于阅读。</p>
+<h2 id="PHP访问多维数组-1"><a href="#PHP访问多维数组-1" class="headerlink" title="PHP访问多维数组"></a>PHP访问多维数组</h2><h3 id="多维数组结构"><a href="#多维数组结构" class="headerlink" title="多维数组结构"></a>多维数组结构</h3><ul>
+<li><code>$products</code> 是一个多维数组，每个元素都是一个代表产品信息的数组。</li>
+</ul>
+<h3 id="foreach循环访问"><a href="#foreach循环访问" class="headerlink" title="foreach循环访问"></a>foreach循环访问</h3><ul>
+<li>使用 <code>foreach</code> 循环遍历 <code>$products</code> 数组的每个子数组。</li>
+</ul>
+<h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><ul>
+<li>通过 <code>is_array($value)</code> 判断当前元素是否为数组，以便正确处理子数组。</li>
+</ul>
+<h3 id="嵌套的foreach循环"><a href="#嵌套的foreach循环" class="headerlink" title="嵌套的foreach循环"></a>嵌套的foreach循环</h3><ul>
+<li>如果 <code>$value</code> 是一个数组，再次使用 <code>foreach</code> 循环来访问子数组中的每个元素。</li>
+</ul>
+<h3 id="元素输出-2"><a href="#元素输出-2" class="headerlink" title="元素输出"></a>元素输出</h3><ul>
+<li>在内层循环中，使用 <code>echo</code> 语句输出每个子元素，并用制表符 <code>\t</code> 作为分隔符。</li>
+</ul>
+<h3 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h3><ul>
+<li>输出每个产品信息，其中包含产品代码、名称和价格，每个信息之间用制表符分隔。</li>
+</ul>
+<h3 id="头部信息-6"><a href="#头部信息-6" class="headerlink" title="头部信息"></a>头部信息</h3><ul>
+<li><code>header(&quot;Content-Type: text/plain&quot;)</code> 确保输出为纯文本格式。</li>
+</ul>
+<h3 id="执行结果-3"><a href="#执行结果-3" class="headerlink" title="执行结果"></a>执行结果</h3><ul>
+<li>输出结果以文本形式展示了 <code>$products</code> 数组中每个产品的详细信息。</li>
+</ul>
+<p>总结：这段PHP代码展示了如何使用 <code>foreach</code> 循环及条件语句来访问和输出多维数组中的数据，便于在文本形式中清晰展示每个产品的信息。</p>
+<h2 id="PHP为多维数组分配列名"><a href="#PHP为多维数组分配列名" class="headerlink" title="PHP为多维数组分配列名"></a>PHP为多维数组分配列名</h2><h3 id="多维关联数组"><a href="#多维关联数组" class="headerlink" title="多维关联数组"></a>多维关联数组</h3><ul>
+<li><code>$products</code> 数组由多个子数组构成，每个子数组都是关联数组，含有 ‘Code’、’Description’ 和 ‘Price’ 键。</li>
+</ul>
+<h3 id="访问多维数组-1"><a href="#访问多维数组-1" class="headerlink" title="访问多维数组"></a>访问多维数组</h3><ul>
+<li>使用 <code>foreach</code> 循环来遍历 <code>$products</code> 数组。</li>
+</ul>
+<h3 id="关联数组的键值输出"><a href="#关联数组的键值输出" class="headerlink" title="关联数组的键值输出"></a>关联数组的键值输出</h3><ul>
+<li><code>foreach</code> 循环内部，又使用了 <code>foreach</code> 循环来访问每个子数组的键和值。</li>
+</ul>
+<h3 id="输出格式化"><a href="#输出格式化" class="headerlink" title="输出格式化"></a>输出格式化</h3><ul>
+<li>通过 <code>echo</code> 语句输出每个产品的代码、描述和价格，每个产品的信息用制表符 <code>\t</code> 分隔，并在每个子数组后添加换行。</li>
+</ul>
+<h3 id="顺序输出数组"><a href="#顺序输出数组" class="headerlink" title="顺序输出数组"></a>顺序输出数组</h3><ul>
+<li>另一个 <code>for</code> 循环用来按顺序输出 <code>$products</code> 数组的每个元素，显示为表格形式。</li>
+</ul>
+<h3 id="表格输出"><a href="#表格输出" class="headerlink" title="表格输出"></a>表格输出</h3><ul>
+<li>输出格式化为表格样式，每行显示一个产品的 ‘Code’、’Description’ 和 ‘Price’。</li>
+</ul>
+<h3 id="头部信息-7"><a href="#头部信息-7" class="headerlink" title="头部信息"></a>头部信息</h3><ul>
+<li>通过 <code>header(&quot;Content-Type: text/plain&quot;)</code> 设置输出为纯文本格式，以确保在浏览器中格式正确显示。</li>
+</ul>
+<h3 id="执行结果-4"><a href="#执行结果-4" class="headerlink" title="执行结果"></a>执行结果</h3><ul>
+<li>浏览器窗口展示了通过两种不同方式（嵌套 <code>foreach</code> 循环和 <code>for</code> 循环）格式化输出的产品信息。</li>
+</ul>
+<p>总结：此PHP脚本演示了如何创建多维关联数组，并以两种不同的循环方式访问及输出其内容。使用关联数组的键来指定列名，可以在输出时清晰地标识每个产品的属性。</p>
+<h2 id="PHP三维数组"><a href="#PHP三维数组" class="headerlink" title="PHP三维数组"></a>PHP三维数组</h2><h3 id="三维关联数组定义"><a href="#三维关联数组定义" class="headerlink" title="三维关联数组定义"></a>三维关联数组定义</h3><ul>
+<li><code>$categories</code> 定义为一个三维关联数组，每个元素都是一个代表不同类别的二维数组。</li>
+</ul>
+<h3 id="数组内容-1"><a href="#数组内容-1" class="headerlink" title="数组内容"></a>数组内容</h3><ul>
+<li>每个二维数组包含了产品的 ‘Code’、’Description’ 和 ‘Price’。</li>
+</ul>
+<h3 id="顺序访问三维数组"><a href="#顺序访问三维数组" class="headerlink" title="顺序访问三维数组"></a>顺序访问三维数组</h3><ul>
+<li>使用嵌套的 <code>for</code> 循环来访问 <code>$categories</code> 数组的每个子数组。</li>
+</ul>
+<h3 id="输出格式化-1"><a href="#输出格式化-1" class="headerlink" title="输出格式化"></a>输出格式化</h3><ul>
+<li>通过 <code>for</code> 循环输出每个类别中的产品信息，包括代码、描述和价格。</li>
+</ul>
+<h3 id="输出结果-2"><a href="#输出结果-2" class="headerlink" title="输出结果"></a>输出结果</h3><ul>
+<li>输出结果显示了分层的产品信息，每个类别用一个新行分隔。</li>
+</ul>
+<h3 id="头部信息-8"><a href="#头部信息-8" class="headerlink" title="头部信息"></a>头部信息</h3><ul>
+<li>通过 <code>header(&quot;Content-Type: text/plain&quot;)</code> 设置输出为纯文本格式。</li>
+</ul>
+<p>总结：此PHP代码演示了如何创建和访问三维关联数组，以及如何通过嵌套循环按顺序输出每个分类下的所有产品信息。</p>
+<h2 id="集合与数组的对比"><a href="#集合与数组的对比" class="headerlink" title="集合与数组的对比"></a>集合与数组的对比</h2><h3 id="集合的定义"><a href="#集合的定义" class="headerlink" title="集合的定义"></a>集合的定义</h3><ul>
+<li>集合是用于存储和管理对象组的数据结构。</li>
+<li>不同编程语言中的集合可能名称和特性不同，但通常提供添加、删除和迭代项目的功能。</li>
+</ul>
+<h3 id="集合类"><a href="#集合类" class="headerlink" title="集合类"></a>集合类</h3><ul>
+<li>PHP中的集合可以作为封装数组行为的对象，提供更面向对象的方式来处理项目组。</li>
+<li>PHP框架中的Collection类，如Laravel，与.NET中的List类或Java中的ArrayList类似，提供了过滤、映射、归约等方法，简化了常见的数组操作。</li>
+</ul>
+<h3 id="使用集合的好处"><a href="#使用集合的好处" class="headerlink" title="使用集合的好处"></a>使用集合的好处</h3><ul>
+<li>集合提供了更具表达性的语法和便捷方法来执行诸如搜索项目或对集合中的每个项目应用操作等常见任务。</li>
+<li>通过抽象数据管理的底层细节，集合可以使代码更具可读性和可维护性。</li>
+</ul>
+<h3 id="数组函数与集合"><a href="#数组函数与集合" class="headerlink" title="数组函数与集合"></a>数组函数与集合</h3><ul>
+<li>PHP的数组函数如<code>in_array</code>、<code>array_map</code>和<code>array_walk</code>可以对数组执行各种操作，但集合提供了处理这些操作的更统一和面向对象的方法。</li>
+</ul>
+<h3 id="集合的安装和使用"><a href="#集合的安装和使用" class="headerlink" title="集合的安装和使用"></a>集合的安装和使用</h3><ul>
+<li>在PHP中，集合不是内置于语言中的，但可以通过第三方包添加到项目中。</li>
+<li>可以使用Composer（PHP的包管理器）通过在<code>composer.json</code>文件中添加包并运行<code>composer install</code>或<code>composer update</code>来安装包。</li>
+</ul>
+<h3 id="与数组的比较"><a href="#与数组的比较" class="headerlink" title="与数组的比较"></a>与数组的比较</h3><ul>
+<li>虽然PHP数组功能强大，但集合以其更加直观的操作和维护性优势而受到青睐。</li>
+</ul>
+<p>总结：在编程中，集合和数组都是用于存储数据的重要工具。集合通过提供更高级的操作和更易于理解的接口，为数据管理提供了一个更加优雅的解决方案。在PHP中，虽然数组本身功能全面，但使用集合可以使代码更加清晰和易于维护。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/02/14/431%E7%AC%AC%E4%B8%89%E5%91%A8LEC/">http://example.com/2024/02/14/431%E7%AC%AC%E4%B8%89%E5%91%A8LEC/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/02/19/301%E7%AC%AC%E5%9B%9B%E5%91%A8LEC/" title="301第四周LEC"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">301第四周LEC</div></div></a></div><div class="next-post pull-right"><a href="/2024/02/14/301%E7%AC%AC%E4%B8%89%E5%91%A8LAB6/" title="301第三周LAB6"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">301第三周LAB6</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">110</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%80%85%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%8C%83%E5%9B%B4%E4%B8%8E%E6%8C%91%E6%88%98-Devs-who-work-with"><span class="toc-number">1.</span> <span class="toc-text">开发者的工作范围与挑战 (Devs who work with:)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%BB%BA%E8%AE%AE-How-should-code-be-formatted"><span class="toc-number">2.</span> <span class="toc-text">代码格式化建议 (How should code be formatted?)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E6%A6%82%E8%A7%88-Contents"><span class="toc-number">3.</span> <span class="toc-text">内容概览 (Contents)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Composer%E4%B8%8E%E5%8C%85%E7%AE%A1%E7%90%86-Composer-and-Packages"><span class="toc-number">4.</span> <span class="toc-text">Composer与包管理 (Composer and Packages)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Composer%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-composer-json-lock-gitignore"><span class="toc-number">5.</span> <span class="toc-text">Composer的配置文件 (composer.json &amp; .lock &amp; .gitignore)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Composer-Using-Composer"><span class="toc-number">6.</span> <span class="toc-text">如何使用Composer (Using Composer)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%97%E6%AC%A2%E8%BF%8E%E7%9A%84%E5%8C%85-Popular-packages"><span class="toc-number">7.</span> <span class="toc-text">受欢迎的包 (Popular packages)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E4%B8%8E%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE-Storing-and-Retrieving-Data"><span class="toc-number">8.</span> <span class="toc-text">存储与检索数据 (Storing and Retrieving Data)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%86%E8%A7%A3XML%E6%96%87%E4%BB%B6-FYI-%E2%80%93-XML-File"><span class="toc-number">9.</span> <span class="toc-text">了解XML文件 (FYI – XML File)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%86%E8%A7%A3JSON-FYI-%E2%80%93-JSON"><span class="toc-number">10.</span> <span class="toc-text">了解JSON (FYI – JSON)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A6%86%E7%9B%96%E7%9A%84%E4%B8%BB%E9%A2%98-Topics-Covered"><span class="toc-number">11.</span> <span class="toc-text">覆盖的主题 (Topics Covered)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6-Opening-a-file"><span class="toc-number">12.</span> <span class="toc-text">如何打开文件 (Opening a file)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%A8%A1%E5%BC%8F-fopen-File-Modes-fopen"><span class="toc-number">13.</span> <span class="toc-text">文件模式 - fopen() (File Modes - fopen())</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84-%E7%9B%B8%E5%AF%B9%E6%88%96%E7%BB%9D%E5%AF%B9-Paths-Relative-or-Absolute"><span class="toc-number">14.</span> <span class="toc-text">路径 - 相对或绝对 (Paths - Relative or Absolute)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B8%B8%E9%87%8F-Define-Constants-for-File-System"><span class="toc-number">15.</span> <span class="toc-text">定义文件系统常量 (Define Constants for File System)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6-Writing-to-File"><span class="toc-number">16.</span> <span class="toc-text">写入文件 (Writing to File)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F-Predefined-Constants"><span class="toc-number">17.</span> <span class="toc-text">预定义常量 (Predefined Constants)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E9%94%81%E5%AE%9A-Locking-Files"><span class="toc-number">18.</span> <span class="toc-text">文件锁定 (Locking Files)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E9%94%81%EF%BC%88Acquiring-Lock%EF%BC%89"><span class="toc-number">19.</span> <span class="toc-text">获取锁（Acquiring Lock）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%81%E5%AE%9A%E6%96%87%E4%BB%B6%E7%A4%BA%E4%BE%8B%EF%BC%88Locking-File-Example%EF%BC%89"><span class="toc-number">20.</span> <span class="toc-text">锁定文件示例（Locking File Example）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">21.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%EF%BC%88Other-Useful-File-Functions%EF%BC%89"><span class="toc-number">22.</span> <span class="toc-text">文件操作函数（Other Useful File Functions）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E6%93%8D%E4%BD%9C%EF%BC%88Reading-Operations%EF%BC%89"><span class="toc-number">22.1.</span> <span class="toc-text">读取操作（Reading Operations）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E6%93%8D%E4%BD%9C%EF%BC%88Writing-Operations%EF%BC%89"><span class="toc-number">22.2.</span> <span class="toc-text">写入操作（Writing Operations）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C%EF%BC%88Other-Operations%EF%BC%89"><span class="toc-number">22.3.</span> <span class="toc-text">其他操作（Other Operations）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%BF%A1%E6%81%AF%E6%93%8D%E4%BD%9C%EF%BC%88File-Information-Operations%EF%BC%89"><span class="toc-number">22.4.</span> <span class="toc-text">文件信息操作（File Information Operations）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%EF%BC%88File-Pointer-Operations%EF%BC%89"><span class="toc-number">22.5.</span> <span class="toc-text">文件指针操作（File Pointer Operations）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C%EF%BC%88File-Deletion-Operations%EF%BC%89"><span class="toc-number">22.6.</span> <span class="toc-text">文件删除操作（File Deletion Operations）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-number">22.7.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%EF%BC%88Arrays%EF%BC%89"><span class="toc-number">23.</span> <span class="toc-text">数组（Arrays）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E4%BC%98%E7%82%B9%EF%BC%88Advantages%EF%BC%89"><span class="toc-number">23.1.</span> <span class="toc-text">数组的优点（Advantages）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E7%BC%BA%E7%82%B9%EF%BC%88Disadvantages%EF%BC%89"><span class="toc-number">23.2.</span> <span class="toc-text">数组的缺点（Disadvantages）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84%E5%87%BD%E6%95%B0%EF%BC%88PHP-Array-Functions%EF%BC%89"><span class="toc-number">23.3.</span> <span class="toc-text">PHP中的数组函数（PHP Array Functions）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-2"><span class="toc-number">23.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E6%95%B0%E5%80%BC%E7%B4%A2%E5%BC%95%E6%95%B0%E7%BB%84"><span class="toc-number">24.</span> <span class="toc-text">PHP数值索引数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%AE%9A%E4%B9%89"><span class="toc-number">24.1.</span> <span class="toc-text">基础定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">24.2.</span> <span class="toc-text">数组初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%86%85%E5%AE%B9"><span class="toc-number">24.3.</span> <span class="toc-text">数组内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E8%BE%93%E5%87%BA"><span class="toc-number">24.4.</span> <span class="toc-text">数组输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A"><span class="toc-number">24.5.</span> <span class="toc-text">图表解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C"><span class="toc-number">24.6.</span> <span class="toc-text">PHP代码执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E9%83%A8%E4%BF%A1%E6%81%AF"><span class="toc-number">24.7.</span> <span class="toc-text">头部信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E7%89%88%E6%9C%AC"><span class="toc-number">24.8.</span> <span class="toc-text">PHP版本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E5%BE%AA%E7%8E%AF%E8%AE%BF%E9%97%AE%E6%95%B0%E5%80%BC%E7%B4%A2%E5%BC%95%E6%95%B0%E7%BB%84"><span class="toc-number">25.</span> <span class="toc-text">PHP循环访问数值索引数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E4%B8%8E%E5%BE%AA%E7%8E%AF"><span class="toc-number">25.1.</span> <span class="toc-text">数组与循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#header-%E5%87%BD%E6%95%B0"><span class="toc-number">25.2.</span> <span class="toc-text">header 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96-1"><span class="toc-number">25.3.</span> <span class="toc-text">数组初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-%E5%BE%AA%E7%8E%AF"><span class="toc-number">25.4.</span> <span class="toc-text">for 循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-number">25.5.</span> <span class="toc-text">输出结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C-1"><span class="toc-number">25.6.</span> <span class="toc-text">PHP代码执行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E9%9D%9E%E6%95%B0%E5%80%BC%E7%B4%A2%E5%BC%95%E6%95%B0%E7%BB%84"><span class="toc-number">26.</span> <span class="toc-text">PHP非数值索引数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%AE%9A%E4%B9%89%E5%92%8C%E7%B1%BB%E5%9E%8B"><span class="toc-number">26.1.</span> <span class="toc-text">数组定义和类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%B4%A2%E5%BC%95%E6%95%B0%E7%BB%84"><span class="toc-number">26.2.</span> <span class="toc-text">数值索引数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E6%95%B0%E7%BB%84"><span class="toc-number">26.3.</span> <span class="toc-text">关联数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%86%85%E5%AE%B9%E8%BE%93%E5%87%BA"><span class="toc-number">26.4.</span> <span class="toc-text">数组内容输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%8D%B0%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0"><span class="toc-number">26.5.</span> <span class="toc-text">打印数组元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">26.6.</span> <span class="toc-text">执行结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E9%83%A8%E4%BF%A1%E6%81%AF-1"><span class="toc-number">26.7.</span> <span class="toc-text">头部信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E4%BD%BF%E7%94%A8Foreach%E8%AE%BF%E9%97%AE%E9%9D%9E%E6%95%B0%E5%80%BC%E7%B4%A2%E5%BC%95%E6%95%B0%E7%BB%84"><span class="toc-number">27.</span> <span class="toc-text">PHP使用Foreach访问非数值索引数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Foreach%E5%BE%AA%E7%8E%AF%E7%AE%80%E4%BB%8B"><span class="toc-number">27.1.</span> <span class="toc-text">Foreach循环简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E6%95%B0%E7%BB%84%E5%AE%9A%E4%B9%89"><span class="toc-number">27.2.</span> <span class="toc-text">关联数组定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Foreach%E5%BE%AA%E7%8E%AF%E4%BD%BF%E7%94%A8"><span class="toc-number">27.3.</span> <span class="toc-text">Foreach循环使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E8%BE%93%E5%87%BA"><span class="toc-number">27.4.</span> <span class="toc-text">元素输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-number">27.5.</span> <span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E9%83%A8%E4%BF%A1%E6%81%AF-2"><span class="toc-number">27.6.</span> <span class="toc-text">头部信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C-1"><span class="toc-number">27.7.</span> <span class="toc-text">执行结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E4%BD%BF%E7%94%A8each-%E5%87%BD%E6%95%B0%E8%AE%BF%E9%97%AE%E9%9D%9E%E6%95%B0%E5%80%BC%E7%B4%A2%E5%BC%95%E6%95%B0%E7%BB%84"><span class="toc-number">28.</span> <span class="toc-text">PHP使用each()函数访问非数值索引数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#each-%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95"><span class="toc-number">28.1.</span> <span class="toc-text">each()函数用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E6%95%B0%E7%BB%84-1"><span class="toc-number">28.2.</span> <span class="toc-text">关联数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AE%BF%E9%97%AE%E6%95%B0%E7%BB%84"><span class="toc-number">28.3.</span> <span class="toc-text">循环访问数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0"><span class="toc-number">28.4.</span> <span class="toc-text">输出数组元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">28.5.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C-2"><span class="toc-number">28.6.</span> <span class="toc-text">执行结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E9%83%A8%E4%BF%A1%E6%81%AF-3"><span class="toc-number">28.7.</span> <span class="toc-text">头部信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E6%95%B0%E7%BB%84%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">29.</span> <span class="toc-text">PHP数组运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E6%A6%82%E8%BF%B0"><span class="toc-number">29.1.</span> <span class="toc-text">运算符概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E5%85%B6%E4%BD%9C%E7%94%A8"><span class="toc-number">29.2.</span> <span class="toc-text">运算符及其作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F"><span class="toc-number">29.3.</span> <span class="toc-text">使用注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">30.</span> <span class="toc-text">PHP多维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">30.1.</span> <span class="toc-text">多维数组的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%B8%AD%E7%9A%84%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">30.2.</span> <span class="toc-text">示例中的多维数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84"><span class="toc-number">30.3.</span> <span class="toc-text">数组结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#var-dump%E8%BE%93%E5%87%BA"><span class="toc-number">30.4.</span> <span class="toc-text">var_dump输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E9%83%A8%E4%BF%A1%E6%81%AF-4"><span class="toc-number">30.5.</span> <span class="toc-text">头部信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A-1"><span class="toc-number">30.6.</span> <span class="toc-text">图表解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E4%B8%8E%E5%9B%BE%E8%A1%A8%E7%9A%84%E5%85%B3%E8%81%94"><span class="toc-number">30.7.</span> <span class="toc-text">数组与图表的关联</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E8%AE%BF%E9%97%AE%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">31.</span> <span class="toc-text">PHP访问多维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E5%AE%9A%E4%B9%89"><span class="toc-number">31.1.</span> <span class="toc-text">多维数组定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">31.2.</span> <span class="toc-text">访问多维数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E5%B1%82%E5%BE%AA%E7%8E%AF"><span class="toc-number">31.3.</span> <span class="toc-text">外层循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%B1%82%E5%BE%AA%E7%8E%AF"><span class="toc-number">31.4.</span> <span class="toc-text">内层循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E8%BE%93%E5%87%BA-1"><span class="toc-number">31.5.</span> <span class="toc-text">元素输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E9%83%A8%E4%BF%A1%E6%81%AF-5"><span class="toc-number">31.6.</span> <span class="toc-text">头部信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C-1"><span class="toc-number">31.7.</span> <span class="toc-text">输出结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E8%AE%BF%E9%97%AE%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84-1"><span class="toc-number">32.</span> <span class="toc-text">PHP访问多维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84"><span class="toc-number">32.1.</span> <span class="toc-text">多维数组结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#foreach%E5%BE%AA%E7%8E%AF%E8%AE%BF%E9%97%AE"><span class="toc-number">32.2.</span> <span class="toc-text">foreach循环访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD"><span class="toc-number">32.3.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E7%9A%84foreach%E5%BE%AA%E7%8E%AF"><span class="toc-number">32.4.</span> <span class="toc-text">嵌套的foreach循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E8%BE%93%E5%87%BA-2"><span class="toc-number">32.5.</span> <span class="toc-text">元素输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-1"><span class="toc-number">32.6.</span> <span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E9%83%A8%E4%BF%A1%E6%81%AF-6"><span class="toc-number">32.7.</span> <span class="toc-text">头部信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C-3"><span class="toc-number">32.8.</span> <span class="toc-text">执行结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E4%B8%BA%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%86%E9%85%8D%E5%88%97%E5%90%8D"><span class="toc-number">33.</span> <span class="toc-text">PHP为多维数组分配列名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E5%85%B3%E8%81%94%E6%95%B0%E7%BB%84"><span class="toc-number">33.1.</span> <span class="toc-text">多维关联数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84-1"><span class="toc-number">33.2.</span> <span class="toc-text">访问多维数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E6%95%B0%E7%BB%84%E7%9A%84%E9%94%AE%E5%80%BC%E8%BE%93%E5%87%BA"><span class="toc-number">33.3.</span> <span class="toc-text">关联数组的键值输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-number">33.4.</span> <span class="toc-text">输出格式化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E8%BE%93%E5%87%BA%E6%95%B0%E7%BB%84"><span class="toc-number">33.5.</span> <span class="toc-text">顺序输出数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E8%BE%93%E5%87%BA"><span class="toc-number">33.6.</span> <span class="toc-text">表格输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E9%83%A8%E4%BF%A1%E6%81%AF-7"><span class="toc-number">33.7.</span> <span class="toc-text">头部信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C-4"><span class="toc-number">33.8.</span> <span class="toc-text">执行结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E4%B8%89%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">34.</span> <span class="toc-text">PHP三维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BB%B4%E5%85%B3%E8%81%94%E6%95%B0%E7%BB%84%E5%AE%9A%E4%B9%89"><span class="toc-number">34.1.</span> <span class="toc-text">三维关联数组定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%86%85%E5%AE%B9-1"><span class="toc-number">34.2.</span> <span class="toc-text">数组内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E8%AE%BF%E9%97%AE%E4%B8%89%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">34.3.</span> <span class="toc-text">顺序访问三维数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%E5%8C%96-1"><span class="toc-number">34.4.</span> <span class="toc-text">输出格式化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C-2"><span class="toc-number">34.5.</span> <span class="toc-text">输出结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E9%83%A8%E4%BF%A1%E6%81%AF-8"><span class="toc-number">34.6.</span> <span class="toc-text">头部信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E4%B8%8E%E6%95%B0%E7%BB%84%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-number">35.</span> <span class="toc-text">集合与数组的对比</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">35.1.</span> <span class="toc-text">集合的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E7%B1%BB"><span class="toc-number">35.2.</span> <span class="toc-text">集合类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%9B%86%E5%90%88%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-number">35.3.</span> <span class="toc-text">使用集合的好处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%87%BD%E6%95%B0%E4%B8%8E%E9%9B%86%E5%90%88"><span class="toc-number">35.4.</span> <span class="toc-text">数组函数与集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-number">35.5.</span> <span class="toc-text">集合的安装和使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8E%E6%95%B0%E7%BB%84%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">35.6.</span> <span class="toc-text">与数组的比较</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/19/301%E7%AC%AC%E5%9B%9B%E5%91%A8LEC/" title="301第四周LEC">301第四周LEC</a><time datetime="2024-02-19T21:43:03.000Z" title="Created 2024-02-19 21:43:03">2024-02-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/14/431%E7%AC%AC%E4%B8%89%E5%91%A8LEC/" title="431第三周LEC">431第三周LEC</a><time datetime="2024-02-14T21:42:49.000Z" title="Created 2024-02-14 21:42:49">2024-02-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/14/301%E7%AC%AC%E4%B8%89%E5%91%A8LAB6/" title="301第三周LAB6">301第三周LAB6</a><time datetime="2024-02-14T21:14:34.000Z" title="Created 2024-02-14 21:14:34">2024-02-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/14/301%E7%AC%AC%E4%B8%89%E5%91%A8LAB5/" title="301第三周LAB5">301第三周LAB5</a><time datetime="2024-02-14T21:07:25.000Z" title="Created 2024-02-14 21:07:25">2024-02-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/11/301%E7%AC%AC%E4%B8%89%E5%91%A8TUL/" title="301第三周TUL">301第三周TUL</a><time datetime="2024-02-11T22:18:49.000Z" title="Created 2024-02-11 22:18:49">2024-02-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
