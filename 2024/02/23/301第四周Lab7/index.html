@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>301第四周Lab7 | Jacka10086's Blog</title><meta name="author" content="Jacka10086"><meta name="copyright" content="Jacka10086"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="子网划分场景拓扑结构 拓扑结构中包含4台PC、4台交换机（S1、S2、S3、S4）和2台路由器（R1、R2）。 每台PC通过一台交换机连接到路由器R1，R1通过串行接口连接到路由器R2。 每个连接支持25个主机。  地址分配表 表格列出了设备接口、IP地址、子网掩码和默认网关。 路由器接口和交换机VLAN接口已分配固定IP。 PC接口通过NIC（网络接口卡）连接，并分配了IP地址。  分组追踪器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="301第四周Lab7">
+<meta property="og:url" content="http://example.com/2024/02/23/301%E7%AC%AC%E5%9B%9B%E5%91%A8Lab7/index.html">
+<meta property="og:site_name" content="Jacka10086&#39;s Blog">
+<meta property="og:description" content="子网划分场景拓扑结构 拓扑结构中包含4台PC、4台交换机（S1、S2、S3、S4）和2台路由器（R1、R2）。 每台PC通过一台交换机连接到路由器R1，R1通过串行接口连接到路由器R2。 每个连接支持25个主机。  地址分配表 表格列出了设备接口、IP地址、子网掩码和默认网关。 路由器接口和交换机VLAN接口已分配固定IP。 PC接口通过NIC（网络接口卡）连接，并分配了IP地址。  分组追踪器">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg">
+<meta property="article:published_time" content="2024-02-23T16:17:37.000Z">
+<meta property="article:modified_time" content="2024-02-23T16:36:42.587Z">
+<meta property="article:author" content="Jacka10086">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/02/23/301%E7%AC%AC%E5%9B%9B%E5%91%A8Lab7/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '301第四周Lab7',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-02-23 16:36:42'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">112</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jacka10086's Blog"><span class="site-name">Jacka10086's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">301第四周Lab7</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-02-23T16:17:37.000Z" title="Created 2024-02-23 16:17:37">2024-02-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-02-23T16:36:42.587Z" title="Updated 2024-02-23 16:36:42">2024-02-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="301第四周Lab7"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="子网划分场景"><a href="#子网划分场景" class="headerlink" title="子网划分场景"></a>子网划分场景</h2><h3 id="拓扑结构"><a href="#拓扑结构" class="headerlink" title="拓扑结构"></a>拓扑结构</h3><ul>
+<li>拓扑结构中包含4台PC、4台交换机（S1、S2、S3、S4）和2台路由器（R1、R2）。</li>
+<li>每台PC通过一台交换机连接到路由器R1，R1通过串行接口连接到路由器R2。</li>
+<li>每个连接支持25个主机。</li>
+</ul>
+<h3 id="地址分配表"><a href="#地址分配表" class="headerlink" title="地址分配表"></a>地址分配表</h3><ul>
+<li>表格列出了设备接口、IP地址、子网掩码和默认网关。</li>
+<li>路由器接口和交换机VLAN接口已分配固定IP。</li>
+<li>PC接口通过NIC（网络接口卡）连接，并分配了IP地址。</li>
+</ul>
+<h3 id="分组追踪器-子网划分场景"><a href="#分组追踪器-子网划分场景" class="headerlink" title="分组追踪器 - 子网划分场景"></a>分组追踪器 - 子网划分场景</h3><ul>
+<li>给定网络地址192.168.100.0&#x2F;24进行子网划分。</li>
+<li>每个局域网(LAN)需要至少25个地址供终端设备使用。</li>
+<li>R1到R2之间的连接需要一个IP地址用于链路的每端。</li>
+</ul>
+<p>总结：本场景描述了一个含有四台PC、四台交换机和两台路由器的网络拓扑结构，并提供了一个地址分配表来指明各个设备接口的IP地址和子网掩码。此外，还介绍了一个子网划分的任务，要求为每个局域网分配足够的IP地址以支持至少25台主机，并为路由器间的连接配置IP地址。</p>
+<h2 id="Part-1-设计IP地址方案（设计一个IP地址方案）"><a href="#Part-1-设计IP地址方案（设计一个IP地址方案）" class="headerlink" title="Part 1: 设计IP地址方案（设计一个IP地址方案）"></a>Part 1: 设计IP地址方案（设计一个IP地址方案）</h2><h3 id="Step-1-划分192-168-100-0-24网络为适当数量的子网（划分192-168-100-0-24网络到合适的子网数量）"><a href="#Step-1-划分192-168-100-0-24网络为适当数量的子网（划分192-168-100-0-24网络到合适的子网数量）" class="headerlink" title="Step 1: 划分192.168.100.0&#x2F;24网络为适当数量的子网（划分192.168.100.0&#x2F;24网络到合适的子网数量）"></a>Step 1: 划分192.168.100.0&#x2F;24网络为适当数量的子网（划分192.168.100.0&#x2F;24网络到合适的子网数量）</h3><ul>
+<li>a. 基于拓扑结构，需要5个子网。</li>
+<li>b. 借用了多少位来支持拓扑表中的子网数量？借用了3位。</li>
+<li>c. 这样会创建多少个子网？创建了8个子网。</li>
+<li>d. 每个子网可以容纳多少个可用主机？每个子网可以有30个可用主机。</li>
+<li>e. 计算前五个子网的二进制和十进制表示。第一个子网已经显示。</li>
+</ul>
+<h3 id="Step-1扩展解释"><a href="#Step-1扩展解释" class="headerlink" title="Step 1扩展解释"></a>Step 1扩展解释</h3><ul>
+<li>f. 计算新子网掩码的二进制和十进制值。新子网掩码为255.255.255.224。</li>
+<li>g. 填写子网表，列出所有可用子网的十进制值，第一个和最后一个可用的主机地址，以及广播地址。重复直到列出所有地址。</li>
+</ul>
+<h3 id="Step-2-将子网分配给拓扑图中显示的网络（为拓扑结构中的网络分配子网）"><a href="#Step-2-将子网分配给拓扑图中显示的网络（为拓扑结构中的网络分配子网）" class="headerlink" title="Step 2: 将子网分配给拓扑图中显示的网络（为拓扑结构中的网络分配子网）"></a>Step 2: 将子网分配给拓扑图中显示的网络（为拓扑结构中的网络分配子网）</h3><ul>
+<li>a. 将子网0分配给R1的GigabitEthernet 0&#x2F;0接口连接的局域网。子网地址：192.168.100.0&#x2F;27。</li>
+<li>b. 将子网1分配给R1的GigabitEthernet 0&#x2F;1接口连接的局域网。子网地址：192.168.100.32&#x2F;27。</li>
+<li>c. 将子网2分配给R2的GigabitEthernet 0&#x2F;0接口连接的局域网。子网地址：192.168.100.64&#x2F;27。</li>
+<li>d. 将子网3分配给R2的GigabitEthernet 0&#x2F;1接口连接的局域网。子网地址：192.168.100.96&#x2F;27。</li>
+<li>e. 将子网4分配给R1与R2之间的WAN链路。子网地址：192.168.100.128&#x2F;27。</li>
+</ul>
+<h3 id="Step-3-记录地址方案（记录地址分配方案）"><a href="#Step-3-记录地址方案（记录地址分配方案）" class="headerlink" title="Step 3: 记录地址方案（记录地址分配方案）"></a>Step 3: 记录地址方案（记录地址分配方案）</h3><ul>
+<li>a. 使用以下准则填写子网表：为两个局域网链路和WAN链路分配R1的第一个和最后一个IP地址。</li>
+<li>b. 为局域网链路分配R2的第一个IP地址。为WAN链路分配最后一个可用IP地址。</li>
+<li>c. 将第二个可用IP地址分配给交换机。</li>
+<li>d. 将最后一个可用IP地址分配给主机。</li>
+</ul>
+<h3 id="子网表解析"><a href="#子网表解析" class="headerlink" title="子网表解析"></a>子网表解析</h3><ul>
+<li>子网表详细列出了每个子网的编号、子网地址、第一个可用的主机地址、最后一个可用的主机地址以及广播地址。</li>
+<li>子网编号从0到7，每个子网的主机部分的位数由于借用了3个位，因此主机数为2^5-2&#x3D;30个。</li>
+<li>子网掩码为255.255.255.224，即&#x2F;27，表示每个子网可以有32个IP地址，其中30个可用于主机。</li>
+</ul>
+<p>总结：这一部分的内容详细阐述了如何将一个给定的IP网络地址划分为多个子网，并分配给一个特定的网络拓扑。通过借用位数，可以创造出足够的子网来满足网络需求，同时每个子网能容纳足够数量的主机。子网表为网络管理员提供了一个明确的地址分配记录，便于管理和故障排查。</p>
+<h2 id="第二部分：为网络设备分配IP地址并验证连通性"><a href="#第二部分：为网络设备分配IP地址并验证连通性" class="headerlink" title="第二部分：为网络设备分配IP地址并验证连通性"></a>第二部分：为网络设备分配IP地址并验证连通性</h2><h3 id="步骤1：在R1路由器的LAN接口上配置IP地址"><a href="#步骤1：在R1路由器的LAN接口上配置IP地址" class="headerlink" title="步骤1：在R1路由器的LAN接口上配置IP地址"></a>步骤1：在R1路由器的LAN接口上配置IP地址</h3><ul>
+<li>配置R1的局域网接口以确保与其他网络设备的通信。</li>
+</ul>
+<h3 id="步骤2：在S3交换机上配置IP地址，包括默认网关（接口vlan-1）"><a href="#步骤2：在S3交换机上配置IP地址，包括默认网关（接口vlan-1）" class="headerlink" title="步骤2：在S3交换机上配置IP地址，包括默认网关（接口vlan_1）"></a>步骤2：在S3交换机上配置IP地址，包括默认网关（接口vlan_1）</h3><ul>
+<li>设置S3交换机的管理接口IP地址。</li>
+<li>配置默认网关，以便S3可以与网络外部通信。</li>
+</ul>
+<h3 id="步骤3：在PC4上配置IP地址，包括默认网关"><a href="#步骤3：在PC4上配置IP地址，包括默认网关" class="headerlink" title="步骤3：在PC4上配置IP地址，包括默认网关"></a>步骤3：在PC4上配置IP地址，包括默认网关</h3><ul>
+<li>分配PC4的IP地址。</li>
+<li>设置默认网关，使得PC4能够访问局域网外部的资源。</li>
+</ul>
+<h3 id="进一步工作：优化WAN链路子网划分"><a href="#进一步工作：优化WAN链路子网划分" class="headerlink" title="进一步工作：优化WAN链路子网划分"></a>进一步工作：优化WAN链路子网划分</h3><ul>
+<li>WAN链路（两个路由器之间的连接）可能分配了过大的子网，浪费了IP地址。</li>
+<li>序列链路仅包含两个设备，32节点的子网可能会浪费IP地址。</li>
+<li>建议将其更改为只有4个IP地址的网络，其中只有两个IP是可用的。</li>
+</ul>
+<p>总结：本部分提供了关于如何在一个已经部分配置了IP地址的网络上完成剩余配置的指导。需要在R1路由器、S3交换机以及PC4上进行IP地址配置，并建议优化WAN链路的子网分配以减少IP地址的浪费。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Jacka10086</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/02/23/301%E7%AC%AC%E5%9B%9B%E5%91%A8Lab7/">http://example.com/2024/02/23/301%E7%AC%AC%E5%9B%9B%E5%91%A8Lab7/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/02/23/301%E7%AC%AC%E5%9B%9B%E5%91%A8TUL/" title="301第四周TUL"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">301第四周TUL</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2023/10/18/fq6OmvaUIxkbdo5.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jacka10086</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">112</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Jacka10086"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E5%9C%BA%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">子网划分场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">拓扑结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E8%A1%A8"><span class="toc-number">1.2.</span> <span class="toc-text">地址分配表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E8%BF%BD%E8%B8%AA%E5%99%A8-%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E5%9C%BA%E6%99%AF"><span class="toc-number">1.3.</span> <span class="toc-text">分组追踪器 - 子网划分场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-1-%E8%AE%BE%E8%AE%A1IP%E5%9C%B0%E5%9D%80%E6%96%B9%E6%A1%88%EF%BC%88%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AAIP%E5%9C%B0%E5%9D%80%E6%96%B9%E6%A1%88%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">Part 1: 设计IP地址方案（设计一个IP地址方案）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-1-%E5%88%92%E5%88%86192-168-100-0-24%E7%BD%91%E7%BB%9C%E4%B8%BA%E9%80%82%E5%BD%93%E6%95%B0%E9%87%8F%E7%9A%84%E5%AD%90%E7%BD%91%EF%BC%88%E5%88%92%E5%88%86192-168-100-0-24%E7%BD%91%E7%BB%9C%E5%88%B0%E5%90%88%E9%80%82%E7%9A%84%E5%AD%90%E7%BD%91%E6%95%B0%E9%87%8F%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">Step 1: 划分192.168.100.0&#x2F;24网络为适当数量的子网（划分192.168.100.0&#x2F;24网络到合适的子网数量）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-1%E6%89%A9%E5%B1%95%E8%A7%A3%E9%87%8A"><span class="toc-number">2.2.</span> <span class="toc-text">Step 1扩展解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-2-%E5%B0%86%E5%AD%90%E7%BD%91%E5%88%86%E9%85%8D%E7%BB%99%E6%8B%93%E6%89%91%E5%9B%BE%E4%B8%AD%E6%98%BE%E7%A4%BA%E7%9A%84%E7%BD%91%E7%BB%9C%EF%BC%88%E4%B8%BA%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84%E4%B8%AD%E7%9A%84%E7%BD%91%E7%BB%9C%E5%88%86%E9%85%8D%E5%AD%90%E7%BD%91%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">Step 2: 将子网分配给拓扑图中显示的网络（为拓扑结构中的网络分配子网）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-3-%E8%AE%B0%E5%BD%95%E5%9C%B0%E5%9D%80%E6%96%B9%E6%A1%88%EF%BC%88%E8%AE%B0%E5%BD%95%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E6%96%B9%E6%A1%88%EF%BC%89"><span class="toc-number">2.4.</span> <span class="toc-text">Step 3: 记录地址方案（记录地址分配方案）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E7%BD%91%E8%A1%A8%E8%A7%A3%E6%9E%90"><span class="toc-number">2.5.</span> <span class="toc-text">子网表解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%9A%E4%B8%BA%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%88%86%E9%85%8DIP%E5%9C%B0%E5%9D%80%E5%B9%B6%E9%AA%8C%E8%AF%81%E8%BF%9E%E9%80%9A%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">第二部分：为网络设备分配IP地址并验证连通性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A41%EF%BC%9A%E5%9C%A8R1%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84LAN%E6%8E%A5%E5%8F%A3%E4%B8%8A%E9%85%8D%E7%BD%AEIP%E5%9C%B0%E5%9D%80"><span class="toc-number">3.1.</span> <span class="toc-text">步骤1：在R1路由器的LAN接口上配置IP地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A42%EF%BC%9A%E5%9C%A8S3%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8A%E9%85%8D%E7%BD%AEIP%E5%9C%B0%E5%9D%80%EF%BC%8C%E5%8C%85%E6%8B%AC%E9%BB%98%E8%AE%A4%E7%BD%91%E5%85%B3%EF%BC%88%E6%8E%A5%E5%8F%A3vlan-1%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">步骤2：在S3交换机上配置IP地址，包括默认网关（接口vlan_1）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A43%EF%BC%9A%E5%9C%A8PC4%E4%B8%8A%E9%85%8D%E7%BD%AEIP%E5%9C%B0%E5%9D%80%EF%BC%8C%E5%8C%85%E6%8B%AC%E9%BB%98%E8%AE%A4%E7%BD%91%E5%85%B3"><span class="toc-number">3.3.</span> <span class="toc-text">步骤3：在PC4上配置IP地址，包括默认网关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%B7%A5%E4%BD%9C%EF%BC%9A%E4%BC%98%E5%8C%96WAN%E9%93%BE%E8%B7%AF%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86"><span class="toc-number">3.4.</span> <span class="toc-text">进一步工作：优化WAN链路子网划分</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/23/301%E7%AC%AC%E5%9B%9B%E5%91%A8Lab7/" title="301第四周Lab7">301第四周Lab7</a><time datetime="2024-02-23T16:17:37.000Z" title="Created 2024-02-23 16:17:37">2024-02-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/23/301%E7%AC%AC%E5%9B%9B%E5%91%A8TUL/" title="301第四周TUL">301第四周TUL</a><time datetime="2024-02-23T15:49:54.000Z" title="Created 2024-02-23 15:49:54">2024-02-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/19/301%E7%AC%AC%E5%9B%9B%E5%91%A8LEC/" title="301第四周LEC">301第四周LEC</a><time datetime="2024-02-19T21:43:03.000Z" title="Created 2024-02-19 21:43:03">2024-02-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/14/431%E7%AC%AC%E4%B8%89%E5%91%A8LEC/" title="431第三周LEC">431第三周LEC</a><time datetime="2024-02-14T21:42:49.000Z" title="Created 2024-02-14 21:42:49">2024-02-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/14/301%E7%AC%AC%E4%B8%89%E5%91%A8LAB6/" title="301第三周LAB6">301第三周LAB6</a><time datetime="2024-02-14T21:14:34.000Z" title="Created 2024-02-14 21:14:34">2024-02-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Jacka10086</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
